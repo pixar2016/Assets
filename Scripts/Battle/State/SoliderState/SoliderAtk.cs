@@ -22,7 +22,7 @@ public class SoliderAtk : StateBase
 
     public void EnterExcute()
     {
-        soliderInfo.StartAttack();
+        soliderInfo.StartSkill(soliderInfo.attackSkill);
         attackTime = soliderInfo.attackTime;
         curTime = 0;
     }

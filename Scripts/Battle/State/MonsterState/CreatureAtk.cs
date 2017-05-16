@@ -22,7 +22,7 @@ public class CreatureAtk : StateBase
     public void EnterExcute()
     {
         //Debug.Log("CreatureAtk EnterExcute");
-        monsterInfo.StartAttack();
+        monsterInfo.StartSkill(monsterInfo.attackSkill);
         attackTime = monsterInfo.attackTime;
         curTime = 0;
     }

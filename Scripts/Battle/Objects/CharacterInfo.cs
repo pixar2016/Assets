@@ -1,6 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 //using EventDispatcherSpace;
+
+public enum CharAttr
+{
+    //血量
+    Hp,
+    //血量上限
+    HpMax,
+    //攻击速度
+    AttackSpeed,
+    //攻击伤害
+    AttackDamage,
+    //护甲类型
+    ArmorType,
+}
 
 public class CharacterInfo
 {
@@ -11,23 +26,27 @@ public class CharacterInfo
     public Vector3 position;
     public Vector3 rotation;
     public string actionName;
+    public Dictionary<CharAttr, int> attrList;
 
     //攻击间隔，兵营为出兵间隔
     public float attackTime;
     //用于广播事件
     public MiniEventDispatcher eventDispatcher;
-    
+
 
     public CharacterInfo()
     {
         eventDispatcher = new MiniEventDispatcher();
-        position = new Vector3(0, 0, 0);
-        rotation = new Vector3(0, 0, 0);
+        position = Vector3.zero;
+        rotation = Vector3.zero;
+        attrList = new Dictionary<CharAttr, int>();
     }
 
     public void SetPosition(float x, float y, float z)
     {
-        position = new Vector3(x, y, z);
+        position.x = x;
+        position.y = y;
+        position.z = z;
     }
     public Vector3 GetPosition()
     {
@@ -36,7 +55,9 @@ public class CharacterInfo
 
     public void SetRotation(float x, float y, float z)
     {
-        rotation = new Vector3(x, y, z);
+        rotation.x = x;
+        rotation.y = y;
+        rotation.z = z;
     }
     public Vector3 GetRotation()
     {
@@ -73,42 +94,48 @@ public class CharacterInfo
     {
         return null;
     }
-
-    //开始普通攻击
-    public virtual void StartAttack()
+    //开始一个技能
+    public virtual void StartSkill(SkillInfo skillInfo)
     {
-
+        SkillManager.getInstance().StartSkill(skillInfo);
     }
     //开始主动技能或被动技能
     public virtual void StartSkill(int skillId)
     {
 
     }
-    //向上走
-    public virtual void RunUp()
+    public virtual void Run(Vector3 targetPos)
     {
-        DoAction("run1");
-    }
-    //向下走
-    public virtual void RunDown()
-    {
-        DoAction("run1");
-    }
-    //向右走
-    public virtual void RunRight()
-    {
-        DoAction("run1");
-    }
-    //向左走
-    public virtual void RunLeft()
-    {
-        DoAction("run1");
+        Vector3 curPos = this.GetPosition();
+        if (targetPos.y > curPos.y && Mathf.Abs(targetPos.y - curPos.y) > Mathf.Abs(targetPos.x - curPos.x))
+        {
+            DoAction("run1");
+        }
+        else if (targetPos.x >= curPos.x)
+        {
+            DoAction("run1");
+        }
+        else
+        {
+            DoAction("run1");
+        }
     }
     //对目标造成普通攻击伤害
     public virtual void Hurt()
     {
     }
-
+    //得到某一个属性值
+    public virtual int GetAttr(CharAttr attrName)
+    {
+        if (attrList.ContainsKey(attrName))
+        {
+            return attrList[attrName];
+        }
+        else
+        {
+            return -1;
+        }
+    }
     public virtual void ReduceHP(int losehp)
     {
     }

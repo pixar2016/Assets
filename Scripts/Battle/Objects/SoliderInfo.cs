@@ -168,11 +168,6 @@ public class SoliderInfo : CharacterInfo
         }
     }
 
-    public override void StartAttack()
-    {
-        SkillManager.getInstance().StartSkill(attackSkill);
-    }
-
     public override void StartSkill(int skillId)
     {
 
@@ -193,31 +188,49 @@ public class SoliderInfo : CharacterInfo
         hp -= losehp;
         //Debug.Log(this.charName + " hp = " + hp);
     }
-
-    //向上走
-    public override void RunUp()
+    public override void Run(Vector3 targetPos)
     {
-        SetRotation(0, 0, 0);
-        DoAction("run1");
+        Vector3 curPos = this.GetPosition();
+        if (targetPos.y > curPos.y && Mathf.Abs(targetPos.y - curPos.y) > Mathf.Abs(targetPos.x - curPos.x))
+        {
+            SetRotation(0, 0, 0);
+            DoAction("run2");
+        }
+        else if (targetPos.x >= curPos.x)
+        {
+            SetRotation(0, 0, 0);
+            DoAction("run1");
+        }
+        else
+        {
+            SetRotation(0, 180, 0);
+            DoAction("run1");
+        }
     }
-    //向下走
-    public override void RunDown()
-    {
-        SetRotation(0, 0, 180);
-        DoAction("run1");
-    }
-    //向右走
-    public override void RunRight()
-    {
-        SetRotation(0, 0, 0);
-        DoAction("run1");
-    }
-    //向左走
-    public override void RunLeft()
-    {
-        SetRotation(0, 180, 0);
-        DoAction("run1");
-    }
+    ////向上走
+    //public override void RunUp()
+    //{
+    //    SetRotation(0, 0, 0);
+    //    DoAction("run1");
+    //}
+    ////向下走
+    //public override void RunDown()
+    //{
+    //    SetRotation(0, 0, 180);
+    //    DoAction("run1");
+    //}
+    ////向右走
+    //public override void RunRight()
+    //{
+    //    SetRotation(0, 0, 0);
+    //    DoAction("run1");
+    //}
+    ////向左走
+    //public override void RunLeft()
+    //{
+    //    SetRotation(0, 180, 0);
+    //    DoAction("run1");
+    //}
     public float GetSpeed()
     {
         return 60;
