@@ -14,7 +14,8 @@ public class TriggerEffectLogic_Hurt : TriggerEffectBase
         CharacterInfo charInfo = triggerInfo.charInfo;
         if (!charInfo.IsDead())
         {
-            charInfo.Hurt();
+            CharacterInfo targetInfo = charInfo.GetTargetInfo();
+            BattleUtils.CalcAtkDamage(charInfo, targetInfo);
         }
         //Debug.Log(charInfo);
         //Debug.Log(charInfo.GetAttackInfo());

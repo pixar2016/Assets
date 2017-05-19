@@ -12,7 +12,7 @@ public class TriggerEffectLogic_Bullet : TriggerEffectBase
     {
         Debug.Log("TriggerEffectLogic_Bullet");
         CharacterInfo charInfo = triggerInfo.charInfo;
-        CharacterInfo targetInfo = charInfo.GetAttackInfo();
+        CharacterInfo targetInfo = charInfo.GetTargetInfo();
         EntityManager.getInstance().AddBullet(1, charInfo, targetInfo, 200f, triggerInfo.triggerGroup.Id);
         //EntityManager.getInstance().AddMoveEffect(1, charInfo.GetPosition(), targetInfo.GetPosition(), 2.5f);
     }

@@ -9,6 +9,7 @@ public class SkillInfo
     public int triggerId;
     public List<TriggerGroup> triggerGroupList;
     public bool isActive;
+    
     //用于广播事件
     public MiniEventDispatcher eventDispatcher;
     public SkillInfo(int indexId, int skillId)

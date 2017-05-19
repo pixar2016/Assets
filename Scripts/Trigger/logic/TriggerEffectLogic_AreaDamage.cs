@@ -12,7 +12,7 @@ public class TriggerEffectLogic_AreaDamage : TriggerEffectBase
     public override void ExcuteAction(TriggerInfo triggerInfo, TriggerEffectInfo effectInfo)
     {
         CharacterInfo charInfo = triggerInfo.charInfo;
-        CharacterInfo targetInfo = charInfo.GetAttackInfo();
+        CharacterInfo targetInfo = charInfo.GetTargetInfo();
         Vector3 targetPos = targetInfo.GetPosition();
         List<MonsterInfo> monsterList = EntityManager.getInstance().GetMonsterInfo();
         foreach (MonsterInfo monster in monsterList)

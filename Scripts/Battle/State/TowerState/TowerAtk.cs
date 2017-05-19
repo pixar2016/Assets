@@ -27,7 +27,7 @@ public class TowerAtk : StateBase
 
     public void AttackEnd()
     {
-        CharacterInfo attackCharInfo = towerInfo.GetAttackInfo();
+        CharacterInfo attackCharInfo = towerInfo.GetTargetInfo();
         //若死亡或者超出了攻击范围，则回归待机重新寻找目标
         if (attackCharInfo.IsDead())
         {

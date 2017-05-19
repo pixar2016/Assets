@@ -33,7 +33,7 @@ public class TowerIdle : StateBase
         CharacterInfo targetInfo = towerInfo.RunAI();
         if (targetInfo != null && towerInfo.WithinRange(targetInfo))
         {
-            towerInfo.SetAttackInfo(targetInfo);
+            towerInfo.SetTargetInfo(targetInfo);
             towerInfo.ChangeState("attack", targetInfo);
         }
         else

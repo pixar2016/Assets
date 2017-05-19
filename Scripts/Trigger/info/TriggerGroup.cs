@@ -12,6 +12,11 @@ public class TriggerGroup
 
     public List<TriggerInfo> triggerInfos;
 
+    //技能目标
+    public CharacterInfo targetInfo;
+    //技能目标组
+    public List<CharacterInfo> targetGroup;
+
     public TriggerGroup(int id)
     {
         Id = id;

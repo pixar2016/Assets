@@ -77,12 +77,12 @@ public class MonsterInfo : CharacterInfo
         return pathInfo.GetPoint(curPathNum + 1);
     }
     //设置攻击目标等信息
-    public override void SetAttackInfo(CharacterInfo charInfo)
+    public override void SetTargetInfo(CharacterInfo charInfo)
     {
         attackCharInfo = charInfo;
     }
 
-    public override CharacterInfo GetAttackInfo()
+    public override CharacterInfo GetTargetInfo()
     {
         return attackCharInfo;
     }
@@ -137,7 +137,7 @@ public class MonsterInfo : CharacterInfo
         return creatureStateMachine.GetCurrentState().ToString();
     }
 
-    public override void StartSkill(int skillId)
+    public override void StartSkill(SkillInfo skillInfo)
     {
         
     }
@@ -188,22 +188,6 @@ public class MonsterInfo : CharacterInfo
     public float GetSpeed()
     {
         return 60;
-    }
-    //对目标造成普通攻击伤害
-    public override void Hurt()
-    {
-        if (attackCharInfo != null)
-        {
-            attackCharInfo.ReduceHP(attackDamage);
-            //Debug.Log(attackCharInfo.charName + "  " + attackCharInfo.hp);
-        }
-    }
-
-    public override void ReduceHP(int losehp)
-    {
-        //Debug.Log("losehp = "+losehp);
-        hp -= losehp;
-        Debug.Log(this.charName + " hp = " + hp);
     }
 
     public override bool IsDead()

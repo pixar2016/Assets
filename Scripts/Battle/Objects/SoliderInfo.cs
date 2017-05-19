@@ -69,12 +69,12 @@ public class SoliderInfo : CharacterInfo
     }
 
     //设置攻击目标等信息
-    public override void SetAttackInfo(CharacterInfo charInfo)
+    public override void SetTargetInfo(CharacterInfo charInfo)
     {
         attackCharInfo = charInfo;
     }
 
-    public override CharacterInfo GetAttackInfo()
+    public override CharacterInfo GetTargetInfo()
     {
         return attackCharInfo;
     }
@@ -112,7 +112,7 @@ public class SoliderInfo : CharacterInfo
         List<MonsterInfo> monsterList = EntityManager.getInstance().GetMonsterInfo();
         foreach (MonsterInfo monster in monsterList)
         {
-            if (monster.GetAttackInfo() == null && Vector3.Distance(this.GetPosition(), monster.GetPosition()) <= 150)
+            if (monster.GetTargetInfo() == null && Vector3.Distance(this.GetPosition(), monster.GetPosition()) <= 150)
             {
                 return monster;
             }
@@ -168,26 +168,11 @@ public class SoliderInfo : CharacterInfo
         }
     }
 
-    public override void StartSkill(int skillId)
+    public override void StartSkill(SkillInfo skillInfo)
     {
 
     }
 
-    //对目标造成普通攻击伤害
-    public override void Hurt()
-    {
-        if (attackCharInfo != null)
-        {
-            attackCharInfo.ReduceHP(attackDamage);
-        }
-    }
-
-    public override void ReduceHP(int losehp)
-    {
-        //Debug.Log("losehp = "+losehp);
-        hp -= losehp;
-        //Debug.Log(this.charName + " hp = " + hp);
-    }
     public override void Run(Vector3 targetPos)
     {
         Vector3 curPos = this.GetPosition();

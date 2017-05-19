@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 //战场工具方法 包括战斗双方计算伤害等
 public class BattleUtils
@@ -16,7 +17,11 @@ public class BattleUtils
         {
             return;
         }
-        defInfo.ReduceHP(atkInfo.GetAttr(CharAttr.AttackDamage));
+        int attackDamage = atkInfo.GetAttr(CharAttr.AttackDamage);
+        if (attackDamage != -1)
+        {
+            defInfo.ChangeAttr(CharAttr.Hp, attackDamage);
+        }
     }
     /// <summary>
     /// 对多个目标造成物理攻击伤害
@@ -44,6 +49,16 @@ public class BattleUtils
     public static void CalcMagicDamage(CharacterInfo atkInfo, List<CharacterInfo> defList)
     {
 
+    }
+    /// <summary>
+    /// 得到攻击者攻击目标时站立的位置
+    /// </summary>
+    /// <param name="charInfo">攻击者</param>
+    /// <param name="targetInfo">攻击目标</param>
+    /// <returns></returns>
+    public static Vector3 GetAtkPos(CharacterInfo charInfo, CharacterInfo targetInfo)
+    {
+        return Vector3.zero;
     }
 }
 

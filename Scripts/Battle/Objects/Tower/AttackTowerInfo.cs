@@ -56,17 +56,17 @@ public class AttackTowerInfo : TowerInfo
         return SkillManager.getInstance().AddSkill(2, this);
     }
 
-    public override void SetAttackInfo(CharacterInfo charInfo)
+    public override void SetTargetInfo(CharacterInfo charInfo)
     {
         attackCharInfo = charInfo;
     }
 
-    public override CharacterInfo GetAttackInfo()
+    public override CharacterInfo GetTargetInfo()
     {
         return attackCharInfo;
     }
 
-    public override void StartSkill(int skillId)
+    public override void StartSkill(SkillInfo skillInfo)
     {
 
     }

@@ -38,10 +38,10 @@ public class SoliderIdle : StateBase
         else
         {
             //双方都输入攻击目标，均被占用，不再接受其他人的约战
-            targetInfo.SetAttackInfo(soliderInfo);
-            targetInfo.ChangeState("idle", soliderInfo);
-            soliderInfo.SetAttackInfo(targetInfo);
-            soliderInfo.ChangeState("move", targetInfo);
+            targetInfo.SetTargetInfo(soliderInfo);
+            targetInfo.ChangeState("idle");
+            soliderInfo.SetTargetInfo(targetInfo);
+            soliderInfo.ChangeState("move");
         }
     }
 

@@ -29,7 +29,7 @@ public class CreatureAtk : StateBase
 
     public void AttackEnd()
     {
-        CharacterInfo attackCharInfo = monsterInfo.GetAttackInfo();
+        CharacterInfo attackCharInfo = monsterInfo.GetTargetInfo();
         if (attackCharInfo.IsDead())
         {
             attackCharInfo.ChangeState("die");

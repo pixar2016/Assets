@@ -15,6 +15,8 @@ public enum CharAttr
     AttackDamage,
     //护甲类型
     ArmorType,
+    //速度
+    Speed
 }
 
 public class CharacterInfo
@@ -48,6 +50,7 @@ public class CharacterInfo
         position.y = y;
         position.z = z;
     }
+
     public Vector3 GetPosition()
     {
         return position;
@@ -59,6 +62,7 @@ public class CharacterInfo
         rotation.y = y;
         rotation.z = z;
     }
+
     public Vector3 GetRotation()
     {
         return rotation;
@@ -85,25 +89,24 @@ public class CharacterInfo
     {
 
     }
-    //设置攻击目标等信息
-    public virtual void SetAttackInfo(CharacterInfo charInfo)
-    {
-    }
 
-    public virtual CharacterInfo GetAttackInfo()
+    //用作设置目标，方便状态机转换
+    public virtual void SetTargetInfo(CharacterInfo charInfo)
+    {
+
+    }
+    //得到目标
+    public virtual CharacterInfo GetTargetInfo()
     {
         return null;
     }
+
     //开始一个技能
     public virtual void StartSkill(SkillInfo skillInfo)
     {
         SkillManager.getInstance().StartSkill(skillInfo);
     }
-    //开始主动技能或被动技能
-    public virtual void StartSkill(int skillId)
-    {
 
-    }
     public virtual void Run(Vector3 targetPos)
     {
         Vector3 curPos = this.GetPosition();
@@ -120,10 +123,7 @@ public class CharacterInfo
             DoAction("run1");
         }
     }
-    //对目标造成普通攻击伤害
-    public virtual void Hurt()
-    {
-    }
+
     //得到某一个属性值
     public virtual int GetAttr(CharAttr attrName)
     {
@@ -136,8 +136,18 @@ public class CharacterInfo
             return -1;
         }
     }
-    public virtual void ReduceHP(int losehp)
+    //改变某个属性
+    public virtual bool ChangeAttr(CharAttr attrName, int changeNum)
     {
+        if (attrList.ContainsKey(attrName))
+        {
+            attrList[attrName] += changeNum;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public virtual void Release()
