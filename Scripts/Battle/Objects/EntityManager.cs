@@ -17,7 +17,7 @@ public class EntityManager {
 		}
 		return instance;
 	}
-
+    public Dictionary<int, CharacterPrototype> monsterPrototypes;
     public Dictionary<int, MonsterInfo> monsters;
     public Dictionary<int, SoliderInfo> soliders;
     public Dictionary<int, EffectInfo> effects;
@@ -37,6 +37,7 @@ public class EntityManager {
     public int towerIndexId;
 	private EntityManager()
 	{
+        monsterPrototypes = new Dictionary<int, CharacterPrototype>();
         monsters = new Dictionary<int, MonsterInfo>();
         soliders = new Dictionary<int, SoliderInfo>();
         effects = new Dictionary<int, EffectInfo>();
@@ -55,14 +56,28 @@ public class EntityManager {
         towerIndexId = 0;
 	}
 
+    //public MonsterInfo AddMonster(int monsterId, PathInfo pathInfo)
+    //{
+    //    monsterIndexId += 1;
+    //    MonsterInfo charInfo = new MonsterInfo(monsterIndexId, monsterId, pathInfo);
+    //    monsters.Add(monsterIndexId, charInfo);
+    //    //Debug.Log(DataPreLoader.getInstance().GetData("Monsters")[creatureId]["AttackValue"]);
+    //    this.eventDispatcher.Broadcast("AddMonster", charInfo);
+    //    //EntityViewManager.getInstance().AddCreature(charInfo);
+    //    return charInfo;
+    //}
+
     public MonsterInfo AddMonster(int monsterId, PathInfo pathInfo)
     {
         monsterIndexId += 1;
-        MonsterInfo charInfo = new MonsterInfo(monsterIndexId, monsterId, pathInfo);
+        if (!monsterPrototypes.ContainsKey(monsterId))
+        {
+            monsterPrototypes.Add(monsterId, new CharacterPrototype(monsterId));
+        }
+        CharacterPrototype proto = monsterPrototypes[monsterId];
+        MonsterInfo charInfo = new MonsterInfo(monsterIndexId, proto, pathInfo);
         monsters.Add(monsterIndexId, charInfo);
-        //Debug.Log(DataPreLoader.getInstance().GetData("Monsters")[creatureId]["AttackValue"]);
         this.eventDispatcher.Broadcast("AddMonster", charInfo);
-        //EntityViewManager.getInstance().AddCreature(charInfo);
         return charInfo;
     }
 

@@ -105,9 +105,9 @@ public class Test1 : MonoBehaviour {
         GameObject uiroot = GameObject.Find("Canvas").gameObject;
         UiManager.Instance.Init(uiroot);
 
-        //PathLoader pathloader = new PathLoader();
-        //pathloader.LoadPath("level1");
-        //PathInfo path = pathloader.GetPath("1");
+        PathLoader pathloader = new PathLoader();
+        pathloader.LoadPath("level1");
+        PathInfo path = pathloader.GetPath("1");
         //path.PrintAllPoint();
 
         
@@ -116,10 +116,10 @@ public class Test1 : MonoBehaviour {
         tower = EntityManager.getInstance().AddTower(1);
         tower.SetPosition(250, 0, 0);
         tower.ChangeState("idle");
-        GameManager.getInstance().LoadLevel(1);
-        GameManager.getInstance().StartGame();
-        //monster = EntityManager.getInstance().AddMonster(10002, path);
-        //monster.SetPosition(-180, -150, 0);
+        //GameManager.getInstance().LoadLevel(1);
+        //GameManager.getInstance().StartGame();
+        monster = EntityManager.getInstance().AddMonster(10001, path);
+        monster.SetPosition(-180, -150, 0);
 
         
     }

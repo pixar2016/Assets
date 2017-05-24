@@ -15,9 +15,9 @@ public class CharacterPrototype
     public CharacterPrototype(int _charId)
     {
         charId = _charId;
-        InitAttr(charId);
-        eventDispatcher = new MiniEventDispatcher();
         attrList = new Dictionary<int, int>();
+        eventDispatcher = new MiniEventDispatcher();
+        InitAttr(charId);
     }
     public void InitAttr(int _charId)
     {
