@@ -8,57 +8,99 @@ public class MonsterInfo : CharacterInfo
     private CharacterInfo attackCharInfo;
     //攻击需要移动的位置
     private Vector3 attackMovePos;
-
-    //属性
-    public D_Creature creatureData;
-    public int hp;
-    public int hpMax;
-    public int attackSpeed;
-    public int attackDamage;
-    public int defenceType;
-
+    //状态机
     public StateMachine creatureStateMachine;
     public CreatureAtk creatureAtk;
     public CreatureDead creatureDead;
     public CreatureIdle creatureIdle;
     public CreatureMove creatureMove;
-    
+    //普通攻击
     public SkillInfo attackSkill;
     //当前怪物行动路径
     public PathInfo pathInfo;
     //当前走到路径第几个点
     public int curPathNum;
+    //正常初始化
     public MonsterInfo(int creatureIndexId, int creatureId, PathInfo _pathInfo)
     {
         Id = creatureIndexId;
         charId = creatureId;
-        creatureData = J_Creature.GetData(charId);
-        charName = creatureData._modelName;
-        if (charName == null)
-        {
-            Debug.LogError("MonsterModelName" + charId + " is NULL");
-        }
-        
+        InitAttr(charId);
+        InitStatusMachine();
+        attackSkill = SkillManager.getInstance().AddSkill(1, this);
+        pathInfo = _pathInfo;
+        curPathNum = 0;
+        position = pathInfo.GetPoint(curPathNum);
+        attackTime = AnimationCache.getInstance().getAnimation(charName).getMeshAnimation("attack").getAnimTime();
+    }
+    //复制原型类中的数据
+    public MonsterInfo(int creatureIndexId, CharacterPrototype charInfo, PathInfo _pathInfo)
+    {
+        Id = creatureIndexId;
+        charId = charInfo.charId;
+        InitAttr(charInfo);
+        InitStatusMachine();
+        attackSkill = SkillManager.getInstance().AddSkill(1, this);
+        pathInfo = _pathInfo;
+        curPathNum = 0;
+        position = pathInfo.GetPoint(curPathNum);
+        attackTime = charInfo.attackTime;
+        charInfo.eventDispatcher.Register("ChangeProtoAttr", ChangeProtoAttr);
+    }
+
+    public void ChangeProtoAttr(object[] param)
+    {
+        CharAttr attrName = (CharAttr)param[1];
+        int attrNum = (int)param[2];
+        ChangeAttr(attrName, attrNum);
+    }
+
+    public void InitStatusMachine()
+    {
         creatureStateMachine = new StateMachine();
         creatureAtk = new CreatureAtk(this);
         creatureDead = new CreatureDead(this);
         creatureIdle = new CreatureIdle(this);
         creatureMove = new CreatureMove(this);
-
-        hpMax = creatureData._hp;
-        hp = hpMax;
-        attackSpeed = creatureData._attackSpeed;
-        attackDamage = creatureData._attackDamage;
-        defenceType = creatureData._defenceType;
-        attackSkill = SkillManager.getInstance().AddSkill(1, this);
-        pathInfo = _pathInfo;
-        curPathNum = 0;
-        //设置初始位置
-        position = pathInfo.GetPoint(curPathNum);
-
-        attackTime = AnimationCache.getInstance().getAnimation(charName).getMeshAnimation("attack").getAnimTime();
-
     }
+
+    public void InitAttr(int _charId)
+    {
+        D_Creature creatureData = J_Creature.GetData(_charId);
+        charName = creatureData._modelName;
+        if (charName == null)
+        {
+            Debug.LogError("MonsterModelName" + _charId + " is NULL");
+        }
+        SetAttr(CharAttr.HpMax, creatureData._hp);
+        SetAttr(CharAttr.HpMaxPer, 0);
+        SetAttr(CharAttr.Hp, creatureData._hp);
+        SetAttr(CharAttr.HpPer, 0);
+        SetAttr(CharAttr.AttackSpeed, creatureData._attackSpeed);
+        SetAttr(CharAttr.AttackSpeedPer, 0);
+        SetAttr(CharAttr.AttackDamage, creatureData._attackDamage);
+        SetAttr(CharAttr.AttackDamagePer, 0);
+        SetAttr(CharAttr.ArmorType, creatureData._defenceType);
+        SetAttr(CharAttr.Speed, 60);
+        SetAttr(CharAttr.SpeedPer, 0);
+    }
+    //复制charInfo的属性值
+    public void InitAttr(CharacterPrototype _charInfo)
+    {
+        charName = _charInfo.charName;
+        SetAttr(CharAttr.HpMax, _charInfo.GetAttr(CharAttr.HpMax));
+        SetAttr(CharAttr.HpMaxPer, _charInfo.GetAttr(CharAttr.HpMaxPer));
+        SetAttr(CharAttr.Hp, _charInfo.GetAttr(CharAttr.Hp));
+        SetAttr(CharAttr.HpPer, _charInfo.GetAttr(CharAttr.HpPer));
+        SetAttr(CharAttr.AttackSpeed, _charInfo.GetAttr(CharAttr.AttackSpeed));
+        SetAttr(CharAttr.AttackSpeedPer, _charInfo.GetAttr(CharAttr.AttackSpeedPer));
+        SetAttr(CharAttr.AttackDamage, _charInfo.GetAttr(CharAttr.AttackDamage));
+        SetAttr(CharAttr.AttackDamagePer, _charInfo.GetAttr(CharAttr.AttackDamagePer));
+        SetAttr(CharAttr.ArmorType, _charInfo.GetAttr(CharAttr.ArmorType));
+        SetAttr(CharAttr.Speed, _charInfo.GetAttr(CharAttr.Speed));
+        SetAttr(CharAttr.SpeedPer, _charInfo.GetAttr(CharAttr.SpeedPer));
+    }
+
     public bool ReachNextPoint()
     {
         if (curPathNum + 1 >= pathInfo.GetCount())
@@ -187,12 +229,12 @@ public class MonsterInfo : CharacterInfo
     //}
     public float GetSpeed()
     {
-        return 60;
+        return GetAttr(CharAttr.Speed) * (1 + GetAttr(CharAttr.SpeedPer));
     }
 
     public override bool IsDead()
     {
-        return hp <= 0;
+        return GetAttr(CharAttr.Hp) <= 0;
     }
 
     public void Update()

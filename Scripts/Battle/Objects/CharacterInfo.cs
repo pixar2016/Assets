@@ -7,16 +7,26 @@ public enum CharAttr
 {
     //血量
     Hp,
+    //血量增加百分比
+    HpPer,
     //血量上限
     HpMax,
+    //血量上限增加百分比
+    HpMaxPer,
     //攻击速度
     AttackSpeed,
+    //攻击速度增加百分比
+    AttackSpeedPer,
     //攻击伤害
     AttackDamage,
+    //攻击伤害增加百分比
+    AttackDamagePer,
     //护甲类型
     ArmorType,
     //速度
-    Speed
+    Speed,
+    //速度增加百分比
+    SpeedPer
 }
 
 public class CharacterInfo
@@ -28,7 +38,8 @@ public class CharacterInfo
     public Vector3 position;
     public Vector3 rotation;
     public string actionName;
-    public Dictionary<CharAttr, int> attrList;
+    //key-CharAttr value-attrValue
+    public Dictionary<int, int> attrList;
 
     //攻击间隔，兵营为出兵间隔
     public float attackTime;
@@ -41,7 +52,7 @@ public class CharacterInfo
         eventDispatcher = new MiniEventDispatcher();
         position = Vector3.zero;
         rotation = Vector3.zero;
-        attrList = new Dictionary<CharAttr, int>();
+        attrList = new Dictionary<int, int>();
     }
 
     public void SetPosition(float x, float y, float z)
@@ -127,9 +138,10 @@ public class CharacterInfo
     //得到某一个属性值
     public virtual int GetAttr(CharAttr attrName)
     {
-        if (attrList.ContainsKey(attrName))
+        int temp = (int)attrName;
+        if (attrList.ContainsKey(temp))
         {
-            return attrList[attrName];
+            return attrList[temp];
         }
         else
         {
@@ -139,14 +151,29 @@ public class CharacterInfo
     //改变某个属性
     public virtual bool ChangeAttr(CharAttr attrName, int changeNum)
     {
-        if (attrList.ContainsKey(attrName))
+        int temp = (int)attrName;
+        if (attrList.ContainsKey(temp))
         {
-            attrList[attrName] += changeNum;
+            attrList[temp] += changeNum;
             return true;
         }
         else
         {
             return false;
+        }
+    }
+
+    //设置某个属性值
+    public void SetAttr(CharAttr attrName, int attrNum)
+    {
+        int temp = (int)attrName;
+        if (attrList.ContainsKey(temp))
+        {
+            attrList[temp] = attrNum;
+        }
+        else
+        {
+            attrList.Add(temp, attrNum);
         }
     }
 
