@@ -8,18 +8,11 @@ public class SoliderInfo : CharacterInfo
     private CharacterInfo attackCharInfo;
     //关联的兵营
     public BarrackTowerInfo barrackTower;
-    //兵营中的Id
+    //在兵营中的Id
     public int barrackSoliderId;
     //兵营停留位置
     public Vector3 barrackSoliderPos;
 
-    //属性
-    public D_Creature creatureData;
-    public int hp;
-    public int hpMax;
-    public int attackSpeed;
-    public int attackDamage;
-    public int defenceType;
     //宽度
     public float width;
     //高度
@@ -31,33 +24,77 @@ public class SoliderInfo : CharacterInfo
     public SoliderIdle soliderIdle;
     public SoliderMove soliderMove;
     public SoliderReady soliderReady;
-
     public SkillInfo attackSkill;
+
     public SoliderInfo(int soliderIndexId, int soliderId)
     {
         Id = soliderIndexId;
         charId = soliderId;
-        creatureData = J_Creature.GetData(charId);
-        charName = creatureData._modelName;
-        if (charName == null)
-        {
-            Debug.LogError("SoliderModelName" + charId + " is NULL");
-        }
+        InitAttr(charId);
+        InitStatusMachine();
+        attackSkill = SkillManager.getInstance().AddSkill(1, this);
+        attackTime = AnimationCache.getInstance().getAnimation(charName).getMeshAnimation("attack").getAnimTime();
+    }
+    public SoliderInfo(int soliderIndexId, CharacterPrototype charInfo)
+    {
+        Id = soliderIndexId;
+        charId = charInfo.charId;
+        InitAttr(charInfo);
+        InitStatusMachine();
+        attackSkill = SkillManager.getInstance().AddSkill(1, this);
+        attackTime = charInfo.attackTime;
+        charInfo.eventDispatcher.Register("ChangeProtoAttr", ChangeProtoAttr);
+    }
+
+    public void ChangeProtoAttr(object[] param)
+    {
+
+    }
+    public void InitStatusMachine()
+    {
         soliderStateMachine = new StateMachine();
         soliderAtk = new SoliderAtk(this);
         soliderDead = new SoliderDead(this);
         soliderIdle = new SoliderIdle(this);
         soliderMove = new SoliderMove(this);
         soliderReady = new SoliderReady(this);
+    }
 
-        hpMax = creatureData._hp;
-        hp = hpMax;
-        attackSpeed = creatureData._attackSpeed;
-        attackDamage = creatureData._attackDamage;
-        defenceType = creatureData._defenceType;
-        attackSkill = SkillManager.getInstance().AddSkill(1, this);
+    public void InitAttr(int _charId)
+    {
+        D_Creature creatureData = J_Creature.GetData(_charId);
+        charName = creatureData._modelName;
+        if (charName == null)
+        {
+            Debug.LogError("SoliderModelName" + _charId + " is NULL");
+        }
+        SetAttr(CharAttr.HpMax, creatureData._hp);
+        SetAttr(CharAttr.HpMaxPer, 0);
+        SetAttr(CharAttr.Hp, creatureData._hp);
+        SetAttr(CharAttr.HpPer, 0);
+        SetAttr(CharAttr.AttackSpeed, creatureData._attackSpeed);
+        SetAttr(CharAttr.AttackSpeedPer, 0);
+        SetAttr(CharAttr.AttackDamage, creatureData._attackDamage);
+        SetAttr(CharAttr.AttackDamagePer, 0);
+        SetAttr(CharAttr.ArmorType, creatureData._defenceType);
+        SetAttr(CharAttr.Speed, 60);
+        SetAttr(CharAttr.SpeedPer, 0);
+    }
 
-        attackTime = AnimationCache.getInstance().getAnimation(charName).getMeshAnimation("attack").getAnimTime();
+    public void InitAttr(CharacterPrototype _charInfo)
+    {
+        charName = _charInfo.charName;
+        SetAttr(CharAttr.HpMax, _charInfo.GetAttr(CharAttr.HpMax));
+        SetAttr(CharAttr.HpMaxPer, _charInfo.GetAttr(CharAttr.HpMaxPer));
+        SetAttr(CharAttr.Hp, _charInfo.GetAttr(CharAttr.Hp));
+        SetAttr(CharAttr.HpPer, _charInfo.GetAttr(CharAttr.HpPer));
+        SetAttr(CharAttr.AttackSpeed, _charInfo.GetAttr(CharAttr.AttackSpeed));
+        SetAttr(CharAttr.AttackSpeedPer, _charInfo.GetAttr(CharAttr.AttackSpeedPer));
+        SetAttr(CharAttr.AttackDamage, _charInfo.GetAttr(CharAttr.AttackDamage));
+        SetAttr(CharAttr.AttackDamagePer, _charInfo.GetAttr(CharAttr.AttackDamagePer));
+        SetAttr(CharAttr.ArmorType, _charInfo.GetAttr(CharAttr.ArmorType));
+        SetAttr(CharAttr.Speed, _charInfo.GetAttr(CharAttr.Speed));
+        SetAttr(CharAttr.SpeedPer, _charInfo.GetAttr(CharAttr.SpeedPer));
     }
 
     //关联兵营、兵营Id和停留位置
@@ -168,11 +205,6 @@ public class SoliderInfo : CharacterInfo
         }
     }
 
-    public override void StartSkill(SkillInfo skillInfo)
-    {
-
-    }
-
     public override void Run(Vector3 targetPos)
     {
         Vector3 curPos = this.GetPosition();
@@ -192,38 +224,15 @@ public class SoliderInfo : CharacterInfo
             DoAction("run1");
         }
     }
-    ////向上走
-    //public override void RunUp()
-    //{
-    //    SetRotation(0, 0, 0);
-    //    DoAction("run1");
-    //}
-    ////向下走
-    //public override void RunDown()
-    //{
-    //    SetRotation(0, 0, 180);
-    //    DoAction("run1");
-    //}
-    ////向右走
-    //public override void RunRight()
-    //{
-    //    SetRotation(0, 0, 0);
-    //    DoAction("run1");
-    //}
-    ////向左走
-    //public override void RunLeft()
-    //{
-    //    SetRotation(0, 180, 0);
-    //    DoAction("run1");
-    //}
+
     public float GetSpeed()
     {
-        return 60;
+        return GetAttr(CharAttr.Speed) * (1 + GetAttr(CharAttr.SpeedPer));
     }
 
     public override bool IsDead()
     {
-        return hp <= 0;
+        return GetAttr(CharAttr.Hp) <= 0;
     }
 
     public void Update()

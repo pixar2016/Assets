@@ -79,8 +79,6 @@ public class GameManager
     //开始出下一波怪物
     public void StartNextWave(uint nTimeID)
     {
-        Debug.Log(curWave);
-        Debug.Log(wave);
         if (curWave >= wave)
         {
             Debug.Log("wave reach max");
@@ -107,7 +105,7 @@ public class GameManager
 
     public void AddMonsters(uint nTimeID)
     {
-        Debug.Log("AddMonsters" + nTimeID);
+        //Debug.Log("AddMonsters" + nTimeID);
         int pathId = (int)nTimeID;
         //pathId路径轮到第几个怪物
         int monsterNum = pathMonster[pathId];
@@ -115,7 +113,7 @@ public class GameManager
         List<int> monsters = curWaveMonsters[pathId];
         if (monsterNum >= monsters.Count)
         {
-            Debug.Log("DestroyTimer " + nTimeID);
+            //Debug.Log("DestroyTimer " + nTimeID);
             m_TimerSystem.DestroyTimer((uint)pathId, AddMonsters);
             return;
         }

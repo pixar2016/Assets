@@ -5,7 +5,7 @@ using UnityEngine;
 //攻击类型塔 箭塔、魔塔、炮塔，因为状态机一致分配到一类中
 public class AttackTowerInfo : TowerInfo
 {
-
+    
     public CharacterInfo attackCharInfo;
     public int attackDamage;
     public int attackSpeed;
@@ -66,11 +66,6 @@ public class AttackTowerInfo : TowerInfo
         return attackCharInfo;
     }
 
-    public override void StartSkill(SkillInfo skillInfo)
-    {
-
-    }
-
     public CharacterInfo RunAI()
     {
         return FindMonster();
@@ -81,7 +76,8 @@ public class AttackTowerInfo : TowerInfo
         List<MonsterInfo> monsterList = EntityManager.getInstance().GetMonsterInfo();
         foreach (MonsterInfo monster in monsterList)
         {
-            if (Vector3.Distance(this.GetPosition(), monster.GetPosition()) <= 100)
+            //Debug.Log(Vector3.Distance(this.GetPosition(), monster.GetPosition()));
+            if (Vector3.Distance(this.GetPosition(), monster.GetPosition()) <= 200)
             {
                 return monster;
             } 

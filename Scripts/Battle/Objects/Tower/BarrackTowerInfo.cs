@@ -5,7 +5,7 @@ using UnityEngine;
 //兵营
 public class BarrackTowerInfo : TowerInfo
 {
-
+    
     public Dictionary<int, SoliderInfo> soliderDict;
     //出兵标记点
     public Vector3 signPos;

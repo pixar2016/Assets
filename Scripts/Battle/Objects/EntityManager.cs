@@ -18,6 +18,7 @@ public class EntityManager {
 		return instance;
 	}
     public Dictionary<int, CharacterPrototype> monsterPrototypes;
+    public Dictionary<int, CharacterPrototype> soliderPrototypes;
     public Dictionary<int, MonsterInfo> monsters;
     public Dictionary<int, SoliderInfo> soliders;
     public Dictionary<int, EffectInfo> effects;
@@ -38,6 +39,7 @@ public class EntityManager {
 	private EntityManager()
 	{
         monsterPrototypes = new Dictionary<int, CharacterPrototype>();
+        soliderPrototypes = new Dictionary<int, CharacterPrototype>();
         monsters = new Dictionary<int, MonsterInfo>();
         soliders = new Dictionary<int, SoliderInfo>();
         effects = new Dictionary<int, EffectInfo>();
@@ -72,19 +74,32 @@ public class EntityManager {
         monsterIndexId += 1;
         if (!monsterPrototypes.ContainsKey(monsterId))
         {
-            monsterPrototypes.Add(monsterId, new CharacterPrototype(monsterId));
+            monsterPrototypes.Add(monsterId, new CharacterPrototype(monsterId, CharacterType.Monster));
         }
         CharacterPrototype proto = monsterPrototypes[monsterId];
-        MonsterInfo charInfo = new MonsterInfo(monsterIndexId, proto, pathInfo);
+        MonsterInfo charInfo = proto.CloneMonster(monsterIndexId, pathInfo);
         monsters.Add(monsterIndexId, charInfo);
         this.eventDispatcher.Broadcast("AddMonster", charInfo);
         return charInfo;
     }
 
+    //public SoliderInfo AddSolider(int soliderId)
+    //{
+    //    soliderIndexId += 1;
+    //    SoliderInfo charInfo = new SoliderInfo(soliderIndexId, soliderId);
+    //    soliders.Add(soliderIndexId, charInfo);
+    //    this.eventDispatcher.Broadcast("AddSolider", charInfo);
+    //    return charInfo;
+    //}
     public SoliderInfo AddSolider(int soliderId)
     {
         soliderIndexId += 1;
-        SoliderInfo charInfo = new SoliderInfo(soliderIndexId, soliderId);
+        if (!soliderPrototypes.ContainsKey(soliderId))
+        {
+            soliderPrototypes.Add(soliderId, new CharacterPrototype(soliderId, CharacterType.Solider));
+        }
+        CharacterPrototype proto = soliderPrototypes[soliderId];
+        SoliderInfo charInfo = proto.CloneSolider(soliderIndexId);
         soliders.Add(soliderIndexId, charInfo);
         this.eventDispatcher.Broadcast("AddSolider", charInfo);
         return charInfo;
@@ -121,7 +136,7 @@ public class EntityManager {
             towerInfo.ChangeState("idle");
             return towerInfo;
         }
-        //增加空地
+        ////增加空地
         else if (towerType == 5)
         {
             OpenSpaceInfo spaceInfo = new OpenSpaceInfo(towerIndexId, towerId);
@@ -267,6 +282,11 @@ public class EntityManager {
             }
             towerDelList.Clear();
         }
+    }
+
+    public void Release()
+    {
+
     }
 
     public List<SoliderInfo> GetSoliderInfo()

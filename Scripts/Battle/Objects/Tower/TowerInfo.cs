@@ -9,7 +9,6 @@ public class TowerInfo : CharacterInfo
     //没有就为空
     public string shooter;
     public int towerType;
-
     public TowerInfo()
     {
 

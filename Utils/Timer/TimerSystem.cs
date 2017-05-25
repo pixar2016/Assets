@@ -107,7 +107,7 @@ namespace CoreLib.Timer
             if( uIntervalTime == 0 )
 		        uIntervalTime = 1;
 
-            Debug.Log("CTimerSystem::CreateTimer del.GetHashCode() = " + del.GetHashCode());
+            //Debug.Log("CTimerSystem::CreateTimer del.GetHashCode() = " + del.GetHashCode());
 
             int nHashCode = del.GetHashCode();
             List<uint> singleList = null;

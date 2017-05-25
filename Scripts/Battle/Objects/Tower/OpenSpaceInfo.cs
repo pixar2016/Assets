@@ -5,7 +5,10 @@ using UnityEngine;
 //空地类，可以建设所有塔
 public class OpenSpaceInfo : TowerInfo
 {
-
+    public D_Tower towerData;
+    public string towerBase;
+    //没有就为空
+    public string shooter;
     public StateMachine stateMachine;
     public OpenSpaceConstructing openSpaceConstructing;
 
@@ -15,7 +18,7 @@ public class OpenSpaceInfo : TowerInfo
         this.charId = spaceId;
         this.towerData = J_Tower.GetData(spaceId);
         this.towerBase = towerData._towerBase;
-        this.towerType = towerData._towerType;
+        //this.towerType = towerData._towerType;
         stateMachine = new StateMachine();
         openSpaceConstructing = new OpenSpaceConstructing(this);
     }

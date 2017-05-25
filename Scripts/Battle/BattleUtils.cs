@@ -13,14 +13,17 @@ public class BattleUtils
     /// <param name="defInfo">防守方</param>
     public static void CalcAtkDamage(CharacterInfo atkInfo, CharacterInfo defInfo)
     {
+        Debug.Log("CalcAtkDamage");
         if (atkInfo == null || defInfo == null)
         {
             return;
         }
         int attackDamage = atkInfo.GetAttr(CharAttr.AttackDamage);
+        defInfo.ChangeAttr(CharAttr.Hp, -200);
         if (attackDamage != -1)
         {
             defInfo.ChangeAttr(CharAttr.Hp, attackDamage);
+            Debug.Log(defInfo.GetAttr(CharAttr.Hp));
         }
     }
     /// <summary>

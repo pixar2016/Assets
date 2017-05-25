@@ -2,24 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CharacterType
+{
+    Solider = 1,
+    Monster = 2,
+    Tower = 3
+}
 //单位原型类，主要用于针对某类对象的属性的改变，在改变属性后，需要通知已创建的对象改变属性
 //举个例子，某个技能树提高所有兵种的血量上限，但如果进入战场，血量上限仍然读表赋值，不正确，但对每个兵种释放一次该技能，增加不必要的消耗和复杂性。所以可以修改原型来解决。
 public class CharacterPrototype
 {
     public int charId;
+    public int charType;
     public string charName;
     public Dictionary<int, int> attrList;
     public int attackTime;
     public MiniEventDispatcher eventDispatcher;
 
-    public CharacterPrototype(int _charId)
+    public CharacterPrototype(int _charId, CharacterType _charType)
     {
         charId = _charId;
+        charType = (int)_charType;
         attrList = new Dictionary<int, int>();
         eventDispatcher = new MiniEventDispatcher();
-        InitAttr(charId);
+        if (charType == (int)CharacterType.Tower)
+            InitTowerAttr(charId);
+        else
+            InitCreatureAttr(charId);
     }
-    public void InitAttr(int _charId)
+    private void InitCreatureAttr(int _charId)
     {
         D_Creature creatureData = J_Creature.GetData(_charId);
         charName = creatureData._modelName;
@@ -38,6 +49,12 @@ public class CharacterPrototype
         SetAttr(CharAttr.ArmorType, creatureData._defenceType);
         SetAttr(CharAttr.Speed, 60);
         SetAttr(CharAttr.SpeedPer, 0);
+    }
+
+    private void InitTowerAttr(int _charId)
+    {
+        D_Tower towerData = J_Tower.GetData(_charId);
+        
     }
     //得到某一个属性值
     public virtual int GetAttr(CharAttr attrName)
@@ -88,9 +105,14 @@ public class CharacterPrototype
         return new MonsterInfo(_monsterIndex, this, _pathInfo);
     }
 
-    //public SoliderInfo CloneSolider()
-    //{
-    //    return new SoliderInfo();
-    //}
+    public SoliderInfo CloneSolider(int _soliderIndex)
+    {
+        return new SoliderInfo(_soliderIndex, this);
+    }
+
+    public TowerInfo CloneTower(int _towerIndex)
+    {
+        return new TowerInfo();
+    }
 }
 

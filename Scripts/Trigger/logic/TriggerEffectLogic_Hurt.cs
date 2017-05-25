@@ -10,7 +10,7 @@ public class TriggerEffectLogic_Hurt : TriggerEffectBase
     }
     public override void ExcuteAction(TriggerInfo triggerInfo, TriggerEffectInfo effectInfo)
     {
-        //Debug.Log("TriggerGroupId = " + triggerInfo.triggerGroup.Id + "TriggerEffectLogic_Hurt");
+        Debug.Log("TriggerGroupId = " + triggerInfo.triggerGroup.Id + "TriggerEffectLogic_Hurt");
         CharacterInfo charInfo = triggerInfo.charInfo;
         if (!charInfo.IsDead())
         {
