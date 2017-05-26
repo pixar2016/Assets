@@ -14,6 +14,8 @@ public class CharacterPrototype
 {
     public int charId;
     public int charType;
+    //若为塔类型，区分不同类型的塔
+    public int towerType;
     public string charName;
     public Dictionary<int, int> attrList;
     public int attackTime;
@@ -54,7 +56,11 @@ public class CharacterPrototype
     private void InitTowerAttr(int _charId)
     {
         D_Tower towerData = J_Tower.GetData(_charId);
-        
+        int towerType = towerData._towerType;
+        SetAttr(CharAttr.AttackSpeed, 2);
+        SetAttr(CharAttr.AttackSpeedPer, 0);
+        SetAttr(CharAttr.AttackDamage, 20);
+        SetAttr(CharAttr.AttackDamagePer, 0);
     }
     //得到某一个属性值
     public virtual int GetAttr(CharAttr attrName)
@@ -112,7 +118,15 @@ public class CharacterPrototype
 
     public TowerInfo CloneTower(int _towerIndex)
     {
-        return new TowerInfo();
+        //若为兵营
+        if (towerType == 4)
+        {
+            return new BarrackTowerInfo(_towerIndex, this);
+        }
+        else
+        {
+            return new AttackTowerInfo(_towerIndex, this);
+        }
     }
 }
 

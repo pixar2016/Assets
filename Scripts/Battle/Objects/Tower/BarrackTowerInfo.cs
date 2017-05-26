@@ -16,16 +16,9 @@ public class BarrackTowerInfo : TowerInfo
     public BarrackStart barrackStart;
     public BarrackIdle barrackIdle;
 
-    public BarrackTowerInfo(int indexId, int barrackId)
+    public BarrackTowerInfo(int indexId, int barrackId) 
+        : base(indexId, barrackId)
     {
-        this.Id = indexId;
-        this.charId = barrackId;
-        this.eventDispatcher = new MiniEventDispatcher();
-        this.towerData = J_Tower.GetData(barrackId);
-        this.towerBase = towerData._towerBase;
-        this.shooter = towerData._Shooter;
-        this.towerType = towerData._towerType;
-
         towerStateMachine = new StateMachine();
         barrackStart = new BarrackStart(this);
         barrackIdle = new BarrackIdle(this);
@@ -35,7 +28,18 @@ public class BarrackTowerInfo : TowerInfo
         startTime = AnimationCache.getInstance().getAnimation(this.towerBase).getMeshAnimation("start").getAnimTime();
         InitSoliderDict();
     }
+    public BarrackTowerInfo(int indexId, CharacterPrototype proto)
+        : base(indexId, proto)
+    {
+        towerStateMachine = new StateMachine();
+        barrackStart = new BarrackStart(this);
+        barrackIdle = new BarrackIdle(this);
+        soliderDict = new Dictionary<int, SoliderInfo>();
 
+        signPos = new Vector3(0, 0, 0);
+        startTime = AnimationCache.getInstance().getAnimation(this.towerBase).getMeshAnimation("start").getAnimTime();
+        InitSoliderDict();
+    }
     public void InitSoliderDict()
     {
         Vector3 []pos = new Vector3[4];

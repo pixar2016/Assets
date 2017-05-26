@@ -19,6 +19,7 @@ public class EntityManager {
 	}
     public Dictionary<int, CharacterPrototype> monsterPrototypes;
     public Dictionary<int, CharacterPrototype> soliderPrototypes;
+    public Dictionary<int, CharacterPrototype> towerPrototypes;
     public Dictionary<int, MonsterInfo> monsters;
     public Dictionary<int, SoliderInfo> soliders;
     public Dictionary<int, EffectInfo> effects;
@@ -40,6 +41,7 @@ public class EntityManager {
 	{
         monsterPrototypes = new Dictionary<int, CharacterPrototype>();
         soliderPrototypes = new Dictionary<int, CharacterPrototype>();
+        towerPrototypes = new Dictionary<int, CharacterPrototype>();
         monsters = new Dictionary<int, MonsterInfo>();
         soliders = new Dictionary<int, SoliderInfo>();
         effects = new Dictionary<int, EffectInfo>();
@@ -125,35 +127,16 @@ public class EntityManager {
     //添加防御塔
     public TowerInfo AddTower(int towerId)
     {
-        towerIndexId += 1;
-        int towerType = J_Tower.GetData(towerId)._towerType;
-        //增加兵营
-        if (towerType == 4)
+        towerIndexId++;
+        if (!towerPrototypes.ContainsKey(towerId))
         {
-            BarrackTowerInfo towerInfo = new BarrackTowerInfo(towerIndexId, towerId);
-            this.eventDispatcher.Broadcast("AddTower", towerInfo);
-            towers.Add(towerIndexId, towerInfo);
-            towerInfo.ChangeState("idle");
-            return towerInfo;
+            towerPrototypes.Add(towerId, new CharacterPrototype(towerId, CharacterType.Tower));
         }
-        ////增加空地
-        else if (towerType == 5)
-        {
-            OpenSpaceInfo spaceInfo = new OpenSpaceInfo(towerIndexId, towerId);
-            this.eventDispatcher.Broadcast("AddTower", spaceInfo);
-            towers.Add(towerIndexId, spaceInfo);
-            spaceInfo.ChangeState("idle");
-            return spaceInfo;
-        }
-        //增加攻击塔
-        else
-        {
-            AttackTowerInfo towerInfo = new AttackTowerInfo(towerIndexId, towerId);
-            this.eventDispatcher.Broadcast("AddTower", towerInfo);
-            towers.Add(towerIndexId, towerInfo);
-            towerInfo.ChangeState("idle");
-            return towerInfo;
-        }
+        CharacterPrototype proto = towerPrototypes[towerId];
+        TowerInfo towerInfo = proto.CloneTower(towerIndexId);
+        towers.Add(towerIndexId, towerInfo);
+        this.eventDispatcher.Broadcast("AddTower", towerInfo);
+        return towerInfo;
     }
     public void RemoveTower(int towerId)
     {

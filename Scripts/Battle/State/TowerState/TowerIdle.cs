@@ -30,7 +30,7 @@ public class TowerIdle : StateBase
 
     public void Attack()
     {
-        CharacterInfo targetInfo = towerInfo.RunAI();
+        CharacterInfo targetInfo = RunAI(towerInfo);
         //Debug.Log(towerInfo.WithinRange(targetInfo));
         if (targetInfo != null)
         {
@@ -41,6 +41,21 @@ public class TowerIdle : StateBase
         {
             towerInfo.ChangeState("idle");
         }
+    }
+
+    public CharacterInfo RunAI(TowerInfo towerInfo)
+    {
+        List<MonsterInfo> monsterList = EntityManager.getInstance().GetMonsterInfo();
+        Vector3 towerPos = towerInfo.GetPosition();
+        for (int i = 0; i < monsterList.Count; i++)
+        {
+            MonsterInfo temp = monsterList[i];
+            if (Vector3.Distance(towerPos, temp.GetPosition()) <= 200)
+            {
+                return temp;
+            }
+        }
+        return null;
     }
 
     public void Excute()

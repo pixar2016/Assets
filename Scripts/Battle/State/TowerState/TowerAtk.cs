@@ -35,7 +35,7 @@ public class TowerAtk : StateBase
             attackCharInfo.ChangeState("die");
             towerInfo.ChangeState("idle");
         }
-        else if (!towerInfo.WithinRange(attackCharInfo))
+        else if (!WithinRange(towerInfo, attackCharInfo))
         {
             towerInfo.ChangeState("idle");
         }
@@ -43,6 +43,14 @@ public class TowerAtk : StateBase
         {
             towerInfo.ChangeState("attack");
         }
+    }
+
+    public bool WithinRange(TowerInfo towerInfo, CharacterInfo target)
+    {
+        if (Vector3.Distance(towerInfo.GetPosition(), target.GetPosition()) <= 100)
+            return true;
+        else
+            return false;
     }
 
     public void Excute()
