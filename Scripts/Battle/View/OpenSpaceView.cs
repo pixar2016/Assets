@@ -13,7 +13,7 @@ public class OpenSpaceView : TowerView
         this.towerInfo.eventDispatcher.Register("DoAction", DoAction);
     }
 
-    public void LoadModel()
+    public override void LoadModel()
     {
         towerAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/OpenSpace.prefab");
         towerObj = towerAsset.GameObjectAsset;
@@ -52,17 +52,17 @@ public class OpenSpaceView : TowerView
         }
     }
 
-    public void DoAction(object[] data)
+    public override void DoAction(object[] data)
     {
 
     }
 
-    public void Release()
+    public override void Release()
     {
         GameLoader.Instance.UnLoadGameObject(towerAsset);
     }
 
-    public void Update()
+    public override void Update()
     {
         this.towerObj.transform.position = this.towerInfo.GetPosition();
     }
