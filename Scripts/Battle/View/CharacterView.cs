@@ -10,6 +10,10 @@ public class CharacterView {
     public GameObject charObj;
     public Animate charAnim;
 
+    public CharacterView()
+    {
+
+    }
     public CharacterView(CharacterInfo charInfo)
     {
         this.charInfo = charInfo;

@@ -115,6 +115,7 @@ public class EntityViewManager
         //若为空地
         else if (tempInfo.towerType == 5)
         {
+            Debug.Log(tempInfo);
             OpenSpaceInfo spaceInfo = (OpenSpaceInfo)tempInfo;
             towerId = spaceInfo.Id;
             towerView = new OpenSpaceView(spaceInfo);

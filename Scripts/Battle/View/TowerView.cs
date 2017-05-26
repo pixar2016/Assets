@@ -10,6 +10,7 @@ public class TowerView
     public TowerView()
     {
     }
+
     //被点击
     public virtual void FingerDown(ClickInfo curClick)
     {

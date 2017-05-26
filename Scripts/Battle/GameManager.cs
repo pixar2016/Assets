@@ -53,7 +53,7 @@ public class GameManager
         //加载怪物数据
         monsterSeq.LoadData(mapData._monsterJson);
         //根据数据加载塔空位
-        //AddTowerByData();
+        AddTowerByData();
     }
     public void AddTowerByData()
     {

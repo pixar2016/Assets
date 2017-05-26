@@ -28,7 +28,9 @@ public class CharacterPrototype
         attrList = new Dictionary<int, int>();
         eventDispatcher = new MiniEventDispatcher();
         if (charType == (int)CharacterType.Tower)
+        {
             InitTowerAttr(charId);
+        }
         else
             InitCreatureAttr(charId);
     }
@@ -56,7 +58,7 @@ public class CharacterPrototype
     private void InitTowerAttr(int _charId)
     {
         D_Tower towerData = J_Tower.GetData(_charId);
-        int towerType = towerData._towerType;
+        this.towerType = towerData._towerType;
         SetAttr(CharAttr.AttackSpeed, 2);
         SetAttr(CharAttr.AttackSpeedPer, 0);
         SetAttr(CharAttr.AttackDamage, 20);
@@ -122,6 +124,11 @@ public class CharacterPrototype
         if (towerType == 4)
         {
             return new BarrackTowerInfo(_towerIndex, this);
+        }
+        //若为空闲塔位
+        else if (towerType == 5)
+        {
+            return new OpenSpaceInfo(_towerIndex, this);
         }
         else
         {

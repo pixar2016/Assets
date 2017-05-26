@@ -6,12 +6,14 @@ using Hero;
 public class OpenSpaceView : TowerView
 {
     public SpriteImage towerBase;
+
     public OpenSpaceView(OpenSpaceInfo _openSpaceInfo)
     {
         this.towerInfo = _openSpaceInfo;
+        this.towerInfo.eventDispatcher.Register("DoAction", DoAction);
     }
 
-    public override void LoadModel()
+    public void LoadModel()
     {
         towerAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/OpenSpace.prefab");
         towerObj = towerAsset.GameObjectAsset;
@@ -50,12 +52,17 @@ public class OpenSpaceView : TowerView
         }
     }
 
-    public override void Release()
+    public void DoAction(object[] data)
+    {
+
+    }
+
+    public void Release()
     {
         GameLoader.Instance.UnLoadGameObject(towerAsset);
     }
 
-    public override void Update()
+    public void Update()
     {
         this.towerObj.transform.position = this.towerInfo.GetPosition();
     }
