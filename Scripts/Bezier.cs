@@ -53,6 +53,11 @@ public class Bezier
         }
         return Vector3.zero;
     }
+
+    public int GetCount()
+    {
+        return pathCount;
+    }
     /// <summary>
     /// 重置
     /// </summary>

@@ -58,17 +58,6 @@ public class EntityManager {
         towerIndexId = 0;
 	}
 
-    //public MonsterInfo AddMonster(int monsterId, PathInfo pathInfo)
-    //{
-    //    monsterIndexId += 1;
-    //    MonsterInfo charInfo = new MonsterInfo(monsterIndexId, monsterId, pathInfo);
-    //    monsters.Add(monsterIndexId, charInfo);
-    //    //Debug.Log(DataPreLoader.getInstance().GetData("Monsters")[creatureId]["AttackValue"]);
-    //    this.eventDispatcher.Broadcast("AddMonster", charInfo);
-    //    //EntityViewManager.getInstance().AddCreature(charInfo);
-    //    return charInfo;
-    //}
-
     public MonsterInfo AddMonster(int monsterId, PathInfo pathInfo)
     {
         monsterIndexId += 1;
@@ -83,14 +72,6 @@ public class EntityManager {
         return charInfo;
     }
 
-    //public SoliderInfo AddSolider(int soliderId)
-    //{
-    //    soliderIndexId += 1;
-    //    SoliderInfo charInfo = new SoliderInfo(soliderIndexId, soliderId);
-    //    soliders.Add(soliderIndexId, charInfo);
-    //    this.eventDispatcher.Broadcast("AddSolider", charInfo);
-    //    return charInfo;
-    //}
     public SoliderInfo AddSolider(int soliderId)
     {
         soliderIndexId += 1;
@@ -114,10 +95,14 @@ public class EntityManager {
         return effectInfo;
     }
     //添加动态特效
-    public EffectInfo AddMoveEffect(int effectId, CharacterInfo charInfo, CharacterInfo targetInfo, float speed, int triggerGroupId = 0)
+    public EffectInfo AddMoveEffect(int effectId, CharacterInfo charInfo, CharacterInfo targetInfo, float speed, int pathType, int triggerGroupId = 0)
     {
         effectIndexId += 1;
-        EffectInfo effectInfo = new StraightEffectInfo(bulletIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
+        EffectInfo effectInfo;
+        if (pathType == 2)
+            effectInfo = new BezierEffectInfo(bulletIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
+        else
+            effectInfo = new StraightEffectInfo(bulletIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
         effects.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
         return effectInfo;
