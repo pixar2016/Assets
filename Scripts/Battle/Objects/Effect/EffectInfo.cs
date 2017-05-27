@@ -13,20 +13,14 @@ public class EffectInfo
     public string effectName;
     //特效位置
     public Vector3 pos;
-    //特效已产生的时间
-    public float effectTime;
-    //特效播放一次时间
-    public float effectMaxTime;
-    //特效是否循环播放 true-是 false-否
-    public bool loop;
+    //特效角度
+    public Vector3 angle;
+    
     public EffectInfo(int effectIndexId, int effId)
     {
         Id = effectIndexId;
         effectId = effId;
-        effectName = "mageTowerBullet";
-        effectTime = 0;
-        effectMaxTime = 1.0f;
-        loop = false;
+        effectName = "arrow";
     }
 
     public Vector3 GetPosition()
@@ -35,21 +29,19 @@ public class EffectInfo
     }
     public void SetPosition(float x, float y, float z)
     {
-        pos = new Vector3(x, y, z);
+        Vector3 temp = pos;
+        temp.x = x;
+        temp.y = y;
+        temp.z = z;
+        pos = temp;
+    }
+    public Vector3 GetEulerAngles()
+    {
+        return angle;
     }
     public virtual void Update()
     {
-        if (loop)
-        {
-            return;
-        }
-        effectTime += Time.deltaTime;
-        if (effectTime >= effectMaxTime)
-        {
-            effectTime = 0;
-            Debug.Log("RemoveEffect");
-            EntityManager.getInstance().RemoveEffect(this.Id);
-        }
+        
     }
 
     public virtual void Release()

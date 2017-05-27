@@ -47,6 +47,7 @@ public class EffectView
     public void Update()
     {
         effectObj.transform.position = effectInfo.GetPosition();
+        effectObj.transform.eulerAngles = effectInfo.GetEulerAngles();
     }
 }
 

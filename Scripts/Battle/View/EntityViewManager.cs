@@ -17,7 +17,6 @@ public class EntityViewManager
     public Dictionary<int, CharacterView> monsters;
     public Dictionary<int, CharacterView> soliders;
     public Dictionary<int, EffectView> effects;
-    public Dictionary<int, BulletView> bullets;
     public Dictionary<int, TowerView> towers;
 
     private EntityViewManager()
@@ -25,18 +24,15 @@ public class EntityViewManager
         monsters = new Dictionary<int, CharacterView>();
         soliders = new Dictionary<int, CharacterView>();
         effects = new Dictionary<int, EffectView>();
-        bullets = new Dictionary<int, BulletView>();
         towers = new Dictionary<int, TowerView>();
         EntityManager.getInstance().eventDispatcher.Register("AddMonster", AddMonster);
         EntityManager.getInstance().eventDispatcher.Register("AddSolider", AddSolider);
         EntityManager.getInstance().eventDispatcher.Register("AddEffect", AddEffect);
-        EntityManager.getInstance().eventDispatcher.Register("AddBullet", AddBullet);
         EntityManager.getInstance().eventDispatcher.Register("AddTower", AddTower);
 
         EntityManager.getInstance().eventDispatcher.Register("RemoveMonster", RemoveMonster);
         EntityManager.getInstance().eventDispatcher.Register("RemoveSolider", RemoveSolider);
         EntityManager.getInstance().eventDispatcher.Register("RemoveEffect", RemoveEffect);
-        EntityManager.getInstance().eventDispatcher.Register("RemoveBullet", RemoveBullet);
         EntityManager.getInstance().eventDispatcher.Register("RemoveTower", RemoveTower);
     }
 
@@ -82,21 +78,6 @@ public class EntityViewManager
         else
         {
             effects.Add(effectInfo.Id, effectView);
-        }
-    }
-
-    public void AddBullet(object[] data)
-    {
-        BulletInfo bulletInfo = (BulletInfo)data[0];
-        BulletView bulletView = new BulletView(bulletInfo);
-        bulletView.LoadModel();
-        if (bullets.ContainsKey(bulletInfo.Id))
-        {
-            bullets[bulletInfo.Id] = bulletView;
-        }
-        else
-        {
-            bullets.Add(bulletInfo.Id, bulletView);
         }
     }
 
@@ -201,23 +182,6 @@ public class EntityViewManager
             effects.Remove(delId);
         }
     }
-    public void RemoveBullet(object[] data)
-    {
-        int bulletIndexId = (int)data[0];
-        int delId = -1;
-        foreach (int key in bullets.Keys)
-        {
-            if (bullets[key].bulletInfo.Id == bulletIndexId)
-            {
-                delId = key;
-                bullets[key].Release();
-            }
-        }
-        if (delId != -1)
-        {
-            bullets.Remove(delId);
-        }
-    }
     public void RemoveTower(object[] data)
     {
         int towerIndexId = (int)data[0];
@@ -248,10 +212,6 @@ public class EntityViewManager
         foreach (int key in effects.Keys)
         {
             effects[key].Update();
-        }
-        foreach (int key in bullets.Keys)
-        {
-            bullets[key].Update();
         }
         foreach (int key in towers.Keys)
         {

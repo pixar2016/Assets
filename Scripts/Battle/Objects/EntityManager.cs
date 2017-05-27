@@ -23,7 +23,6 @@ public class EntityManager {
     public Dictionary<int, MonsterInfo> monsters;
     public Dictionary<int, SoliderInfo> soliders;
     public Dictionary<int, EffectInfo> effects;
-    public Dictionary<int, BulletInfo> bullets;
     public Dictionary<int, TowerInfo> towers;
     //回收list
     public List<int> monsterDelList;
@@ -45,7 +44,6 @@ public class EntityManager {
         monsters = new Dictionary<int, MonsterInfo>();
         soliders = new Dictionary<int, SoliderInfo>();
         effects = new Dictionary<int, EffectInfo>();
-        bullets = new Dictionary<int, BulletInfo>();
         towers = new Dictionary<int, TowerInfo>();
         eventDispatcher = new MiniEventDispatcher();
         monsterDelList = new List<int>();
@@ -107,21 +105,21 @@ public class EntityManager {
         return charInfo;
     }
     //添加静态特效
-    public EffectInfo AddEffect(int effectId, int effectType)
+    public EffectInfo AddStaticEffect(int effectId, int effectType)
     {
         effectIndexId += 1;
-        EffectInfo effectInfo = new EffectInfo(effectIndexId, effectId);      
+        EffectInfo effectInfo = new StaticEffectInfo(effectIndexId, effectId);      
         effects.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
         return effectInfo;
     }
-    //添加子弹
-    public BulletInfo AddBullet(int effectId, CharacterInfo charInfo, CharacterInfo targetInfo, float speed, int triggerGroupId = 0)
+    //添加动态特效
+    public EffectInfo AddMoveEffect(int effectId, CharacterInfo charInfo, CharacterInfo targetInfo, float speed, int triggerGroupId = 0)
     {
-        bulletIndexId += 1;
-        BulletInfo effectInfo = new BulletInfo(bulletIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
-        bullets.Add(bulletIndexId, effectInfo);
-        this.eventDispatcher.Broadcast("AddBullet", effectInfo);
+        effectIndexId += 1;
+        EffectInfo effectInfo = new StraightEffectInfo(bulletIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
+        effects.Add(effectIndexId, effectInfo);
+        this.eventDispatcher.Broadcast("AddEffect", effectInfo);
         return effectInfo;
     }
     //添加防御塔
@@ -186,18 +184,6 @@ public class EntityManager {
         }
     }
 
-    public void RemoveBullet(int bulletId)
-    {
-        foreach (int key in bullets.Keys)
-        {
-            if (bullets[key].Id == bulletId)
-            {
-                bulletDelList.Add(key);
-                this.eventDispatcher.Broadcast("RemoveBullet", bulletId);
-            }
-        }
-    }
-
     public void Update()
     {
         foreach (int key in monsters.Keys)
@@ -211,10 +197,6 @@ public class EntityManager {
         foreach (int key in effects.Keys)
         {
             effects[key].Update();
-        }
-        foreach (int key in bullets.Keys)
-        {
-            bullets[key].Update();
         }
         foreach (int key in towers.Keys)
         {
@@ -248,14 +230,6 @@ public class EntityManager {
                 effects.Remove(indexId);
             }
             effectDelList.Clear();
-        }
-        if (bulletDelList.Count > 0)
-        {
-            foreach (int indexId in bulletDelList)
-            {
-                bullets.Remove(indexId);
-            }
-            bulletDelList.Clear();
         }
         if (towerDelList.Count > 0)
         {
