@@ -362,6 +362,19 @@ public class ExcelUtility
             fieldType.Append("\"].ToString();\n");
             fieldType.Append("\t\t\t}\n");
         }
+        else if (fieldTypeString == "float")
+        {
+            fieldType.Append("\t\t\tif(jsonObject[\"");
+            fieldType.Append(field);
+            fieldType.Append("\"] != null){\n");
+            fieldType.Append("\t\t\t\tinfo._");
+            fieldType.Append(field);
+            fieldType.Append(" = " + fieldTypeString);
+            fieldType.Append(".Parse(jsonObject[\"");
+            fieldType.Append(field);
+            fieldType.Append("\"].ToString());\n");
+            fieldType.Append("\t\t\t}\n");
+        }
         return fieldType.ToString();
     }
 

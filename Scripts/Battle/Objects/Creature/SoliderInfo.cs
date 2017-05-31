@@ -6,10 +6,6 @@ public class SoliderInfo : CharacterInfo
 {
     //攻击目标
     private CharacterInfo attackCharInfo;
-    //关联的兵营
-    public BarrackTowerInfo barrackTower;
-    //在兵营中的Id
-    public int barrackSoliderId;
     //兵营停留位置
     public Vector3 barrackSoliderPos;
 
@@ -97,11 +93,9 @@ public class SoliderInfo : CharacterInfo
         SetAttr(CharAttr.SpeedPer, _charInfo.GetAttr(CharAttr.SpeedPer));
     }
 
-    //关联兵营、兵营Id和停留位置
-    public void SetTowerInfo(BarrackTowerInfo tower, int id, Vector3 pos)
+    //关联兵营停留点
+    public void SetBarrackPos(Vector3 pos)
     {
-        barrackTower = tower;
-        barrackSoliderId = id;
         barrackSoliderPos = pos;
     }
 

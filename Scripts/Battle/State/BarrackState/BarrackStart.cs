@@ -23,8 +23,29 @@ public class BarrackStart : StateBase
         Debug.Log("BarrackInfo DoAction Start");
         barrackInfo.DoAction("start");
         curTime = 0;
-        //补齐兵种
-        barrackInfo.AddSolider();
+        for (int i = 0; i < 3; i++)
+        {
+            //如果兵营中已存在该Index的兵种
+            if (barrackInfo.ContainsSolider(i))
+            {
+                SoliderInfo solider = barrackInfo.GetSolider(i);
+                //如果该兵种已死亡
+                if (solider.IsDead())
+                {
+                    solider.Reset();
+                    solider.ChangeState("ready");
+                }
+            }
+            //如果兵营不存在该Index兵种
+            else
+            {
+                SoliderInfo solider = EntityManager.getInstance().AddSolider(barrackInfo.soliderId);
+                solider.SetPosition(barrackInfo.GetPosition());
+                solider.SetBarrackPos(barrackInfo.soliderPos[i]);
+                solider.ChangeState("ready");
+                barrackInfo.AddSolider(i, solider);
+            }
+        }
     }
 
     public void Excute()

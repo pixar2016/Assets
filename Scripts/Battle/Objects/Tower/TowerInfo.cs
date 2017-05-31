@@ -20,7 +20,7 @@ public class TowerInfo : CharacterInfo
     {
         this.Id = indexId;
         this.charId = towerId;
-        D_Tower towerData = J_Tower.GetData(towerId);
+        this.towerData = J_Tower.GetData(towerId);
         this.towerBase = towerData._towerBase;
         this.shooter = towerData._Shooter;
         this.towerType = towerData._towerType;
@@ -28,10 +28,9 @@ public class TowerInfo : CharacterInfo
 
     public TowerInfo(int indexId, CharacterPrototype proto)
     {
-        Debug.Log("TowerInfo");
         this.Id = indexId;
         this.charId = proto.charId;
-        D_Tower towerData = J_Tower.GetData(charId);
+        this.towerData = J_Tower.GetData(charId);
         this.towerBase = towerData._towerBase;
         this.shooter = towerData._Shooter;
         this.towerType = towerData._towerType;

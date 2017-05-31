@@ -5,10 +5,12 @@ using UnityEngine;
 //兵营
 public class BarrackTowerInfo : TowerInfo
 {
-    
+    public int soliderId;
     public Dictionary<int, SoliderInfo> soliderDict;
     //出兵标记点
     public Vector3 signPos;
+    //每个兵种的停留点
+    public Vector3[] soliderPos;
     //兵营门开启动画时间
     public float startTime;
 
@@ -19,39 +21,56 @@ public class BarrackTowerInfo : TowerInfo
     public BarrackTowerInfo(int indexId, int barrackId) 
         : base(indexId, barrackId)
     {
+        soliderId = towerData._soliderId;
         towerStateMachine = new StateMachine();
         barrackStart = new BarrackStart(this);
         barrackIdle = new BarrackIdle(this);
         soliderDict = new Dictionary<int, SoliderInfo>();
 
-        signPos = new Vector3(0,0,0);
+        signPos = position;
         startTime = AnimationCache.getInstance().getAnimation(this.towerBase).getMeshAnimation("start").getAnimTime();
-        InitSoliderDict();
+        InitSoliderPos();
     }
     public BarrackTowerInfo(int indexId, CharacterPrototype proto)
         : base(indexId, proto)
     {
+        soliderId = towerData._soliderId;
         towerStateMachine = new StateMachine();
         barrackStart = new BarrackStart(this);
         barrackIdle = new BarrackIdle(this);
         soliderDict = new Dictionary<int, SoliderInfo>();
 
-        signPos = new Vector3(0, 0, 0);
+        signPos = position;
         startTime = AnimationCache.getInstance().getAnimation(this.towerBase).getMeshAnimation("start").getAnimTime();
-        InitSoliderDict();
+        InitSoliderPos();
     }
-    public void InitSoliderDict()
+    public void InitSoliderPos()
     {
-        Vector3 []pos = new Vector3[4];
-        pos[1] = new Vector3(signPos.x + 30, signPos.y + 40, signPos.z);
-        pos[2] = new Vector3(signPos.x - 30, signPos.y + 40, signPos.z);
-        pos[3] = new Vector3(signPos.x, signPos.y + 40, signPos.z);
-        for (int i = 1; i <= 3; i++)
+        soliderPos = new Vector3[3];
+        soliderPos[0] = new Vector3(signPos.x + 30, signPos.y + 40, signPos.z);
+        soliderPos[1] = new Vector3(signPos.x - 30, signPos.y + 40, signPos.z);
+        soliderPos[2] = new Vector3(signPos.x, signPos.y + 40, signPos.z);
+    }
+
+    public bool ContainsSolider(int indexId)
+    {
+        return soliderDict.ContainsKey(indexId);
+    }
+
+    public SoliderInfo GetSolider(int indexId)
+    {
+        if (soliderDict.ContainsKey(indexId))
         {
-            SoliderInfo solider = EntityManager.getInstance().AddSolider(50001);
-            solider.SetTowerInfo(this, i, pos[i]);
-            solider.ChangeState("ready");
-            soliderDict.Add(i, solider);
+            return soliderDict[indexId];
+        }
+        return null;
+    }
+
+    public void AddSolider(int indexId, SoliderInfo soliderInfo)
+    {
+        if (!soliderDict.ContainsKey(indexId))
+        {
+            soliderDict.Add(indexId, soliderInfo);
         }
     }
 
@@ -74,19 +93,6 @@ public class BarrackTowerInfo : TowerInfo
         else if (stateName == "idle")
         {
             towerStateMachine.ChangeState(barrackIdle, args);
-        }
-    }
-
-    public void AddSolider()
-    {
-        //若兵营现在兵种数量小于3，则补充到3个
-        foreach (int key in soliderDict.Keys)
-        {
-            if (soliderDict[key].IsDead())
-            {
-                soliderDict[key].Reset();
-                soliderDict[key].ChangeState("idle");
-            }
         }
     }
 

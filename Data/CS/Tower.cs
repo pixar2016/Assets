@@ -14,6 +14,8 @@ public class D_Tower
 	public int _towerType;
 	public string _towerBase;
 	public string _Shooter;
+	public int _bullet;
+	public int _soliderId;
 	public int _level;
 	public int _attackSpeed;
 	public int _attackDamage;
@@ -66,6 +68,12 @@ public class J_Tower
 			}
 			if(jsonObject["Shooter"] != null){
 				info._Shooter = jsonObject["Shooter"].ToString();
+			}
+			if(jsonObject["bullet"] != null){
+				info._bullet = int.Parse(jsonObject["bullet"].ToString());
+			}
+			if(jsonObject["soliderId"] != null){
+				info._soliderId = int.Parse(jsonObject["soliderId"].ToString());
 			}
 			if(jsonObject["level"] != null){
 				info._level = int.Parse(jsonObject["level"].ToString());

@@ -39,7 +39,6 @@ public class AttackTowerInfo : TowerInfo
     public AttackTowerInfo(int indexId, CharacterPrototype proto)
         : base(indexId, proto)
     {
-        Debug.Log("AttackTowerInfo");
         towerStateMachine = new StateMachine();
         towerAtk = new TowerAtk(this);
         towerIdle = new TowerIdle(this);

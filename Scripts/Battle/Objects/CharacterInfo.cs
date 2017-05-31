@@ -62,6 +62,11 @@ public class CharacterInfo
         position.z = z;
     }
 
+    public void SetPosition(Vector3 _pos)
+    {
+        position = _pos;
+    }
+
     public Vector3 GetPosition()
     {
         return position;

@@ -307,7 +307,7 @@
     "towerBase": "barrackTowerlv1",
     "Shooter": null,
     "bullet": null,
-    "soliderId": null,
+    "soliderId": 50001.0,
     "level": 1.0,
     "attackSpeed": null,
     "attackDamage": null,
