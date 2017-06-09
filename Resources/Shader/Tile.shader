@@ -7,7 +7,6 @@
 		Tags{ "Queue" = "Transparent" }
 		pass
 		{
-			ZWrite Off
 			Cull Off
 			Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM

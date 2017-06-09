@@ -55,7 +55,7 @@ public class SkillInfo
                 return;
             }
         }
-        Debug.Log("SkillEvent_End");
+        //Debug.Log("SkillEvent_End");
         this.isActive = false;
     }
 

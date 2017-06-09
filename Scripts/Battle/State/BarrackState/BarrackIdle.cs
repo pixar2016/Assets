@@ -25,6 +25,7 @@ public class BarrackIdle : StateBase
     public void EnterExcute()
     {
         barrackInfo.DoAction("idle");
+        RunAI();
     }
 
     public void RunAI()

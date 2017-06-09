@@ -13,7 +13,7 @@ public class BattleUtils
     /// <param name="defInfo">防守方</param>
     public static void CalcAtkDamage(CharacterInfo atkInfo, CharacterInfo defInfo)
     {
-        Debug.Log("CalcAtkDamage");
+        //Debug.Log("CalcAtkDamage");
         if (atkInfo == null || defInfo == null)
         {
             return;

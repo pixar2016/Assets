@@ -27,9 +27,7 @@ public class BarrackTowerInfo : TowerInfo
         barrackIdle = new BarrackIdle(this);
         soliderDict = new Dictionary<int, SoliderInfo>();
 
-        signPos = position;
         startTime = AnimationCache.getInstance().getAnimation(this.towerBase).getMeshAnimation("start").getAnimTime();
-        InitSoliderPos();
     }
     public BarrackTowerInfo(int indexId, CharacterPrototype proto)
         : base(indexId, proto)
@@ -40,17 +38,10 @@ public class BarrackTowerInfo : TowerInfo
         barrackIdle = new BarrackIdle(this);
         soliderDict = new Dictionary<int, SoliderInfo>();
 
-        signPos = position;
-        startTime = AnimationCache.getInstance().getAnimation(this.towerBase).getMeshAnimation("start").getAnimTime();
-        InitSoliderPos();
-    }
-    public void InitSoliderPos()
-    {
         soliderPos = new Vector3[3];
-        soliderPos[0] = new Vector3(signPos.x + 30, signPos.y + 40, signPos.z);
-        soliderPos[1] = new Vector3(signPos.x - 30, signPos.y + 40, signPos.z);
-        soliderPos[2] = new Vector3(signPos.x, signPos.y + 40, signPos.z);
+        startTime = AnimationCache.getInstance().getAnimation(this.towerBase).getMeshAnimation("start").getAnimTime();
     }
+    
 
     public bool ContainsSolider(int indexId)
     {
@@ -74,9 +65,23 @@ public class BarrackTowerInfo : TowerInfo
         }
     }
 
-    public void SetPosition(float x, float y, float z)
+    public override void SetPosition(float x, float y, float z)
     {
         position = new Vector3(x, y, z);
+        SetSignPos(position);
+    }
+
+    public void SetSignPos(Vector3 pos)
+    {
+        Debug.Log("SetSignPos");
+        signPos = pos;
+        InitSoliderPos(pos);
+    }
+    private void InitSoliderPos(Vector3 position)
+    {
+        soliderPos[0] = new Vector3(signPos.x + 30, signPos.y + 40, signPos.z);
+        soliderPos[1] = new Vector3(signPos.x - 30, signPos.y + 40, signPos.z);
+        soliderPos[2] = new Vector3(signPos.x, signPos.y + 40, signPos.z);
     }
 
     public Vector3 GetPosition()
@@ -99,6 +104,10 @@ public class BarrackTowerInfo : TowerInfo
     //是否兵营已经全部出阵
     public bool IsSoliderFull()
     {
+        if (soliderDict.Count < 3)
+        {
+            return false;
+        }
         foreach (int key in soliderDict.Keys)
         {
             if (soliderDict[key].IsDead())

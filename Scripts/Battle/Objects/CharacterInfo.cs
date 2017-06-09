@@ -55,7 +55,7 @@ public class CharacterInfo
         attrList = new Dictionary<int, int>();
     }
 
-    public void SetPosition(float x, float y, float z)
+    public virtual void SetPosition(float x, float y, float z)
     {
         position.x = x;
         position.y = y;
