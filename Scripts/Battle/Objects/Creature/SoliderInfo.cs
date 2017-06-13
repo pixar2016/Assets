@@ -8,7 +8,8 @@ public class SoliderInfo : CharacterInfo
     private CharacterInfo attackCharInfo;
     //兵营停留位置
     public Vector3 barrackSoliderPos;
-
+    //出生位置
+    public Vector3 bornPos;
     //宽度
     public float width;
     //高度
@@ -29,16 +30,15 @@ public class SoliderInfo : CharacterInfo
         InitAttr(charId);
         InitStatusMachine();
         attackSkill = SkillManager.getInstance().AddSkill(1, this);
-        attackTime = AnimationCache.getInstance().getAnimation(charName).getMeshAnimation("attack").getAnimTime();
     }
     public SoliderInfo(int soliderIndexId, CharacterPrototype charInfo)
     {
+        charProto = charInfo;
         Id = soliderIndexId;
         charId = charInfo.charId;
         InitAttr(charInfo);
         InitStatusMachine();
         attackSkill = SkillManager.getInstance().AddSkill(1, this);
-        attackTime = charInfo.attackTime;
         charInfo.eventDispatcher.Register("ChangeProtoAttr", ChangeProtoAttr);
     }
 
@@ -93,10 +93,12 @@ public class SoliderInfo : CharacterInfo
         SetAttr(CharAttr.SpeedPer, _charInfo.GetAttr(CharAttr.SpeedPer));
     }
 
-    //关联兵营停留点
-    public void SetBarrackPos(Vector3 pos)
+    //关联兵营停留点和出生点，并把位置放到出生点
+    public void SetBarrackPos(Vector3 staypos, Vector3 bornpos)
     {
-        barrackSoliderPos = pos;
+        barrackSoliderPos = staypos;
+        bornPos = bornpos;
+        SetPosition(bornpos);
     }
 
     //设置攻击目标等信息
@@ -217,11 +219,13 @@ public class SoliderInfo : CharacterInfo
             SetRotation(0, 180, 0);
             DoAction("run1");
         }
+        Debug.Log("RunAction");
     }
 
     public float GetSpeed()
     {
-        return GetAttr(CharAttr.Speed) * (1 + GetAttr(CharAttr.SpeedPer));
+        //return GetAttr(CharAttr.Speed) * (1 + GetAttr(CharAttr.SpeedPer));
+        return GetFinalAttr(CharAttr.Speed);
     }
 
     public override bool IsDead()
@@ -241,6 +245,7 @@ public class SoliderInfo : CharacterInfo
     //重置信息，重置血量等信息
     public void Reset()
     {
-
+        InitAttr(charProto);
+        SetPosition(bornPos);
     }
 }

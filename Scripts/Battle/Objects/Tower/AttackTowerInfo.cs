@@ -23,7 +23,6 @@ public class AttackTowerInfo : TowerInfo
         towerIdle = new TowerIdle(this);
 
         attackSkill = SkillManager.getInstance().AddSkill(2, this);
-        attackTime = 1;
         //若有弓手，攻击时长为弓手攻击动作
         //if (this.shooter != null)
         //{
@@ -44,7 +43,6 @@ public class AttackTowerInfo : TowerInfo
         towerIdle = new TowerIdle(this);
 
         attackSkill = SkillManager.getInstance().AddSkill(2, this);
-        attackTime = 1;
     }
 
     public override void SetTargetInfo(CharacterInfo charInfo)

@@ -19,10 +19,10 @@ public class BattleUtils
             return;
         }
         int attackDamage = atkInfo.GetAttr(CharAttr.AttackDamage);
-        defInfo.ChangeAttr(CharAttr.Hp, 0);
         if (attackDamage != -1)
         {
-            defInfo.ChangeAttr(CharAttr.Hp, attackDamage);
+            defInfo.ChangeAttr(CharAttr.Hp, -attackDamage);
+            //Debug.Log(defInfo.GetAttr(CharAttr.Hp));
         }
     }
     /// <summary>

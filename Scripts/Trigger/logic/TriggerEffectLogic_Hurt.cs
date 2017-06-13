@@ -15,6 +15,10 @@ public class TriggerEffectLogic_Hurt : TriggerEffectBase
         if (!charInfo.IsDead())
         {
             CharacterInfo targetInfo = charInfo.GetTargetInfo();
+            if (targetInfo.charId == 50001)
+            {
+                //Debug.Log("骑士正在掉血" + targetInfo.GetAttr(CharAttr.Hp));
+            }
             BattleUtils.CalcAtkDamage(charInfo, targetInfo);
         }
         //Debug.Log(charInfo);

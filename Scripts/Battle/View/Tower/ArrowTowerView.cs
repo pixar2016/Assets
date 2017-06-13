@@ -68,7 +68,6 @@ public class ArrowTowerView : TowerView
         {
             shooter2 = shooterObj2.AddComponent<Animate>();
         }
-
         //根据塔基座大小增加碰撞盒
         BoxCollider collider;
         if (towerObj.GetComponent<BoxCollider>() == null)

@@ -40,8 +40,7 @@ public class BarrackStart : StateBase
             else
             {
                 SoliderInfo solider = EntityManager.getInstance().AddSolider(barrackInfo.soliderId);
-                solider.SetPosition(barrackInfo.GetPosition());
-                solider.SetBarrackPos(barrackInfo.soliderPos[i]);
+                solider.SetBarrackPos(barrackInfo.soliderPos[i], barrackInfo.GetPosition());
                 solider.ChangeState("ready");
                 barrackInfo.AddSolider(i, solider);
             }

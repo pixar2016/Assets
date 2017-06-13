@@ -13,6 +13,8 @@ public enum CharAttr
     HpMax,
     //血量上限增加百分比
     HpMaxPer,
+    //攻击时间
+    AttackTime,
     //攻击速度
     AttackSpeed,
     //攻击速度增加百分比
@@ -40,13 +42,10 @@ public class CharacterInfo
     public string actionName;
     //key-CharAttr value-attrValue
     public Dictionary<int, int> attrList;
-
-    //攻击间隔，兵营为出兵间隔
-    public float attackTime;
     //用于广播事件
     public MiniEventDispatcher eventDispatcher;
-
-
+    //兵种模板
+    public CharacterPrototype charProto;
     public CharacterInfo()
     {
         eventDispatcher = new MiniEventDispatcher();
@@ -118,7 +117,7 @@ public class CharacterInfo
     }
 
     //开始一个技能
-    public virtual void StartSkill(SkillInfo skillInfo)
+    public void StartSkill(SkillInfo skillInfo)
     {
         SkillManager.getInstance().StartSkill(skillInfo);
     }
@@ -140,7 +139,7 @@ public class CharacterInfo
         }
     }
 
-    //得到某一个属性值
+    //得到某一个属性基础值
     public virtual int GetAttr(CharAttr attrName)
     {
         int temp = (int)attrName;
@@ -152,6 +151,28 @@ public class CharacterInfo
         {
             return -1;
         }
+    }
+    //得到某一个属性的最终值
+    public virtual int GetFinalAttr(CharAttr attrName)
+    {
+        switch (attrName)
+        {
+            case CharAttr.Hp:
+                return GetAttr(CharAttr.Hp) * (1 + GetAttr(CharAttr.HpPer));
+            case CharAttr.HpMax:
+                return GetAttr(CharAttr.HpMax) * (1 + GetAttr(CharAttr.HpMaxPer));
+            case CharAttr.AttackTime:
+                return 1 / (GetAttr(CharAttr.AttackSpeed) * (1 + GetAttr(CharAttr.AttackSpeedPer)));
+            case CharAttr.AttackSpeed:
+                return GetAttr(CharAttr.AttackSpeed) * (1 + GetAttr(CharAttr.AttackSpeedPer));
+            case CharAttr.AttackDamage:
+                return GetAttr(CharAttr.AttackDamage) * (1 + GetAttr(CharAttr.AttackDamagePer));
+            case CharAttr.Speed:
+                return GetAttr(CharAttr.Speed) * (1 + GetAttr(CharAttr.SpeedPer));
+            default:
+                break;
+        }
+        return GetAttr(attrName);
     }
     //改变某个属性
     public virtual bool ChangeAttr(CharAttr attrName, int changeNum)

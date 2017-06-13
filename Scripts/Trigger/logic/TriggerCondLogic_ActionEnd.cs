@@ -10,7 +10,7 @@ public class TriggerCondLogic_ActionEnd : TriggerCondBase
     public override bool CheckCondition(TriggerInfo triggerInfo, TriggerCondInfo condInfo)
     {
         CharacterInfo charInfo = triggerInfo.charInfo;
-        float animTime = charInfo.attackTime;
+        float animTime = charInfo.GetFinalAttr(CharAttr.AttackTime);
         //float animTime = AnimationCache.getInstance().getAnimation(charInfo.charName).getMeshAnimation(charInfo.actionName).getAnimTime();
         if (animTime == null)
         {

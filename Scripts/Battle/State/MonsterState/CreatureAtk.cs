@@ -23,7 +23,7 @@ public class CreatureAtk : StateBase
     {
         //Debug.Log("CreatureAtk EnterExcute");
         monsterInfo.StartSkill(monsterInfo.attackSkill);
-        attackTime = monsterInfo.attackTime;
+        attackTime = monsterInfo.GetFinalAttr(CharAttr.AttackTime);
         curTime = 0;
     }
 
@@ -33,7 +33,7 @@ public class CreatureAtk : StateBase
         if (attackCharInfo.IsDead())
         {
             attackCharInfo.ChangeState("die");
-            monsterInfo.ChangeState("idle");
+            monsterInfo.ChangeState("move");
         }
         else
         {

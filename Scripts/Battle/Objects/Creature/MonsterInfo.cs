@@ -31,7 +31,6 @@ public class MonsterInfo : CharacterInfo
         pathInfo = _pathInfo;
         curPathNum = 0;
         position = pathInfo.GetPoint(curPathNum);
-        attackTime = AnimationCache.getInstance().getAnimation(charName).getMeshAnimation("attack").getAnimTime();
     }
     //复制原型类中的数据
     public MonsterInfo(int creatureIndexId, CharacterPrototype charInfo, PathInfo _pathInfo)
@@ -44,7 +43,6 @@ public class MonsterInfo : CharacterInfo
         pathInfo = _pathInfo;
         curPathNum = 0;
         position = pathInfo.GetPoint(curPathNum);
-        attackTime = charInfo.attackTime;
         charInfo.eventDispatcher.Register("ChangeProtoAttr", ChangeProtoAttr);
     }
 
@@ -87,6 +85,7 @@ public class MonsterInfo : CharacterInfo
     //复制charInfo的属性值
     public void InitAttr(CharacterPrototype _charInfo)
     {
+        charProto = _charInfo;
         charName = _charInfo.charName;
         SetAttr(CharAttr.HpMax, _charInfo.GetAttr(CharAttr.HpMax));
         SetAttr(CharAttr.HpMaxPer, _charInfo.GetAttr(CharAttr.HpMaxPer));
@@ -179,11 +178,6 @@ public class MonsterInfo : CharacterInfo
         return creatureStateMachine.GetCurrentState().ToString();
     }
 
-    public override void StartSkill(SkillInfo skillInfo)
-    {
-        
-    }
-
     public override void Run(Vector3 targetPos)
     {
         Vector3 curPos = this.GetPosition();
@@ -229,7 +223,7 @@ public class MonsterInfo : CharacterInfo
     //}
     public float GetSpeed()
     {
-        return GetAttr(CharAttr.Speed) * (1 + GetAttr(CharAttr.SpeedPer));
+        return GetFinalAttr(CharAttr.Speed);
     }
 
     public override bool IsDead()
