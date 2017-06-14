@@ -24,7 +24,7 @@ public class TowerIdle : StateBase
 
     public void EnterExcute()
     {
-        //Debug.Log("TowerIdle");
+        Debug.Log("TowerIdle");
         towerInfo.DoAction("idle");
     }
 

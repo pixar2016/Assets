@@ -26,10 +26,16 @@ public class OpenSpaceInfo : TowerInfo
 
     public override void ChangeState(string stateName, params object[] args)
     {
+        Debug.Log("stateName" + stateName);
         if (stateName == "constructing")
         {
             stateMachine.ChangeState(openSpaceConstructing, args);
         }
+    }
+
+    public override void Update()
+    {
+        stateMachine.Excute();
     }
 }
 

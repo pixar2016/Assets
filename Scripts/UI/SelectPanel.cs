@@ -85,10 +85,11 @@ public class SelectPanel : UIComponent
 
     public void OnBtnArrowTowerClick(GameObject go)
     {
-        TowerInfo newTower = EntityManager.getInstance().AddTower(2);
         Vector3 pos = towerInfo.GetPosition();
-        newTower.SetPosition(pos.x, pos.y, pos.z);
-        EntityManager.getInstance().RemoveTower(towerInfo.Id);
+        towerInfo.ChangeState("constructing", 2, pos);
+        //TowerInfo newTower = EntityManager.getInstance().AddTower(2);
+        //newTower.SetPosition(pos.x, pos.y, pos.z);
+        //EntityManager.getInstance().RemoveTower(towerInfo.Id);
         UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
     }
 

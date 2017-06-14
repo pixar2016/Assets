@@ -183,6 +183,7 @@ public class EntityManager {
         {
             effects[key].Update();
         }
+        //如果在Update里增加塔则会出错，所以需要将增加的塔存起来
         foreach (int key in towers.Keys)
         {
             towers[key].Update();

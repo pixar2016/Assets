@@ -57,6 +57,7 @@ public class AttackTowerInfo : TowerInfo
 
     public override void ChangeState(string stateName, params object[] args)
     {
+        Debug.Log(stateName);
         if (stateName == "attack")
         {
             towerStateMachine.ChangeState(towerAtk, args);
