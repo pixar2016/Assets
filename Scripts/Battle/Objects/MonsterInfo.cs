@@ -137,54 +137,39 @@ public class MonsterInfo : CharacterInfo
         return creatureStateMachine.GetCurrentState().ToString();
     }
 
+    public override void StartAttack()
+    {
+        SkillManager.getInstance().StartSkill(attackSkill);
+    }
+
     public override void StartSkill(int skillId)
     {
         
     }
-
-    public override void Run(Vector3 targetPos)
+    //向上走
+    public override void RunUp()
     {
-        Vector3 curPos = this.GetPosition();
-        if (targetPos.y > curPos.y && Mathf.Abs(targetPos.y - curPos.y) > Mathf.Abs(targetPos.x - curPos.x))
-        {
-            SetRotation(0, 0, 0);
-            DoAction("run2");
-        }
-        else if (targetPos.x >= curPos.x)
-        {
-            SetRotation(0, 0, 0);
-            DoAction("run1");
-        }
-        else
-        {
-            SetRotation(0, 180, 0);
-            DoAction("run1");
-        }
+        SetRotation(0, 0, 0);
+        DoAction("run2");
     }
-    ////向上走
-    //public override void RunUp()
-    //{
-    //    SetRotation(0, 0, 0);
-    //    DoAction("run2");
-    //}
-    ////向下走
-    //public override void RunDown()
-    //{
-    //    SetRotation(0, 0, 180);
-    //    DoAction("run2");
-    //}
-    ////向右走
-    //public override void RunRight()
-    //{
-    //    SetRotation(0, 0, 0);
-    //    DoAction("run1");
-    //}
-    ////向左走
-    //public override void RunLeft()
-    //{
-    //    SetRotation(0, 180, 0);
-    //    DoAction("run1");
-    //}
+    //向下走
+    public override void RunDown()
+    {
+        SetRotation(0, 0, 180);
+        DoAction("run2");
+    }
+    //向右走
+    public override void RunRight()
+    {
+        SetRotation(0, 0, 0);
+        DoAction("run1");
+    }
+    //向左走
+    public override void RunLeft()
+    {
+        SetRotation(0, 180, 0);
+        DoAction("run1");
+    }
     public float GetSpeed()
     {
         return 60;

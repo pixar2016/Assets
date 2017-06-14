@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoliderMove : StateBase
 {
     public SoliderInfo soliderInfo;
+    public Vector3 curPos;
     public Vector3 targetPos;
     public float speed;
     public SoliderMove(SoliderInfo _soliderInfo)
@@ -19,9 +20,21 @@ public class SoliderMove : StateBase
 
     public void EnterExcute()
     {
+        curPos = soliderInfo.GetPosition();
         targetPos = soliderInfo.GetAttackMovePos();
         speed = soliderInfo.GetSpeed();
-        soliderInfo.Run(targetPos);
+        if (targetPos.y > curPos.y && Math.Abs(targetPos.y - curPos.y) > Math.Abs(targetPos.x - curPos.x))
+        {
+            soliderInfo.RunUp();
+        }
+        else if (targetPos.x >= curPos.x)
+        {
+            soliderInfo.RunRight();
+        }
+        else
+        {
+            soliderInfo.RunLeft();
+        }
     }
 
     public void Excute()
