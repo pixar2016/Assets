@@ -35,7 +35,7 @@ public class ArrowTowerView : TowerView
         //加载塔身图片
         GameObject towerBaseObj = towerObj.transform.Find("ArrowTowerBase").gameObject;
         Vector3 towerBasePos = towerBaseObj.transform.position;
-        towerBasePos.z += 5f;
+        towerBasePos.z += 1f;
         towerBaseObj.transform.position = towerBasePos;
         if (towerBaseObj.GetComponent<SpriteImage>() != null)
         {
