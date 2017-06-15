@@ -46,12 +46,15 @@ public class CharacterInfo
     public MiniEventDispatcher eventDispatcher;
     //兵种模板
     public CharacterPrototype charProto;
+    //标记 0-正常 1-添加 -1-删除
+    public int dirtySign;
     public CharacterInfo()
     {
         eventDispatcher = new MiniEventDispatcher();
         position = Vector3.zero;
         rotation = Vector3.zero;
         attrList = new Dictionary<int, int>();
+        dirtySign = 0;
     }
 
     public virtual void SetPosition(float x, float y, float z)
@@ -189,6 +192,19 @@ public class CharacterInfo
         else
         {
             attrList.Add(temp, attrNum);
+        }
+    }
+
+    //设置标记，true-添加 false-移除
+    public void SetDirtySign(bool isAdd)
+    {
+        if (isAdd)
+        {
+            dirtySign++;
+        }
+        else
+        {
+            dirtySign--;
         }
     }
 

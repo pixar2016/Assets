@@ -39,7 +39,6 @@ public class SkillInfo
                 return trigger;
             }
         }
-        Debug.Log("AddNewTriggerGroup");
         TriggerGroup trigger1 = TriggerManager.getInstance().AddSkillTrigger(this);
         triggerGroupList.Add(trigger1);
         return trigger1;

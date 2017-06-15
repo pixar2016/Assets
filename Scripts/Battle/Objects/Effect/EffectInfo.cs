@@ -15,12 +15,15 @@ public class EffectInfo
     public Vector3 pos;
     //特效角度
     public Vector3 angle;
+    //标记 0-正常 1-添加 2-删除
+    public int dirtySign;
     
     public EffectInfo(int effectIndexId, int effId)
     {
         Id = effectIndexId;
         effectId = effId;
         effectName = "arrow";
+        dirtySign = 0;
     }
 
     public Vector3 GetPosition()
@@ -47,6 +50,19 @@ public class EffectInfo
     public virtual void Release()
     {
 
+    }
+
+    //设置标记，true-移除 false-添加
+    public void SetDirtySign(bool isDirty)
+    {
+        if (isDirty)
+        {
+            dirtySign--;
+        }
+        else
+        {
+            dirtySign++;
+        }
     }
 }
 

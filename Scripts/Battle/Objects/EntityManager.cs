@@ -24,12 +24,11 @@ public class EntityManager {
     public Dictionary<int, SoliderInfo> soliders;
     public Dictionary<int, EffectInfo> effects;
     public Dictionary<int, TowerInfo> towers;
-    //回收list
-    public List<int> monsterDelList;
-    public List<int> soliderDelList;
-    public List<int> effectDelList;
-    public List<int> bulletDelList;
-    public List<int> towerDelList;
+    //暂时记录增加或者回收的单位
+    public Dictionary<int, MonsterInfo> monsterTempList;
+    public Dictionary<int, SoliderInfo> soliderTempList;
+    public Dictionary<int, EffectInfo> effectTempList;
+    public Dictionary<int, TowerInfo> towerTempList;
     //兵种序列ID
     public int monsterIndexId;
     public int soliderIndexId;
@@ -46,11 +45,10 @@ public class EntityManager {
         effects = new Dictionary<int, EffectInfo>();
         towers = new Dictionary<int, TowerInfo>();
         eventDispatcher = new MiniEventDispatcher();
-        monsterDelList = new List<int>();
-        soliderDelList = new List<int>();
-        effectDelList = new List<int>();
-        bulletDelList = new List<int>();
-        towerDelList = new List<int>();
+        monsterTempList = new Dictionary<int, MonsterInfo>();
+        soliderTempList = new Dictionary<int, SoliderInfo>();
+        effectTempList = new Dictionary<int, EffectInfo>();
+        towerTempList = new Dictionary<int, TowerInfo>();
         monsterIndexId = 0;
         soliderIndexId = 0;
         effectIndexId = 0;
@@ -67,7 +65,10 @@ public class EntityManager {
         }
         CharacterPrototype proto = monsterPrototypes[monsterId];
         MonsterInfo charInfo = proto.CloneMonster(monsterIndexId, pathInfo);
-        monsters.Add(monsterIndexId, charInfo);
+        //monsters.Add(monsterIndexId, charInfo);
+        //标记为“添加”
+        charInfo.SetDirtySign(true);
+        monsterTempList.Add(monsterIndexId, charInfo);
         this.eventDispatcher.Broadcast("AddMonster", charInfo);
         return charInfo;
     }
@@ -81,7 +82,10 @@ public class EntityManager {
         }
         CharacterPrototype proto = soliderPrototypes[soliderId];
         SoliderInfo charInfo = proto.CloneSolider(soliderIndexId);
-        soliders.Add(soliderIndexId, charInfo);
+        //soliders.Add(soliderIndexId, charInfo);
+        //标记为“添加”
+        charInfo.SetDirtySign(true);
+        soliderTempList.Add(soliderIndexId, charInfo);
         this.eventDispatcher.Broadcast("AddSolider", charInfo);
         return charInfo;
     }
@@ -90,7 +94,10 @@ public class EntityManager {
     {
         effectIndexId += 1;
         EffectInfo effectInfo = new StaticEffectInfo(effectIndexId, effectId);      
-        effects.Add(effectIndexId, effectInfo);
+        //effects.Add(effectIndexId, effectInfo);
+        //标记为“添加”
+        effectInfo.SetDirtySign(true);
+        effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
         return effectInfo;
     }
@@ -103,7 +110,10 @@ public class EntityManager {
             effectInfo = new BezierEffectInfo(bulletIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
         else
             effectInfo = new StraightEffectInfo(bulletIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
-        effects.Add(effectIndexId, effectInfo);
+        //effects.Add(effectIndexId, effectInfo);
+        //标记为“添加”
+        effectInfo.SetDirtySign(true);
+        effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
         return effectInfo;
     }
@@ -117,7 +127,10 @@ public class EntityManager {
         }
         CharacterPrototype proto = towerPrototypes[towerId];
         TowerInfo towerInfo = proto.CloneTower(towerIndexId);
-        towers.Add(towerIndexId, towerInfo);
+        //towers.Add(towerIndexId, towerInfo);
+        //标记为“添加”
+        towerInfo.SetDirtySign(true);
+        towerTempList.Add(towerIndexId, towerInfo);
         this.eventDispatcher.Broadcast("AddTower", towerInfo);
         return towerInfo;
     }
@@ -127,7 +140,16 @@ public class EntityManager {
         {
             if (towers[key].Id == towerId)
             {
-                towerDelList.Add(key);
+                //towerDelList.Add(key);
+                if (towerTempList.ContainsKey(key))
+                {
+                    towerTempList[key].SetDirtySign(false);
+                }
+                else
+                {
+                    towerTempList.Add(key, towers[key]);
+                    towers[key].SetDirtySign(false);
+                }
                 this.eventDispatcher.Broadcast("RemoveTower", towerId);
             }
         }
@@ -139,7 +161,15 @@ public class EntityManager {
         {
             if (monsters[key].Id == monsterId)
             {
-                monsterDelList.Add(key);
+                if (monsterTempList.ContainsKey(key))
+                {
+                    monsterTempList[key].SetDirtySign(false);
+                }
+                else
+                {
+                    monsterTempList.Add(key, monsters[key]);
+                    monsters[key].SetDirtySign(false);
+                }
                 this.eventDispatcher.Broadcast("RemoveMonster", monsterId);
             }
         }
@@ -151,7 +181,15 @@ public class EntityManager {
         {
             if (soliders[key].Id == soliderId)
             {
-                soliderDelList.Add(key);
+                if (soliderTempList.ContainsKey(key))
+                {
+                    soliderTempList[key].SetDirtySign(false);
+                }
+                else
+                {
+                    soliderTempList.Add(key, soliders[key]);
+                    soliders[key].SetDirtySign(false);
+                }
                 this.eventDispatcher.Broadcast("RemoveSolider", soliderId);
             }
         }
@@ -163,7 +201,15 @@ public class EntityManager {
         {
             if (effects[key].Id == effectId)
             {
-                effectDelList.Add(key);
+                if (effectTempList.ContainsKey(key))
+                {
+                    effectTempList[key].SetDirtySign(false);
+                }
+                else
+                {
+                    effectTempList.Add(key, effects[key]);
+                    effects[key].SetDirtySign(false);
+                }
                 this.eventDispatcher.Broadcast("RemoveEffect", effectId);
             }
         }
@@ -187,42 +233,78 @@ public class EntityManager {
         {
             towers[key].Update();
         }
-        CollectDelInfo();
+        CollectDirtyUnit();
     }
-    //回收要删除的实体
-    public void CollectDelInfo()
+    //处理带有脏标记的单位
+    public void CollectDirtyUnit()
     {
-        if (monsterDelList.Count > 0)
+        if (monsterTempList.Count > 0)
         {
-            foreach (int indexId in monsterDelList)
+            foreach (int key in monsterTempList.Keys)
             {
-                monsters.Remove(indexId);
+                MonsterInfo monster = monsterTempList[key];
+                if (monster.dirtySign > 0)
+                {
+                    monsters.Add(key, monster);
+                }
+                else if (monster.dirtySign < 0)
+                {
+                    monsters.Remove(key);
+                }
+                monster.dirtySign = 0;
             }
-            monsterDelList.Clear();
+            monsterTempList.Clear();
         }
-        if (soliderDelList.Count > 0)
+        if (soliderTempList.Count > 0)
         {
-            foreach (int indexId in soliderDelList)
+            foreach (int key in soliderTempList.Keys)
             {
-                soliders.Remove(indexId);
+                SoliderInfo solider = soliderTempList[key];
+                if (solider.dirtySign > 0)
+                {
+                    soliders.Add(key, solider);
+                }
+                else if (solider.dirtySign < 0)
+                {
+                    soliders.Remove(key);
+                }
+                solider.dirtySign = 0;
             }
-            soliderDelList.Clear();
+            soliderTempList.Clear();
         }
-        if (effectDelList.Count > 0)
+        if (effectTempList.Count > 0)
         {
-            foreach (int indexId in effectDelList)
+            foreach (int key in effectTempList.Keys)
             {
-                effects.Remove(indexId);
+                EffectInfo effect = effectTempList[key];
+                if (effect.dirtySign > 0)
+                {
+                    effects.Add(key, effect);
+                }
+                else if (effect.dirtySign < 0)
+                {
+                    effects.Remove(key);
+                }
+                effect.dirtySign = 0;
             }
-            effectDelList.Clear();
+            effectTempList.Clear();
         }
-        if (towerDelList.Count > 0)
+        if (towerTempList.Count > 0)
         {
-            foreach (int indexId in towerDelList)
+            foreach (int key in towerTempList.Keys)
             {
-                towers.Remove(indexId);
+                TowerInfo tower = towerTempList[key];
+                if (tower.dirtySign > 0)
+                {
+                    towers.Add(key, tower);
+                }
+                else if (tower.dirtySign < 0)
+                {
+                    towers.Remove(key);
+                }
+                tower.dirtySign = 0;
             }
-            towerDelList.Clear();
+            towerTempList.Clear();
         }
     }
 

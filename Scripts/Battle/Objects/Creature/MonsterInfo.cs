@@ -196,7 +196,6 @@ public class MonsterInfo : CharacterInfo
             SetRotation(0, 180, 0);
             DoAction("run1");
         }
-        Debug.Log("RunAction");
     }
 
     public override void StartAttack()

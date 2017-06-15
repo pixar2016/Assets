@@ -30,9 +30,12 @@ public class OpenSpaceConstructing : StateBase
     public void Excute()
     {
         curTime += Time.deltaTime;
-        if (curTime > 0.1f)
+        if (curTime > 1f)
         {
-            EntityManager.getInstance().AddTower(changeTowerId);
+            TowerInfo changeTower = EntityManager.getInstance().AddTower(changeTowerId);
+            Vector3 pos = openSpaceInfo.GetPosition();
+            changeTower.SetPosition(pos.x, pos.y, pos.z);
+            changeTower.ChangeState("idle");
             EntityManager.getInstance().RemoveTower(openSpaceInfo.Id);
         }
     }

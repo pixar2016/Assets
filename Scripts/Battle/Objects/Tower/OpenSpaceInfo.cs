@@ -31,5 +31,10 @@ public class OpenSpaceInfo : TowerInfo
             stateMachine.ChangeState(openSpaceConstructing, args);
         }
     }
+
+    public override void Update()
+    {
+        stateMachine.Excute();
+    }
 }
 
