@@ -178,49 +178,43 @@ public class MonsterInfo : CharacterInfo
         return creatureStateMachine.GetCurrentState().ToString();
     }
 
+<<<<<<< HEAD:Scripts/Battle/Objects/Creature/MonsterInfo.cs
     public override void Run(Vector3 targetPos)
+=======
+    public override void StartAttack()
     {
-        Vector3 curPos = this.GetPosition();
-        if (targetPos.y > curPos.y && Mathf.Abs(targetPos.y - curPos.y) > Mathf.Abs(targetPos.x - curPos.x))
-        {
-            SetRotation(0, 0, 0);
-            DoAction("run2");
-        }
-        else if (targetPos.x >= curPos.x)
-        {
-            SetRotation(0, 0, 0);
-            DoAction("run1");
-        }
-        else
-        {
-            SetRotation(0, 180, 0);
-            DoAction("run1");
-        }
+        SkillManager.getInstance().StartSkill(attackSkill);
     }
-    ////向上走
-    //public override void RunUp()
-    //{
-    //    SetRotation(0, 0, 0);
-    //    DoAction("run2");
-    //}
-    ////向下走
-    //public override void RunDown()
-    //{
-    //    SetRotation(0, 0, 180);
-    //    DoAction("run2");
-    //}
-    ////向右走
-    //public override void RunRight()
-    //{
-    //    SetRotation(0, 0, 0);
-    //    DoAction("run1");
-    //}
-    ////向左走
-    //public override void RunLeft()
-    //{
-    //    SetRotation(0, 180, 0);
-    //    DoAction("run1");
-    //}
+
+    public override void StartSkill(int skillId)
+    {
+        
+    }
+    //向上走
+    public override void RunUp()
+>>>>>>> origin/master:Scripts/Battle/Objects/MonsterInfo.cs
+    {
+        SetRotation(0, 0, 0);
+        DoAction("run2");
+    }
+    //向下走
+    public override void RunDown()
+    {
+        SetRotation(0, 0, 180);
+        DoAction("run2");
+    }
+    //向右走
+    public override void RunRight()
+    {
+        SetRotation(0, 0, 0);
+        DoAction("run1");
+    }
+    //向左走
+    public override void RunLeft()
+    {
+        SetRotation(0, 180, 0);
+        DoAction("run1");
+    }
     public float GetSpeed()
     {
         return GetFinalAttr(CharAttr.Speed);

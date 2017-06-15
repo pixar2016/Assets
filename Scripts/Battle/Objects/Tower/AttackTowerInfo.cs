@@ -55,6 +55,50 @@ public class AttackTowerInfo : TowerInfo
         return attackCharInfo;
     }
 
+<<<<<<< HEAD
+=======
+    public override void StartAttack()
+    {
+        SkillManager.getInstance().StartSkill(attackSkill);
+    }
+
+    public override void StartSkill(int skillId)
+    {
+
+    }
+
+    public CharacterInfo RunAI()
+    {
+        return FindMonster();
+    }
+
+    MonsterInfo FindMonster()
+    {
+        List<MonsterInfo> monsterList = EntityManager.getInstance().GetMonsterInfo();
+        foreach (MonsterInfo monster in monsterList)
+        {
+            if (Vector3.Distance(this.GetPosition(), monster.GetPosition()) <= 100)
+            {
+                return monster;
+            } 
+        }
+        return null;
+    }
+
+    //是否在攻击范围内
+    public bool WithinRange(CharacterInfo target)
+    {
+        if (Vector3.Distance(this.GetPosition(), target.GetPosition()) <= 100)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+>>>>>>> origin/master
     public override void ChangeState(string stateName, params object[] args)
     {
         Debug.Log(stateName);

@@ -22,8 +22,13 @@ public class CreatureAtk : StateBase
     public void EnterExcute()
     {
         //Debug.Log("CreatureAtk EnterExcute");
+<<<<<<< HEAD
         monsterInfo.StartSkill(monsterInfo.attackSkill);
         attackTime = monsterInfo.GetFinalAttr(CharAttr.AttackTime);
+=======
+        monsterInfo.StartAttack();
+        attackTime = monsterInfo.attackTime;
+>>>>>>> origin/master
         curTime = 0;
     }
 

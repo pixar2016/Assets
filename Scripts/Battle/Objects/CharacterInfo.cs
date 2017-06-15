@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 //using EventDispatcherSpace;
 
+<<<<<<< HEAD
 public enum CharAttr
 {
     //血量
@@ -31,6 +31,8 @@ public enum CharAttr
     SpeedPer
 }
 
+=======
+>>>>>>> origin/master
 public class CharacterInfo
 {
     //序列ID
@@ -40,6 +42,7 @@ public class CharacterInfo
     public Vector3 position;
     public Vector3 rotation;
     public string actionName;
+<<<<<<< HEAD
     //key-CharAttr value-attrValue
     public Dictionary<int, int> attrList;
     //用于广播事件
@@ -52,13 +55,25 @@ public class CharacterInfo
         position = Vector3.zero;
         rotation = Vector3.zero;
         attrList = new Dictionary<int, int>();
+=======
+
+    //攻击间隔，兵营为出兵间隔
+    public float attackTime;
+    //用于广播事件
+    public MiniEventDispatcher eventDispatcher;
+    
+
+    public CharacterInfo()
+    {
+        eventDispatcher = new MiniEventDispatcher();
+        position = new Vector3(0, 0, 0);
+        rotation = new Vector3(0, 0, 0);
+>>>>>>> origin/master
     }
 
     public virtual void SetPosition(float x, float y, float z)
     {
-        position.x = x;
-        position.y = y;
-        position.z = z;
+        position = new Vector3(x, y, z);
     }
 
     public void SetPosition(Vector3 _pos)
@@ -73,9 +88,7 @@ public class CharacterInfo
 
     public void SetRotation(float x, float y, float z)
     {
-        rotation.x = x;
-        rotation.y = y;
-        rotation.z = z;
+        rotation = new Vector3(x, y, z);
     }
 
     public Vector3 GetRotation()
@@ -116,28 +129,28 @@ public class CharacterInfo
         return null;
     }
 
+<<<<<<< HEAD
     //开始一个技能
     public void StartSkill(SkillInfo skillInfo)
+=======
+    //开始普通攻击
+    public virtual void StartAttack()
+>>>>>>> origin/master
     {
-        SkillManager.getInstance().StartSkill(skillInfo);
+
     }
 
+<<<<<<< HEAD
     public virtual void Run(Vector3 targetPos)
-    {
-        Vector3 curPos = this.GetPosition();
-        if (targetPos.y > curPos.y && Mathf.Abs(targetPos.y - curPos.y) > Mathf.Abs(targetPos.x - curPos.x))
-        {
-            DoAction("run1");
-        }
-        else if (targetPos.x >= curPos.x)
-        {
-            DoAction("run1");
-        }
-        else
-        {
-            DoAction("run1");
-        }
+=======
     }
+    //向上走
+    public virtual void RunUp()
+>>>>>>> origin/master
+    {
+        DoAction("run1");
+    }
+<<<<<<< HEAD
 
     //得到某一个属性基础值
     public virtual int GetAttr(CharAttr attrName)
@@ -154,6 +167,29 @@ public class CharacterInfo
     }
     //得到某一个属性的最终值
     public virtual int GetFinalAttr(CharAttr attrName)
+=======
+    //向下走
+    public virtual void RunDown()
+    {
+        DoAction("run1");
+    }
+    //向右走
+    public virtual void RunRight()
+    {
+        DoAction("run1");
+    }
+    //向左走
+    public virtual void RunLeft()
+    {
+        DoAction("run1");
+    }
+    //对目标造成普通攻击伤害
+    public virtual void Hurt()
+    {
+    }
+
+    public virtual void ReduceHP(int losehp)
+>>>>>>> origin/master
     {
         switch (attrName)
         {
