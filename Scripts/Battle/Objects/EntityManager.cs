@@ -67,7 +67,7 @@ public class EntityManager {
         MonsterInfo charInfo = proto.CloneMonster(monsterIndexId, pathInfo);
         //monsters.Add(monsterIndexId, charInfo);
         //标记为“添加”
-        charInfo.SetDirtySign(true);
+        charInfo.SetDirtySign(false);
         monsterTempList.Add(monsterIndexId, charInfo);
         this.eventDispatcher.Broadcast("AddMonster", charInfo);
         return charInfo;
@@ -84,7 +84,7 @@ public class EntityManager {
         SoliderInfo charInfo = proto.CloneSolider(soliderIndexId);
         //soliders.Add(soliderIndexId, charInfo);
         //标记为“添加”
-        charInfo.SetDirtySign(true);
+        charInfo.SetDirtySign(false);
         soliderTempList.Add(soliderIndexId, charInfo);
         this.eventDispatcher.Broadcast("AddSolider", charInfo);
         return charInfo;
@@ -96,7 +96,7 @@ public class EntityManager {
         EffectInfo effectInfo = new StaticEffectInfo(effectIndexId, effectId);      
         //effects.Add(effectIndexId, effectInfo);
         //标记为“添加”
-        effectInfo.SetDirtySign(true);
+        effectInfo.SetDirtySign(false);
         effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
         return effectInfo;
@@ -112,7 +112,7 @@ public class EntityManager {
             effectInfo = new StraightEffectInfo(bulletIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
         //effects.Add(effectIndexId, effectInfo);
         //标记为“添加”
-        effectInfo.SetDirtySign(true);
+        effectInfo.SetDirtySign(false);
         effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
         return effectInfo;
@@ -129,7 +129,7 @@ public class EntityManager {
         TowerInfo towerInfo = proto.CloneTower(towerIndexId);
         //towers.Add(towerIndexId, towerInfo);
         //标记为“添加”
-        towerInfo.SetDirtySign(true);
+        towerInfo.SetDirtySign(false);
         towerTempList.Add(towerIndexId, towerInfo);
         this.eventDispatcher.Broadcast("AddTower", towerInfo);
         return towerInfo;
@@ -143,12 +143,12 @@ public class EntityManager {
                 //towerDelList.Add(key);
                 if (towerTempList.ContainsKey(key))
                 {
-                    towerTempList[key].SetDirtySign(false);
+                    towerTempList[key].SetDirtySign(true);
                 }
                 else
                 {
                     towerTempList.Add(key, towers[key]);
-                    towers[key].SetDirtySign(false);
+                    towers[key].SetDirtySign(true);
                 }
                 this.eventDispatcher.Broadcast("RemoveTower", towerId);
             }
@@ -163,12 +163,12 @@ public class EntityManager {
             {
                 if (monsterTempList.ContainsKey(key))
                 {
-                    monsterTempList[key].SetDirtySign(false);
+                    monsterTempList[key].SetDirtySign(true);
                 }
                 else
                 {
                     monsterTempList.Add(key, monsters[key]);
-                    monsters[key].SetDirtySign(false);
+                    monsters[key].SetDirtySign(true);
                 }
                 this.eventDispatcher.Broadcast("RemoveMonster", monsterId);
             }
@@ -183,12 +183,12 @@ public class EntityManager {
             {
                 if (soliderTempList.ContainsKey(key))
                 {
-                    soliderTempList[key].SetDirtySign(false);
+                    soliderTempList[key].SetDirtySign(true);
                 }
                 else
                 {
                     soliderTempList.Add(key, soliders[key]);
-                    soliders[key].SetDirtySign(false);
+                    soliders[key].SetDirtySign(true);
                 }
                 this.eventDispatcher.Broadcast("RemoveSolider", soliderId);
             }
@@ -203,12 +203,12 @@ public class EntityManager {
             {
                 if (effectTempList.ContainsKey(key))
                 {
-                    effectTempList[key].SetDirtySign(false);
+                    effectTempList[key].SetDirtySign(true);
                 }
                 else
                 {
                     effectTempList.Add(key, effects[key]);
-                    effects[key].SetDirtySign(false);
+                    effects[key].SetDirtySign(true);
                 }
                 this.eventDispatcher.Broadcast("RemoveEffect", effectId);
             }

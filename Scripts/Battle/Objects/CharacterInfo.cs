@@ -195,16 +195,16 @@ public class CharacterInfo
         }
     }
 
-    //设置标记，true-添加 false-移除
-    public void SetDirtySign(bool isAdd)
+    //设置标记，false-添加 true-移除
+    public void SetDirtySign(bool isDirty)
     {
-        if (isAdd)
+        if (isDirty)
         {
-            dirtySign++;
+            dirtySign--;
         }
         else
         {
-            dirtySign--;
+            dirtySign++;
         }
     }
 
