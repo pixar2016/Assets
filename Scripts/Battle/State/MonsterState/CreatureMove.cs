@@ -26,22 +26,7 @@ public class CreatureMove : StateBase
         curPos = monsterInfo.GetPosition();
         targetPos = monsterInfo.GetNextPoint();
         speed = monsterInfo.GetSpeed();
-<<<<<<< HEAD
         monsterInfo.Run(targetPos);
-=======
-        if (targetPos.y > curPos.y && Math.Abs(targetPos.y - curPos.y) > Math.Abs(targetPos.x - curPos.x))
-        {
-            monsterInfo.RunUp();
-        }
-        else if (targetPos.x >= curPos.x)
-        {
-            monsterInfo.RunRight();
-        }
-        else
-        {
-            monsterInfo.RunLeft();
-        }
->>>>>>> origin/master
     }
 
     public void Excute()

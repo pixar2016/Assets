@@ -201,7 +201,6 @@ public class SoliderInfo : CharacterInfo
         }
     }
 
-<<<<<<< HEAD:Scripts/Battle/Objects/Creature/SoliderInfo.cs
     public override void Run(Vector3 targetPos)
     {
         Vector3 curPos = this.GetPosition();
@@ -223,58 +222,11 @@ public class SoliderInfo : CharacterInfo
         Debug.Log("RunAction");
     }
 
-=======
     public override void StartAttack()
     {
         SkillManager.getInstance().StartSkill(attackSkill);
     }
 
-    public override void StartSkill(int skillId)
-    {
-
-    }
-
-    //对目标造成普通攻击伤害
-    public override void Hurt()
-    {
-        if (attackCharInfo != null)
-        {
-            attackCharInfo.ReduceHP(attackDamage);
-        }
-    }
-
-    public override void ReduceHP(int losehp)
-    {
-        //Debug.Log("losehp = "+losehp);
-        hp -= losehp;
-        //Debug.Log(this.charName + " hp = " + hp);
-    }
-
-    //向上走
-    public override void RunUp()
-    {
-        SetRotation(0, 0, 0);
-        DoAction("run1");
-    }
-    //向下走
-    public override void RunDown()
-    {
-        SetRotation(0, 0, 180);
-        DoAction("run1");
-    }
-    //向右走
-    public override void RunRight()
-    {
-        SetRotation(0, 0, 0);
-        DoAction("run1");
-    }
-    //向左走
-    public override void RunLeft()
-    {
-        SetRotation(0, 180, 0);
-        DoAction("run1");
-    }
->>>>>>> origin/master:Scripts/Battle/Objects/SoliderInfo.cs
     public float GetSpeed()
     {
         //return GetAttr(CharAttr.Speed) * (1 + GetAttr(CharAttr.SpeedPer));

@@ -20,14 +20,10 @@ public class TowerAtk : StateBase
 
     public void EnterExcute()
     {
-<<<<<<< HEAD
         //Debug.Log("TowerAtk");
         towerInfo.StartSkill(towerInfo.attackSkill);
         attackTime = 1;//towerInfo.attackTime;
-=======
         towerInfo.StartAttack();
-        attackTime = towerInfo.attackTime;
->>>>>>> origin/master
         curTime = 0;
     }
 

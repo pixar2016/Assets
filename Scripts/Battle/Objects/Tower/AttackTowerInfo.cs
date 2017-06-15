@@ -23,16 +23,6 @@ public class AttackTowerInfo : TowerInfo
         towerIdle = new TowerIdle(this);
 
         attackSkill = SkillManager.getInstance().AddSkill(2, this);
-        //若有弓手，攻击时长为弓手攻击动作
-        //if (this.shooter != null)
-        //{
-        //    attackTime = AnimationCache.getInstance().getAnimation(this.shooter).getMeshAnimation("attack").getAnimTime();
-        //}
-        //若没有弓手，攻击时长为塔身攻击动作
-        //else
-        //{
-        //    attackTime = AnimationCache.getInstance().getAnimation(this.towerBase).getMeshAnimation("attack").getAnimTime();
-        //}
     }
 
     public AttackTowerInfo(int indexId, CharacterPrototype proto)
@@ -55,21 +45,9 @@ public class AttackTowerInfo : TowerInfo
         return attackCharInfo;
     }
 
-<<<<<<< HEAD
-=======
     public override void StartAttack()
     {
         SkillManager.getInstance().StartSkill(attackSkill);
-    }
-
-    public override void StartSkill(int skillId)
-    {
-
-    }
-
-    public CharacterInfo RunAI()
-    {
-        return FindMonster();
     }
 
     MonsterInfo FindMonster()
@@ -98,7 +76,6 @@ public class AttackTowerInfo : TowerInfo
         }
     }
 
->>>>>>> origin/master
     public override void ChangeState(string stateName, params object[] args)
     {
         if (stateName == "attack")

@@ -23,18 +23,7 @@ public class SoliderReady : StateBase
         curPos = soliderInfo.GetPosition();
         targetPos = soliderInfo.GetBarrackPos();
         speed = soliderInfo.GetSpeed();
-        if (targetPos.y > curPos.y && Math.Abs(targetPos.y - curPos.y) > Math.Abs(targetPos.x - curPos.x))
-        {
-            soliderInfo.RunUp();
-        }
-        else if (targetPos.x >= curPos.x)
-        {
-            soliderInfo.RunRight();
-        }
-        else
-        {
-            soliderInfo.RunLeft();
-        }
+        soliderInfo.Run(targetPos);
     }
 
     public void Excute()
