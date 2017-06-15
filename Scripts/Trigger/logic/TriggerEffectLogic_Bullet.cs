@@ -21,6 +21,7 @@ public class TriggerEffectLogic_Bullet : TriggerEffectBase
         int pathType = int.Parse(effectInfo.paramList[1]);
         float speed = float.Parse(effectInfo.paramList[2]);
         //EntityManager.getInstance().AddBullet(1, charInfo, targetInfo, 200f, triggerInfo.triggerGroup.Id);
+        Debug.Log("AddBullet");
         EntityManager.getInstance().AddMoveEffect(effectId, charInfo, targetInfo, speed, pathType, triggerInfo.triggerGroup.Id);
     }
 }

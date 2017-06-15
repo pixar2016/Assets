@@ -113,6 +113,7 @@ public class EntityManager {
         //effects.Add(effectIndexId, effectInfo);
         //标记为“添加”
         effectInfo.SetDirtySign(false);
+        Debug.Log("AddMoveEffect");
         effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
         return effectInfo;
@@ -210,6 +211,7 @@ public class EntityManager {
                     effectTempList.Add(key, effects[key]);
                     effects[key].SetDirtySign(true);
                 }
+                Debug.Log("RemoveEffect");
                 this.eventDispatcher.Broadcast("RemoveEffect", effectId);
             }
         }
