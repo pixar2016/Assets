@@ -7,13 +7,13 @@
   },
   {
     "id": 2.0,
-    "name": "远程普通攻击",
+    "name": "远程直线射击",
     "triggerId": 2.0,
     "": null
   },
   {
     "id": 3.0,
-    "name": "弓箭伤害",
+    "name": "远程曲线射击",
     "triggerId": 3.0,
     "": null
   }

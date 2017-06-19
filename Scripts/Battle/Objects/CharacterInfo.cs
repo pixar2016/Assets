@@ -145,7 +145,7 @@ public class CharacterInfo
     {
     }
     //得到某一个属性的最终值
-    public virtual int GetFinalAttr(CharAttr attrName)
+    public virtual float GetFinalAttr(CharAttr attrName)
     {
         switch (attrName)
         {
@@ -154,7 +154,8 @@ public class CharacterInfo
             case CharAttr.HpMax:
                 return GetAttr(CharAttr.HpMax) * (1 + GetAttr(CharAttr.HpMaxPer));
             case CharAttr.AttackTime:
-                return 1 / (GetAttr(CharAttr.AttackSpeed) * (1 + GetAttr(CharAttr.AttackSpeedPer)));
+                int attackSpeed = GetAttr(CharAttr.AttackSpeed);
+                return (attackSpeed == 0) ? 0 : (1.0f / attackSpeed * (1 + GetAttr(CharAttr.AttackSpeedPer)));
             case CharAttr.AttackSpeed:
                 return GetAttr(CharAttr.AttackSpeed) * (1 + GetAttr(CharAttr.AttackSpeedPer));
             case CharAttr.AttackDamage:

@@ -10,7 +10,7 @@ public class TriggerEffectLogic_Hurt : TriggerEffectBase
     }
     public override void ExcuteAction(TriggerInfo triggerInfo, TriggerEffectInfo effectInfo)
     {
-        //Debug.Log("TriggerGroupId = " + triggerInfo.triggerGroup.Id + "TriggerEffectLogic_Hurt");
+        Debug.Log("TriggerGroupId = " + triggerInfo.triggerGroup.Id + "TriggerEffectLogic_Hurt");
         CharacterInfo charInfo = triggerInfo.charInfo;
         if (!charInfo.IsDead())
         {
@@ -20,6 +20,10 @@ public class TriggerEffectLogic_Hurt : TriggerEffectBase
                 //Debug.Log("骑士正在掉血" + targetInfo.GetAttr(CharAttr.Hp));
             }
             BattleUtils.CalcAtkDamage(charInfo, targetInfo);
+            if (targetInfo.IsDead())
+            {
+                targetInfo.ChangeState("die");
+            }
         }
         //Debug.Log(charInfo);
         //Debug.Log(charInfo.GetAttackInfo());

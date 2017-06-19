@@ -26,6 +26,12 @@ public class TowerIdle : StateBase
     {
         //Debug.Log("TowerIdle");
         towerInfo.DoAction("idle");
+        CharacterInfo targetInfo = RunAI(towerInfo);
+        if (targetInfo != null)
+        {
+            towerInfo.SetTargetInfo(targetInfo);
+            towerInfo.ChangeState("attack", targetInfo);
+        }
     }
 
     public void Attack()

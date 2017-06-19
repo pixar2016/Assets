@@ -16,6 +16,8 @@ public class D_Creature
 	public int _attackDamage;
 	public int _defenceType;
 	public int _attackRange;
+	public int _attackId;
+	public int _speed;
 	public string _description;
 	public int _skill1;
 	public int _skill2;
@@ -69,6 +71,12 @@ public class J_Creature
 			}
 			if(jsonObject["attackRange"] != null){
 				info._attackRange = int.Parse(jsonObject["attackRange"].ToString());
+			}
+			if(jsonObject["attackId"] != null){
+				info._attackId = int.Parse(jsonObject["attackId"].ToString());
+			}
+			if(jsonObject["speed"] != null){
+				info._speed = int.Parse(jsonObject["speed"].ToString());
 			}
 			if(jsonObject["description"] != null){
 				info._description = jsonObject["description"].ToString();

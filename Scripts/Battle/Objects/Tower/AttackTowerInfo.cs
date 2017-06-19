@@ -22,7 +22,7 @@ public class AttackTowerInfo : TowerInfo
         towerAtk = new TowerAtk(this);
         towerIdle = new TowerIdle(this);
 
-        attackSkill = SkillManager.getInstance().AddSkill(2, this);
+        attackSkill = SkillManager.getInstance().AddSkill(this.towerData._attackId, this);
     }
 
     public AttackTowerInfo(int indexId, CharacterPrototype proto)
@@ -32,7 +32,7 @@ public class AttackTowerInfo : TowerInfo
         towerAtk = new TowerAtk(this);
         towerIdle = new TowerIdle(this);
 
-        attackSkill = SkillManager.getInstance().AddSkill(2, this);
+        attackSkill = SkillManager.getInstance().AddSkill(this.towerData._attackId, this);
     }
 
     public override void SetTargetInfo(CharacterInfo charInfo)

@@ -10,14 +10,15 @@
     "soliderId": null,
     "level": 1.0,
     "attackSpeed": 2.0,
-    "attackDamage": 2.0,
+    "attackDamage": 10.0,
     "attackRange": 1.0,
     "description": "一级箭塔",
-    "attackId": 1.0,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 2.0,
@@ -30,14 +31,15 @@
     "soliderId": null,
     "level": 2.0,
     "attackSpeed": 2.0,
-    "attackDamage": 2.0,
+    "attackDamage": 20.0,
     "attackRange": 1.0,
     "description": "二级箭塔",
-    "attackId": 1.0,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 3.0,
@@ -50,14 +52,15 @@
     "soliderId": null,
     "level": 3.0,
     "attackSpeed": 2.0,
-    "attackDamage": 2.0,
+    "attackDamage": 30.0,
     "attackRange": 1.0,
     "description": "三级箭塔",
-    "attackId": 1.0,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 4.0,
@@ -70,14 +73,15 @@
     "soliderId": null,
     "level": 4.0,
     "attackSpeed": 2.0,
-    "attackDamage": 2.0,
+    "attackDamage": 35.0,
     "attackRange": 1.0,
     "description": "精灵箭塔",
-    "attackId": 1.0,
+    "attackId": 2.0,
     "skill1": 5.0,
     "skill2": 7.0,
     "skill3": 9.0,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 5.0,
@@ -90,14 +94,15 @@
     "soliderId": null,
     "level": 5.0,
     "attackSpeed": 2.0,
-    "attackDamage": 2.0,
+    "attackDamage": 60.0,
     "attackRange": 1.0,
     "description": "矮人炮塔",
-    "attackId": 1.0,
+    "attackId": 2.0,
     "skill1": 6.0,
     "skill2": 8.0,
     "skill3": 10.0,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 6.0,
@@ -109,15 +114,16 @@
     "bullet": null,
     "soliderId": null,
     "level": 1.0,
-    "attackSpeed": null,
+    "attackSpeed": 2.0,
     "attackDamage": null,
     "attackRange": null,
     "description": null,
-    "attackId": null,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 7.0,
@@ -129,15 +135,16 @@
     "bullet": null,
     "soliderId": null,
     "level": 2.0,
-    "attackSpeed": null,
+    "attackSpeed": 2.0,
     "attackDamage": null,
     "attackRange": null,
     "description": null,
-    "attackId": null,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 8.0,
@@ -149,15 +156,16 @@
     "bullet": null,
     "soliderId": null,
     "level": 3.0,
-    "attackSpeed": null,
+    "attackSpeed": 2.0,
     "attackDamage": null,
     "attackRange": null,
     "description": null,
-    "attackId": null,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 9.0,
@@ -169,15 +177,16 @@
     "bullet": null,
     "soliderId": null,
     "level": 4.0,
-    "attackSpeed": null,
+    "attackSpeed": 2.0,
     "attackDamage": null,
     "attackRange": null,
     "description": null,
-    "attackId": null,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 10.0,
@@ -189,15 +198,16 @@
     "bullet": null,
     "soliderId": null,
     "level": 5.0,
-    "attackSpeed": null,
+    "attackSpeed": 2.0,
     "attackDamage": null,
     "attackRange": null,
     "description": null,
-    "attackId": null,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 11.0,
@@ -209,15 +219,16 @@
     "bullet": null,
     "soliderId": null,
     "level": 1.0,
-    "attackSpeed": null,
+    "attackSpeed": 2.0,
     "attackDamage": null,
     "attackRange": null,
     "description": null,
-    "attackId": null,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 12.0,
@@ -229,15 +240,16 @@
     "bullet": null,
     "soliderId": null,
     "level": 2.0,
-    "attackSpeed": null,
+    "attackSpeed": 2.0,
     "attackDamage": null,
     "attackRange": null,
     "description": null,
-    "attackId": null,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 13.0,
@@ -249,15 +261,16 @@
     "bullet": null,
     "soliderId": null,
     "level": 3.0,
-    "attackSpeed": null,
+    "attackSpeed": 2.0,
     "attackDamage": null,
     "attackRange": null,
     "description": null,
-    "attackId": null,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 14.0,
@@ -269,15 +282,16 @@
     "bullet": null,
     "soliderId": null,
     "level": 4.0,
-    "attackSpeed": null,
+    "attackSpeed": 2.0,
     "attackDamage": null,
     "attackRange": null,
     "description": null,
-    "attackId": null,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 15.0,
@@ -289,15 +303,16 @@
     "bullet": null,
     "soliderId": null,
     "level": 5.0,
-    "attackSpeed": null,
+    "attackSpeed": 2.0,
     "attackDamage": null,
     "attackRange": null,
     "description": null,
-    "attackId": null,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 16.0,
@@ -309,15 +324,16 @@
     "bullet": null,
     "soliderId": 50001.0,
     "level": 1.0,
-    "attackSpeed": null,
+    "attackSpeed": 2.0,
     "attackDamage": null,
     "attackRange": null,
     "description": null,
-    "attackId": null,
+    "attackId": 2.0,
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   },
   {
     "id": 100.0,
@@ -337,6 +353,7 @@
     "skill1": null,
     "skill2": null,
     "skill3": null,
-    "skill4": null
+    "skill4": null,
+    "": null
   }
 ]

@@ -107,13 +107,12 @@ public class EntityManager {
         effectIndexId += 1;
         EffectInfo effectInfo;
         if (pathType == 2)
-            effectInfo = new BezierEffectInfo(bulletIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
+            effectInfo = new BezierEffectInfo(effectIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
         else
-            effectInfo = new StraightEffectInfo(bulletIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
+            effectInfo = new StraightEffectInfo(effectIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
         //effects.Add(effectIndexId, effectInfo);
         //标记为“添加”
         effectInfo.SetDirtySign(false);
-        Debug.Log("AddMoveEffect");
         effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
         return effectInfo;
@@ -157,7 +156,6 @@ public class EntityManager {
     }
     public void RemoveMonster(int monsterId)
     {
-        Debug.Log("RemoveMonster!");
         foreach (int key in monsters.Keys)
         {
             if (monsters[key].Id == monsterId)
@@ -211,7 +209,7 @@ public class EntityManager {
                     effectTempList.Add(key, effects[key]);
                     effects[key].SetDirtySign(true);
                 }
-                Debug.Log("RemoveEffect");
+                
                 this.eventDispatcher.Broadcast("RemoveEffect", effectId);
             }
         }
