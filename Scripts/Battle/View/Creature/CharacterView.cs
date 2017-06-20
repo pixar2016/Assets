@@ -24,6 +24,7 @@ public class CharacterView {
     {
         charAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/fly.prefab");
         charObj = charAsset.GameObjectAsset;
+        charObj.name = charInfo.charName;
         if (charObj.GetComponent<Animate>() != null)
         {
             charAnim = charObj.GetComponent<Animate>();
