@@ -23,6 +23,8 @@ public class SoliderReady : StateBase
         curPos = soliderInfo.GetPosition();
         targetPos = soliderInfo.GetBarrackPos();
         speed = soliderInfo.GetSpeed();
+        //Debug.Log(curPos);
+        //Debug.Log(targetPos);
         soliderInfo.Run(targetPos);
     }
 
@@ -30,14 +32,14 @@ public class SoliderReady : StateBase
     {
         Vector3 pos = soliderInfo.GetPosition();
         float dis = Vector3.Distance(pos, targetPos);
-        if (dis < speed * Time.deltaTime)
+        if (dis < 10 * Time.deltaTime)
         {
             soliderInfo.SetPosition(targetPos.x, targetPos.y, targetPos.z);
             soliderInfo.ChangeState("idle");
         }
         else
         {
-            pos = Vector3.MoveTowards(pos, targetPos, Time.deltaTime * speed);
+            pos = Vector3.MoveTowards(pos, targetPos, Time.deltaTime * 10);
             soliderInfo.SetPosition(pos.x, pos.y, pos.z);
         }
     }

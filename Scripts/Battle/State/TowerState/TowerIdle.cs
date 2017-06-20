@@ -56,7 +56,7 @@ public class TowerIdle : StateBase
         for (int i = 0; i < monsterList.Count; i++)
         {
             MonsterInfo temp = monsterList[i];
-            if (Vector3.Distance(towerPos, temp.GetPosition()) <= 200)
+            if (!temp.IsDead() && Vector3.Distance(towerPos, temp.GetPosition()) <= 200)
             {
                 return temp;
             }

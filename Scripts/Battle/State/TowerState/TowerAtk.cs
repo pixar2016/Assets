@@ -21,8 +21,8 @@ public class TowerAtk : StateBase
     public void EnterExcute()
     {
         //towerInfo.StartSkill(towerInfo.attackSkill);
-        Debug.Log(towerInfo.GetFinalAttr(CharAttr.AttackTime));
-        attackTime = 5;// towerInfo.GetFinalAttr(CharAttr.AttackTime);//towerInfo.attackTime;
+        //Debug.Log(towerInfo.GetFinalAttr(CharAttr.AttackTime));
+        attackTime = towerInfo.GetFinalAttr(CharAttr.AttackTime);//towerInfo.attackTime;
         towerInfo.StartAttack();
         curTime = 0;
     }
@@ -31,7 +31,7 @@ public class TowerAtk : StateBase
     {
         CharacterInfo attackCharInfo = towerInfo.GetTargetInfo();
         //若死亡或者超出了攻击范围，则回归待机重新寻找目标
-        if (!attackCharInfo.IsDead() && !WithinRange(towerInfo, attackCharInfo))
+        if (attackCharInfo.IsDead() || !WithinRange(towerInfo, attackCharInfo))
         {
             towerInfo.ChangeState("idle");
         }

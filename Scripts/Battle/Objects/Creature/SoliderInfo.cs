@@ -73,7 +73,7 @@ public class SoliderInfo : CharacterInfo
         SetAttr(CharAttr.AttackDamage, creatureData._attackDamage);
         SetAttr(CharAttr.AttackDamagePer, 0);
         SetAttr(CharAttr.ArmorType, creatureData._defenceType);
-        SetAttr(CharAttr.Speed, 60);
+        SetAttr(CharAttr.Speed, 10);
         SetAttr(CharAttr.SpeedPer, 0);
     }
 
@@ -219,7 +219,7 @@ public class SoliderInfo : CharacterInfo
             SetRotation(0, 180, 0);
             DoAction("run1");
         }
-        Debug.Log("RunAction");
+        //Debug.Log("RunAction");
     }
 
     public override void StartAttack()
