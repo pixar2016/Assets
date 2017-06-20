@@ -42,7 +42,7 @@
   {
     "id": 5.0,
     "modelName": "wulf",
-    "animName": "die",
+    "animName": "stuck",
     "FrameName": "wulf_",
     "startFrame": 29.0,
     "endFrame": 35.0,
@@ -51,6 +51,26 @@
   },
   {
     "id": 6.0,
+    "modelName": "wulf",
+    "animName": "stuckend",
+    "FrameName": "wulf_",
+    "startFrame": 36.0,
+    "endFrame": 40.0,
+    "delta": 0.1,
+    "loop": 0.0
+  },
+  {
+    "id": 7.0,
+    "modelName": "wulf",
+    "animName": "die",
+    "FrameName": "wulf_",
+    "startFrame": 41.0,
+    "endFrame": 49.0,
+    "delta": 0.1,
+    "loop": 0.0
+  },
+  {
+    "id": 8.0,
     "modelName": "knight",
     "animName": "idle",
     "FrameName": "knight_",
@@ -60,7 +80,7 @@
     "loop": 1.0
   },
   {
-    "id": 7.0,
+    "id": 9.0,
     "modelName": "knight",
     "animName": "run1",
     "FrameName": "knight_",
@@ -70,7 +90,7 @@
     "loop": 1.0
   },
   {
-    "id": 8.0,
+    "id": 10.0,
     "modelName": "knight",
     "animName": "attack",
     "FrameName": "knight_",
@@ -80,7 +100,7 @@
     "loop": 0.0
   },
   {
-    "id": 9.0,
+    "id": 11.0,
     "modelName": "knight",
     "animName": "attack1",
     "FrameName": "knight_",
@@ -90,7 +110,7 @@
     "loop": 0.0
   },
   {
-    "id": 10.0,
+    "id": 12.0,
     "modelName": "knight",
     "animName": "skill",
     "FrameName": "knight_",
@@ -100,7 +120,7 @@
     "loop": 0.0
   },
   {
-    "id": 11.0,
+    "id": 13.0,
     "modelName": "knight",
     "animName": "skill1",
     "FrameName": "knight_",
@@ -110,7 +130,7 @@
     "loop": 0.0
   },
   {
-    "id": 12.0,
+    "id": 14.0,
     "modelName": "knight",
     "animName": "die",
     "FrameName": "knight_",
@@ -120,58 +140,58 @@
     "loop": 0.0
   },
   {
-    "id": 13.0,
+    "id": 15.0,
     "modelName": "arrowTowerlv1Shooter",
     "animName": "idle",
     "FrameName": "arrowTowerlv1Shooter_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
-    "loop": 0.0
-  },
-  {
-    "id": 14.0,
-    "modelName": "arrowTowerlv1Shooter",
-    "animName": "attack",
-    "FrameName": "arrowTowerlv1Shooter_",
-    "startFrame": 1.0,
-    "endFrame": 5.0,
-    "delta": 0.1,
-    "loop": 0.0
-  },
-  {
-    "id": 15.0,
-    "modelName": "arrowTowerlv1Shooter",
-    "animName": "attack1",
-    "FrameName": "arrowTowerlv1Shooter_",
-    "startFrame": 6.0,
-    "endFrame": 10.0,
     "delta": 0.1,
     "loop": 0.0
   },
   {
     "id": 16.0,
-    "modelName": "arrowTowerlv2Shooter",
-    "animName": "idle",
-    "FrameName": "arrowTowerlv2Shooter_",
+    "modelName": "arrowTowerlv1Shooter",
+    "animName": "attack",
+    "FrameName": "arrowTowerlv1Shooter_",
     "startFrame": 1.0,
-    "endFrame": 1.0,
+    "endFrame": 5.0,
     "delta": 0.1,
     "loop": 0.0
   },
   {
     "id": 17.0,
-    "modelName": "arrowTowerlv2Shooter",
-    "animName": "attack",
-    "FrameName": "arrowTowerlv2Shooter_",
-    "startFrame": 1.0,
-    "endFrame": 5.0,
+    "modelName": "arrowTowerlv1Shooter",
+    "animName": "attack1",
+    "FrameName": "arrowTowerlv1Shooter_",
+    "startFrame": 6.0,
+    "endFrame": 10.0,
     "delta": 0.1,
     "loop": 0.0
   },
   {
     "id": 18.0,
     "modelName": "arrowTowerlv2Shooter",
+    "animName": "idle",
+    "FrameName": "arrowTowerlv2Shooter_",
+    "startFrame": 1.0,
+    "endFrame": 1.0,
+    "delta": 0.1,
+    "loop": 0.0
+  },
+  {
+    "id": 19.0,
+    "modelName": "arrowTowerlv2Shooter",
+    "animName": "attack",
+    "FrameName": "arrowTowerlv2Shooter_",
+    "startFrame": 1.0,
+    "endFrame": 5.0,
+    "delta": 0.1,
+    "loop": 0.0
+  },
+  {
+    "id": 20.0,
+    "modelName": "arrowTowerlv2Shooter",
     "animName": "attack1",
     "FrameName": "arrowTowerlv2Shooter_",
     "startFrame": 6.0,
@@ -180,7 +200,7 @@
     "loop": 0.0
   },
   {
-    "id": 19.0,
+    "id": 21.0,
     "modelName": "arrowTowerlv3Shooter",
     "animName": "idle",
     "FrameName": "arrowTowerlv3Shooter_",
@@ -190,7 +210,7 @@
     "loop": 0.0
   },
   {
-    "id": 20.0,
+    "id": 22.0,
     "modelName": "arrowTowerlv3Shooter",
     "animName": "attack",
     "FrameName": "arrowTowerlv3Shooter_",
@@ -200,7 +220,7 @@
     "loop": 0.0
   },
   {
-    "id": 21.0,
+    "id": 23.0,
     "modelName": "arrowTowerlv3Shooter",
     "animName": "attack1",
     "FrameName": "arrowTowerlv3Shooter_",
@@ -210,30 +230,10 @@
     "loop": 0.0
   },
   {
-    "id": 22.0,
-    "modelName": "barrackTowerlv1",
-    "animName": "idle",
-    "FrameName": "barrackTowerlv1_",
-    "startFrame": 1.0,
-    "endFrame": 1.0,
-    "delta": 0.1,
-    "loop": 0.0
-  },
-  {
-    "id": 23.0,
-    "modelName": "barrackTowerlv1",
-    "animName": "start",
-    "FrameName": "barrackTowerlv1_",
-    "startFrame": 2.0,
-    "endFrame": 4.0,
-    "delta": 0.1,
-    "loop": 0.0
-  },
-  {
     "id": 24.0,
-    "modelName": "barrackTowerlv2",
+    "modelName": "barrackTowerlv1",
     "animName": "idle",
-    "FrameName": "barrackTowerlv2_",
+    "FrameName": "barrackTowerlv1_",
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
@@ -241,6 +241,26 @@
   },
   {
     "id": 25.0,
+    "modelName": "barrackTowerlv1",
+    "animName": "start",
+    "FrameName": "barrackTowerlv1_",
+    "startFrame": 2.0,
+    "endFrame": 4.0,
+    "delta": 0.1,
+    "loop": 0.0
+  },
+  {
+    "id": 26.0,
+    "modelName": "barrackTowerlv2",
+    "animName": "idle",
+    "FrameName": "barrackTowerlv2_",
+    "startFrame": 1.0,
+    "endFrame": 1.0,
+    "delta": 0.1,
+    "loop": 0.0
+  },
+  {
+    "id": 27.0,
     "modelName": "barrackTowerlv2",
     "animName": "start",
     "FrameName": "barrackTowerlv2_",
@@ -250,7 +270,7 @@
     "loop": 0.0
   },
   {
-    "id": 26.0,
+    "id": 28.0,
     "modelName": "barrackTowerlv3",
     "animName": "idle",
     "FrameName": "barrackTowerlv3_",
@@ -260,7 +280,7 @@
     "loop": 0.0
   },
   {
-    "id": 27.0,
+    "id": 29.0,
     "modelName": "barrackTowerlv3",
     "animName": "start",
     "FrameName": "barrackTowerlv3_",
@@ -270,30 +290,10 @@
     "loop": 0.0
   },
   {
-    "id": 28.0,
-    "modelName": "mageTowerlv1",
-    "animName": "idle",
-    "FrameName": "mageTowerlv1_",
-    "startFrame": 1.0,
-    "endFrame": 1.0,
-    "delta": 0.1,
-    "loop": 0.0
-  },
-  {
-    "id": 29.0,
-    "modelName": "mageTowerlv1",
-    "animName": "attack",
-    "FrameName": "mageTowerlv1_",
-    "startFrame": 2.0,
-    "endFrame": 6.0,
-    "delta": 0.1,
-    "loop": 0.0
-  },
-  {
     "id": 30.0,
-    "modelName": "mageTowerlv2",
+    "modelName": "mageTowerlv1",
     "animName": "idle",
-    "FrameName": "mageTowerlv2_",
+    "FrameName": "mageTowerlv1_",
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
@@ -301,6 +301,26 @@
   },
   {
     "id": 31.0,
+    "modelName": "mageTowerlv1",
+    "animName": "attack",
+    "FrameName": "mageTowerlv1_",
+    "startFrame": 2.0,
+    "endFrame": 6.0,
+    "delta": 0.1,
+    "loop": 0.0
+  },
+  {
+    "id": 32.0,
+    "modelName": "mageTowerlv2",
+    "animName": "idle",
+    "FrameName": "mageTowerlv2_",
+    "startFrame": 1.0,
+    "endFrame": 1.0,
+    "delta": 0.1,
+    "loop": 0.0
+  },
+  {
+    "id": 33.0,
     "modelName": "mageTowerlv2",
     "animName": "attack",
     "FrameName": "mageTowerlv2_",
@@ -310,7 +330,7 @@
     "loop": 0.0
   },
   {
-    "id": 32.0,
+    "id": 34.0,
     "modelName": "mageTowerlv3",
     "animName": "idle",
     "FrameName": "mageTowerlv3_",
@@ -320,7 +340,7 @@
     "loop": 0.0
   },
   {
-    "id": 33.0,
+    "id": 35.0,
     "modelName": "mageTowerlv3",
     "animName": "attack",
     "FrameName": "mageTowerlv3_",
@@ -330,7 +350,7 @@
     "loop": 0.0
   },
   {
-    "id": 34.0,
+    "id": 36.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "idle",
     "FrameName": "mageTowerNecroShooter_",
@@ -340,7 +360,7 @@
     "loop": 0.0
   },
   {
-    "id": 35.0,
+    "id": 37.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "idle1",
     "FrameName": "mageTowerNecroShooter_",
@@ -350,7 +370,7 @@
     "loop": 0.0
   },
   {
-    "id": 36.0,
+    "id": 38.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "attack",
     "FrameName": "mageTowerNecroShooter_",
@@ -360,7 +380,7 @@
     "loop": 0.0
   },
   {
-    "id": 37.0,
+    "id": 39.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "attack1",
     "FrameName": "mageTowerNecroShooter_",
@@ -370,7 +390,7 @@
     "loop": 0.0
   },
   {
-    "id": 38.0,
+    "id": 40.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "skill",
     "FrameName": "mageTowerNecroShooter_",
@@ -380,7 +400,7 @@
     "loop": 0.0
   },
   {
-    "id": 39.0,
+    "id": 41.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "skill1",
     "FrameName": "mageTowerNecroShooter_",
@@ -390,7 +410,7 @@
     "loop": 0.0
   },
   {
-    "id": 40.0,
+    "id": 42.0,
     "modelName": "mageTowerMasterShooter",
     "animName": "idle",
     "FrameName": "mageTowerMasterShooter_",
@@ -400,7 +420,7 @@
     "loop": 0.0
   },
   {
-    "id": 41.0,
+    "id": 43.0,
     "modelName": "mageTowerMasterShooter",
     "animName": "idle1",
     "FrameName": "mageTowerMasterShooter_",
@@ -410,7 +430,7 @@
     "loop": 0.0
   },
   {
-    "id": 42.0,
+    "id": 44.0,
     "modelName": "mageTowerMasterShooter",
     "animName": "attack",
     "FrameName": "mageTowerMasterShooter_",
@@ -420,7 +440,7 @@
     "loop": 0.0
   },
   {
-    "id": 43.0,
+    "id": 45.0,
     "modelName": "mageTowerMasterShooter",
     "animName": "attack1",
     "FrameName": "mageTowerMasterShooter_",
@@ -430,7 +450,7 @@
     "loop": 0.0
   },
   {
-    "id": 44.0,
+    "id": 46.0,
     "modelName": "arrow",
     "animName": null,
     "FrameName": "arrow",

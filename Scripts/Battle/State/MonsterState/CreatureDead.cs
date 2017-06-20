@@ -22,7 +22,7 @@ public class CreatureDead : StateBase
 
     public void EnterExcute()
     {
-        Debug.Log("CreatureDead EnterExcute");
+        //Debug.Log("CreatureDead EnterExcute");
         monsterInfo.DoAction("die");
     }
 

@@ -39,6 +39,7 @@ public class CharacterView {
 
     public void DoAction(object[] data)
     {
+        //Debug.Log("View DoAction" + data[0].ToString());
         charAnim.startAnimation(data[0].ToString());
     }
 

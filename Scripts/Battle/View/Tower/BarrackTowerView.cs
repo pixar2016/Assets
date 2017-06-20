@@ -42,7 +42,7 @@ public class BarrackTowerView : TowerView
     public override void DoAction(object[] data)
     {
         string actionName = data[0].ToString();
-        Debug.Log("BarrackTowerView  Do Action " + actionName);
+        //Debug.Log("BarrackTowerView  Do Action " + actionName);
         towerBase.startAnimation(actionName);
     }
 

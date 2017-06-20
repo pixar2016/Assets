@@ -207,7 +207,7 @@ public class SoliderInfo : CharacterInfo
         if (targetPos.y > curPos.y && Mathf.Abs(targetPos.y - curPos.y) > Mathf.Abs(targetPos.x - curPos.x))
         {
             SetRotation(0, 0, 0);
-            DoAction("run2");
+            DoAction("run1");
         }
         else if (targetPos.x >= curPos.x)
         {
@@ -219,7 +219,6 @@ public class SoliderInfo : CharacterInfo
             SetRotation(0, 180, 0);
             DoAction("run1");
         }
-        //Debug.Log("RunAction");
     }
 
     public override void StartAttack()

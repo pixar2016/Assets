@@ -73,7 +73,7 @@ public class BarrackTowerInfo : TowerInfo
 
     public void SetSignPos(Vector3 pos)
     {
-        Debug.Log("SetSignPos");
+        //Debug.Log("SetSignPos");
         signPos = pos;
         InitSoliderPos(pos);
     }
