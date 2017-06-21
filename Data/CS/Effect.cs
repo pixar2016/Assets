@@ -6,16 +6,16 @@ using System.Collections;
 using System.Collections.Generic;
 using MiniJSON;
 
-public class D_Skill
+public class D_Effect
 {
 	public int _id;
 	public string _name;
-	public int _triggerId;
+	public string _model;
 
 }
-public class J_Skill
+public class J_Effect
 {
-    private static Dictionary<int, D_Skill> infoDict = new Dictionary<int, D_Skill>();
+    private static Dictionary<int, D_Effect> infoDict = new Dictionary<int, D_Effect>();
     private static string tableName = "";
     public static void LoadConfig()
     {
@@ -23,8 +23,8 @@ public class J_Skill
         {
             return;
         }
-        tableName = "Skill";
-        string infos = FileUtils.LoadFile(Application.dataPath, "Data/Json/Skill.json");
+        tableName = "Effect";
+        string infos = FileUtils.LoadFile(Application.dataPath, "Data/Json/Effect.json");
 		Init(infos);
     }
 
@@ -33,7 +33,7 @@ public class J_Skill
         List<object> jsonObjects = MiniJSON.Json.Deserialize(_info) as List<object>;
         for (int i = 0; i < jsonObjects.Count; i++)
         {
-            D_Skill info = new D_Skill();
+            D_Effect info = new D_Effect();
 			Dictionary<string, object> jsonObject = jsonObjects[i] as Dictionary<string, object>;
 			
 			if(jsonObject["id"] != null){
@@ -42,14 +42,14 @@ public class J_Skill
 			if(jsonObject["name"] != null){
 				info._name = jsonObject["name"].ToString();
 			}
-			if(jsonObject["triggerId"] != null){
-				info._triggerId = int.Parse(jsonObject["triggerId"].ToString());
+			if(jsonObject["model"] != null){
+				info._model = jsonObject["model"].ToString();
 			}
 
             infoDict.Add(info._id, info);
         }
         /*
-        foreach (KeyValuePair<int, D_Skill> info in infoDict)
+        foreach (KeyValuePair<int, D_Effect> info in infoDict)
         {
             Debug.Log(">>>>>"+info.Value._id+":"+info.Value._name+":"+info.Value._desc+":"+info.Value._point+":"+info.Value._label+":"+info.Value._type+":"+info.Value._number+":"+info.Value._function+":"+info.Value._para+":"+info.Value._reward+":"+"<<<<<\n");
         }
@@ -61,9 +61,9 @@ public class J_Skill
     /// </summary>
     /// <param name="_id">字典key</param>
     /// <returns></returns>
-    public static D_Skill GetData(int _id)
+    public static D_Effect GetData(int _id)
     {
-        D_Skill data = null;
+        D_Effect data = null;
         if (infoDict.ContainsKey(_id))
         {
             data = infoDict[_id];
@@ -86,10 +86,10 @@ public class J_Skill
     /// 把字典转换成List
     /// </summary>
     /// <returns></returns>
-    public static List<D_Skill> ToList()
+    public static List<D_Effect> ToList()
     {
-        List<D_Skill> list =  new List<D_Skill>();
-        foreach (KeyValuePair<int,D_Skill> info in infoDict)
+        List<D_Effect> list =  new List<D_Effect>();
+        foreach (KeyValuePair<int,D_Effect> info in infoDict)
         {
             list.Add(info.Value);
         }

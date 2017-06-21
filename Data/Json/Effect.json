@@ -1,0 +1,62 @@
+﻿[
+  {
+    "id": 1.0,
+    "name": "弓箭",
+    "model": "arrow"
+  },
+  {
+    "id": 2.0,
+    "name": "基础魔法弹",
+    "model": "mageTowerBullet"
+  },
+  {
+    "id": 3.0,
+    "name": "巫师塔魔法弹",
+    "model": "mageTowerNecroBullet"
+  },
+  {
+    "id": 4.0,
+    "name": "巫师塔魔法弹击中",
+    "model": "mageTowerNecroHitEffect"
+  },
+  {
+    "id": 5.0,
+    "name": "大法师塔魔法弹",
+    "model": "mageTowerMasterBullet"
+  },
+  {
+    "id": 6.0,
+    "name": "大法师塔魔法弹击中",
+    "model": "mageTowerMasterHitEffect"
+  },
+  {
+    "id": 7.0,
+    "name": "大法师塔传送小型",
+    "model": "mageTowerMasterTransferEffect"
+  },
+  {
+    "id": 8.0,
+    "name": "大法师塔传送大型",
+    "model": "mageTowerMasterTransferEffect1"
+  },
+  {
+    "id": 9.0,
+    "name": "炮塔子弹",
+    "model": "turreBullet"
+  },
+  {
+    "id": 10.0,
+    "name": "炮弹击中",
+    "model": "turretEffect"
+  },
+  {
+    "id": 11.0,
+    "name": "兵营子弹",
+    "model": "barrackSoliderBullet"
+  },
+  {
+    "id": 12.0,
+    "name": "闪电",
+    "model": "lightening"
+  }
+]

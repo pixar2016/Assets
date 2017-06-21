@@ -14,14 +14,16 @@ public class D_Tower
 	public int _towerType;
 	public string _towerBase;
 	public string _Shooter;
-	public int _bullet;
-	public int _soliderId;
 	public int _level;
 	public int _attackSpeed;
 	public int _attackDamage;
 	public int _attackRange;
 	public string _description;
 	public int _attackId;
+	public int _bulletId;
+	public int _bulletType;
+	public int _bulletSpeed;
+	public int _soliderId;
 	public int _skill1;
 	public int _skill2;
 	public int _skill3;
@@ -69,12 +71,6 @@ public class J_Tower
 			if(jsonObject["Shooter"] != null){
 				info._Shooter = jsonObject["Shooter"].ToString();
 			}
-			if(jsonObject["bullet"] != null){
-				info._bullet = int.Parse(jsonObject["bullet"].ToString());
-			}
-			if(jsonObject["soliderId"] != null){
-				info._soliderId = int.Parse(jsonObject["soliderId"].ToString());
-			}
 			if(jsonObject["level"] != null){
 				info._level = int.Parse(jsonObject["level"].ToString());
 			}
@@ -92,6 +88,18 @@ public class J_Tower
 			}
 			if(jsonObject["attackId"] != null){
 				info._attackId = int.Parse(jsonObject["attackId"].ToString());
+			}
+			if(jsonObject["bulletId"] != null){
+				info._bulletId = int.Parse(jsonObject["bulletId"].ToString());
+			}
+			if(jsonObject["bulletType"] != null){
+				info._bulletType = int.Parse(jsonObject["bulletType"].ToString());
+			}
+			if(jsonObject["bulletSpeed"] != null){
+				info._bulletSpeed = int.Parse(jsonObject["bulletSpeed"].ToString());
+			}
+			if(jsonObject["soliderId"] != null){
+				info._soliderId = int.Parse(jsonObject["soliderId"].ToString());
 			}
 			if(jsonObject["skill1"] != null){
 				info._skill1 = int.Parse(jsonObject["skill1"].ToString());

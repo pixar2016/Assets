@@ -30,6 +30,7 @@ public class Test1 : MonoBehaviour {
         J_Skill.LoadConfig();
         J_Tower.LoadConfig();
         J_AnimData.LoadConfig();
+        J_Effect.LoadConfig();
 
         EntityManager.getInstance();
         EntityViewManager.getInstance();
@@ -141,7 +142,7 @@ public class Test1 : MonoBehaviour {
         
         //charInfo.ChangeState("move");
         BattleFingerEvent.getInstance();
-        tower = EntityManager.getInstance().AddTower(1);
+        tower = EntityManager.getInstance().AddTower(6);
         tower.SetPosition(250, 0, 0);
         tower.ChangeState("idle");
         GameManager.getInstance().LoadLevel(1);
