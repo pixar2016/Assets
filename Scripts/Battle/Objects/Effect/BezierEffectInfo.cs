@@ -33,7 +33,7 @@ public class BezierEffectInfo : EffectInfo
         }
         else
         {
-            this.charInfo.eventDispatcher.Broadcast("BulletReach", triggerGroupId);
+            this.charInfo.eventDispatcher.Broadcast("BulletReach", triggerGroupId, bezierPath.GetPath(curPathNum));
             EntityManager.getInstance().RemoveEffect(this.Id);
         }
     }

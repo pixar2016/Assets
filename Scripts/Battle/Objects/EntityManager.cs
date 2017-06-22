@@ -90,10 +90,11 @@ public class EntityManager {
         return charInfo;
     }
     //添加静态特效
-    public EffectInfo AddStaticEffect(int effectId, int effectType)
+    public EffectInfo AddStaticEffect(int effectId, Vector3 pos)
     {
         effectIndexId += 1;
-        EffectInfo effectInfo = new StaticEffectInfo(effectIndexId, effectId);      
+        EffectInfo effectInfo = new StaticEffectInfo(effectIndexId, effectId);
+        effectInfo.SetPosition(pos);
         //effects.Add(effectIndexId, effectInfo);
         //标记为“添加”
         effectInfo.SetDirtySign(false);

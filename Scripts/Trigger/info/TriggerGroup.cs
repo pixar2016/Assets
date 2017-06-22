@@ -11,17 +11,15 @@ public class TriggerGroup
     public CharacterInfo charInfo;
 
     public List<TriggerInfo> triggerInfos;
-
-    //技能目标
-    public CharacterInfo targetInfo;
-    //技能目标组
-    public List<CharacterInfo> targetGroup;
+    //用于logic交互的数据
+    public TriggerData triggerlogicData;
 
     public TriggerGroup(int id)
     {
         Id = id;
         triggerIndexId = 0;
         triggerInfos = new List<TriggerInfo>();
+        triggerlogicData = new TriggerData();
     }
 
     public TriggerInfo AddTriggerInfo(TriggerConfigData data)

@@ -36,6 +36,7 @@ public class TriggerManager
         RegisterEffectLogic("Hurt", new TriggerEffectLogic_Hurt());
         RegisterEffectLogic("Bullet", new TriggerEffectLogic_Bullet());
         RegisterEffectLogic("SkillEvent", new TriggerEffectLogic_SkillEvent());
+        RegisterEffectLogic("ShowEffect", new TriggerEffectLogic_ShowEffect());
     }
 
     private void RegisterCondLogic(string condName, TriggerCondBase logic)

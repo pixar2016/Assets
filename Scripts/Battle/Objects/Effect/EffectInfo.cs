@@ -22,7 +22,7 @@ public class EffectInfo
     {
         Id = effectIndexId;
         effectId = effId;
-        effectName = "arrow";
+        effectName = J_Effect.GetData(effId)._model;
         dirtySign = 0;
     }
 
@@ -37,6 +37,11 @@ public class EffectInfo
         temp.y = y;
         temp.z = z;
         pos = temp;
+    }
+
+    public void SetPosition(Vector3 _pos)
+    {
+        pos = _pos;
     }
     public Vector3 GetEulerAngles()
     {

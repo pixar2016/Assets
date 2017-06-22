@@ -67,9 +67,12 @@ public class TriggerCondInfo
     public void BulletReach(object[] paramList)
     {
         int triggerGroupId = (int)paramList[0];
+        Vector3 pos = (Vector3)paramList[1];
         if (this.triggerInfo.triggerGroup.Id == triggerGroupId)
         {
             this.isConditionMatch = true;
+            //将到达的位置记录下来
+            this.triggerInfo.triggerGroup.triggerlogicData.pos = pos;
         }
     }
 }

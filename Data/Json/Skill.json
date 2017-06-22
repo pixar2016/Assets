@@ -1,20 +1,50 @@
 ﻿[
   {
     "id": 1.0,
-    "name": "近战普通攻击",
+    "name": "近战通用攻击",
     "triggerId": 1.0,
     "": null
   },
   {
     "id": 2.0,
-    "name": "远程直线射击",
+    "name": "箭塔通用射击",
     "triggerId": 2.0,
     "": null
   },
   {
     "id": 3.0,
-    "name": "远程曲线射击",
+    "name": "魔法塔通用攻击",
     "triggerId": 3.0,
+    "": null
+  },
+  {
+    "id": 4.0,
+    "name": "巫师塔攻击",
+    "triggerId": 4.0,
+    "": null
+  },
+  {
+    "id": 5.0,
+    "name": "大法师塔攻击",
+    "triggerId": 5.0,
+    "": null
+  },
+  {
+    "id": 6.0,
+    "name": "炮塔通用攻击",
+    "triggerId": 6.0,
+    "": null
+  },
+  {
+    "id": 7.0,
+    "name": "地震塔攻击",
+    "triggerId": 7.0,
+    "": null
+  },
+  {
+    "id": 8.0,
+    "name": "磁暴塔攻击",
+    "triggerId": 8.0,
     "": null
   }
 ]

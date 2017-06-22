@@ -20,9 +20,6 @@ public class D_Creature
 	public int _speed;
 	public string _description;
 	public int _attackType;
-	public int _bulletId;
-	public int _bulletType;
-	public int _bulletSpeed;
 	public int _skill1;
 	public int _skill2;
 	public int _skill3;
@@ -87,15 +84,6 @@ public class J_Creature
 			}
 			if(jsonObject["attackType"] != null){
 				info._attackType = int.Parse(jsonObject["attackType"].ToString());
-			}
-			if(jsonObject["bulletId"] != null){
-				info._bulletId = int.Parse(jsonObject["bulletId"].ToString());
-			}
-			if(jsonObject["bulletType"] != null){
-				info._bulletType = int.Parse(jsonObject["bulletType"].ToString());
-			}
-			if(jsonObject["bulletSpeed"] != null){
-				info._bulletSpeed = int.Parse(jsonObject["bulletSpeed"].ToString());
 			}
 			if(jsonObject["skill1"] != null){
 				info._skill1 = int.Parse(jsonObject["skill1"].ToString());
