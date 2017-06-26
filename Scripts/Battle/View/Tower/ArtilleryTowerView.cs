@@ -15,7 +15,7 @@ public class ArtilleryTowerView : TowerView
 
     public override void LoadModel()
     {
-        towerAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/MageTower.prefab");
+        towerAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/ArtilleryTower.prefab");
         towerObj = towerAsset.GameObjectAsset;
         towerObj.transform.position = this.towerInfo.GetPosition();
         if (towerObj.GetComponent<ClickInfo>() == null)
@@ -37,6 +37,7 @@ public class ArtilleryTowerView : TowerView
         {
             towerBase = towerObj.AddComponent<Animate>();
         }
+        Debug.Log(towerInfo.towerBase);
         towerBase.OnInit(towerInfo.towerBase);
         towerBase.startAnimation("idle");
     }

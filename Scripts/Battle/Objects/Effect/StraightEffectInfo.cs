@@ -22,9 +22,11 @@ public class StraightEffectInfo : EffectInfo
     public override void Update()
     {
         Vector3 targetPos = targetInfo.GetPosition();
-        if (Vector3.Distance(pos, targetPos) < 1)
+        //Debug.Log(Vector3.Distance(pos, targetPos));
+        if (Vector3.Distance(pos, targetPos) < 10)
         {
-            this.charInfo.eventDispatcher.Broadcast("BulletReach", triggerGroupId, targetPos);
+            Debug.Log("BulletReach");
+            this.charInfo.eventDispatcher.Broadcast("BulletReach", triggerGroupId, targetPos, targetInfo);
             EntityManager.getInstance().RemoveEffect(this.Id);
         }
         else

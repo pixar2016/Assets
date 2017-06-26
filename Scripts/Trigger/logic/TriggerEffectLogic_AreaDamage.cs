@@ -11,17 +11,17 @@ public class TriggerEffectLogic_AreaDamage : TriggerEffectBase
 
     public override void ExcuteAction(TriggerInfo triggerInfo, TriggerEffectInfo effectInfo)
     {
-        CharacterInfo charInfo = triggerInfo.charInfo;
-        CharacterInfo targetInfo = charInfo.GetTargetInfo();
-        Vector3 targetPos = targetInfo.GetPosition();
-        List<MonsterInfo> monsterList = EntityManager.getInstance().GetMonsterInfo();
-        foreach (MonsterInfo monster in monsterList)
-        {
-            if (Vector3.Distance(targetPos, monster.GetPosition()) <= 100)
-            {
-                //在范围内造成伤害
-            }
-        }
+        //CharacterInfo charInfo = triggerInfo.charInfo;
+        //CharacterInfo targetInfo = charInfo.GetTargetInfo();
+        //Vector3 targetPos = targetInfo.GetPosition();
+        //List<MonsterInfo> monsterList = EntityManager.getInstance().GetMonsterInfo();
+        //foreach (MonsterInfo monster in monsterList)
+        //{
+        //    if (Vector3.Distance(targetPos, monster.GetPosition()) <= 100)
+        //    {
+        //        //在范围内造成伤害
+        //    }
+        //}
     }
 
     //在圆形范围内

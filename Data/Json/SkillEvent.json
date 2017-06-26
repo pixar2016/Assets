@@ -142,5 +142,41 @@
     "effParam4": null,
     "effName5": null,
     "effParam5": null
+  },
+  {
+    "id": 9.0,
+    "triggerId": 6.0,
+    "condName1": "SkillEvent",
+    "condParam1": "start",
+    "condName2": null,
+    "condParam2": null,
+    "effName1": "Action",
+    "effParam1": "attack",
+    "effName2": "Bullet",
+    "effParam2": "9|2|2.5",
+    "effName3": null,
+    "effParam3": null,
+    "effName4": null,
+    "effParam4": null,
+    "effName5": null,
+    "effParam5": null
+  },
+  {
+    "id": 10.0,
+    "triggerId": 6.0,
+    "condName1": "BulletReach",
+    "condParam1": null,
+    "condName2": null,
+    "condParam2": null,
+    "effName1": "AreaDamage",
+    "effParam1": null,
+    "effName2": "ShowEffect",
+    "effParam2": "10|2",
+    "effName3": "SkillEvent",
+    "effParam3": "end",
+    "effName4": null,
+    "effParam4": null,
+    "effName5": null,
+    "effParam5": null
   }
 ]

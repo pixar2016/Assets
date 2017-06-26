@@ -68,11 +68,20 @@ public class TriggerCondInfo
     {
         int triggerGroupId = (int)paramList[0];
         Vector3 pos = (Vector3)paramList[1];
+        CharacterInfo targetInfo = null;
+        if (paramList.Length > 2)
+        {
+            targetInfo = (CharacterInfo)paramList[2];
+        }
         if (this.triggerInfo.triggerGroup.Id == triggerGroupId)
         {
             this.isConditionMatch = true;
             //将到达的位置记录下来
             this.triggerInfo.triggerGroup.triggerlogicData.pos = pos;
+            if(targetInfo != null)
+            {
+                this.triggerInfo.triggerGroup.triggerlogicData.targetInfo = targetInfo;
+            }
         }
     }
 }
