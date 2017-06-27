@@ -17,7 +17,7 @@ public class BezierEffectInfo : EffectInfo
         angle = Vector3.zero;
         triggerGroupId = _triggerGroupId;
         bezierPath = new Bezier();
-        bezierPath.AddPath(_charInfo.GetPosition(), _targetInfo.GetPosition(), 20);
+        bezierPath.AddPath(_charInfo.GetPosition(), _targetInfo.GetPosition(), 60);
         curPathNum = 0;
         SetPosition(bezierPath.GetPath(curPathNum));
     }
@@ -34,7 +34,6 @@ public class BezierEffectInfo : EffectInfo
         }
         else
         {
-            Debug.Log(bezierPath.GetPath(curPathNum));
             this.charInfo.eventDispatcher.Broadcast("BulletReach", triggerGroupId, bezierPath.GetPath(curPathNum));
             EntityManager.getInstance().RemoveEffect(this.Id);
         }

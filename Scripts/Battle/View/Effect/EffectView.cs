@@ -14,7 +14,6 @@ public class EffectView
 
     public void LoadModel()
     {
-        Debug.Log("EffectView LoadModel");
         Animate effectAnim;
         //SpriteImage sprite;
         effectAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/fly.prefab");
@@ -36,7 +35,8 @@ public class EffectView
         {
             effectAnim = effectObj.AddComponent<Animate>();
         }
-        effectAnim.OnInit(AnimationCache.getInstance().getAnimation(effectInfo.effectName));
+        //effectAnim.OnInit(AnimationCache.getInstance().getAnimation(effectInfo.effectName));
+        effectAnim.OnInit(effectInfo.effectName);
         effectAnim.startAnimation();
     }
 

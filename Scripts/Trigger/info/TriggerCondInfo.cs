@@ -68,7 +68,6 @@ public class TriggerCondInfo
     {
         int triggerGroupId = (int)paramList[0];
         Vector3 pos = (Vector3)paramList[1];
-        Debug.Log(pos);
         CharacterInfo targetInfo = null;
         if (paramList.Length > 2)
         {

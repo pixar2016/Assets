@@ -11,7 +11,7 @@ public class TriggerEffectLogic_ShowEffect : TriggerEffectBase
 
     public override void ExcuteAction(TriggerInfo triggerInfo, TriggerEffectInfo effectInfo)
     {
-        Debug.Log("ShowEffect");
+        //Debug.Log("ShowEffect");
         if (effectInfo.paramList == null || effectInfo.paramList[0] == null)
         {
             return;

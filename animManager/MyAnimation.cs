@@ -8,7 +8,7 @@ public class MyAnimation
 {
     //不同的动作对应着不同的动画
     public Dictionary<string, MeshAnimation> actionFrameDict;
-    //动画帧对应的图片
+    //动画帧所在的大图名字
     public string pictName;
     public void AddAnimation(MeshAnimation anim, string animName)
     {

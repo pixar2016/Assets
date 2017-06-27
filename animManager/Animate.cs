@@ -70,7 +70,7 @@ public class Animate: MonoBehaviour
         this.delay = curAnimation.delay;
         this.isLoop = curAnimation.loop;
         this.maxFrameNum = curAnimation.frameList.Count;
-        this.curTime = 0;
+        this.curTime = delay;
         this.FrameNum = 0;
         this.active = true;
     }
@@ -133,6 +133,7 @@ public class Animate: MonoBehaviour
     //开始一个动画，不包含动作，内部默认动作名为normal
     public void startAnimation()
     {
+        
         if (curActionName != "normal")
         {
             startAnimate("normal");
