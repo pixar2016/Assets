@@ -79,7 +79,7 @@ public class MonsterInfo : CharacterInfo
         SetAttr(CharAttr.AttackDamage, creatureData._attackDamage);
         SetAttr(CharAttr.AttackDamagePer, 0);
         SetAttr(CharAttr.ArmorType, creatureData._defenceType);
-        SetAttr(CharAttr.Speed, 60);
+        SetAttr(CharAttr.Speed, 10);
         SetAttr(CharAttr.SpeedPer, 0);
     }
     //复制charInfo的属性值

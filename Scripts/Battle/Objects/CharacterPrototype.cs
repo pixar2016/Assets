@@ -51,7 +51,7 @@ public class CharacterPrototype
         SetAttr(CharAttr.AttackDamage, creatureData._attackDamage);
         SetAttr(CharAttr.AttackDamagePer, 0);
         SetAttr(CharAttr.ArmorType, creatureData._defenceType);
-        SetAttr(CharAttr.Speed, 60);
+        SetAttr(CharAttr.Speed, 20);
         SetAttr(CharAttr.SpeedPer, 0);
     }
 
