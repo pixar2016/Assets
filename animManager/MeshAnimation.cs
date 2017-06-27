@@ -38,6 +38,7 @@ public class MeshAnimation
         count = animFrames.Count;
         animTime = count * delay;
     }
+
     //得到动画总时间
     public float getAnimTime()
     {

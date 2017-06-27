@@ -22,7 +22,7 @@ public class TowerAtk : StateBase
     {
         //towerInfo.StartSkill(towerInfo.attackSkill);
         //Debug.Log(towerInfo.GetFinalAttr(CharAttr.AttackTime));
-        attackTime = towerInfo.GetFinalAttr(CharAttr.AttackTime);//towerInfo.attackTime;
+        attackTime = 2;//towerInfo.GetFinalAttr(CharAttr.AttackTime);//towerInfo.attackTime;
         towerInfo.StartAttack();
         curTime = 0;
     }

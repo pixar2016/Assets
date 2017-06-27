@@ -7,7 +7,9 @@
     "startFrame": 19.0,
     "endFrame": 19.0,
     "delta": 0.1,
-    "loop": 1.0
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 2.0,
@@ -17,7 +19,9 @@
     "startFrame": 1.0,
     "endFrame": 8.0,
     "delta": 0.1,
-    "loop": 1.0
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 3.0,
@@ -27,7 +31,9 @@
     "startFrame": 9.0,
     "endFrame": 18.0,
     "delta": 0.1,
-    "loop": 1.0
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 4.0,
@@ -37,7 +43,9 @@
     "startFrame": 19.0,
     "endFrame": 28.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 5.0,
@@ -47,7 +55,9 @@
     "startFrame": 29.0,
     "endFrame": 35.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 6.0,
@@ -57,7 +67,9 @@
     "startFrame": 36.0,
     "endFrame": 40.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 7.0,
@@ -67,7 +79,9 @@
     "startFrame": 41.0,
     "endFrame": 49.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 8.0,
@@ -77,7 +91,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 1.0
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 9.0,
@@ -87,7 +103,9 @@
     "startFrame": 2.0,
     "endFrame": 6.0,
     "delta": 0.1,
-    "loop": 1.0
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 10.0,
@@ -97,7 +115,9 @@
     "startFrame": 7.0,
     "endFrame": 10.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 11.0,
@@ -107,7 +127,9 @@
     "startFrame": 11.0,
     "endFrame": 15.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 12.0,
@@ -117,7 +139,9 @@
     "startFrame": 16.0,
     "endFrame": 33.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 13.0,
@@ -127,7 +151,9 @@
     "startFrame": 34.0,
     "endFrame": 62.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 14.0,
@@ -137,7 +163,9 @@
     "startFrame": 63.0,
     "endFrame": 69.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 15.0,
@@ -147,7 +175,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 16.0,
@@ -157,7 +187,9 @@
     "startFrame": 1.0,
     "endFrame": 5.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 17.0,
@@ -167,7 +199,9 @@
     "startFrame": 6.0,
     "endFrame": 10.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 18.0,
@@ -177,7 +211,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 19.0,
@@ -187,7 +223,9 @@
     "startFrame": 1.0,
     "endFrame": 5.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 20.0,
@@ -197,7 +235,9 @@
     "startFrame": 6.0,
     "endFrame": 10.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 21.0,
@@ -207,7 +247,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 22.0,
@@ -217,7 +259,9 @@
     "startFrame": 1.0,
     "endFrame": 5.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 23.0,
@@ -227,7 +271,9 @@
     "startFrame": 6.0,
     "endFrame": 10.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 24.0,
@@ -237,7 +283,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 25.0,
@@ -247,7 +295,9 @@
     "startFrame": 2.0,
     "endFrame": 4.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 26.0,
@@ -257,7 +307,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 27.0,
@@ -267,7 +319,9 @@
     "startFrame": 2.0,
     "endFrame": 4.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 28.0,
@@ -277,7 +331,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 29.0,
@@ -287,7 +343,9 @@
     "startFrame": 2.0,
     "endFrame": 4.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 30.0,
@@ -297,7 +355,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 31.0,
@@ -307,7 +367,9 @@
     "startFrame": 2.0,
     "endFrame": 6.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 32.0,
@@ -317,7 +379,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 33.0,
@@ -327,7 +391,9 @@
     "startFrame": 2.0,
     "endFrame": 6.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 34.0,
@@ -337,7 +403,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 35.0,
@@ -347,7 +415,9 @@
     "startFrame": 2.0,
     "endFrame": 6.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 36.0,
@@ -357,7 +427,9 @@
     "startFrame": 2.0,
     "endFrame": 2.0,
     "delta": 0.1,
-    "loop": 1.0
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 37.0,
@@ -367,7 +439,9 @@
     "startFrame": 3.0,
     "endFrame": 3.0,
     "delta": 0.1,
-    "loop": 1.0
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 38.0,
@@ -377,7 +451,9 @@
     "startFrame": 4.0,
     "endFrame": 12.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 39.0,
@@ -387,7 +463,9 @@
     "startFrame": 13.0,
     "endFrame": 22.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 40.0,
@@ -397,7 +475,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 41.0,
@@ -407,7 +487,9 @@
     "startFrame": 2.0,
     "endFrame": 2.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 42.0,
@@ -417,7 +499,9 @@
     "startFrame": 3.0,
     "endFrame": 15.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 43.0,
@@ -427,7 +511,9 @@
     "startFrame": 16.0,
     "endFrame": 28.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 44.0,
@@ -437,7 +523,9 @@
     "startFrame": 29.0,
     "endFrame": 31.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 45.0,
@@ -447,7 +535,9 @@
     "startFrame": 32.0,
     "endFrame": 34.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 46.0,
@@ -457,7 +547,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 47.0,
@@ -467,7 +559,9 @@
     "startFrame": 2.0,
     "endFrame": 2.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 48.0,
@@ -477,7 +571,9 @@
     "startFrame": 3.0,
     "endFrame": 4.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 49.0,
@@ -487,7 +583,9 @@
     "startFrame": 5.0,
     "endFrame": 6.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 50.0,
@@ -497,7 +595,9 @@
     "startFrame": 0.0,
     "endFrame": 0.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 51.0,
@@ -507,7 +607,9 @@
     "startFrame": 1.0,
     "endFrame": 10.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 52.0,
@@ -517,7 +619,9 @@
     "startFrame": 5.0,
     "endFrame": 13.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 53.0,
@@ -527,7 +631,9 @@
     "startFrame": 1.0,
     "endFrame": 4.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 54.0,
@@ -537,7 +643,9 @@
     "startFrame": 1.0,
     "endFrame": 12.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 55.0,
@@ -547,7 +655,9 @@
     "startFrame": 1.0,
     "endFrame": 16.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 56.0,
@@ -557,7 +667,9 @@
     "startFrame": 1.0,
     "endFrame": 5.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 57.0,
@@ -567,7 +679,9 @@
     "startFrame": 6.0,
     "endFrame": 10.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 58.0,
@@ -577,7 +691,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 59.0,
@@ -587,7 +703,9 @@
     "startFrame": 4.0,
     "endFrame": 14.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": 20.0
   },
   {
     "id": 60.0,
@@ -597,7 +715,9 @@
     "startFrame": 1.0,
     "endFrame": 1.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   },
   {
     "id": 61.0,
@@ -607,6 +727,8 @@
     "startFrame": 4.0,
     "endFrame": 13.0,
     "delta": 0.1,
-    "loop": 0.0
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
   }
 ]

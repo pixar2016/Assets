@@ -53,17 +53,17 @@ public class Test1 : MonoBehaviour {
             D_AnimData animData = animList[i];
             bool loop = (animData._loop == 1?true:false);
             //无动作动画
-            if (animData._animName == null)
+            if (animData._animName == "")
             {
                 animCache.addAnimation(
-                    animCache.createAnimation(animData._FrameName, animData._startFrame, animData._endFrame, animData._delta, loop),
+                    animCache.createAnimation(animData._FrameName, animData._startFrame, animData._endFrame, animData._delta, loop, animData._xoffset, animData._yoffset),
                     animData._modelName
                 );
             }
             else
             {
                 animCache.addAnimation(
-                    animCache.createAnimation(animData._FrameName, animData._startFrame, animData._endFrame, animData._delta, loop),
+                    animCache.createAnimation(animData._FrameName, animData._startFrame, animData._endFrame, animData._delta, loop, animData._xoffset, animData._yoffset),
                     animData._modelName,
                     animData._animName
                 );

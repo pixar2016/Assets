@@ -348,7 +348,9 @@ public class ExcelUtility
             fieldType.Append(".Parse(jsonObject[\"");
             fieldType.Append(field);
             fieldType.Append("\"].ToString());\n");
-            fieldType.Append("\t\t\t}\n");
+            fieldType.Append("\t\t\t}\n\t\t\telse{\n\t\t\t\tinfo._");
+            fieldType.Append(field);
+            fieldType.Append(" = 0;\n\t\t\t}\n");
         }
         else if (fieldTypeString == "string")
         {
@@ -360,7 +362,9 @@ public class ExcelUtility
             fieldType.Append(" = jsonObject[\"");
             fieldType.Append(field);
             fieldType.Append("\"].ToString();\n");
-            fieldType.Append("\t\t\t}\n");
+            fieldType.Append("\t\t\t}\n\t\t\telse{\n\t\t\t\tinfo._");
+            fieldType.Append(field);
+            fieldType.Append(" = \"\";\n\t\t\t}\n");
         }
         else if (fieldTypeString == "float")
         {
@@ -373,7 +377,9 @@ public class ExcelUtility
             fieldType.Append(".Parse(jsonObject[\"");
             fieldType.Append(field);
             fieldType.Append("\"].ToString());\n");
-            fieldType.Append("\t\t\t}\n");
+            fieldType.Append("\t\t\t}\n\t\t\telse{\n\t\t\t\tinfo._");
+            fieldType.Append(field);
+            fieldType.Append(" = 0;\n\t\t\t}\n");
         }
         return fieldType.ToString();
     }

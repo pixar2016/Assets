@@ -16,6 +16,8 @@ public class D_AnimData
 	public int _endFrame;
 	public float _delta;
 	public int _loop;
+	public float _xoffset;
+	public float _yoffset;
 
 }
 public class J_AnimData
@@ -44,26 +46,62 @@ public class J_AnimData
 			if(jsonObject["id"] != null){
 				info._id = int.Parse(jsonObject["id"].ToString());
 			}
+			else{
+				info._id = 0;
+			}
 			if(jsonObject["modelName"] != null){
 				info._modelName = jsonObject["modelName"].ToString();
+			}
+			else{
+				info._modelName = "";
 			}
 			if(jsonObject["animName"] != null){
 				info._animName = jsonObject["animName"].ToString();
 			}
+			else{
+				info._animName = "";
+			}
 			if(jsonObject["FrameName"] != null){
 				info._FrameName = jsonObject["FrameName"].ToString();
+			}
+			else{
+				info._FrameName = "";
 			}
 			if(jsonObject["startFrame"] != null){
 				info._startFrame = int.Parse(jsonObject["startFrame"].ToString());
 			}
+			else{
+				info._startFrame = 0;
+			}
 			if(jsonObject["endFrame"] != null){
 				info._endFrame = int.Parse(jsonObject["endFrame"].ToString());
+			}
+			else{
+				info._endFrame = 0;
 			}
 			if(jsonObject["delta"] != null){
 				info._delta = float.Parse(jsonObject["delta"].ToString());
 			}
+			else{
+				info._delta = 0;
+			}
 			if(jsonObject["loop"] != null){
 				info._loop = int.Parse(jsonObject["loop"].ToString());
+			}
+			else{
+				info._loop = 0;
+			}
+			if(jsonObject["xoffset"] != null){
+				info._xoffset = float.Parse(jsonObject["xoffset"].ToString());
+			}
+			else{
+				info._xoffset = 0;
+			}
+			if(jsonObject["yoffset"] != null){
+				info._yoffset = float.Parse(jsonObject["yoffset"].ToString());
+			}
+			else{
+				info._yoffset = 0;
 			}
 
             infoDict.Add(info._id, info);

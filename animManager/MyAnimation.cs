@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//对应的所有动作图需要在同一张图中（重要）
+//某个动画对应的所有动作图需要在同一张图中（重要）
 public class MyAnimation
 {
     //不同的动作对应着不同的动画

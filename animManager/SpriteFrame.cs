@@ -47,6 +47,7 @@ public class SpriteFrame
             maxX = minX + spriteSourceSizeW;
             //动画位置在中心
             maxY = sourceSizeH / 2 - spriteSourceSizeY;
+            //maxY = sourceSizeH - spriteSourceSizeY;
             minY = maxY - spriteSourceSizeH;
             //Debug.Log("minX = "+minX);
             //Debug.Log("maxX = " + maxX);
@@ -78,6 +79,7 @@ public class SpriteFrame
             maxX = minX + spriteSourceSizeW;
             //动画位置在中心
             maxY = sourceSizeH / 2 - spriteSourceSizeY;
+            //maxY = sourceSizeH - spriteSourceSizeY;
             minY = maxY - spriteSourceSizeH;
             minX /= zoomSize;
             maxX /= zoomSize;
@@ -103,5 +105,15 @@ public class SpriteFrame
         vertices = new Vector3[] { v1, v2, v3, v4 };
         triangles = new int[] { 0, 1, 2, 0, 2, 3 };
         uv = new Vector2[] { s1, s2, s3, s4 };
+    }
+
+    public void AddOffset(float x, float y)
+    {
+        int count = vertices.Length;
+        for (int i = 0; i < count; i++)
+        {
+            vertices[i].x += x;
+            vertices[i].y += y;
+        }
     }
 }

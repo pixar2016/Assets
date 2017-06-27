@@ -27,19 +27,21 @@ public class Animate: MonoBehaviour
     //动画运行时间，用于控制动画帧时间间隔
 	private float curTime;
     //当前Mesh动画总帧数
-    private int curAnimationFrameNum;
+    private int maxFrameNum;
 
+    //根据MyAnimation信息加载动画
 	public void OnInit(MyAnimation myanim)
 	{
 		this.anim = myanim;
         this.mesh = new Mesh();
-        ResetAnimateVariable("", false);
+        stopAnimate();
         //mesh关联
         gameObject.GetComponent<MeshFilter>().sharedMesh = this.mesh;
         //根据图片名字加载使用的材质
         gameObject.GetComponent<MeshRenderer>().sharedMaterial = SpriteFrameCache.getInstance().getSpriteTexture(anim.pictName);
     }
 
+    //根据model名字加载相应动画
     public void OnInit(string animName = "")
     {
         if (animName == null || animName == "")
@@ -49,31 +51,39 @@ public class Animate: MonoBehaviour
         this.animName = animName;
         this.anim = AnimationCache.getInstance().getAnimation(this.animName);
         this.mesh = new Mesh();
-        ResetAnimateVariable("", false);
+        stopAnimate();
         //mesh关联
         gameObject.GetComponent<MeshFilter>().sharedMesh = this.mesh;
         //根据图片名字加载使用的材质
         gameObject.GetComponent<MeshRenderer>().material = SpriteFrameCache.getInstance().getSpriteTexture(anim.pictName);
     }
-    public void ResetAnimateVariable(string actionName, bool active)
+    public void startAnimate(string actionName)
     {
+        MeshAnimation temp = anim.getMeshAnimation(actionName);
+        if (temp == null)
+        {
+            stopAnimate();
+            return;
+        }
         this.curActionName = actionName;
-        this.curAnimation = anim.getMeshAnimation(curActionName);
-        if (this.curAnimation == null)
-        {
-            this.delay = 0.1f;
-            this.isLoop = true;
-            this.curAnimationFrameNum = 1;
-        }
-        else
-        {
-            this.delay = curAnimation.delay;
-            this.isLoop = curAnimation.loop;
-            this.curAnimationFrameNum = curAnimation.frameList.Count;
-        }
+        this.curAnimation = temp;
+        this.delay = curAnimation.delay;
+        this.isLoop = curAnimation.loop;
+        this.maxFrameNum = curAnimation.frameList.Count;
         this.curTime = 0;
         this.FrameNum = 0;
-        this.active = active;
+        this.active = true;
+    }
+    public void stopAnimate()
+    {
+        this.curActionName = "";
+        this.curAnimation = null;
+        this.delay = 0.1f;
+        this.isLoop = false;
+        this.maxFrameNum = 1;
+        this.curTime = 0;
+        this.FrameNum = 0;
+        this.active = false;
     }
     //重新设置某个动作的时长
     public void SetAnimateTime(string actionName, float time)
@@ -83,19 +93,13 @@ public class Animate: MonoBehaviour
     }
 	public void Update()
 	{
-		if (!active)
-		{
-			return;
-		}
+        if (!active) return;
 		if (curAnimation != null)
 		{
 			curTime += Time.deltaTime;
-			if (curTime < delay)
-			{
-				return;
-			}
+            if (curTime < delay) return;
 			curTime = 0;
-            if (FrameNum >= this.curAnimationFrameNum)
+            if (FrameNum >= this.maxFrameNum)
 			{
                 if (isLoop)
                 {
@@ -103,8 +107,7 @@ public class Animate: MonoBehaviour
                 }    
                 else
                 {
-                    ResetAnimateVariable("", false);
-                    active = false;
+                    stopAnimate();
                     return;
                 }
                     
@@ -116,7 +119,7 @@ public class Animate: MonoBehaviour
 
     public int GetFrameMaxNum()
     {
-        return this.curAnimationFrameNum;
+        return this.maxFrameNum;
     }
     //开始一个动画，包含多个动作
     public void startAnimation(string actionName)
@@ -124,22 +127,18 @@ public class Animate: MonoBehaviour
         //若是相同的动作，不需要改变
         if (curActionName != actionName)
         {
-            ResetAnimateVariable(actionName, true);
+            startAnimate(actionName);
         }
     }
-    //开始一个动画，只有一个动作
+    //开始一个动画，不包含动作，内部默认动作名为normal
     public void startAnimation()
     {
         if (curActionName != "normal")
         {
-            ResetAnimateVariable("normal", true);
+            startAnimate("normal");
         }
     }
-    //停止动画
-    public void stopAnimation()
-    {
-        ResetAnimateVariable("", false);
-    }
+
     /// <summary>
     /// 利用动画帧信息，构造Mesh
     /// </summary>

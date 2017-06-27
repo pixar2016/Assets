@@ -70,7 +70,7 @@ public class AnimationCache
             _animations.Add(name, anim);
         }
     }
-    public MeshAnimation createAnimation(string imageName, int start, int end, float delay, bool isLoop = true)
+    public MeshAnimation createAnimation(string imageName, int start, int end, float delay, bool isLoop, float xoffset = 0, float yoffset = 0)
     {
         List<SpriteFrame> animFrames = new List<SpriteFrame>();
         if (start <= 0 && end <= 0)
@@ -78,6 +78,10 @@ public class AnimationCache
             SpriteFrame frame = SpriteFrameCache.getInstance().getSpriteFrame(imageName + ".png");
             if (frame != null)
             {
+                if (xoffset != 0 || yoffset != 0)
+                {
+                    frame.AddOffset(xoffset, yoffset);
+                }
                 animFrames.Add(frame);
             }
         }
@@ -88,6 +92,10 @@ public class AnimationCache
                 SpriteFrame frame = SpriteFrameCache.getInstance().getSpriteFrame(imageName + i + ".png");
                 if (frame != null)
                 {
+                    if (xoffset != 0 || yoffset != 0)
+                    {
+                        frame.AddOffset(xoffset, yoffset);
+                    }
                     animFrames.Add(frame);
                 }
             }
