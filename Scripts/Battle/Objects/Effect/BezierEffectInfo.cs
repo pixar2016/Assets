@@ -23,7 +23,7 @@ public class BezierEffectInfo : EffectInfo
         //Debug.Log(Vector3.Distance(startPos, endPos));
         //Debug.Log(_speed);
         //Debug.Log(fps);
-        bezierPath.AddPath(_charInfo.GetPosition(), _targetInfo.GetPosition(), fps);
+        bezierPath.AddPath(startPos, endPos, fps);
         curPathNum = 0;
         SetPosition(bezierPath.GetPath(curPathNum));
     }

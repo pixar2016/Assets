@@ -22,6 +22,17 @@ public class StateMachine
         }
     }
 
+    //public void ChangeState(StateBase _newState)
+    //{
+    //    if (currentState != null)
+    //    {
+    //        currentState.ExitExcute();
+    //        previousState = currentState;
+    //    }
+    //    currentState = _newState;
+    //    currentState.EnterExcute();
+    //}
+
     public void ChangeState(StateBase _newState, params object[] param)
     {
         if (currentState != null)
