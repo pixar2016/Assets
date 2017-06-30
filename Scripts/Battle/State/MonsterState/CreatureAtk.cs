@@ -5,6 +5,7 @@ using UnityEngine;
 public class CreatureAtk : StateBase
 {
     public MonsterInfo monsterInfo;
+    public CharacterInfo attackInfo;
     public float attackTime;
     public float curTime;
     public CreatureAtk(MonsterInfo _monsterInfo)
@@ -14,9 +15,11 @@ public class CreatureAtk : StateBase
         curTime = 0;
     }
 
-    public void SetParam(params object[] args)
+    public void SetParam(StateParam _param)
     {
-
+        if (_param == null)
+            return;
+        attackInfo = _param.targetInfo;
     }
 
     public void EnterExcute()
@@ -24,22 +27,26 @@ public class CreatureAtk : StateBase
         //Debug.Log("CreatureAtk EnterExcute");
         //monsterInfo.StartSkill(monsterInfo.attackSkill);
         attackTime = monsterInfo.GetFinalAttr(CharAttr.AttackTime);
-        monsterInfo.StartAttack();
+        monsterInfo.StartAttack(attackInfo);
         curTime = 0;
     }
 
     public void AttackEnd()
     {
-        CharacterInfo attackCharInfo = monsterInfo.GetTargetInfo();
-        if (attackCharInfo.IsDead())
+        //CharacterInfo attackCharInfo = monsterInfo.GetTargetInfo();
+        if (attackInfo == null)
         {
-            attackCharInfo.ChangeState("die");
+            monsterInfo.ChangeState("idle");
+        }
+        else if (attackInfo.IsDead())
+        {
+            attackInfo.ChangeState("die");
             monsterInfo.ChangeState("move");
         }
         else
         {
             //Debug.Log("continue attack");
-            monsterInfo.ChangeState("attack");
+            monsterInfo.ChangeState("attack", new StateParam(attackInfo));
         }
     }
 

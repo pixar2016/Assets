@@ -16,7 +16,7 @@ public class SoliderIdle : StateBase
         curTime = 0;
     }
 
-    public void SetParam(params object[] args)
+    public void SetParam(StateParam _param)
     {
 
     }
@@ -38,9 +38,9 @@ public class SoliderIdle : StateBase
         else
         {
             //双方都输入攻击目标，均被占用，不再接受其他人的约战
-            targetInfo.SetTargetInfo(soliderInfo);
+            //targetInfo.SetTargetInfo(soliderInfo);
             targetInfo.ChangeState("idle");
-            soliderInfo.SetTargetInfo(targetInfo);
+            //soliderInfo.SetTargetInfo(targetInfo);
             soliderInfo.ChangeState("move");
         }
     }

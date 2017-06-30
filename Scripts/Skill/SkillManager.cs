@@ -52,9 +52,14 @@ public class SkillManager
         }
     }
 
-    public void StartSkill(SkillInfo skillInfo)
+    //public void StartSkill(SkillInfo skillInfo)
+    //{
+    //    skillInfo.Start();
+    //}
+
+    public void StartSkill(SkillInfo skillInfo, TriggerData param = null)
     {
-        skillInfo.Start();
+        skillInfo.Start(param);
     }
 
     public void EndSkill(SkillInfo skillInfo, TriggerGroup trigger)

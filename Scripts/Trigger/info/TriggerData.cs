@@ -12,6 +12,11 @@ public class TriggerData
     public Vector3 pos;
     //技能释放位置组
     public List<Vector3> posGroup;
+
+    public TriggerData(CharacterInfo _targetInfo)
+    {
+        targetInfo = _targetInfo;
+    }
     
 }
 

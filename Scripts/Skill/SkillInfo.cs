@@ -21,10 +21,11 @@ public class SkillInfo
         this.eventDispatcher = new MiniEventDispatcher();
     }
 
-    public void Start()
+    public void Start(TriggerData param = null)
     {
         //Debug.Log("SkillEvent_Start");
         TriggerGroup trigger = GetSpareTriggerGroup();
+        trigger.SetTriggerData(param);
         Reset(trigger, true);
         //Debug.Log("triggerGroup--------------" + triggerGroup.Id + "-----" + triggerGroup.GetActive());
         eventDispatcher.Broadcast("SkillEvent_start");

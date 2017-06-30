@@ -15,7 +15,7 @@ public class CreatureDead : StateBase
         monsterDeadTime = AnimationCache.getInstance().getAnimation(monsterInfo.charName).getMeshAnimation("die").getAnimTime();
     }
 
-    public void SetParam(params object[] args)
+    public void SetParam(StateParam _param)
     {
 
     }

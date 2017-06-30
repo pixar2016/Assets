@@ -85,41 +85,29 @@ public class SelectPanel : UIComponent
 
     public void OnBtnArrowTowerClick(GameObject go)
     {
-        towerInfo.ChangeState("constructing", 2);
-        //TowerInfo newTower = EntityManager.getInstance().AddTower(2);
-        //Vector3 pos = towerInfo.GetPosition();
-        //newTower.SetPosition(pos.x, pos.y, pos.z);
-        //EntityManager.getInstance().RemoveTower(towerInfo.Id);
+        //towerInfo.ChangeState("constructing", 2);
+        towerInfo.ChangeState("constructing");
         UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
     }
 
     public void OnBtnMageTowerClick(GameObject go)
     {
-        towerInfo.ChangeState("constructing", 6);
-        //TowerInfo newTower = EntityManager.getInstance().AddTower(6);
-        //Vector3 pos = towerInfo.GetPosition();
-        //newTower.SetPosition(pos.x, pos.y, pos.z);
-        //EntityManager.getInstance().RemoveTower(towerInfo.Id);
+        //towerInfo.ChangeState("constructing", 6);
+        towerInfo.ChangeState("constructing");
         UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
     }
 
     public void OnBtnSoliderTowerClick(GameObject go)
     {
-        towerInfo.ChangeState("constructing", 16);
-        //TowerInfo newTower = EntityManager.getInstance().AddTower(16);
-        //Vector3 pos = towerInfo.GetPosition();
-        //newTower.SetPosition(pos.x, pos.y, pos.z);
-        //EntityManager.getInstance().RemoveTower(towerInfo.Id);
+        //towerInfo.ChangeState("constructing", 16);
+        towerInfo.ChangeState("constructing");
         UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
     }
 
     public void OnBtnArtileryTowerClick(GameObject go)
     {
-        towerInfo.ChangeState("constructing", 11);
-        //TowerInfo newTower = EntityManager.getInstance().AddTower(11);
-        //Vector3 pos = towerInfo.GetPosition();
-        //newTower.SetPosition(pos.x, pos.y, pos.z);
-        //EntityManager.getInstance().RemoveTower(towerInfo.Id);
+        //towerInfo.ChangeState("constructing", 11);
+        towerInfo.ChangeState("constructing");
         UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
     }
 

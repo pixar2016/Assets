@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class MonsterInfo : CharacterInfo
 {
     //攻击目标
-    private CharacterInfo attackCharInfo;
+    //private CharacterInfo attackCharInfo;
     //攻击需要移动的位置
     private Vector3 attackMovePos;
     //状态机
@@ -14,6 +14,7 @@ public class MonsterInfo : CharacterInfo
     public CreatureDead creatureDead;
     public CreatureIdle creatureIdle;
     public CreatureMove creatureMove;
+    public CreatureWait creatureWait;
     //普通攻击
     public SkillInfo attackSkill;
     //当前怪物行动路径
@@ -60,6 +61,7 @@ public class MonsterInfo : CharacterInfo
         creatureDead = new CreatureDead(this);
         creatureIdle = new CreatureIdle(this);
         creatureMove = new CreatureMove(this);
+        creatureWait = new CreatureWait(this);
     }
 
     public void InitAttr(int _charId)
@@ -117,34 +119,38 @@ public class MonsterInfo : CharacterInfo
         }
         return pathInfo.GetPoint(curPathNum + 1);
     }
-    //设置攻击目标等信息
-    public override void SetTargetInfo(CharacterInfo charInfo)
-    {
-        attackCharInfo = charInfo;
-    }
+    ////设置攻击目标等信息
+    //public override void SetTargetInfo(CharacterInfo charInfo)
+    //{
+    //    attackCharInfo = charInfo;
+    //}
 
-    public override CharacterInfo GetTargetInfo()
-    {
-        return attackCharInfo;
-    }
+    //public override CharacterInfo GetTargetInfo()
+    //{
+    //    return attackCharInfo;
+    //}
 
-    public override void ChangeState(string _state, params object[] args)
+    public override void ChangeState(string _state, StateParam _param = null)
     {
         if (_state == "attack")
         {
-            creatureStateMachine.ChangeState(creatureAtk, args);
+            creatureStateMachine.ChangeState(creatureAtk, _param);
         }
         else if (_state == "die")
         {
-            creatureStateMachine.ChangeState(creatureDead, args);
+            creatureStateMachine.ChangeState(creatureDead, _param);
         }
         else if (_state == "idle")
         {
-            creatureStateMachine.ChangeState(creatureIdle, args);
+            creatureStateMachine.ChangeState(creatureIdle, _param);
         }
         else if (_state == "move")
         {
-            creatureStateMachine.ChangeState(creatureMove, args);
+            creatureStateMachine.ChangeState(creatureMove, _param);
+        }
+        else if (_state == "wait")
+        {
+            creatureStateMachine.ChangeState(creatureWait, _param);
         }
     }
 
@@ -165,6 +171,10 @@ public class MonsterInfo : CharacterInfo
         else if (_state == "move")
         {
             creatureStateMachine.SetCurrentState(creatureMove);
+        }
+        else if (_state == "wait")
+        {
+            creatureStateMachine.SetCurrentState(creatureWait);
         }
     }
 
@@ -198,9 +208,9 @@ public class MonsterInfo : CharacterInfo
         }
     }
 
-    public override void StartAttack()
+    public override void StartAttack(CharacterInfo targetInfo)
     {
-        SkillManager.getInstance().StartSkill(attackSkill);
+        SkillManager.getInstance().StartSkill(attackSkill, new TriggerData(targetInfo));
     }
 
     public float GetSpeed()

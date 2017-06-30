@@ -19,7 +19,11 @@ public class TriggerGroup
         Id = id;
         triggerIndexId = 0;
         triggerInfos = new List<TriggerInfo>();
-        triggerlogicData = new TriggerData();
+    }
+
+    public void SetTriggerData(TriggerData data)
+    {
+        triggerlogicData = data;
     }
 
     public TriggerInfo AddTriggerInfo(TriggerConfigData data)

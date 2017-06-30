@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class SoliderInfo : CharacterInfo
 {
     //攻击目标
-    private CharacterInfo attackCharInfo;
+    //private CharacterInfo attackCharInfo;
     //兵营停留位置
     public Vector3 barrackSoliderPos;
     //出生位置
@@ -101,33 +101,33 @@ public class SoliderInfo : CharacterInfo
         SetPosition(bornpos);
     }
 
-    //设置攻击目标等信息
-    public override void SetTargetInfo(CharacterInfo charInfo)
-    {
-        attackCharInfo = charInfo;
-    }
+    ////设置攻击目标等信息
+    //public override void SetTargetInfo(CharacterInfo charInfo)
+    //{
+    //    attackCharInfo = charInfo;
+    //}
 
-    public override CharacterInfo GetTargetInfo()
-    {
-        return attackCharInfo;
-    }
-    public Vector3 GetAttackMovePos()
-    {
-        Vector3 atkPos = attackCharInfo.GetPosition();
-        Vector3 movePos;
-        Vector3 atkRot = attackCharInfo.GetRotation();
-        //攻击目标向左
-        if (atkRot.y > 0)
-        {
-            movePos = atkPos - new Vector3(30f, 0, 0); 
-        }
-        //攻击目标向右
-        else
-        {
-            movePos = atkPos + new Vector3(30f, 0, 0);
-        }
-        return movePos;
-    }
+    //public override CharacterInfo GetTargetInfo()
+    //{
+    //    return attackCharInfo;
+    //}
+    //public Vector3 GetAttackMovePos()
+    //{
+    //    Vector3 atkPos = attackCharInfo.GetPosition();
+    //    Vector3 movePos;
+    //    Vector3 atkRot = attackCharInfo.GetRotation();
+    //    //攻击目标向左
+    //    if (atkRot.y > 0)
+    //    {
+    //        movePos = atkPos - new Vector3(30f, 0, 0); 
+    //    }
+    //    //攻击目标向右
+    //    else
+    //    {
+    //        movePos = atkPos + new Vector3(30f, 0, 0);
+    //    }
+    //    return movePos;
+    //}
     public Vector3 GetBarrackPos()
     {
         return barrackSoliderPos;
@@ -153,27 +153,27 @@ public class SoliderInfo : CharacterInfo
         return null;
     }
 
-    public override void ChangeState(string _state, params object[] args)
+    public override void ChangeState(string _state, StateParam _param = null)
     {
         if (_state == "attack")
         {
-            soliderStateMachine.ChangeState(soliderAtk, args);
+            soliderStateMachine.ChangeState(soliderAtk, _param);
         }
         else if (_state == "die")
         {
-            soliderStateMachine.ChangeState(soliderDead, args);
+            soliderStateMachine.ChangeState(soliderDead, _param);
         }
         else if (_state == "idle")
         {
-            soliderStateMachine.ChangeState(soliderIdle, args);
+            soliderStateMachine.ChangeState(soliderIdle, _param);
         }
         else if (_state == "move")
         {
-            soliderStateMachine.ChangeState(soliderMove, args);
+            soliderStateMachine.ChangeState(soliderMove, _param);
         }
         else if(_state == "ready")
         {
-            soliderStateMachine.ChangeState(soliderReady, args);
+            soliderStateMachine.ChangeState(soliderReady, _param);
         }
     }
 
@@ -221,9 +221,9 @@ public class SoliderInfo : CharacterInfo
         }
     }
 
-    public override void StartAttack()
+    public override void StartAttack(CharacterInfo targetInfo)
     {
-        SkillManager.getInstance().StartSkill(attackSkill);
+        SkillManager.getInstance().StartSkill(attackSkill, new TriggerData(targetInfo));
     }
 
     public float GetSpeed()

@@ -13,7 +13,7 @@ public class BarrackStart : StateBase
         curTime = 0;
     }
 
-    public void SetParam(params object[] args)
+    public void SetParam(StateParam _param)
     {
 
     }

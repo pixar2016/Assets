@@ -16,7 +16,8 @@ public class TriggerEffectLogic_Bullet : TriggerEffectBase
             return;
         }
         CharacterInfo charInfo = triggerInfo.charInfo;
-        CharacterInfo targetInfo = charInfo.GetTargetInfo();
+        CharacterInfo targetInfo = triggerInfo.triggerGroup.triggerlogicData.targetInfo;
+        //CharacterInfo targetInfo = charInfo.GetTargetInfo();
         int effectId = int.Parse(effectInfo.paramList[0]);
         int pathType = int.Parse(effectInfo.paramList[1]);
         float speed = 120;//float.Parse(effectInfo.paramList[2]);

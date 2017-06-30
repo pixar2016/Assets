@@ -4,6 +4,7 @@ using UnityEngine;
 public class TowerAtk : StateBase
 {
     public AttackTowerInfo towerInfo;
+    public CharacterInfo attackInfo;
     public float attackTime;
     public float curTime;
     public TowerAtk(AttackTowerInfo _towerInfo)
@@ -13,9 +14,11 @@ public class TowerAtk : StateBase
         curTime = 0;
     }
 
-    public void SetParam(params object[] args)
+    public void SetParam(StateParam _param)
     {
-
+        if (_param == null)
+            return;
+        attackInfo = _param.targetInfo;
     }
 
     public void EnterExcute()
@@ -23,21 +26,21 @@ public class TowerAtk : StateBase
         //towerInfo.StartSkill(towerInfo.attackSkill);
         //Debug.Log(towerInfo.GetFinalAttr(CharAttr.AttackTime));
         attackTime = 2;//towerInfo.GetFinalAttr(CharAttr.AttackTime);//towerInfo.attackTime;
-        towerInfo.StartAttack();
+        towerInfo.StartAttack(attackInfo);
         curTime = 0;
     }
 
     public void AttackEnd()
     {
-        CharacterInfo attackCharInfo = towerInfo.GetTargetInfo();
+        //CharacterInfo attackCharInfo = towerInfo.GetTargetInfo();
         //若死亡或者超出了攻击范围，则回归待机重新寻找目标
-        if (attackCharInfo.IsDead() || !WithinRange(towerInfo, attackCharInfo))
+        if (attackInfo.IsDead() || !WithinRange(towerInfo, attackInfo))
         {
             towerInfo.ChangeState("idle");
         }
         else
         {
-            towerInfo.ChangeState("attack");
+            towerInfo.ChangeState("attack", new StateParam(attackInfo));
         }
     }
 

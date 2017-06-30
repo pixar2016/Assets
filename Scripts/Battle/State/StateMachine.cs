@@ -33,7 +33,7 @@ public class StateMachine
     //    currentState.EnterExcute();
     //}
 
-    public void ChangeState(StateBase _newState, params object[] param)
+    public void ChangeState(StateBase _newState, StateParam _param = null)
     {
         if (currentState != null)
         {
@@ -41,7 +41,7 @@ public class StateMachine
             previousState = currentState;
         }
         currentState = _newState;
-        currentState.SetParam(param);
+        currentState.SetParam(_param);
         currentState.EnterExcute();
     }
 

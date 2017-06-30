@@ -12,13 +12,13 @@ public class OpenSpaceConstructing : StateBase
         openSpaceInfo = _openSpaceInfo;
     }
 
-    public void SetParam(params object[] args)
+    public void SetParam(StateParam _param)
     {
-        if (args == null || args.Length < 1)
+        if (_param == null)
         {
             return;
         }
-        changeTowerId = (int)args[0];
+        changeTowerId = _param.towerId;
     }
 
     public void EnterExcute()

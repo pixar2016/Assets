@@ -24,11 +24,11 @@ public class OpenSpaceInfo : TowerInfo
         openSpaceConstructing = new OpenSpaceConstructing(this);
     }
 
-    public override void ChangeState(string stateName, params object[] args)
+    public override void ChangeState(string stateName, StateParam _param = null)
     {
         if (stateName == "constructing")
         {
-            stateMachine.ChangeState(openSpaceConstructing, args);
+            stateMachine.ChangeState(openSpaceConstructing, _param);
         }
     }
 

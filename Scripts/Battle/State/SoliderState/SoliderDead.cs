@@ -11,7 +11,7 @@ public class SoliderDead : StateBase
         soliderInfo = _soliderInfo;
     }
 
-    public void SetParam(params object[] args)
+    public void SetParam(StateParam _param)
     {
 
     }

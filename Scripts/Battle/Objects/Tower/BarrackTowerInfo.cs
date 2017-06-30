@@ -89,15 +89,15 @@ public class BarrackTowerInfo : TowerInfo
         return position;
     }
 
-    public override void ChangeState(string stateName, params object[] args)
+    public override void ChangeState(string stateName, StateParam _param = null)
     {
         if (stateName == "start")
         {
-            towerStateMachine.ChangeState(barrackStart, args);
+            towerStateMachine.ChangeState(barrackStart, _param);
         }
         else if (stateName == "idle")
         {
-            towerStateMachine.ChangeState(barrackIdle, args);
+            towerStateMachine.ChangeState(barrackIdle, _param);
         }
     }
 

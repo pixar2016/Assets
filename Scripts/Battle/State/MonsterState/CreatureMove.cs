@@ -15,7 +15,7 @@ public class CreatureMove : StateBase
         monsterInfo = _monsterInfo;
     }
 
-    public void SetParam(params object[] args)
+    public void SetParam(StateParam _param)
     {
 
     }

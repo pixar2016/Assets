@@ -5,6 +5,8 @@ using UnityEngine;
 public class SoliderAtk : StateBase
 {
     public SoliderInfo soliderInfo;
+    //攻击目标
+    public CharacterInfo attackInfo;
     public float attackTime;
     public float curTime;
     //普通攻击放到状态机里做，技能用SkillManager做，普通攻击不作为技能处理
@@ -15,34 +17,42 @@ public class SoliderAtk : StateBase
         curTime = 0;
     }
 
-    public void SetParam(params object[] args)
+    public void SetParam(StateParam _param)
     {
-
+        if (_param == null)
+        {
+            return;
+        }
+        attackInfo = _param.targetInfo;
     }
 
     public void EnterExcute()
     {
         //soliderInfo.StartSkill(soliderInfo.attackSkill);
         attackTime = soliderInfo.GetFinalAttr(CharAttr.AttackTime);
-        soliderInfo.StartAttack();
+        soliderInfo.StartAttack(attackInfo);
         curTime = 0;
     }
 
     public void AttackEnd()
     {
         //Debug.Log("SkillEnd");
-        CharacterInfo attackCharInfo = soliderInfo.GetTargetInfo();
-        //如果目标死亡，回归空闲状态
-        if (attackCharInfo.IsDead())
+        //CharacterInfo attackCharInfo = soliderInfo.GetTargetInfo();
+        if (attackInfo == null)
         {
-            attackCharInfo.ChangeState("die");
+            soliderInfo.ChangeState("idle");
+        }
+        //如果目标死亡，回归空闲状态
+        else if (attackInfo.IsDead())
+        {
+            attackInfo.ChangeState("die");
             soliderInfo.ChangeState("ready");
         }
         //如果目标未死亡，继续攻击状态
         else
         {
             //Debug.Log("continue attack");
-            soliderInfo.ChangeState("attack");
+            soliderInfo.ChangeState("attack", new StateParam(attackInfo));
         }
     }
 

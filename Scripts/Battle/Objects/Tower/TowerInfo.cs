@@ -61,7 +61,7 @@ public class TowerInfo : CharacterInfo
 
     }
 
-    public virtual void ChangeState(string stateName, params object[] args)
+    public virtual void ChangeState(string stateName, StateParam _param = null)
     {
 
     }

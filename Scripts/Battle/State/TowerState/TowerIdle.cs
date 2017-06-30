@@ -17,7 +17,7 @@ public class TowerIdle : StateBase
         curTime = 0;
     }
 
-    public void SetParam(params object[] args)
+    public void SetParam(StateParam _param)
     {
 
     }
@@ -29,8 +29,8 @@ public class TowerIdle : StateBase
         CharacterInfo targetInfo = RunAI(towerInfo);
         if (targetInfo != null)
         {
-            towerInfo.SetTargetInfo(targetInfo);
-            towerInfo.ChangeState("attack", targetInfo);
+            //towerInfo.SetTargetInfo(targetInfo);
+            towerInfo.ChangeState("attack", new StateParam(targetInfo));
         }
     }
 
@@ -40,8 +40,8 @@ public class TowerIdle : StateBase
         //Debug.Log(towerInfo.WithinRange(targetInfo));
         if (targetInfo != null)
         {
-            towerInfo.SetTargetInfo(targetInfo);
-            towerInfo.ChangeState("attack", targetInfo);
+            //towerInfo.SetTargetInfo(targetInfo);
+            towerInfo.ChangeState("attack", new StateParam(targetInfo));
         }
         else
         {

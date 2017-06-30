@@ -1,15 +1,11 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using UnityEngine;
 
-public class CreatureIdle : StateBase
+public class CreatureWait : StateBase
 {
     public MonsterInfo monsterInfo;
-    public string name;
-
-    public CreatureIdle(MonsterInfo _monsterInfo)
+    public CreatureWait(MonsterInfo _monsterInfo)
     {
-        name = "CreatureIdle";
         monsterInfo = _monsterInfo;
     }
 
@@ -20,8 +16,7 @@ public class CreatureIdle : StateBase
 
     public void EnterExcute()
     {
-        //Debug.Log("CreatureIdle EnterExcute");
-        monsterInfo.DoAction("idle");
+
     }
 
     public void Excute()
@@ -34,4 +29,3 @@ public class CreatureIdle : StateBase
 
     }
 }
-

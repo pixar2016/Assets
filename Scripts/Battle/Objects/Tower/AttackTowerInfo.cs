@@ -6,7 +6,7 @@ using UnityEngine;
 public class AttackTowerInfo : TowerInfo
 {
     
-    public CharacterInfo attackCharInfo;
+    //public CharacterInfo attackCharInfo;
     //public int attackDamage;
     //public int attackSpeed;
     //public List<SkillInfo> attackSkillList;
@@ -35,19 +35,19 @@ public class AttackTowerInfo : TowerInfo
         attackSkill = SkillManager.getInstance().AddSkill(this.towerData._attackId, this);
     }
 
-    public override void SetTargetInfo(CharacterInfo charInfo)
-    {
-        attackCharInfo = charInfo;
-    }
+    //public override void SetTargetInfo(CharacterInfo charInfo)
+    //{
+    //    attackCharInfo = charInfo;
+    //}
 
-    public override CharacterInfo GetTargetInfo()
-    {
-        return attackCharInfo;
-    }
+    //public override CharacterInfo GetTargetInfo()
+    //{
+    //    return attackCharInfo;
+    //}
 
-    public override void StartAttack()
+    public override void StartAttack(CharacterInfo targetInfo)
     {
-        SkillManager.getInstance().StartSkill(attackSkill);
+        SkillManager.getInstance().StartSkill(attackSkill, new TriggerData(targetInfo));
     }
 
     MonsterInfo FindMonster()
@@ -76,15 +76,15 @@ public class AttackTowerInfo : TowerInfo
         }
     }
 
-    public override void ChangeState(string stateName, params object[] args)
+    public override void ChangeState(string stateName, StateParam _param = null)
     {
         if (stateName == "attack")
         {
-            towerStateMachine.ChangeState(towerAtk, args);
+            towerStateMachine.ChangeState(towerAtk, _param);
         }
         else if (stateName == "idle")
         {
-            towerStateMachine.ChangeState(towerIdle, args);
+            towerStateMachine.ChangeState(towerIdle, _param);
         }
     }
 

@@ -94,7 +94,7 @@ public class CharacterInfo
         this.eventDispatcher.Broadcast("DoAction", actionName);
     }
 
-    public virtual void ChangeState(string _state, params object[] args)
+    public virtual void ChangeState(string _state, StateParam _param = null)
     {
 
     }
@@ -121,7 +121,7 @@ public class CharacterInfo
         SkillManager.getInstance().StartSkill(skillInfo);
     }
     //开始普通攻击
-    public virtual void StartAttack(){}
+    public virtual void StartAttack(CharacterInfo targetInfo){}
 
     public virtual void Run(Vector3 targetPos){}
 
