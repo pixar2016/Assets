@@ -133,6 +133,15 @@ public class SoliderInfo : CharacterInfo
         return barrackSoliderPos;
     }
 
+    public bool WithinStayPos()
+    {
+        if (Vector3.Distance(barrackSoliderPos, GetPosition()) < 0.1f)
+        {
+            return true;
+        }
+        return false;
+    }
+
     //执行AI
     public CharacterInfo RunAI()
     {
@@ -145,7 +154,8 @@ public class SoliderInfo : CharacterInfo
         List<MonsterInfo> monsterList = EntityManager.getInstance().GetMonsterInfo();
         foreach (MonsterInfo monster in monsterList)
         {
-            if (monster.GetTargetInfo() == null && Vector3.Distance(this.GetPosition(), monster.GetPosition()) <= 150)
+            if (monster.GetTargetInfo() == null && Vector3.Distance(this.GetPosition(), monster.GetPosition()) <= 150
+                && Vector3.Distance(this.GetPosition(), barrackSoliderPos) <= 150)
             {
                 return monster;
             }

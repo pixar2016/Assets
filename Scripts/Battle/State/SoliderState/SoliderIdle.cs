@@ -32,7 +32,10 @@ public class SoliderIdle : StateBase
         //若未找到目标，继续空闲
         if (targetInfo == null)
         {
-            soliderInfo.ChangeState("idle");
+            if (!soliderInfo.WithinStayPos())
+            {
+                soliderInfo.ChangeState("ready");
+            }
         }
         //若找到目标，目标停住，并进入移动状态
         else
@@ -41,7 +44,7 @@ public class SoliderIdle : StateBase
             //targetInfo.SetTargetInfo(soliderInfo);
             targetInfo.ChangeState("idle");
             //soliderInfo.SetTargetInfo(targetInfo);
-            soliderInfo.ChangeState("move");
+            soliderInfo.ChangeState("move", new StateParam(targetInfo));
         }
     }
 

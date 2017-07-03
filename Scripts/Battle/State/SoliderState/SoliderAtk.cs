@@ -46,7 +46,7 @@ public class SoliderAtk : StateBase
         else if (attackInfo.IsDead())
         {
             attackInfo.ChangeState("die");
-            soliderInfo.ChangeState("ready");
+            soliderInfo.ChangeState("idle");
         }
         //如果目标未死亡，继续攻击状态
         else

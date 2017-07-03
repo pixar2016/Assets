@@ -26,6 +26,7 @@ public class SoliderMove : StateBase
     {
         //curPos = soliderInfo.GetPosition();
         //targetPos = soliderInfo.GetAttackMovePos();
+        targetPos = attackInfo.GetPosition();
         speed = soliderInfo.GetSpeed();
         soliderInfo.Run(targetPos);
     }
