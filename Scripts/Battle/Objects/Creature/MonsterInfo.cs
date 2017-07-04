@@ -14,13 +14,14 @@ public class MonsterInfo : CharacterInfo
     public CreatureDead creatureDead;
     public CreatureIdle creatureIdle;
     public CreatureMove creatureMove;
-    public CreatureWait creatureWait;
     //普通攻击
     public SkillInfo attackSkill;
     //当前怪物行动路径
     public PathInfo pathInfo;
     //当前走到路径第几个点
     public int curPathNum;
+    //攻击列表（可能有多个攻击目标）
+    public List<CharacterInfo> atkList;
     //正常初始化
     public MonsterInfo(int creatureIndexId, int creatureId, PathInfo _pathInfo)
     {
@@ -32,6 +33,7 @@ public class MonsterInfo : CharacterInfo
         pathInfo = _pathInfo;
         curPathNum = 0;
         position = pathInfo.GetPoint(curPathNum);
+        atkList = new List<CharacterInfo>();
     }
     //复制原型类中的数据
     public MonsterInfo(int creatureIndexId, CharacterPrototype charInfo, PathInfo _pathInfo)
@@ -44,6 +46,7 @@ public class MonsterInfo : CharacterInfo
         pathInfo = _pathInfo;
         curPathNum = 0;
         position = pathInfo.GetPoint(curPathNum);
+        atkList = new List<CharacterInfo>();
         charInfo.eventDispatcher.Register("ChangeProtoAttr", ChangeProtoAttr);
     }
 
@@ -61,7 +64,6 @@ public class MonsterInfo : CharacterInfo
         creatureDead = new CreatureDead(this);
         creatureIdle = new CreatureIdle(this);
         creatureMove = new CreatureMove(this);
-        creatureWait = new CreatureWait(this);
     }
 
     public void InitAttr(int _charId)
@@ -148,10 +150,6 @@ public class MonsterInfo : CharacterInfo
         {
             creatureStateMachine.ChangeState(creatureMove, _param);
         }
-        else if (_state == "wait")
-        {
-            creatureStateMachine.ChangeState(creatureWait, _param);
-        }
     }
 
     public override void SetState(string _state)
@@ -171,10 +169,6 @@ public class MonsterInfo : CharacterInfo
         else if (_state == "move")
         {
             creatureStateMachine.SetCurrentState(creatureMove);
-        }
-        else if (_state == "wait")
-        {
-            creatureStateMachine.SetCurrentState(creatureWait);
         }
     }
 
@@ -221,6 +215,11 @@ public class MonsterInfo : CharacterInfo
     public override bool IsDead()
     {
         return GetAttr(CharAttr.Hp) <= 0;
+    }
+
+    public bool HasAtkInfo()
+    {
+        return atkList.Count > 0;
     }
 
     public void Update()

@@ -6,16 +6,21 @@ public class CreatureIdle : StateBase
 {
     public MonsterInfo monsterInfo;
     public string name;
-
+    public List<CharacterInfo> atkList;
     public CreatureIdle(MonsterInfo _monsterInfo)
     {
         name = "CreatureIdle";
         monsterInfo = _monsterInfo;
+        atkList = monsterInfo.atkList;
     }
 
     public void SetParam(StateParam _param)
     {
-
+        if (_param == null)
+        {
+            return;
+        }
+        atkList.Add(_param.targetInfo);
     }
 
     public void EnterExcute()
@@ -26,7 +31,21 @@ public class CreatureIdle : StateBase
 
     public void Excute()
     {
+        int count = atkList.Count;
+        if (count == 1)
+        {
+            monsterInfo.ChangeState("attack", new StateParam(atkList[0]));
+            atkList.Clear();
+        }
+        else if (count > 1)
+        {
+            //for (int i = 0; i < count; i++)
+            //{
 
+            //}
+            monsterInfo.ChangeState("attack", new StateParam(atkList[0]));
+            atkList.RemoveAt(0);
+        }
     }
 
     public void ExitExcute()
