@@ -27,26 +27,26 @@ public class MonsterInfo : CharacterInfo
     {
         Id = creatureIndexId;
         charId = creatureId;
+        atkList = new List<CharacterInfo>();
         InitAttr(charId);
         InitStatusMachine();
         attackSkill = SkillManager.getInstance().AddSkill(1, this);
         pathInfo = _pathInfo;
         curPathNum = 0;
         position = pathInfo.GetPoint(curPathNum);
-        atkList = new List<CharacterInfo>();
     }
     //复制原型类中的数据
     public MonsterInfo(int creatureIndexId, CharacterPrototype charInfo, PathInfo _pathInfo)
     {
         Id = creatureIndexId;
         charId = charInfo.charId;
+        atkList = new List<CharacterInfo>();
         InitAttr(charInfo);
         InitStatusMachine();
         attackSkill = SkillManager.getInstance().AddSkill(1, this);
         pathInfo = _pathInfo;
         curPathNum = 0;
         position = pathInfo.GetPoint(curPathNum);
-        atkList = new List<CharacterInfo>();
         charInfo.eventDispatcher.Register("ChangeProtoAttr", ChangeProtoAttr);
     }
 

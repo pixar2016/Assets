@@ -39,10 +39,6 @@ public class CreatureIdle : StateBase
         }
         else if (count > 1)
         {
-            //for (int i = 0; i < count; i++)
-            //{
-
-            //}
             monsterInfo.ChangeState("attack", new StateParam(atkList[0]));
             atkList.RemoveAt(0);
         }

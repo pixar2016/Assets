@@ -42,7 +42,7 @@ public class SoliderIdle : StateBase
         {
             //双方都输入攻击目标，均被占用，不再接受其他人的约战
             //targetInfo.SetTargetInfo(soliderInfo);
-            targetInfo.ChangeState("idle");
+            targetInfo.ChangeState("idle", new StateParam(soliderInfo));
             //soliderInfo.SetTargetInfo(targetInfo);
             soliderInfo.ChangeState("move", new StateParam(targetInfo));
         }
