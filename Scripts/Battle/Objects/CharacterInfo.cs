@@ -104,17 +104,6 @@ public class CharacterInfo
 
     }
 
-    //用作设置目标，方便状态机转换
-    public virtual void SetTargetInfo(CharacterInfo charInfo)
-    {
-
-    }
-    //得到目标
-    public virtual CharacterInfo GetTargetInfo()
-    {
-        return null;
-    }
-
     //开始一个技能
     public void StartSkill(SkillInfo skillInfo)
     {

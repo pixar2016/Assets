@@ -38,11 +38,7 @@ public class SoliderMove : StateBase
         if (dis < speed * Time.deltaTime)
         {
             soliderInfo.SetPosition(targetPos.x, targetPos.y, targetPos.z);
-            //CharacterInfo attackInfo = soliderInfo.GetTargetInfo();
-            //soliderInfo.SetTargetInfo(attackInfo);
-            //attackInfo.SetTargetInfo(soliderInfo);
             soliderInfo.ChangeState("attack", new StateParam(attackInfo));
-            attackInfo.ChangeState("attack", new StateParam(soliderInfo));
         }
         else
         {

@@ -6,12 +6,11 @@ public class CreatureIdle : StateBase
 {
     public MonsterInfo monsterInfo;
     public string name;
-    public List<CharacterInfo> atkList;
+    public CharacterInfo atkInfo;
     public CreatureIdle(MonsterInfo _monsterInfo)
     {
         name = "CreatureIdle";
         monsterInfo = _monsterInfo;
-        atkList = monsterInfo.atkList;
     }
 
     public void SetParam(StateParam _param)
@@ -20,29 +19,25 @@ public class CreatureIdle : StateBase
         {
             return;
         }
-        atkList.Add(_param.targetInfo);
+        monsterInfo.SetAtkInfo(_param.targetInfo);
     }
 
     public void EnterExcute()
     {
         //Debug.Log("CreatureIdle EnterExcute");
         monsterInfo.DoAction("idle");
+        atkInfo = monsterInfo.GetAtkInfo();
     }
 
     public void Excute()
     {
-        int count = atkList.Count;
-        if (count == 1)
+        if (Vector3.Distance(atkInfo.GetPosition(), monsterInfo.GetPosition()) < 20)
         {
-            monsterInfo.ChangeState("attack", new StateParam(atkList[0]));
-            atkList.Clear();
-        }
-        else if (count > 1)
-        {
-            monsterInfo.ChangeState("attack", new StateParam(atkList[0]));
-            atkList.RemoveAt(0);
+            monsterInfo.ChangeState("attack", new StateParam(atkInfo));
         }
     }
+
+    
 
     public void ExitExcute()
     {

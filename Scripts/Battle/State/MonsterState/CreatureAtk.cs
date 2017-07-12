@@ -19,13 +19,14 @@ public class CreatureAtk : StateBase
     {
         if (_param == null)
             return;
-        attackInfo = _param.targetInfo;
+        monsterInfo.SetAtkInfo(_param.targetInfo);
     }
 
     public void EnterExcute()
     {
         //Debug.Log("CreatureAtk EnterExcute");
         //monsterInfo.StartSkill(monsterInfo.attackSkill);
+        attackInfo = monsterInfo.GetAtkInfo();
         attackTime = monsterInfo.GetFinalAttr(CharAttr.AttackTime);
         monsterInfo.StartAttack(attackInfo);
         curTime = 0;
@@ -34,13 +35,12 @@ public class CreatureAtk : StateBase
     public void AttackEnd()
     {
         //CharacterInfo attackCharInfo = monsterInfo.GetTargetInfo();
-        if (attackInfo == null)
+        if (monsterInfo.IsDead())
         {
-            monsterInfo.ChangeState("idle");
+            return;
         }
-        else if (attackInfo.IsDead())
+        if (attackInfo == null || attackInfo.IsDead())
         {
-            attackInfo.ChangeState("die");
             monsterInfo.ChangeState("move");
         }
         else

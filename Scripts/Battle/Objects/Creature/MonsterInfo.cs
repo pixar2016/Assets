@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class MonsterInfo : CharacterInfo
 {
     //攻击目标
-    //private CharacterInfo attackCharInfo;
+    private CharacterInfo attackCharInfo;
     //攻击需要移动的位置
     private Vector3 attackMovePos;
     //状态机
@@ -20,14 +20,11 @@ public class MonsterInfo : CharacterInfo
     public PathInfo pathInfo;
     //当前走到路径第几个点
     public int curPathNum;
-    //攻击列表（可能有多个攻击目标）
-    public List<CharacterInfo> atkList;
     //正常初始化
     public MonsterInfo(int creatureIndexId, int creatureId, PathInfo _pathInfo)
     {
         Id = creatureIndexId;
         charId = creatureId;
-        atkList = new List<CharacterInfo>();
         InitAttr(charId);
         InitStatusMachine();
         attackSkill = SkillManager.getInstance().AddSkill(1, this);
@@ -40,7 +37,6 @@ public class MonsterInfo : CharacterInfo
     {
         Id = creatureIndexId;
         charId = charInfo.charId;
-        atkList = new List<CharacterInfo>();
         InitAttr(charInfo);
         InitStatusMachine();
         attackSkill = SkillManager.getInstance().AddSkill(1, this);
@@ -122,15 +118,15 @@ public class MonsterInfo : CharacterInfo
         return pathInfo.GetPoint(curPathNum + 1);
     }
     ////设置攻击目标等信息
-    //public override void SetTargetInfo(CharacterInfo charInfo)
-    //{
-    //    attackCharInfo = charInfo;
-    //}
+    public void SetAtkInfo(CharacterInfo charInfo)
+    {
+        attackCharInfo = charInfo;
+    }
 
-    //public override CharacterInfo GetTargetInfo()
-    //{
-    //    return attackCharInfo;
-    //}
+    public CharacterInfo GetAtkInfo()
+    {
+        return attackCharInfo;
+    }
 
     public override void ChangeState(string _state, StateParam _param = null)
     {
@@ -215,11 +211,6 @@ public class MonsterInfo : CharacterInfo
     public override bool IsDead()
     {
         return GetAttr(CharAttr.Hp) <= 0;
-    }
-
-    public bool HasAtkInfo()
-    {
-        return atkList.Count > 0;
     }
 
     public void Update()

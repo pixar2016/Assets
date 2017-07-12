@@ -30,6 +30,7 @@ public class SoliderAtk : StateBase
     {
         //soliderInfo.StartSkill(soliderInfo.attackSkill);
         attackTime = soliderInfo.GetFinalAttr(CharAttr.AttackTime);
+        soliderInfo.SetAtkInfo(attackInfo);
         soliderInfo.StartAttack(attackInfo);
         curTime = 0;
     }
@@ -38,14 +39,9 @@ public class SoliderAtk : StateBase
     {
         //Debug.Log("SkillEnd");
         //CharacterInfo attackCharInfo = soliderInfo.GetTargetInfo();
-        if (attackInfo == null)
-        {
-            soliderInfo.ChangeState("idle");
-        }
         //如果目标死亡，回归空闲状态
-        else if (attackInfo.IsDead())
+        if (attackInfo == null || attackInfo.IsDead())
         {
-            attackInfo.ChangeState("die");
             soliderInfo.ChangeState("idle");
         }
         //如果目标未死亡，继续攻击状态

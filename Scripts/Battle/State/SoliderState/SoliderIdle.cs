@@ -41,9 +41,9 @@ public class SoliderIdle : StateBase
         else
         {
             //双方都输入攻击目标，均被占用，不再接受其他人的约战
-            //targetInfo.SetTargetInfo(soliderInfo);
+            //怪物进入等待状态，并且向目标的攻击列表中添加
             targetInfo.ChangeState("idle", new StateParam(soliderInfo));
-            //soliderInfo.SetTargetInfo(targetInfo);
+            //兵种进入到移动状态，向targetInfo移动
             soliderInfo.ChangeState("move", new StateParam(targetInfo));
         }
     }

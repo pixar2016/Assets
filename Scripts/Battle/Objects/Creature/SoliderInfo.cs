@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class SoliderInfo : CharacterInfo
 {
     //攻击目标
-    //private CharacterInfo attackCharInfo;
+    private CharacterInfo attackCharInfo;
     //兵营停留位置
     public Vector3 barrackSoliderPos;
     //出生位置
@@ -101,16 +101,16 @@ public class SoliderInfo : CharacterInfo
         SetPosition(bornpos);
     }
 
-    ////设置攻击目标等信息
-    //public override void SetTargetInfo(CharacterInfo charInfo)
-    //{
-    //    attackCharInfo = charInfo;
-    //}
+    //设置攻击目标等信息
+    public void SetAtkInfo(CharacterInfo charInfo)
+    {
+        attackCharInfo = charInfo;
+    }
 
-    //public override CharacterInfo GetTargetInfo()
-    //{
-    //    return attackCharInfo;
-    //}
+    public CharacterInfo GetTargetInfo()
+    {
+        return attackCharInfo;
+    }
     //public Vector3 GetAttackMovePos()
     //{
     //    Vector3 atkPos = attackCharInfo.GetPosition();
@@ -154,7 +154,8 @@ public class SoliderInfo : CharacterInfo
         List<MonsterInfo> monsterList = EntityManager.getInstance().GetMonsterInfo();
         foreach (MonsterInfo monster in monsterList)
         {
-            if (monster.GetTargetInfo() == null && Vector3.Distance(this.GetPosition(), monster.GetPosition()) <= 150
+            //小型单位如果已经有兵种阻拦，则不会再被占用，大型单位可以有多个兵种阻拦
+            if (monster.GetAtkInfo() == null && Vector3.Distance(this.GetPosition(), monster.GetPosition()) <= 150
                 && Vector3.Distance(this.GetPosition(), barrackSoliderPos) <= 150)
             {
                 return monster;

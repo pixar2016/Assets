@@ -62,5 +62,15 @@ public class BattleUtils
     {
         return Vector3.zero;
     }
+
+    /// <summary>
+    /// 根据攻击者与受攻击者距离排序受攻击者列表
+    /// </summary>
+    /// <param name="charInfo">攻击者</param>
+    /// <param name="atklist">受攻击者</param>
+    public static void SortAtkList(CharacterInfo charInfo, List<CharacterInfo> atklist)
+    {
+
+    }
 }
 
