@@ -26,9 +26,23 @@ public class SoliderMove : StateBase
     {
         //curPos = soliderInfo.GetPosition();
         //targetPos = soliderInfo.GetAttackMovePos();
-        targetPos = attackInfo.GetPosition();
+        targetPos = GetAtkPos(attackInfo.GetPosition());
         speed = soliderInfo.GetSpeed();
         soliderInfo.Run(targetPos);
+    }
+
+    private Vector3 GetAtkPos(Vector3 _targetPos)
+    {
+        Vector3 soliderPos = soliderInfo.GetPosition();
+        if (soliderPos.x < _targetPos.x)
+        {
+            _targetPos.x = _targetPos.x - 30;
+        }
+        else
+        {
+            _targetPos.x = _targetPos.x + 30;
+        }
+        return _targetPos;
     }
 
     public void Excute()

@@ -32,7 +32,7 @@ public class CreatureMove : StateBase
     public void Excute()
     {
         Vector3 pos = monsterInfo.GetPosition();
-        float dis = Vector3.Distance(pos, targetPos);
+        float dis = BattleUtils.Distance2(pos, targetPos);
         if (dis < speed * Time.deltaTime)
         {
             monsterInfo.SetPosition(targetPos.x, targetPos.y, targetPos.z);

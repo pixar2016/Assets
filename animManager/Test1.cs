@@ -142,15 +142,22 @@ public class Test1 : MonoBehaviour {
         
         //charInfo.ChangeState("move");
         BattleFingerEvent.getInstance();
-        tower = EntityManager.getInstance().AddTower(16);
-        tower.SetPosition(250, 0, 0);
-        tower.ChangeState("idle");
+        //tower = EntityManager.getInstance().AddTower(16);
+        //tower.SetPosition(250, 0, 0);
+        //tower.ChangeState("idle");
+
         GameManager.getInstance().LoadLevel(1);
         GameManager.getInstance().StartGame();
+
         //monster = EntityManager.getInstance().AddMonster(10001, path);
         //monster.SetPosition(-180, -150, 0);
 
-        
+        //CharacterInfo charInfo = EntityManager.getInstance().AddSolider(50001);
+        //charInfo.SetPosition(-180, -150, 0);
+        //charInfo.DoAction("idle");
+        //charInfo = EntityManager.getInstance().AddSolider(50001);
+        //charInfo.SetPosition(-170, -150, 0);
+        //charInfo.DoAction("idle");
     }
 
     public void StartAI()

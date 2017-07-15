@@ -31,6 +31,10 @@ public class CreatureIdle : StateBase
 
     public void Excute()
     {
+        if (atkInfo == null)
+        {
+            return;
+        }
         if (Vector3.Distance(atkInfo.GetPosition(), monsterInfo.GetPosition()) < 20)
         {
             monsterInfo.ChangeState("attack", new StateParam(atkInfo));

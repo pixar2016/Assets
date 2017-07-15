@@ -51,7 +51,7 @@ public class CharacterInfo
     public CharacterInfo()
     {
         eventDispatcher = new MiniEventDispatcher();
-        position = Vector3.zero;
+        position = new Vector3(0, 0, 0);
         rotation = Vector3.zero;
         attrList = new Dictionary<int, int>();
         dirtySign = 0;
@@ -59,11 +59,15 @@ public class CharacterInfo
 
     public virtual void SetPosition(float x, float y, float z)
     {
-        position = new Vector3(x, y, z);
+        //position = new Vector3(x, y, z);
+        position.x = x;
+        position.y = y;
+        position.z = y / 20;
     }
 
     public void SetPosition(Vector3 _pos)
     {
+        //_pos.z = _pos.y / 20f;
         position = _pos;
     }
 

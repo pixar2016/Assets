@@ -111,23 +111,7 @@ public class SoliderInfo : CharacterInfo
     {
         return attackCharInfo;
     }
-    //public Vector3 GetAttackMovePos()
-    //{
-    //    Vector3 atkPos = attackCharInfo.GetPosition();
-    //    Vector3 movePos;
-    //    Vector3 atkRot = attackCharInfo.GetRotation();
-    //    //攻击目标向左
-    //    if (atkRot.y > 0)
-    //    {
-    //        movePos = atkPos - new Vector3(30f, 0, 0); 
-    //    }
-    //    //攻击目标向右
-    //    else
-    //    {
-    //        movePos = atkPos + new Vector3(30f, 0, 0);
-    //    }
-    //    return movePos;
-    //}
+
     public Vector3 GetBarrackPos()
     {
         return barrackSoliderPos;

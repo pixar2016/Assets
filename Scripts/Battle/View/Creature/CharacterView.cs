@@ -35,6 +35,9 @@ public class CharacterView {
         }
         charAnim.OnInit(AnimationCache.getInstance().getAnimation(charInfo.charName));
         charAnim.startAnimation("idle");
+        MeshRenderer render = charObj.GetComponent<MeshRenderer>();
+        render.sortingLayerName = "Monster";
+        render.sortingOrder = this.charInfo.Id;
     }
 
     public void DoAction(object[] data)

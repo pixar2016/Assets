@@ -86,28 +86,28 @@ public class SelectPanel : UIComponent
     public void OnBtnArrowTowerClick(GameObject go)
     {
         //towerInfo.ChangeState("constructing", 2);
-        towerInfo.ChangeState("constructing");
+        towerInfo.ChangeState("constructing", new StateParam(2));
         UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
     }
 
     public void OnBtnMageTowerClick(GameObject go)
     {
         //towerInfo.ChangeState("constructing", 6);
-        towerInfo.ChangeState("constructing");
+        towerInfo.ChangeState("constructing", new StateParam(6));
         UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
     }
 
     public void OnBtnSoliderTowerClick(GameObject go)
     {
         //towerInfo.ChangeState("constructing", 16);
-        towerInfo.ChangeState("constructing");
+        towerInfo.ChangeState("constructing", new StateParam(16));
         UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
     }
 
     public void OnBtnArtileryTowerClick(GameObject go)
     {
         //towerInfo.ChangeState("constructing", 11);
-        towerInfo.ChangeState("constructing");
+        towerInfo.ChangeState("constructing", new StateParam(11));
         UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
     }
 
