@@ -23,7 +23,7 @@ public class StraightEffectInfo : EffectInfo
     {
         Vector3 targetPos = targetInfo.GetPosition();
         //Debug.Log(Vector3.Distance(pos, targetPos));
-        if (Vector3.Distance(pos, targetPos) < 10)
+        if (BattleUtils.Distance2(pos, targetPos) < 10)
         {
             Debug.Log("BulletReach");
             this.charInfo.eventDispatcher.Broadcast("BulletReach", triggerGroupId, targetPos, targetInfo);

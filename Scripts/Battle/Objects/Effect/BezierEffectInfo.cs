@@ -19,7 +19,7 @@ public class BezierEffectInfo : EffectInfo
         bezierPath = new Bezier();
         Vector3 startPos = _charInfo.GetPosition();
         Vector3 endPos = _targetInfo.GetPosition();
-        int fps = (int)(60 * Vector3.Distance(startPos, endPos) / speed);
+        int fps = (int)(60 * BattleUtils.Distance2(startPos, endPos) / speed);
         //Debug.Log(Vector3.Distance(startPos, endPos));
         //Debug.Log(_speed);
         //Debug.Log(fps);

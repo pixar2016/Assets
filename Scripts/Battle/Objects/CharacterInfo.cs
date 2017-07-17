@@ -91,11 +91,11 @@ public class CharacterInfo
         return false;
     }
 
-    public void DoAction(string actionName)
+    public void DoAction(string actionName, float actionTime = 0)
     {
         //Debug.Log("Dispatching: SampleEvent " + sampleEvent);
         this.actionName = actionName;
-        this.eventDispatcher.Broadcast("DoAction", actionName);
+        this.eventDispatcher.Broadcast("DoAction", actionName, actionTime);
     }
 
     public virtual void ChangeState(string _state, StateParam _param = null)
@@ -148,7 +148,7 @@ public class CharacterInfo
                 return GetAttr(CharAttr.HpMax) * (1 + GetAttr(CharAttr.HpMaxPer));
             case CharAttr.AttackTime:
                 int attackSpeed = GetAttr(CharAttr.AttackSpeed);
-                return (attackSpeed == 0) ? 0 : (1.0f / attackSpeed * (1 + GetAttr(CharAttr.AttackSpeedPer)));
+                return (attackSpeed == 0) ? 0 : (1.0f / (attackSpeed * (1 + GetAttr(CharAttr.AttackSpeedPer))));
             case CharAttr.AttackSpeed:
                 return GetAttr(CharAttr.AttackSpeed) * (1 + GetAttr(CharAttr.AttackSpeedPer));
             case CharAttr.AttackDamage:

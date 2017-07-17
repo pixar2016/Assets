@@ -46,7 +46,7 @@ public class TowerAtk : StateBase
 
     public bool WithinRange(TowerInfo towerInfo, CharacterInfo target)
     {
-        if (Vector3.Distance(towerInfo.GetPosition(), target.GetPosition()) <= 100)
+        if (BattleUtils.Distance2(towerInfo.GetPosition(), target.GetPosition()) <= 100)
             return true;
         else
             return false;

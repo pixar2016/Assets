@@ -41,7 +41,10 @@ public class Animate: MonoBehaviour
         gameObject.GetComponent<MeshRenderer>().sharedMaterial = SpriteFrameCache.getInstance().getSpriteTexture(anim.pictName);
     }
 
-    //根据model名字加载相应动画
+    /// <summary>
+    /// 根据animData表里的model列加载相应动画数据
+    /// </summary>
+    /// <param name="animName"></param>
     public void OnInit(string animName = "")
     {
         if (animName == null || animName == "")
@@ -57,7 +60,12 @@ public class Animate: MonoBehaviour
         //根据图片名字加载使用的材质
         gameObject.GetComponent<MeshRenderer>().material = SpriteFrameCache.getInstance().getSpriteTexture(anim.pictName);
     }
-    public void startAnimate(string actionName)
+    /// <summary>
+    /// 开始动画
+    /// </summary>
+    /// <param name="actionName">动作名</param>
+    /// <param name="animTime">动画播放时间</param>
+    public void startAnimate(string actionName, float animTime = 0)
     {
         MeshAnimation temp = anim.getMeshAnimation(actionName);
         if (temp == null)
@@ -67,13 +75,17 @@ public class Animate: MonoBehaviour
         }
         this.curActionName = actionName;
         this.curAnimation = temp;
-        this.delay = curAnimation.delay;
-        this.isLoop = curAnimation.loop;
         this.maxFrameNum = curAnimation.frameList.Count;
+        float frameDelta = animTime / this.maxFrameNum;
+        this.delay = (frameDelta > 0) ? frameDelta : curAnimation.delay;
+        this.isLoop = curAnimation.loop;
         this.curTime = delay;
         this.FrameNum = 0;
         this.active = true;
     }
+    /// <summary>
+    /// 停止动画
+    /// </summary>
     public void stopAnimate()
     {
         this.curActionName = "";
@@ -85,7 +97,11 @@ public class Animate: MonoBehaviour
         this.FrameNum = 0;
         this.active = false;
     }
-    //重新设置某个动作的时长
+    /// <summary>
+    /// 重新设置某个动作的时长
+    /// </summary>
+    /// <param name="actionName"></param>
+    /// <param name="time"></param>
     public void SetAnimateTime(string actionName, float time)
     {
         MeshAnimation temp = anim.getMeshAnimation(actionName);
@@ -121,16 +137,21 @@ public class Animate: MonoBehaviour
     {
         return this.maxFrameNum;
     }
-    //开始一个动画，包含多个动作
-    public void startAnimation(string actionName)
+    /// <summary>
+    /// 开始一个动画，包含多个动作
+    /// </summary>
+    /// <param name="actionName"></param>
+    public void startAnimation(string actionName, float animTime = 0)
     {
         //若是相同的动作，不需要改变
         if (curActionName != actionName)
         {
-            startAnimate(actionName);
+            startAnimate(actionName, animTime);
         }
     }
-    //开始一个动画，不包含动作，内部默认动作名为normal
+    /// <summary>
+    /// 开始一个动画，不包含动作，内部默认动作名为normal
+    /// </summary>
     public void startAnimation()
     {
         

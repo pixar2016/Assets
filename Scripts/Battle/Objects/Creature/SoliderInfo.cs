@@ -119,7 +119,7 @@ public class SoliderInfo : CharacterInfo
 
     public bool WithinStayPos()
     {
-        if (Vector3.Distance(barrackSoliderPos, GetPosition()) < 0.1f)
+        if (BattleUtils.Distance2(barrackSoliderPos, GetPosition()) < 0.1f)
         {
             return true;
         }
@@ -139,8 +139,8 @@ public class SoliderInfo : CharacterInfo
         foreach (MonsterInfo monster in monsterList)
         {
             //小型单位如果已经有兵种阻拦，则不会再被占用，大型单位可以有多个兵种阻拦
-            if (monster.GetAtkInfo() == null && Vector3.Distance(this.GetPosition(), monster.GetPosition()) <= 150
-                && Vector3.Distance(this.GetPosition(), barrackSoliderPos) <= 150)
+            if (monster.GetAtkInfo() == null && BattleUtils.Distance2(this.GetPosition(), monster.GetPosition()) <= 150
+                && BattleUtils.Distance2(this.GetPosition(), barrackSoliderPos) <= 150)
             {
                 return monster;
             }

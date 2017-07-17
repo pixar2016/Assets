@@ -48,7 +48,7 @@ public class SoliderMove : StateBase
     public void Excute()
     {
         Vector3 pos = soliderInfo.GetPosition();
-        float dis = Vector3.Distance(pos, targetPos);
+        float dis = BattleUtils.Distance2(pos, targetPos);
         if (dis < speed * Time.deltaTime)
         {
             soliderInfo.SetPosition(targetPos.x, targetPos.y, targetPos.z);

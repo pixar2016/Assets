@@ -32,6 +32,7 @@ public class ArrowTowerView : TowerView
             ClickInfo clickInfo = towerObj.GetComponent<ClickInfo>();
             clickInfo.OnInit(ClickType.Tower, this.towerInfo.Id, FingerDown);
         }
+
         //加载塔身图片
         GameObject towerBaseObj = towerObj.transform.Find("ArrowTowerBase").gameObject;
         Vector3 towerBasePos = towerBaseObj.transform.position;

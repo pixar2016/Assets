@@ -15,7 +15,9 @@ public class TriggerEffectLogic_Action : TriggerEffectBase
         {
             return;
         }
-        charInfo.DoAction(effectInfo.paramList[0]);
+        string actionName = effectInfo.paramList[0];
+        float actionTime = charInfo.GetFinalAttr(CharAttr.AttackTime);
+        charInfo.DoAction(effectInfo.paramList[0], actionTime);
     }
 }
 

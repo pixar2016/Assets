@@ -18,6 +18,7 @@ public class TriggerCondLogic_ActionEnd : TriggerCondBase
             return false;
         }
         //Debug.Log("EffectTime = " + triggerInfo.EffectTime);
+        //Debug.Log("animTime = " + animTime);
         condInfo.isConditionMatch = triggerInfo.EffectTime >= animTime;
         return condInfo.isConditionMatch;
     }

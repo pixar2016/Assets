@@ -20,7 +20,7 @@ public class TriggerEffectLogic_Bullet : TriggerEffectBase
         //CharacterInfo targetInfo = charInfo.GetTargetInfo();
         int effectId = int.Parse(effectInfo.paramList[0]);
         int pathType = int.Parse(effectInfo.paramList[1]);
-        float speed = 300;//float.Parse(effectInfo.paramList[2]);
+        float speed = float.Parse(effectInfo.paramList[2]);
         //EntityManager.getInstance().AddBullet(1, charInfo, targetInfo, 200f, triggerInfo.triggerGroup.Id);
         EntityManager.getInstance().AddMoveEffect(effectId, charInfo, targetInfo, speed, pathType, triggerInfo.triggerGroup.Id);
     }

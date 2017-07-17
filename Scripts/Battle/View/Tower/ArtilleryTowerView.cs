@@ -40,6 +40,7 @@ public class ArtilleryTowerView : TowerView
         Debug.Log(towerInfo.towerBase);
         towerBase.OnInit(towerInfo.towerBase);
         towerBase.startAnimation("idle");
+        //towerObj.GetComponent<MeshRenderer>().sortingLayerName = "Creature";
     }
 
     public override void DoAction(object[] data)

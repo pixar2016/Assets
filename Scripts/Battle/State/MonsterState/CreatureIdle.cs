@@ -35,7 +35,7 @@ public class CreatureIdle : StateBase
         {
             return;
         }
-        if (Vector3.Distance(atkInfo.GetPosition(), monsterInfo.GetPosition()) < 20)
+        if (BattleUtils.Distance2(atkInfo.GetPosition(), monsterInfo.GetPosition()) < 20)
         {
             monsterInfo.ChangeState("attack", new StateParam(atkInfo));
         }

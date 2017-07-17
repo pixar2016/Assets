@@ -35,6 +35,13 @@ public class EffectView
         {
             effectAnim = effectObj.AddComponent<Animate>();
         }
+        //if (effectObj.GetComponent<MeshRenderer>() != null)
+        //{
+        //    MeshRenderer render = effectObj.GetComponent<MeshRenderer>();
+        //    render.sortingLayerName = "Effect";
+        //}
+        MeshRenderer render = effectObj.GetComponent<MeshRenderer>();
+        render.sortingLayerName = "Effect";
         //effectAnim.OnInit(AnimationCache.getInstance().getAnimation(effectInfo.effectName));
         effectAnim.OnInit(effectInfo.effectName);
         effectAnim.startAnimation();

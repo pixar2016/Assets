@@ -55,7 +55,7 @@ public class AttackTowerInfo : TowerInfo
         List<MonsterInfo> monsterList = EntityManager.getInstance().GetMonsterInfo();
         foreach (MonsterInfo monster in monsterList)
         {
-            if (Vector3.Distance(this.GetPosition(), monster.GetPosition()) <= 100)
+            if (BattleUtils.Distance2(this.GetPosition(), monster.GetPosition()) <= 100)
             {
                 return monster;
             } 
@@ -66,7 +66,7 @@ public class AttackTowerInfo : TowerInfo
     //是否在攻击范围内
     public bool WithinRange(CharacterInfo target)
     {
-        if (Vector3.Distance(this.GetPosition(), target.GetPosition()) <= 100)
+        if (BattleUtils.Distance2(this.GetPosition(), target.GetPosition()) <= 100)
         {
             return true;
         }
