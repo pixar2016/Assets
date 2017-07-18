@@ -25,20 +25,7 @@ public class CharacterView {
         charAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/fly.prefab");
         charObj = charAsset.GameObjectAsset;
         charObj.name = charInfo.charName;
-        if (charObj.GetComponent<Animate>() != null)
-        {
-            charAnim = charObj.GetComponent<Animate>();
-        }
-        else
-        {
-            charAnim = charObj.AddComponent<Animate>();
-        }
-        charAnim.OnInit(AnimationCache.getInstance().getAnimation(charInfo.charName));
-        charAnim.startAnimation("idle");
-        MeshRenderer render = charObj.GetComponent<MeshRenderer>();
-        //render.sortingLayerName = "Creature";
-        //Debug.Log(render.sortingOrder);
-        //render.sortingOrder = this.charInfo.Id;
+        charAnim = InitAnimate(charObj, charInfo.charName);
     }
 
     public void DoAction(object[] data)
@@ -50,6 +37,44 @@ public class CharacterView {
             actionTime = float.Parse(data[1].ToString());
         }
         charAnim.startAnimation(data[0].ToString(), actionTime);
+    }
+
+    /// <summary>
+    /// 初始化动画
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <param name="modelName">动画模型名</param>
+    public Animate InitAnimate(GameObject obj, string modelName)
+    {
+        Animate animCom;
+        if (obj.GetComponent<Animate>() != null)
+        {
+            animCom = obj.GetComponent<Animate>();
+        }
+        else
+        {
+            animCom = obj.AddComponent<Animate>();
+        }
+        animCom.OnInit(modelName);
+        animCom.startAnimation("idle");
+        return animCom;
+    }
+
+    /// <summary>
+    /// 设置meshrenderer组件中所在的层名字和层ID，用于深度控制
+    /// </summary>
+    /// <param name="obj">包含meshrenderer的GameObject</param>
+    /// <param name="layerName">层名字sortingLayerName</param>
+    /// <param name="layerId">在该层的sortingOrder</param>
+    public void InitSortingLayer(GameObject obj, string layerName, int layerId = 0)
+    {
+        MeshRenderer render = obj.GetComponent<MeshRenderer>();
+        if (render == null)
+        {
+            Debug.Log("error:No MeshRenderer Component");
+        }
+        render.sortingLayerName = layerName;
+        render.sortingOrder = layerId;
     }
 
     public void Release()

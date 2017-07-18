@@ -17,39 +17,15 @@ public class MageTowerView : TowerView
         towerAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/MageTower.prefab");
         towerObj = towerAsset.GameObjectAsset;
         towerObj.transform.position = this.towerInfo.GetPosition();
-        if (towerObj.GetComponent<ClickInfo>() == null)
-        {
-            ClickInfo clickInfo = towerObj.AddComponent<ClickInfo>();
-            clickInfo.OnInit(ClickType.Tower, this.towerInfo.Id, FingerDown);
-        }
-        else
-        {
-            ClickInfo clickInfo = towerObj.GetComponent<ClickInfo>();
-            clickInfo.OnInit(ClickType.Tower, this.towerInfo.Id, FingerDown);
-        }
+        //增加点击事件
+        AddClickInfo(towerObj, towerInfo.Id);
         //加载塔身图片
-        if (towerObj.GetComponent<Animate>() != null)
-        {
-            towerBase = towerObj.GetComponent<Animate>();
-        }
-        else
-        {
-            towerBase = towerObj.AddComponent<Animate>();
-        }
-        towerBase.OnInit(towerInfo.towerBase);
-        towerBase.startAnimation("idle");
-        //加载射手
+        towerBase = InitAnimate(towerObj, towerInfo.towerBase);
+        //加载魔法师
         GameObject shooterObj = towerObj.transform.Find("MageShooter").gameObject;
-        if (shooterObj.GetComponent<Animate>() != null)
-        {
-            shooter = shooterObj.GetComponent<Animate>();
-        }
-        else
-        {
-            shooter = shooterObj.AddComponent<Animate>();
-        }
-        shooter.OnInit(towerInfo.shooter);
-        shooter.startAnimation("idle");
+        shooter = InitAnimate(shooterObj, towerInfo.shooter);
+        //根据塔基座大小增加碰撞盒
+        //AddBoxColider(towerObj, towerBase.width, towerBase.height);
     }
 
     public override void DoAction(object[] data)

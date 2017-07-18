@@ -17,26 +17,30 @@ public class BarrackTowerView : TowerView
         towerAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/SoliderTower.prefab");
         towerObj = towerAsset.GameObjectAsset;
         towerObj.transform.position = this.towerInfo.GetPosition();
-        if (towerObj.GetComponent<ClickInfo>() == null)
-        {
-            ClickInfo clickInfo = towerObj.AddComponent<ClickInfo>();
-            clickInfo.OnInit(ClickType.Tower, this.towerInfo.Id, FingerDown);
-        }
-        else
-        {
-            ClickInfo clickInfo = towerObj.GetComponent<ClickInfo>();
-            clickInfo.OnInit(ClickType.Tower, this.towerInfo.Id, FingerDown);
-        }
-        if (towerObj.GetComponent<Animate>() != null)
-        {
-            towerBase = towerObj.GetComponent<Animate>();
-        }
-        else
-        {
-            towerBase = towerObj.AddComponent<Animate>();
-        }
-        towerBase.OnInit(towerInfo.towerBase);
-        towerBase.startAnimation("idle");
+        //增加点击事件
+        AddClickInfo(towerObj, towerInfo.Id);
+        //加载塔身图片
+        towerBase = InitAnimate(towerObj, towerInfo.towerBase);
+        //if (towerObj.GetComponent<ClickInfo>() == null)
+        //{
+        //    ClickInfo clickInfo = towerObj.AddComponent<ClickInfo>();
+        //    clickInfo.OnInit(ClickType.Tower, this.towerInfo.Id, FingerDown);
+        //}
+        //else
+        //{
+        //    ClickInfo clickInfo = towerObj.GetComponent<ClickInfo>();
+        //    clickInfo.OnInit(ClickType.Tower, this.towerInfo.Id, FingerDown);
+        //}
+        //if (towerObj.GetComponent<Animate>() != null)
+        //{
+        //    towerBase = towerObj.GetComponent<Animate>();
+        //}
+        //else
+        //{
+        //    towerBase = towerObj.AddComponent<Animate>();
+        //}
+        //towerBase.OnInit(towerInfo.towerBase);
+        //towerBase.startAnimation("idle");
     }
 
     public override void DoAction(object[] data)

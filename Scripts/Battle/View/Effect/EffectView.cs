@@ -14,39 +14,48 @@ public class EffectView
 
     public void LoadModel()
     {
-        Animate effectAnim;
-        //SpriteImage sprite;
         effectAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/fly.prefab");
         effectObj = effectAsset.GameObjectAsset;
-        //if (effectObj.GetComponent<SpriteImage>() != null)
-        //{
-        //    sprite = effectObj.GetComponent<SpriteImage>();
-        //}
-        //else
-        //{
-        //    sprite = effectObj.AddComponent<SpriteImage>();
-        //}
-        //sprite.OnInit("knight_3.png");
-        if (effectObj.GetComponent<Animate>() != null)
+        InitAnimate(effectObj, effectInfo.effectName);
+        InitSortingLayer(effectObj, "Effect");
+    }
+    /// <summary>
+    /// 初始化动画
+    /// </summary>
+    /// <param name="obj"></param>
+    /// <param name="modelName">动画模型名</param>
+    public Animate InitAnimate(GameObject obj, string modelName)
+    {
+        Animate animCom;
+        if (obj.GetComponent<Animate>() != null)
         {
-            effectAnim = effectObj.GetComponent<Animate>();
+            animCom = obj.GetComponent<Animate>();
         }
         else
         {
-            effectAnim = effectObj.AddComponent<Animate>();
+            animCom = obj.AddComponent<Animate>();
         }
-        //if (effectObj.GetComponent<MeshRenderer>() != null)
-        //{
-        //    MeshRenderer render = effectObj.GetComponent<MeshRenderer>();
-        //    render.sortingLayerName = "Effect";
-        //}
-        MeshRenderer render = effectObj.GetComponent<MeshRenderer>();
-        render.sortingLayerName = "Effect";
-        //effectAnim.OnInit(AnimationCache.getInstance().getAnimation(effectInfo.effectName));
-        effectAnim.OnInit(effectInfo.effectName);
-        effectAnim.startAnimation();
+        animCom.OnInit(modelName);
+        animCom.startAnimation();
+        return animCom;
     }
 
+    /// <summary>
+    /// 设置meshrenderer组件中所在的层名字和层ID，用于深度控制
+    /// </summary>
+    /// <param name="obj">包含meshrenderer的GameObject</param>
+    /// <param name="layerName">层名字sortingLayerName</param>
+    /// <param name="layerId">在该层的sortingOrder</param>
+    public void InitSortingLayer(GameObject obj, string layerName, int layerId = 0)
+    {
+        MeshRenderer render = obj.GetComponent<MeshRenderer>();
+        if (render == null)
+        {
+            Debug.Log("error:No MeshRenderer Component");
+        }
+        render.sortingLayerName = layerName;
+        render.sortingOrder = layerId;
+    }
     public void Release()
     {
         GameLoader.Instance.UnLoadGameObject(effectAsset);

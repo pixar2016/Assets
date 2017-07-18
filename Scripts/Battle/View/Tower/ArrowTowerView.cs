@@ -22,67 +22,19 @@ public class ArrowTowerView : TowerView
         towerAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/ArrowTower.prefab");
         towerObj = towerAsset.GameObjectAsset;
         towerObj.transform.position = this.towerInfo.GetPosition();
-        if (towerObj.GetComponent<ClickInfo>() == null)
-        {
-            ClickInfo clickInfo = towerObj.AddComponent<ClickInfo>();
-            clickInfo.OnInit(ClickType.Tower, this.towerInfo.Id, FingerDown);
-        }
-        else
-        {
-            ClickInfo clickInfo = towerObj.GetComponent<ClickInfo>();
-            clickInfo.OnInit(ClickType.Tower, this.towerInfo.Id, FingerDown);
-        }
-
+        //增加点击事件
+        AddClickInfo(towerObj, towerInfo.Id);
         //加载塔身图片
         GameObject towerBaseObj = towerObj.transform.Find("ArrowTowerBase").gameObject;
-        Vector3 towerBasePos = towerBaseObj.transform.position;
-        towerBasePos.z += 1f;
-        towerBaseObj.transform.position = towerBasePos;
-        if (towerBaseObj.GetComponent<SpriteImage>() != null)
-        {
-            towerBase = towerBaseObj.GetComponent<SpriteImage>();
-        }
-        else
-        {
-            towerBase = towerBaseObj.AddComponent<SpriteImage>();
-        }
-        towerBase.OnInit(towerInfo.towerBase);
+        towerBase = InitSpriteImage(towerBaseObj, towerInfo.towerBase);
         //加载射手1
         GameObject shooterObj1 = towerObj.transform.Find("ArrowShooter1").gameObject;
-        if (shooterObj1.GetComponent<Animate>() != null)
-        {
-            shooter1 = shooterObj1.GetComponent<Animate>();
-        }
-        else
-        {
-            shooter1 = shooterObj1.AddComponent<Animate>();
-        }
-        shooter1.OnInit(towerInfo.shooter);
-        shooter1.startAnimation("idle");
+        shooter1 = InitAnimate(shooterObj1, towerInfo.shooter);
         //加载射手2
         GameObject shooterObj2 = towerObj.transform.Find("ArrowShooter2").gameObject;
-        if (shooterObj2.GetComponent<Animate>() != null)
-        {
-            shooter2 = shooterObj2.GetComponent<Animate>();
-        }
-        else
-        {
-            shooter2 = shooterObj2.AddComponent<Animate>();
-        }
+        shooter2 = InitAnimate(shooterObj2, towerInfo.shooter);
         //根据塔基座大小增加碰撞盒
-        BoxCollider collider;
-        if (towerObj.GetComponent<BoxCollider>() == null)
-        {
-            collider = towerObj.AddComponent<BoxCollider>();
-            collider.size = new Vector3(towerBase.width, towerBase.height, 0.2f);
-        }
-        else
-        {
-            collider = towerObj.GetComponent<BoxCollider>();
-            collider.size = new Vector3(towerBase.width, towerBase.height, 0.2f);
-        }
-        shooter2.OnInit(towerInfo.shooter);
-        shooter2.startAnimation("idle");
+        AddBoxColider(towerObj, towerBase.width, towerBase.height);
     }
 
     public override void DoAction(object[] data)
