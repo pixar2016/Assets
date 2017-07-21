@@ -15,12 +15,14 @@ public class AttackTowerInfo : TowerInfo
     public StateMachine towerStateMachine;
     public TowerAtk towerAtk;
     public TowerIdle towerIdle;
+    public TowerConstructing towerConstructing;
     public AttackTowerInfo(int indexId, int towerId) 
         : base(indexId, towerId)
     {
         towerStateMachine = new StateMachine();
         towerAtk = new TowerAtk(this);
         towerIdle = new TowerIdle(this);
+        towerConstructing = new TowerConstructing(this);
 
         attackSkill = SkillManager.getInstance().AddSkill(this.towerData._attackId, this);
     }
@@ -31,6 +33,7 @@ public class AttackTowerInfo : TowerInfo
         towerStateMachine = new StateMachine();
         towerAtk = new TowerAtk(this);
         towerIdle = new TowerIdle(this);
+        towerConstructing = new TowerConstructing(this);
 
         attackSkill = SkillManager.getInstance().AddSkill(this.towerData._attackId, this);
     }
@@ -85,6 +88,10 @@ public class AttackTowerInfo : TowerInfo
         else if (stateName == "idle")
         {
             towerStateMachine.ChangeState(towerIdle, _param);
+        }
+        else if (stateName == "constructing")
+        {
+            towerStateMachine.ChangeState(towerConstructing, _param);
         }
     }
 

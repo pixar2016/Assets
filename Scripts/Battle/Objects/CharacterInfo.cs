@@ -67,7 +67,7 @@ public class CharacterInfo
 
     public void SetPosition(Vector3 _pos)
     {
-        //_pos.z = _pos.y / 20f;
+        _pos.z = _pos.y / 20f;
         position = _pos;
     }
 
