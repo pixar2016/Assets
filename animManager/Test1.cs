@@ -141,7 +141,7 @@ public class Test1 : MonoBehaviour {
 
         
         //charInfo.ChangeState("move");
-        BattleFingerEvent.getInstance();
+        BattleFingerEvent.getInstance().ChangeState("start");
         //tower = EntityManager.getInstance().AddTower(11);
         //tower.SetPosition(250, 10, 0);
         //tower.ChangeState("idle");

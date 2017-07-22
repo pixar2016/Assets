@@ -1,50 +1,44 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-public class BattleFingerEvent
+
+public class FingerStart : StateBase
 {
-    private static BattleFingerEvent instance;
-    public static BattleFingerEvent getInstance()
+    public FingerStart()
     {
-        if (instance == null)
-        {
-            instance = new BattleFingerEvent();
-        }
-        return instance;
+
     }
-    public MiniEventDispatcher eventDispatcher;
-    private BattleFingerEvent()
+
+    public void SetParam(StateParam _param)
     {
-        eventDispatcher = new MiniEventDispatcher();
+
+    }
+
+    public void EnterExcute()
+    {
         FingerGestures.OnFingerDown += OnFingerDown;
     }
 
-    //在这里接受点击事件，只需发射一次射线识别物体，其他需要识别点击的物体接收广播即可。
     public void OnFingerDown(int fingerIndex, Vector2 fingerPos)
     {
 #if IPHONE || ANDROID
         if(EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)){
 #else
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
+        if (EventSystem.current.IsPointerOverGameObject()){
 #endif
             Debug.Log("点击到UI");
             return;
         }
-        //未点击到UI
         GameObject obj = PickObject(fingerPos);
-        //点击到物体
         if (obj != null && obj.GetComponent<ClickInfo>() != null)
         {
-            //Debug.Log("Click Obj");
             ClickInfo temp = obj.GetComponent<ClickInfo>();
             temp.fingerDown(temp);
             GameManager.getInstance().curClickInfo = temp;
         }
-        //未点击到任何物体
         else
         {
-            //Debug.Log("Not Click Obj");
             UiManager.Instance.CloseClickPanels();
             GameManager.getInstance().curClickInfo = null;
         }
@@ -60,9 +54,14 @@ public class BattleFingerEvent
 
         return null;
     }
-    public void Release()
+
+    public void Excute()
+    {
+
+    }
+
+    public void ExitExcute()
     {
         FingerGestures.OnFingerDown -= OnFingerDown;
     }
 }
-
