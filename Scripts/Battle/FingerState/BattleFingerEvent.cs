@@ -15,17 +15,16 @@ public class BattleFingerEvent
     public MiniEventDispatcher eventDispatcher;
 
     public StateMachine fingerStateMachine;
-
     public FingerStart fingerStart;
-
     public SelectBarrackAssemble selectBarrackAssemble;
-
+    public BattleCastMagic battleCastMagic;
     private BattleFingerEvent()
     {
         eventDispatcher = new MiniEventDispatcher();
         fingerStateMachine = new StateMachine();
         fingerStart = new FingerStart();
         selectBarrackAssemble = new SelectBarrackAssemble();
+        battleCastMagic = new BattleCastMagic();
     }
 
     public void ChangeState(string _state, StateParam _param = null)
@@ -37,6 +36,10 @@ public class BattleFingerEvent
         else if (_state == "selectBarrackAssemble")
         {
             fingerStateMachine.ChangeState(selectBarrackAssemble, _param);
+        }
+        else if (_state == "castMagic")
+        {
+            fingerStateMachine.ChangeState(battleCastMagic, _param);
         }
     }
 

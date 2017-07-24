@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// 选择兵营集合点
+/// 显示兵营可选择集合点的范围，点击在范围内，出现一个显示2s的旗子，然后退出进入FingerStart状态，点击到范围外，出现一个显示2s的叉，然后继续保留在该状态
+/// </summary>
 public class SelectBarrackAssemble : StateBase
 {
 
