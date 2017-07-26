@@ -910,5 +910,101 @@
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
+  },
+  {
+    "id": 77.0,
+    "modelName": "arrowTowerBase",
+    "animName": null,
+    "FrameName": "arrowTowerBase",
+    "startFrame": 0.0,
+    "endFrame": 0.0,
+    "delta": 0.1,
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 78.0,
+    "modelName": "ArtilleryTowerBase",
+    "animName": null,
+    "FrameName": "ArtilleryTowerBase",
+    "startFrame": 0.0,
+    "endFrame": 0.0,
+    "delta": 0.1,
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 79.0,
+    "modelName": "barrackTowerBase",
+    "animName": null,
+    "FrameName": "barrackTowerBase",
+    "startFrame": 0.0,
+    "endFrame": 0.0,
+    "delta": 0.1,
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 80.0,
+    "modelName": "mageTowerBase",
+    "animName": null,
+    "FrameName": "mageTowerBase",
+    "startFrame": 0.0,
+    "endFrame": 0.0,
+    "delta": 0.1,
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 81.0,
+    "modelName": "towerUpgradeEffect",
+    "animName": null,
+    "FrameName": "towerUpgradeEffect_",
+    "startFrame": 1.0,
+    "endFrame": 11.0,
+    "delta": 0.1,
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 82.0,
+    "modelName": "fireRain",
+    "animName": null,
+    "FrameName": "fireRain_",
+    "startFrame": 1.0,
+    "endFrame": 10.0,
+    "delta": 0.1,
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 83.0,
+    "modelName": "fireRainSelect",
+    "animName": null,
+    "FrameName": "fireRainSelect_",
+    "startFrame": 1.0,
+    "endFrame": 39.0,
+    "delta": 0.1,
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 84.0,
+    "modelName": "lightenSelect",
+    "animName": null,
+    "FrameName": "lightenSelect_",
+    "startFrame": 1.0,
+    "endFrame": 3.0,
+    "delta": 0.1,
+    "loop": 1.0,
+    "xoffset": null,
+    "yoffset": null
   }
 ]

@@ -25,6 +25,25 @@ public class OpenSpaceConstructing : StateBase
     {
         //开始播放建造中动画
         curTime = 0;
+        //EntityManager.getInstance().AddStaticEffect(20, openSpaceInfo.GetPosition());
+        int towerType = J_Tower.GetData(changeTowerId)._towerType;
+        if (towerType == 1)
+        {
+            EntityManager.getInstance().AddStaticEffect(12, openSpaceInfo.GetPosition());
+        }
+        else if (towerType == 2)
+        {
+            EntityManager.getInstance().AddStaticEffect(13, openSpaceInfo.GetPosition());
+        }
+        else if (towerType == 3)
+        {
+            EntityManager.getInstance().AddStaticEffect(15, openSpaceInfo.GetPosition());
+        }
+        else if (towerType == 4)
+        {
+            EntityManager.getInstance().AddStaticEffect(14, openSpaceInfo.GetPosition());
+        }
+        
     }
 
     public void Excute()
@@ -33,6 +52,7 @@ public class OpenSpaceConstructing : StateBase
         if (curTime > 1f)
         {
             TowerInfo changeTower = EntityManager.getInstance().AddTower(changeTowerId);
+            EntityManager.getInstance().AddStaticEffect(20, openSpaceInfo.GetPosition());
             Vector3 pos = openSpaceInfo.GetPosition();
             changeTower.SetPosition(pos.x, pos.y, pos.z);
             changeTower.ChangeState("idle");

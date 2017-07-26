@@ -56,7 +56,47 @@
   },
   {
     "id": 12.0,
+    "name": "箭塔基座",
+    "model": "arrowTowerBase"
+  },
+  {
+    "id": 13.0,
+    "name": "魔法塔基座",
+    "model": "mageTowerBase"
+  },
+  {
+    "id": 14.0,
+    "name": "兵营基座",
+    "model": "barrackTowerBase"
+  },
+  {
+    "id": 15.0,
+    "name": "炮塔基座",
+    "model": "ArtilleryTowerBase"
+  },
+  {
+    "id": 16.0,
     "name": "闪电",
     "model": "lightening"
+  },
+  {
+    "id": 17.0,
+    "name": "闪电选择",
+    "model": "lightenSelect"
+  },
+  {
+    "id": 18.0,
+    "name": "火雨",
+    "model": "fireRain"
+  },
+  {
+    "id": 19.0,
+    "name": "火雨选择",
+    "model": "fireRainSelect"
+  },
+  {
+    "id": 20.0,
+    "name": "塔升级特效",
+    "model": "towerUpgradeEffect"
   }
 ]
