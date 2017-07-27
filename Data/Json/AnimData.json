@@ -6,7 +6,7 @@
     "FrameName": "wulf_",
     "startFrame": 19.0,
     "endFrame": 19.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -18,7 +18,7 @@
     "FrameName": "wulf_",
     "startFrame": 1.0,
     "endFrame": 8.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -30,7 +30,7 @@
     "FrameName": "wulf_",
     "startFrame": 9.0,
     "endFrame": 18.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -42,7 +42,7 @@
     "FrameName": "wulf_",
     "startFrame": 19.0,
     "endFrame": 28.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -54,7 +54,7 @@
     "FrameName": "wulf_",
     "startFrame": 29.0,
     "endFrame": 35.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -66,7 +66,7 @@
     "FrameName": "wulf_",
     "startFrame": 36.0,
     "endFrame": 40.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -78,7 +78,7 @@
     "FrameName": "wulf_",
     "startFrame": 41.0,
     "endFrame": 49.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -90,7 +90,7 @@
     "FrameName": "knight_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -102,7 +102,7 @@
     "FrameName": "knight_",
     "startFrame": 2.0,
     "endFrame": 6.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -114,7 +114,7 @@
     "FrameName": "knight_",
     "startFrame": 7.0,
     "endFrame": 10.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -126,7 +126,7 @@
     "FrameName": "knight_",
     "startFrame": 11.0,
     "endFrame": 15.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -138,7 +138,7 @@
     "FrameName": "knight_",
     "startFrame": 16.0,
     "endFrame": 33.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -150,7 +150,7 @@
     "FrameName": "knight_",
     "startFrame": 34.0,
     "endFrame": 62.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -162,7 +162,7 @@
     "FrameName": "knight_",
     "startFrame": 63.0,
     "endFrame": 69.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -174,7 +174,7 @@
     "FrameName": "arrowTowerlv1Shooter_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -186,7 +186,7 @@
     "FrameName": "arrowTowerlv1Shooter_",
     "startFrame": 1.0,
     "endFrame": 5.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -198,7 +198,7 @@
     "FrameName": "arrowTowerlv1Shooter_",
     "startFrame": 6.0,
     "endFrame": 10.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -210,7 +210,7 @@
     "FrameName": "arrowTowerlv2Shooter_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -222,7 +222,7 @@
     "FrameName": "arrowTowerlv2Shooter_",
     "startFrame": 1.0,
     "endFrame": 5.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -234,7 +234,7 @@
     "FrameName": "arrowTowerlv2Shooter_",
     "startFrame": 6.0,
     "endFrame": 10.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -246,7 +246,7 @@
     "FrameName": "arrowTowerlv3Shooter_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -258,7 +258,7 @@
     "FrameName": "arrowTowerlv3Shooter_",
     "startFrame": 1.0,
     "endFrame": 5.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -270,7 +270,7 @@
     "FrameName": "arrowTowerlv3Shooter_",
     "startFrame": 6.0,
     "endFrame": 10.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -282,7 +282,7 @@
     "FrameName": "barrackTowerlv1_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -294,7 +294,7 @@
     "FrameName": "barrackTowerlv1_",
     "startFrame": 2.0,
     "endFrame": 4.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -306,7 +306,7 @@
     "FrameName": "barrackTowerlv2_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -318,7 +318,7 @@
     "FrameName": "barrackTowerlv2_",
     "startFrame": 2.0,
     "endFrame": 4.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -330,7 +330,7 @@
     "FrameName": "barrackTowerlv3_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -342,7 +342,7 @@
     "FrameName": "barrackTowerlv3_",
     "startFrame": 2.0,
     "endFrame": 4.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -354,7 +354,7 @@
     "FrameName": "barrackTowerKnight_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -366,7 +366,7 @@
     "FrameName": "barrackTowerKnight_",
     "startFrame": 2.0,
     "endFrame": 4.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -378,7 +378,7 @@
     "FrameName": "barrackTowerSavage_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -390,7 +390,7 @@
     "FrameName": "barrackTowerSavage_",
     "startFrame": 2.0,
     "endFrame": 4.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -402,7 +402,7 @@
     "FrameName": "mageTowerlv1_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -414,7 +414,7 @@
     "FrameName": "mageTowerlv1_",
     "startFrame": 2.0,
     "endFrame": 6.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -426,7 +426,7 @@
     "FrameName": "mageTowerlv2_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -438,7 +438,7 @@
     "FrameName": "mageTowerlv2_",
     "startFrame": 2.0,
     "endFrame": 6.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -450,7 +450,7 @@
     "FrameName": "mageTowerlv3_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -462,7 +462,7 @@
     "FrameName": "mageTowerlv3_",
     "startFrame": 2.0,
     "endFrame": 6.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -474,7 +474,7 @@
     "FrameName": "mageTowerShooter_",
     "startFrame": 2.0,
     "endFrame": 2.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -486,7 +486,7 @@
     "FrameName": "mageTowerShooter_",
     "startFrame": 3.0,
     "endFrame": 3.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -498,7 +498,7 @@
     "FrameName": "mageTowerShooter_",
     "startFrame": 4.0,
     "endFrame": 12.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -510,7 +510,7 @@
     "FrameName": "mageTowerShooter_",
     "startFrame": 13.0,
     "endFrame": 22.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -522,7 +522,7 @@
     "FrameName": "mageTowerNecroShooter_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -534,7 +534,7 @@
     "FrameName": "mageTowerNecroShooter_",
     "startFrame": 2.0,
     "endFrame": 2.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -546,7 +546,7 @@
     "FrameName": "mageTowerNecroShooter_",
     "startFrame": 3.0,
     "endFrame": 15.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -558,7 +558,7 @@
     "FrameName": "mageTowerNecroShooter_",
     "startFrame": 16.0,
     "endFrame": 28.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -570,7 +570,7 @@
     "FrameName": "mageTowerNecroShooter_",
     "startFrame": 29.0,
     "endFrame": 31.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -582,7 +582,7 @@
     "FrameName": "mageTowerNecroShooter_",
     "startFrame": 32.0,
     "endFrame": 34.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -594,7 +594,7 @@
     "FrameName": "mageTowerMasterShooter_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -606,7 +606,7 @@
     "FrameName": "mageTowerMasterShooter_",
     "startFrame": 2.0,
     "endFrame": 2.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -618,7 +618,7 @@
     "FrameName": "mageTowerMasterShooter_",
     "startFrame": 3.0,
     "endFrame": 4.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -630,7 +630,7 @@
     "FrameName": "mageTowerMasterShooter_",
     "startFrame": 5.0,
     "endFrame": 6.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -642,7 +642,7 @@
     "FrameName": "artilleryTowerlv1_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -654,7 +654,7 @@
     "FrameName": "artilleryTowerlv1_",
     "startFrame": 2.0,
     "endFrame": 19.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -666,7 +666,7 @@
     "FrameName": "artilleryTowerlv2_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -678,7 +678,7 @@
     "FrameName": "artilleryTowerlv2_",
     "startFrame": 2.0,
     "endFrame": 20.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -690,7 +690,7 @@
     "FrameName": "artilleryTowerlv3_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -702,7 +702,7 @@
     "FrameName": "artilleryTowerlv3_",
     "startFrame": 2.0,
     "endFrame": 17.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -714,7 +714,7 @@
     "FrameName": "artilleryTowerEarthquake_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -726,7 +726,7 @@
     "FrameName": "artilleryTowerEarthquake_",
     "startFrame": 2.0,
     "endFrame": 27.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -738,7 +738,7 @@
     "FrameName": "artilleryTowerEarthquake_",
     "startFrame": 27.0,
     "endFrame": 37.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -750,7 +750,7 @@
     "FrameName": "artilleryTowerTesla_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -762,7 +762,7 @@
     "FrameName": "artilleryTowerTesla_",
     "startFrame": 2.0,
     "endFrame": 33.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -774,7 +774,7 @@
     "FrameName": "arrow",
     "startFrame": 0.0,
     "endFrame": 0.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -786,7 +786,7 @@
     "FrameName": "mageTowerlv1Bullet_",
     "startFrame": 1.0,
     "endFrame": 10.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -798,7 +798,7 @@
     "FrameName": "witchtowereffect_",
     "startFrame": 5.0,
     "endFrame": 13.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -810,7 +810,7 @@
     "FrameName": "witchtowereffect_",
     "startFrame": 1.0,
     "endFrame": 4.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -822,7 +822,7 @@
     "FrameName": "magetowereffect_",
     "startFrame": 1.0,
     "endFrame": 12.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -834,7 +834,7 @@
     "FrameName": "mageTowerMasterEffect_",
     "startFrame": 1.0,
     "endFrame": 16.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -846,7 +846,7 @@
     "FrameName": "transfereffect_",
     "startFrame": 1.0,
     "endFrame": 5.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -858,7 +858,7 @@
     "FrameName": "transfereffect_",
     "startFrame": 6.0,
     "endFrame": 10.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -870,7 +870,7 @@
     "FrameName": "turretlv2effect_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -882,7 +882,7 @@
     "FrameName": "turretlv2effect_",
     "startFrame": 4.0,
     "endFrame": 14.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": 20.0
@@ -894,7 +894,7 @@
     "FrameName": "barrackeffect_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -906,7 +906,7 @@
     "FrameName": "lightning_",
     "startFrame": 4.0,
     "endFrame": 13.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -918,7 +918,7 @@
     "FrameName": "arrowTowerBase",
     "startFrame": 0.0,
     "endFrame": 0.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -930,7 +930,7 @@
     "FrameName": "ArtilleryTowerBase",
     "startFrame": 0.0,
     "endFrame": 0.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -942,7 +942,7 @@
     "FrameName": "barrackTowerBase",
     "startFrame": 0.0,
     "endFrame": 0.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -954,7 +954,7 @@
     "FrameName": "mageTowerBase",
     "startFrame": 0.0,
     "endFrame": 0.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -966,7 +966,7 @@
     "FrameName": "towerUpgradeEffect_",
     "startFrame": 1.0,
     "endFrame": 11.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -978,7 +978,7 @@
     "FrameName": "fireRain_",
     "startFrame": 1.0,
     "endFrame": 10.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
     "yoffset": null
@@ -990,7 +990,7 @@
     "FrameName": "fireRainSelect_",
     "startFrame": 1.0,
     "endFrame": 39.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null
@@ -1002,7 +1002,7 @@
     "FrameName": "lightenSelect_",
     "startFrame": 1.0,
     "endFrame": 3.0,
-    "delta": 0.1,
+    "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
     "yoffset": null

@@ -5,8 +5,9 @@ using UnityEngine;
 public class OpenSpaceConstructing : StateBase
 {
     public OpenSpaceInfo openSpaceInfo;
-    public float curTime;
     public int changeTowerId;
+    public float curTime;
+    public EffectInfo baseEffect;
     public OpenSpaceConstructing(OpenSpaceInfo _openSpaceInfo)
     {
         openSpaceInfo = _openSpaceInfo;
@@ -23,39 +24,24 @@ public class OpenSpaceConstructing : StateBase
 
     public void EnterExcute()
     {
-        //开始播放建造中动画
         curTime = 0;
-        //EntityManager.getInstance().AddStaticEffect(20, openSpaceInfo.GetPosition());
-        int towerType = J_Tower.GetData(changeTowerId)._towerType;
-        if (towerType == 1)
-        {
-            EntityManager.getInstance().AddStaticEffect(12, openSpaceInfo.GetPosition());
-        }
-        else if (towerType == 2)
-        {
-            EntityManager.getInstance().AddStaticEffect(13, openSpaceInfo.GetPosition());
-        }
-        else if (towerType == 3)
-        {
-            EntityManager.getInstance().AddStaticEffect(15, openSpaceInfo.GetPosition());
-        }
-        else if (towerType == 4)
-        {
-            EntityManager.getInstance().AddStaticEffect(14, openSpaceInfo.GetPosition());
-        }
-        
+        //进入第一次创建过程，需要显示底座
+        baseEffect = EntityManager.getInstance().AddStaticEffect(12, openSpaceInfo.GetPosition());
+        openSpaceInfo.DoAction("hide");
     }
 
     public void Excute()
     {
         curTime += Time.deltaTime;
-        if (curTime > 1f)
+        if (curTime > 1)
         {
+            EntityManager.getInstance().RemoveEffect(baseEffect.Id);
             TowerInfo changeTower = EntityManager.getInstance().AddTower(changeTowerId);
-            EntityManager.getInstance().AddStaticEffect(20, openSpaceInfo.GetPosition());
             Vector3 pos = openSpaceInfo.GetPosition();
             changeTower.SetPosition(pos.x, pos.y, pos.z);
             changeTower.ChangeState("idle");
+            //加入灰尘特效
+            EntityManager.getInstance().AddStaticEffect(20, pos);
             EntityManager.getInstance().RemoveTower(openSpaceInfo.Id);
         }
     }

@@ -57,10 +57,12 @@ public class ArrowTowerView : TowerView
         {
             shooterNum = 2;
             shooter1.startAnimation("attack");
+            shooter2.startAnimation("idle");
         }
         else
         {
             shooterNum = 1;
+            shooter1.startAnimation("idle");
             shooter2.startAnimation("attack");
         }
     }
