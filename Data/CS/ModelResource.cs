@@ -39,11 +39,20 @@ public class J_ModelResource
 			if(jsonObject["id"] != null){
 				info._id = int.Parse(jsonObject["id"].ToString());
 			}
+			else{
+				info._id = 0;
+			}
 			if(jsonObject["modelName"] != null){
 				info._modelName = jsonObject["modelName"].ToString();
 			}
+			else{
+				info._modelName = "";
+			}
 			if(jsonObject["modelPath"] != null){
 				info._modelPath = jsonObject["modelPath"].ToString();
+			}
+			else{
+				info._modelPath = "";
 			}
 
             infoDict.Add(info._id, info);
@@ -54,6 +63,25 @@ public class J_ModelResource
             Debug.Log(">>>>>"+info.Value._id+":"+info.Value._name+":"+info.Value._desc+":"+info.Value._point+":"+info.Value._label+":"+info.Value._type+":"+info.Value._number+":"+info.Value._function+":"+info.Value._para+":"+info.Value._reward+":"+"<<<<<\n");
         }
         */
+    }
+
+	/// <summary>
+    /// 将string拆分为int数组
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
+    public static int[] GetIntArray(string data)
+    {
+        string[] strArray = data.Split('|');
+        int strLength = strArray.Length;
+        int[] intArray = new int[strLength];
+        int result;
+        for (int i = 0; i < strLength; i++)
+        {
+            bool isSuccess = int.TryParse(strArray[i], out result);
+            intArray[i] = isSuccess ? result : 0;
+        }
+        return intArray;
     }
 
     /// <summary>

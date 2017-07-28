@@ -52,50 +52,98 @@ public class J_Creature
 			if(jsonObject["id"] != null){
 				info._id = int.Parse(jsonObject["id"].ToString());
 			}
+			else{
+				info._id = 0;
+			}
 			if(jsonObject["name"] != null){
 				info._name = jsonObject["name"].ToString();
+			}
+			else{
+				info._name = "";
 			}
 			if(jsonObject["modelName"] != null){
 				info._modelName = jsonObject["modelName"].ToString();
 			}
+			else{
+				info._modelName = "";
+			}
 			if(jsonObject["hp"] != null){
 				info._hp = int.Parse(jsonObject["hp"].ToString());
+			}
+			else{
+				info._hp = 0;
 			}
 			if(jsonObject["attackSpeed"] != null){
 				info._attackSpeed = int.Parse(jsonObject["attackSpeed"].ToString());
 			}
+			else{
+				info._attackSpeed = 0;
+			}
 			if(jsonObject["attackDamage"] != null){
 				info._attackDamage = int.Parse(jsonObject["attackDamage"].ToString());
+			}
+			else{
+				info._attackDamage = 0;
 			}
 			if(jsonObject["defenceType"] != null){
 				info._defenceType = int.Parse(jsonObject["defenceType"].ToString());
 			}
+			else{
+				info._defenceType = 0;
+			}
 			if(jsonObject["attackRange"] != null){
 				info._attackRange = int.Parse(jsonObject["attackRange"].ToString());
+			}
+			else{
+				info._attackRange = 0;
 			}
 			if(jsonObject["attackId"] != null){
 				info._attackId = int.Parse(jsonObject["attackId"].ToString());
 			}
+			else{
+				info._attackId = 0;
+			}
 			if(jsonObject["speed"] != null){
 				info._speed = int.Parse(jsonObject["speed"].ToString());
+			}
+			else{
+				info._speed = 0;
 			}
 			if(jsonObject["description"] != null){
 				info._description = jsonObject["description"].ToString();
 			}
+			else{
+				info._description = "";
+			}
 			if(jsonObject["attackType"] != null){
 				info._attackType = int.Parse(jsonObject["attackType"].ToString());
+			}
+			else{
+				info._attackType = 0;
 			}
 			if(jsonObject["skill1"] != null){
 				info._skill1 = int.Parse(jsonObject["skill1"].ToString());
 			}
+			else{
+				info._skill1 = 0;
+			}
 			if(jsonObject["skill2"] != null){
 				info._skill2 = int.Parse(jsonObject["skill2"].ToString());
+			}
+			else{
+				info._skill2 = 0;
 			}
 			if(jsonObject["skill3"] != null){
 				info._skill3 = int.Parse(jsonObject["skill3"].ToString());
 			}
+			else{
+				info._skill3 = 0;
+			}
 			if(jsonObject["skill4"] != null){
 				info._skill4 = int.Parse(jsonObject["skill4"].ToString());
+			}
+			else{
+				info._skill4 = 0;
 			}
 
             infoDict.Add(info._id, info);
@@ -106,6 +154,25 @@ public class J_Creature
             Debug.Log(">>>>>"+info.Value._id+":"+info.Value._name+":"+info.Value._desc+":"+info.Value._point+":"+info.Value._label+":"+info.Value._type+":"+info.Value._number+":"+info.Value._function+":"+info.Value._para+":"+info.Value._reward+":"+"<<<<<\n");
         }
         */
+    }
+
+	/// <summary>
+    /// 将string拆分为int数组
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
+    public static int[] GetIntArray(string data)
+    {
+        string[] strArray = data.Split('|');
+        int strLength = strArray.Length;
+        int[] intArray = new int[strLength];
+        int result;
+        for (int i = 0; i < strLength; i++)
+        {
+            bool isSuccess = int.TryParse(strArray[i], out result);
+            intArray[i] = isSuccess ? result : 0;
+        }
+        return intArray;
     }
 
     /// <summary>

@@ -149,6 +149,12 @@ public class Test1 : MonoBehaviour {
         GameManager.getInstance().LoadLevel(1);
         GameManager.getInstance().StartGame();
 
+        int[] result = J_Tower.GetIntArray("1|df|3");
+        foreach (int data in result)
+        {
+            Debug.Log(data);
+        }
+
         //monster = EntityManager.getInstance().AddMonster(10001, path);
         //monster.SetPosition(250, 5, 0);
         //monster = EntityManager.getInstance().AddMonster(10001, path);

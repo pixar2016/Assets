@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class SelectPanel : UIComponent
 {
     int panelType;
-    TowerInfo towerInfo;
+    private TowerInfo towerInfo;
+    private int[] nextlevel;
 
     public GameObject BuildTowerObj;
     public Button BtnArrowTower;
@@ -23,10 +24,17 @@ public class SelectPanel : UIComponent
     public Button BtnSkill1;
     public Button BtnSkill2;
     public Button BtnSkill3;
+
+    public GameObject UpgradeFinalTower;
+    public Button BtnUpgrade1;
+    public Button BtnUpgrade2;
+    public Button BtnSell1;
     //public Button button;
     public override void OnInit(object[] data)
     {
         towerInfo = (TowerInfo)data[0];
+        nextlevel = towerInfo.towerData._nextlevel;
+
         this.gameObject.transform.position = Camera.main.WorldToScreenPoint(towerInfo.GetPosition());
         BuildTowerObj = transform.Find("BuildTower").gameObject;
         BtnArrowTower = transform.Find("BuildTower/BtnArrow").GetComponent<Button>();
@@ -42,6 +50,9 @@ public class SelectPanel : UIComponent
         BtnSkill1 = transform.Find("UpgradeSkill/BtnSkill1").GetComponent<Button>();
         BtnSkill2 = transform.Find("UpgradeSkill/BtnSkill2").GetComponent<Button>();
         BtnSkill3 = transform.Find("UpgradeSkill/BtnSkill3").GetComponent<Button>();
+
+        UpgradeFinalTower = transform.Find("UpgradeFinalTower").gameObject;
+        //BtnUpgrade1 = transform.Find()
         SetEventListener();
 
         ShowPanel(towerInfo);
@@ -54,17 +65,26 @@ public class SelectPanel : UIComponent
         BuildTowerObj.SetActive(false);
         UpgradeTowerObj.SetActive(false);
         UpgradeSkillObj.SetActive(false);
-        if (towerType == 5)
+        UpgradeFinalTower.SetActive(false);
+        //升级技能
+        if (nextlevel == null)
         {
-            BuildTowerObj.SetActive(true);
+            UpgradeSkillObj.SetActive(true);
         }
-        else if (towerLevel <= 3)
+        //升级界面
+        else if (nextlevel.Length == 1)
         {
             UpgradeTowerObj.SetActive(true);
         }
+        //升级到最终状态
+        else if (nextlevel.Length == 2)
+        {
+            UpgradeFinalTower.SetActive(true);
+        }
+        //开始建造界面
         else
         {
-            UpgradeSkillObj.SetActive(true);
+            BuildTowerObj.SetActive(true);
         }
     }
 
@@ -86,36 +106,52 @@ public class SelectPanel : UIComponent
     public void OnBtnArrowTowerClick(GameObject go)
     {
         //towerInfo.ChangeState("constructing", 2);
-        towerInfo.ChangeState("constructing", new StateParam(1));
-        UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        if (nextlevel.Length > 1)
+        {
+            towerInfo.ChangeState("constructing", new StateParam(nextlevel[0]));
+            UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        }
     }
 
     public void OnBtnMageTowerClick(GameObject go)
     {
         //towerInfo.ChangeState("constructing", 6);
-        towerInfo.ChangeState("constructing", new StateParam(6));
-        UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        if (nextlevel.Length > 1)
+        {
+            towerInfo.ChangeState("constructing", new StateParam(nextlevel[1]));
+            UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        }
     }
 
     public void OnBtnSoliderTowerClick(GameObject go)
     {
         //towerInfo.ChangeState("constructing", 16);
-        towerInfo.ChangeState("constructing", new StateParam(16));
-        UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        if (nextlevel.Length > 1)
+        {
+            towerInfo.ChangeState("constructing", new StateParam(nextlevel[3]));
+            UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        }
     }
 
     public void OnBtnArtileryTowerClick(GameObject go)
     {
         //towerInfo.ChangeState("constructing", 11);
-        towerInfo.ChangeState("constructing", new StateParam(11));
-        UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        if (nextlevel.Length > 1)
+        {
+            towerInfo.ChangeState("constructing", new StateParam(nextlevel[2]));
+            UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        }
     }
 
     public void OnBtnUpgradeClick(GameObject go)
     {
         Debug.Log("BtnUpgrade");
-        towerInfo.ChangeState("constructing", new StateParam(2));
-        UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        //Debug.Log(towerInfo.towerData._nextlevel.Length);
+        if (nextlevel.Length == 1)
+        {
+            towerInfo.ChangeState("constructing", new StateParam(nextlevel[0]));
+            UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        }
     }
 
     public void OnBtnSellClick(GameObject go)

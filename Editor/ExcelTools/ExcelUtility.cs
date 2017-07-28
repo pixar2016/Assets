@@ -381,6 +381,17 @@ public class ExcelUtility
             fieldType.Append(field);
             fieldType.Append(" = 0;\n\t\t\t}\n");
         }
+        else if (fieldTypeString == "int[]")
+        {
+            fieldType.Append("\t\t\tif(jsonObject[\"");
+            fieldType.Append(field);
+            fieldType.Append("\"] != null){\n");
+            fieldType.Append("\t\t\t\tinfo._");
+            fieldType.Append(field);
+            fieldType.Append(" = GetIntArray(jsonObject[\"");
+            fieldType.Append(field);
+            fieldType.Append("\"].ToString());\n\t\t\t}\n");
+        }
         return fieldType.ToString();
     }
 

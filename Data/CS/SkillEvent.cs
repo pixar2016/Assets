@@ -52,50 +52,98 @@ public class J_SkillEvent
 			if(jsonObject["id"] != null){
 				info._id = int.Parse(jsonObject["id"].ToString());
 			}
+			else{
+				info._id = 0;
+			}
 			if(jsonObject["triggerId"] != null){
 				info._triggerId = int.Parse(jsonObject["triggerId"].ToString());
+			}
+			else{
+				info._triggerId = 0;
 			}
 			if(jsonObject["condName1"] != null){
 				info._condName1 = jsonObject["condName1"].ToString();
 			}
+			else{
+				info._condName1 = "";
+			}
 			if(jsonObject["condParam1"] != null){
 				info._condParam1 = jsonObject["condParam1"].ToString();
+			}
+			else{
+				info._condParam1 = "";
 			}
 			if(jsonObject["condName2"] != null){
 				info._condName2 = jsonObject["condName2"].ToString();
 			}
+			else{
+				info._condName2 = "";
+			}
 			if(jsonObject["condParam2"] != null){
 				info._condParam2 = jsonObject["condParam2"].ToString();
+			}
+			else{
+				info._condParam2 = "";
 			}
 			if(jsonObject["effName1"] != null){
 				info._effName1 = jsonObject["effName1"].ToString();
 			}
+			else{
+				info._effName1 = "";
+			}
 			if(jsonObject["effParam1"] != null){
 				info._effParam1 = jsonObject["effParam1"].ToString();
+			}
+			else{
+				info._effParam1 = "";
 			}
 			if(jsonObject["effName2"] != null){
 				info._effName2 = jsonObject["effName2"].ToString();
 			}
+			else{
+				info._effName2 = "";
+			}
 			if(jsonObject["effParam2"] != null){
 				info._effParam2 = jsonObject["effParam2"].ToString();
+			}
+			else{
+				info._effParam2 = "";
 			}
 			if(jsonObject["effName3"] != null){
 				info._effName3 = jsonObject["effName3"].ToString();
 			}
+			else{
+				info._effName3 = "";
+			}
 			if(jsonObject["effParam3"] != null){
 				info._effParam3 = jsonObject["effParam3"].ToString();
+			}
+			else{
+				info._effParam3 = "";
 			}
 			if(jsonObject["effName4"] != null){
 				info._effName4 = jsonObject["effName4"].ToString();
 			}
+			else{
+				info._effName4 = "";
+			}
 			if(jsonObject["effParam4"] != null){
 				info._effParam4 = jsonObject["effParam4"].ToString();
+			}
+			else{
+				info._effParam4 = "";
 			}
 			if(jsonObject["effName5"] != null){
 				info._effName5 = jsonObject["effName5"].ToString();
 			}
+			else{
+				info._effName5 = "";
+			}
 			if(jsonObject["effParam5"] != null){
 				info._effParam5 = jsonObject["effParam5"].ToString();
+			}
+			else{
+				info._effParam5 = "";
 			}
 
             infoDict.Add(info._id, info);
@@ -106,6 +154,25 @@ public class J_SkillEvent
             Debug.Log(">>>>>"+info.Value._id+":"+info.Value._name+":"+info.Value._desc+":"+info.Value._point+":"+info.Value._label+":"+info.Value._type+":"+info.Value._number+":"+info.Value._function+":"+info.Value._para+":"+info.Value._reward+":"+"<<<<<\n");
         }
         */
+    }
+
+	/// <summary>
+    /// 将string拆分为int数组
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
+    public static int[] GetIntArray(string data)
+    {
+        string[] strArray = data.Split('|');
+        int strLength = strArray.Length;
+        int[] intArray = new int[strLength];
+        int result;
+        for (int i = 0; i < strLength; i++)
+        {
+            bool isSuccess = int.TryParse(strArray[i], out result);
+            intArray[i] = isSuccess ? result : 0;
+        }
+        return intArray;
     }
 
     /// <summary>

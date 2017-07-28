@@ -43,23 +43,44 @@ public class J_Map
 			if(jsonObject["id"] != null){
 				info._id = int.Parse(jsonObject["id"].ToString());
 			}
+			else{
+				info._id = 0;
+			}
 			if(jsonObject["name"] != null){
 				info._name = jsonObject["name"].ToString();
+			}
+			else{
+				info._name = "";
 			}
 			if(jsonObject["wave"] != null){
 				info._wave = int.Parse(jsonObject["wave"].ToString());
 			}
+			else{
+				info._wave = 0;
+			}
 			if(jsonObject["hp"] != null){
 				info._hp = int.Parse(jsonObject["hp"].ToString());
+			}
+			else{
+				info._hp = 0;
 			}
 			if(jsonObject["gold"] != null){
 				info._gold = int.Parse(jsonObject["gold"].ToString());
 			}
+			else{
+				info._gold = 0;
+			}
 			if(jsonObject["pathJson"] != null){
 				info._pathJson = jsonObject["pathJson"].ToString();
 			}
+			else{
+				info._pathJson = "";
+			}
 			if(jsonObject["monsterJson"] != null){
 				info._monsterJson = jsonObject["monsterJson"].ToString();
+			}
+			else{
+				info._monsterJson = "";
 			}
 
             infoDict.Add(info._id, info);
@@ -70,6 +91,25 @@ public class J_Map
             Debug.Log(">>>>>"+info.Value._id+":"+info.Value._name+":"+info.Value._desc+":"+info.Value._point+":"+info.Value._label+":"+info.Value._type+":"+info.Value._number+":"+info.Value._function+":"+info.Value._para+":"+info.Value._reward+":"+"<<<<<\n");
         }
         */
+    }
+
+	/// <summary>
+    /// 将string拆分为int数组
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
+    public static int[] GetIntArray(string data)
+    {
+        string[] strArray = data.Split('|');
+        int strLength = strArray.Length;
+        int[] intArray = new int[strLength];
+        int result;
+        for (int i = 0; i < strLength; i++)
+        {
+            bool isSuccess = int.TryParse(strArray[i], out result);
+            intArray[i] = isSuccess ? result : 0;
+        }
+        return intArray;
     }
 
     /// <summary>

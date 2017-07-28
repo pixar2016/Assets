@@ -114,6 +114,25 @@ public class J_AnimData
         */
     }
 
+	/// <summary>
+    /// 将string拆分为int数组
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
+    public static int[] GetIntArray(string data)
+    {
+        string[] strArray = data.Split('|');
+        int strLength = strArray.Length;
+        int[] intArray = new int[strLength];
+        int result;
+        for (int i = 0; i < strLength; i++)
+        {
+            bool isSuccess = int.TryParse(strArray[i], out result);
+            intArray[i] = isSuccess ? result : 0;
+        }
+        return intArray;
+    }
+
     /// <summary>
     /// 通过key获取数据
     /// </summary>

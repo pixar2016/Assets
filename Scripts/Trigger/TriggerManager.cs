@@ -120,6 +120,7 @@ public class TriggerManager
         bool isLifeOver = false;
         foreach (TriggerCondInfo condInfo in triggerInfo.condInfos)
         {
+            Debug.Log(condInfo.EventName);
             if (condLogics[condInfo.EventName].IsLifeOver(triggerInfo, condInfo))
             {
                 isLifeOver = true;
