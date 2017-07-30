@@ -52,7 +52,9 @@ public class SelectPanel : UIComponent
         BtnSkill3 = transform.Find("UpgradeSkill/BtnSkill3").GetComponent<Button>();
 
         UpgradeFinalTower = transform.Find("UpgradeFinalTower").gameObject;
-        //BtnUpgrade1 = transform.Find()
+        BtnUpgrade1 = transform.Find("UpgradeFinalTower/BtnUpgrade1").GetComponent<Button>();
+        BtnUpgrade2 = transform.Find("UpgradeFinalTower/BtnUpgrade2").GetComponent<Button>();
+        BtnSell1 = transform.Find("UpgradeFinalTower/BtnSell").GetComponent<Button>();
         SetEventListener();
 
         ShowPanel(towerInfo);
@@ -101,6 +103,10 @@ public class SelectPanel : UIComponent
         UIEventListener.Get(BtnSkill1.gameObject).onClick = OnBtnSkill1Click;
         UIEventListener.Get(BtnSkill2.gameObject).onClick = OnBtnSkill2Click;
         UIEventListener.Get(BtnSkill3.gameObject).onClick = OnBtnSkill3Click;
+
+        UIEventListener.Get(BtnUpgrade1.gameObject).onClick = OnBtnUpgrade1Click;
+        UIEventListener.Get(BtnUpgrade2.gameObject).onClick = OnBtnUpgrade2Click;
+        UIEventListener.Get(BtnSell1.gameObject).onClick = OnBtnSell1Click;
     }
 
     public void OnBtnArrowTowerClick(GameObject go)
@@ -171,6 +177,29 @@ public class SelectPanel : UIComponent
     }
 
     public void OnBtnSkill3Click(GameObject go)
+    {
+
+    }
+
+    public void OnBtnUpgrade2Click(GameObject go)
+    {
+        if (nextlevel.Length == 2)
+        {
+            towerInfo.ChangeState("constructing", new StateParam(nextlevel[1]));
+            UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        }
+    }
+
+    public void OnBtnUpgrade1Click(GameObject go)
+    {
+        if (nextlevel.Length == 2)
+        {
+            towerInfo.ChangeState("constructing", new StateParam(nextlevel[0]));
+            UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
+        }
+    }
+
+    public void OnBtnSell1Click(GameObject go)
     {
 
     }

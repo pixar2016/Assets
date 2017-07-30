@@ -37,7 +37,7 @@ public class SoliderAtk : StateBase
 
     public void AttackEnd()
     {
-        Debug.Log("AttackEnd");
+        //Debug.Log("AttackEnd");
         //CharacterInfo attackCharInfo = soliderInfo.GetTargetInfo();
         //如果目标死亡，回归空闲状态
         if (attackInfo == null || attackInfo.IsDead())

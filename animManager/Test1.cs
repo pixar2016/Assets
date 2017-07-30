@@ -142,18 +142,18 @@ public class Test1 : MonoBehaviour {
         
         //charInfo.ChangeState("move");
         BattleFingerEvent.getInstance().ChangeState("start");
-        //tower = EntityManager.getInstance().AddTower(11);
-        //tower.SetPosition(250, 10, 0);
-        //tower.ChangeState("idle");
+        tower = EntityManager.getInstance().AddTower(100);
+        tower.SetPosition(100, 10, 0);
+        tower.ChangeState("idle");
+        tower = EntityManager.getInstance().AddTower(1);
+        tower.SetPosition(150, 10, 0);
+        tower.ChangeState("idle");
+        tower = EntityManager.getInstance().AddTower(2);
+        tower.SetPosition(200, 10, 0);
+        tower.ChangeState("idle");
 
-        GameManager.getInstance().LoadLevel(1);
-        GameManager.getInstance().StartGame();
-
-        int[] result = J_Tower.GetIntArray("1|df|3");
-        foreach (int data in result)
-        {
-            Debug.Log(data);
-        }
+        //GameManager.getInstance().LoadLevel(1);
+        //GameManager.getInstance().StartGame();
 
         //monster = EntityManager.getInstance().AddMonster(10001, path);
         //monster.SetPosition(250, 5, 0);

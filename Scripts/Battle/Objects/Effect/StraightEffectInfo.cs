@@ -25,7 +25,7 @@ public class StraightEffectInfo : EffectInfo
         //Debug.Log(Vector3.Distance(pos, targetPos));
         if (BattleUtils.Distance2(pos, targetPos) < 10)
         {
-            Debug.Log("BulletReach");
+            //Debug.Log("BulletReach");
             this.charInfo.eventDispatcher.Broadcast("BulletReach", triggerGroupId, targetPos, targetInfo);
             EntityManager.getInstance().RemoveEffect(this.Id);
         }

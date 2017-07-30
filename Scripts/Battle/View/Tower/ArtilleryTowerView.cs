@@ -22,6 +22,9 @@ public class ArtilleryTowerView : TowerView
         AddClickInfo(towerObj, towerInfo.Id);
         //加载塔身图片
         towerBase = InitAnimate(towerObj, towerInfo.towerBase);
+
+        //根据塔基座大小增加碰撞盒
+        AddBoxColider(towerObj, 80, 70);
     }
 
     public override void DoAction(object[] data)

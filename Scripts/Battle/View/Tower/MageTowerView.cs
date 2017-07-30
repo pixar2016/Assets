@@ -25,7 +25,7 @@ public class MageTowerView : TowerView
         GameObject shooterObj = towerObj.transform.Find("MageShooter").gameObject;
         shooter = InitAnimate(shooterObj, towerInfo.shooter);
         //根据塔基座大小增加碰撞盒
-        //AddBoxColider(towerObj, towerBase.width, towerBase.height);
+        AddBoxColider(towerObj, 80, 70);
     }
 
     public override void DoAction(object[] data)
