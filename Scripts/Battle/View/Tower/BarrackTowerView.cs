@@ -23,26 +23,6 @@ public class BarrackTowerView : TowerView
         towerBase = InitAnimate(towerObj, towerInfo.towerBase);
         //根据塔基座大小增加碰撞盒
         AddBoxColider(towerObj, 80, 70);
-        //if (towerObj.GetComponent<ClickInfo>() == null)
-        //{
-        //    ClickInfo clickInfo = towerObj.AddComponent<ClickInfo>();
-        //    clickInfo.OnInit(ClickType.Tower, this.towerInfo.Id, FingerDown);
-        //}
-        //else
-        //{
-        //    ClickInfo clickInfo = towerObj.GetComponent<ClickInfo>();
-        //    clickInfo.OnInit(ClickType.Tower, this.towerInfo.Id, FingerDown);
-        //}
-        //if (towerObj.GetComponent<Animate>() != null)
-        //{
-        //    towerBase = towerObj.GetComponent<Animate>();
-        //}
-        //else
-        //{
-        //    towerBase = towerObj.AddComponent<Animate>();
-        //}
-        //towerBase.OnInit(towerInfo.towerBase);
-        //towerBase.startAnimation("idle");
     }
 
     public override void DoAction(object[] data)
