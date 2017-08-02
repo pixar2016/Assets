@@ -10,6 +10,12 @@ public class SelectPanel : UIComponent
     private TowerInfo towerInfo;
     private int[] nextlevel;
 
+    public GameObject rangeCircle;
+    public RectTransform leftTopObj;
+    public RectTransform rightTopObj;
+    public RectTransform leftDownObj;
+    public RectTransform rightDownObj;
+
     public GameObject BuildTowerObj;
     public Button BtnArrowTower;
     public Button BtnMageTower;
@@ -36,6 +42,13 @@ public class SelectPanel : UIComponent
         nextlevel = towerInfo.towerData._nextlevel;
 
         this.gameObject.transform.position = Camera.main.WorldToScreenPoint(towerInfo.GetPosition());
+
+        rangeCircle = transform.Find("rangeCircle").gameObject;
+        //leftTopObj = transform.Find("rangeCircle/LeftTop").GetComponent<RectTransform>();
+        //rightTopObj = transform.Find("rangeCircle/RightTop").GetComponent<RectTransform>();
+        //leftDownObj = transform.Find("rangeCircle/LeftDown").GetComponent<RectTransform>();
+        //rightDownObj = transform.Find("rangeCircle/RightDown").GetComponent<RectTransform>();
+
         BuildTowerObj = transform.Find("BuildTower").gameObject;
         BtnArrowTower = transform.Find("BuildTower/BtnArrow").GetComponent<Button>();
         BtnMageTower = transform.Find("BuildTower/BtnMage").GetComponent<Button>();

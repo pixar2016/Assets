@@ -75,8 +75,12 @@ public class BattleUtils
 
     public static float Distance2(Vector3 startPos, Vector3 endPos)
     {
-        endPos.z = startPos.z;
-        return Vector3.Distance(startPos, endPos);
+        //endPos.z = startPos.z;
+        //return Vector3.Distance(startPos, endPos);
+        Vector3 delta = endPos - startPos;
+        delta.z = 0;
+        delta.y = delta.y / GlobalVariables.YZOOM;
+        return delta.magnitude;
     }
 }
 
