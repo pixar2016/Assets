@@ -40,7 +40,7 @@ public class ArtilleryTowerView : TowerView
 
     public override void Update()
     {
-        this.towerObj.transform.position = this.towerInfo.GetPosition();
+        //this.towerObj.transform.position = this.towerInfo.GetPosition();
     }
 }
 

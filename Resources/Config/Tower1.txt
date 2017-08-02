@@ -10,7 +10,7 @@
 },
 "arrowTowerlv1.png":
 {
-	"frame": {"x":654,"y":260,"w":74,"h":46},
+	"frame": {"x":893,"y":484,"w":74,"h":46},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":17,"w":74,"h":46},
@@ -18,7 +18,7 @@
 },
 "arrowTowerlv2.png":
 {
-	"frame": {"x":651,"y":336,"w":74,"h":48},
+	"frame": {"x":882,"y":562,"w":74,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":15,"w":74,"h":48},
@@ -26,7 +26,7 @@
 },
 "arrowTowerlv3.png":
 {
-	"frame": {"x":908,"y":328,"w":74,"h":52},
+	"frame": {"x":879,"y":639,"w":74,"h":52},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":11,"w":74,"h":52},
@@ -34,8 +34,8 @@
 },
 "arrowTurretTower.png":
 {
-	"frame": {"x":963,"y":328,"w":72,"h":56},
-	"rotated": true,
+	"frame": {"x":709,"y":963,"w":72,"h":56},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":11,"w":72,"h":56},
 	"sourceSize": {"w":90,"h":70}
@@ -338,23 +338,23 @@
 },
 "artilleryTowerTesla_1.png":
 {
-	"frame": {"x":820,"y":412,"w":75,"h":71},
-	"rotated": false,
+	"frame": {"x":817,"y":798,"w":75,"h":71},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
 	"sourceSize": {"w":77,"h":73}
 },
 "artilleryTowerTesla_10.png":
 {
-	"frame": {"x":820,"y":339,"w":75,"h":71},
-	"rotated": false,
+	"frame": {"x":790,"y":878,"w":75,"h":71},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
 	"sourceSize": {"w":77,"h":73}
 },
 "artilleryTowerTesla_11.png":
 {
-	"frame": {"x":747,"y":475,"w":75,"h":71},
+	"frame": {"x":821,"y":407,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -362,7 +362,7 @@
 },
 "artilleryTowerTesla_12.png":
 {
-	"frame": {"x":738,"y":398,"w":75,"h":71},
+	"frame": {"x":820,"y":485,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -370,15 +370,15 @@
 },
 "artilleryTowerTesla_13.png":
 {
-	"frame": {"x":601,"y":488,"w":77,"h":71},
-	"rotated": true,
+	"frame": {"x":785,"y":266,"w":77,"h":71},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
 	"sourceSize": {"w":77,"h":73}
 },
 "artilleryTowerTesla_14.png":
 {
-	"frame": {"x":890,"y":796,"w":75,"h":71},
+	"frame": {"x":809,"y":562,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -386,7 +386,7 @@
 },
 "artilleryTowerTesla_15.png":
 {
-	"frame": {"x":886,"y":875,"w":75,"h":71},
+	"frame": {"x":806,"y":641,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -394,7 +394,7 @@
 },
 "artilleryTowerTesla_16.png":
 {
-	"frame": {"x":835,"y":719,"w":75,"h":71},
+	"frame": {"x":762,"y":721,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -402,7 +402,7 @@
 },
 "artilleryTowerTesla_17.png":
 {
-	"frame": {"x":817,"y":798,"w":75,"h":71},
+	"frame": {"x":744,"y":801,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -410,7 +410,7 @@
 },
 "artilleryTowerTesla_18.png":
 {
-	"frame": {"x":806,"y":642,"w":75,"h":71},
+	"frame": {"x":717,"y":881,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -418,15 +418,15 @@
 },
 "artilleryTowerTesla_19.png":
 {
-	"frame": {"x":590,"y":568,"w":77,"h":71},
-	"rotated": true,
+	"frame": {"x":706,"y":260,"w":77,"h":71},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
 	"sourceSize": {"w":77,"h":73}
 },
 "artilleryTowerTesla_2.png":
 {
-	"frame": {"x":585,"y":648,"w":77,"h":71},
+	"frame": {"x":610,"y":328,"w":77,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
@@ -434,7 +434,7 @@
 },
 "artilleryTowerTesla_20.png":
 {
-	"frame": {"x":762,"y":721,"w":75,"h":71},
+	"frame": {"x":748,"y":408,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -442,7 +442,7 @@
 },
 "artilleryTowerTesla_21.png":
 {
-	"frame": {"x":813,"y":878,"w":75,"h":71},
+	"frame": {"x":747,"y":485,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -450,7 +450,7 @@
 },
 "artilleryTowerTesla_22.png":
 {
-	"frame": {"x":744,"y":801,"w":75,"h":71},
+	"frame": {"x":736,"y":564,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -458,7 +458,7 @@
 },
 "artilleryTowerTesla_23.png":
 {
-	"frame": {"x":740,"y":881,"w":75,"h":71},
+	"frame": {"x":733,"y":644,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -466,7 +466,7 @@
 },
 "artilleryTowerTesla_24.png":
 {
-	"frame": {"x":541,"y":730,"w":77,"h":71},
+	"frame": {"x":602,"y":408,"w":77,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
@@ -474,7 +474,7 @@
 },
 "artilleryTowerTesla_25.png":
 {
-	"frame": {"x":663,"y":567,"w":75,"h":73},
+	"frame": {"x":658,"y":647,"w":75,"h":73},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":73},
@@ -482,7 +482,7 @@
 },
 "artilleryTowerTesla_26.png":
 {
-	"frame": {"x":658,"y":647,"w":75,"h":73},
+	"frame": {"x":614,"y":727,"w":75,"h":73},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":73},
@@ -490,7 +490,7 @@
 },
 "artilleryTowerTesla_27.png":
 {
-	"frame": {"x":614,"y":727,"w":75,"h":73},
+	"frame": {"x":596,"y":809,"w":75,"h":73},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":73},
@@ -498,7 +498,7 @@
 },
 "artilleryTowerTesla_28.png":
 {
-	"frame": {"x":596,"y":809,"w":75,"h":73},
+	"frame": {"x":569,"y":894,"w":75,"h":73},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":73},
@@ -506,61 +506,13 @@
 },
 "artilleryTowerTesla_29.png":
 {
-	"frame": {"x":592,"y":894,"w":75,"h":73},
-	"rotated": true,
+	"frame": {"x":683,"y":333,"w":75,"h":73},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":73},
 	"sourceSize": {"w":77,"h":73}
 },
 "artilleryTowerTesla_3.png":
-{
-	"frame": {"x":738,"y":565,"w":75,"h":71},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
-	"sourceSize": {"w":77,"h":73}
-},
-"artilleryTowerTesla_30.png":
-{
-	"frame": {"x":523,"y":815,"w":77,"h":71},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
-	"sourceSize": {"w":77,"h":73}
-},
-"artilleryTowerTesla_31.png":
-{
-	"frame": {"x":519,"y":899,"w":77,"h":71},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
-	"sourceSize": {"w":77,"h":73}
-},
-"artilleryTowerTesla_32.png":
-{
-	"frame": {"x":702,"y":325,"w":77,"h":71},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
-	"sourceSize": {"w":77,"h":73}
-},
-"artilleryTowerTesla_33.png":
-{
-	"frame": {"x":781,"y":266,"w":77,"h":71},
-	"rotated": false,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
-	"sourceSize": {"w":77,"h":73}
-},
-"artilleryTowerTesla_4.png":
-{
-	"frame": {"x":733,"y":644,"w":75,"h":71},
-	"rotated": true,
-	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
-	"sourceSize": {"w":77,"h":73}
-},
-"artilleryTowerTesla_5.png":
 {
 	"frame": {"x":689,"y":724,"w":75,"h":71},
 	"rotated": true,
@@ -568,7 +520,39 @@
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
 	"sourceSize": {"w":77,"h":73}
 },
-"artilleryTowerTesla_6.png":
+"artilleryTowerTesla_30.png":
+{
+	"frame": {"x":601,"y":488,"w":77,"h":71},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
+	"sourceSize": {"w":77,"h":73}
+},
+"artilleryTowerTesla_31.png":
+{
+	"frame": {"x":590,"y":568,"w":77,"h":71},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
+	"sourceSize": {"w":77,"h":73}
+},
+"artilleryTowerTesla_32.png":
+{
+	"frame": {"x":585,"y":648,"w":77,"h":71},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
+	"sourceSize": {"w":77,"h":73}
+},
+"artilleryTowerTesla_33.png":
+{
+	"frame": {"x":541,"y":730,"w":77,"h":71},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
+	"sourceSize": {"w":77,"h":73}
+},
+"artilleryTowerTesla_4.png":
 {
 	"frame": {"x":671,"y":804,"w":75,"h":71},
 	"rotated": true,
@@ -576,9 +560,25 @@
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
 	"sourceSize": {"w":77,"h":73}
 },
+"artilleryTowerTesla_5.png":
+{
+	"frame": {"x":644,"y":886,"w":75,"h":71},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
+	"sourceSize": {"w":77,"h":73}
+},
+"artilleryTowerTesla_6.png":
+{
+	"frame": {"x":675,"y":408,"w":75,"h":71},
+	"rotated": true,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
+	"sourceSize": {"w":77,"h":73}
+},
 "artilleryTowerTesla_7.png":
 {
-	"frame": {"x":667,"y":886,"w":75,"h":71},
+	"frame": {"x":674,"y":487,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -586,15 +586,15 @@
 },
 "artilleryTowerTesla_8.png":
 {
-	"frame": {"x":702,"y":252,"w":77,"h":71},
-	"rotated": false,
+	"frame": {"x":523,"y":815,"w":77,"h":71},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":77,"h":71},
 	"sourceSize": {"w":77,"h":73}
 },
 "artilleryTowerTesla_9.png":
 {
-	"frame": {"x":674,"y":488,"w":75,"h":71},
+	"frame": {"x":663,"y":567,"w":75,"h":71},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":2,"w":75,"h":71},
@@ -634,8 +634,8 @@
 },
 "artilleryTowerlv1_13.png":
 {
-	"frame": {"x":702,"y":202,"w":78,"h":48},
-	"rotated": false,
+	"frame": {"x":519,"y":899,"w":78,"h":48},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":7,"w":78,"h":48},
 	"sourceSize": {"w":80,"h":56}
@@ -770,7 +770,7 @@
 },
 "artilleryTowerlv2_11.png":
 {
-	"frame": {"x":244,"y":202,"w":80,"h":58},
+	"frame": {"x":280,"y":202,"w":80,"h":58},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":58},
@@ -778,7 +778,7 @@
 },
 "artilleryTowerlv2_12.png":
 {
-	"frame": {"x":326,"y":202,"w":78,"h":58},
+	"frame": {"x":362,"y":202,"w":78,"h":58},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":78,"h":58},
@@ -1042,7 +1042,7 @@
 },
 "artilleryTowerlv3_9.png":
 {
-	"frame": {"x":162,"y":202,"w":80,"h":59},
+	"frame": {"x":198,"y":202,"w":80,"h":59},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":59},
@@ -1050,23 +1050,23 @@
 },
 "barrackTowerKnight_1.png":
 {
-	"frame": {"x":820,"y":485,"w":74,"h":66},
-	"rotated": false,
+	"frame": {"x":835,"y":718,"w":74,"h":66},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":74,"h":66},
 	"sourceSize": {"w":80,"h":70}
 },
 "barrackTowerKnight_2.png":
 {
-	"frame": {"x":934,"y":952,"w":74,"h":66},
-	"rotated": false,
+	"frame": {"x":863,"y":875,"w":74,"h":66},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":74,"h":66},
 	"sourceSize": {"w":80,"h":70}
 },
 "barrackTowerKnight_3.png":
 {
-	"frame": {"x":858,"y":955,"w":74,"h":66},
+	"frame": {"x":851,"y":955,"w":74,"h":66},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":74,"h":66},
@@ -1074,23 +1074,23 @@
 },
 "barrackTowerKnight_4.png":
 {
-	"frame": {"x":670,"y":412,"w":74,"h":66},
-	"rotated": true,
+	"frame": {"x":836,"y":339,"w":74,"h":66},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":1,"y":0,"w":74,"h":66},
 	"sourceSize": {"w":80,"h":70}
 },
 "barrackTowerSavage_1.png":
 {
-	"frame": {"x":602,"y":412,"w":74,"h":66},
-	"rotated": true,
+	"frame": {"x":760,"y":339,"w":74,"h":66},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":2,"w":74,"h":66},
 	"sourceSize": {"w":80,"h":70}
 },
 "barrackTowerSavage_2.png":
 {
-	"frame": {"x":578,"y":260,"w":74,"h":66},
+	"frame": {"x":630,"y":260,"w":74,"h":66},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":2,"w":74,"h":66},
@@ -1098,7 +1098,7 @@
 },
 "barrackTowerSavage_3.png":
 {
-	"frame": {"x":502,"y":260,"w":74,"h":66},
+	"frame": {"x":554,"y":260,"w":74,"h":66},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":2,"w":74,"h":66},
@@ -1106,7 +1106,7 @@
 },
 "barrackTowerSavage_4.png":
 {
-	"frame": {"x":426,"y":260,"w":74,"h":66},
+	"frame": {"x":478,"y":260,"w":74,"h":66},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":2,"w":74,"h":66},
@@ -1114,16 +1114,16 @@
 },
 "barrackTowerlv1_1.png":
 {
-	"frame": {"x":806,"y":958,"w":64,"h":50},
-	"rotated": true,
+	"frame": {"x":643,"y":971,"w":64,"h":50},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":7,"w":64,"h":50},
 	"sourceSize": {"w":80,"h":60}
 },
 "barrackTowerlv1_2.png":
 {
-	"frame": {"x":666,"y":971,"w":64,"h":50},
-	"rotated": false,
+	"frame": {"x":426,"y":262,"w":64,"h":50},
+	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":7,"w":64,"h":50},
 	"sourceSize": {"w":80,"h":60}
@@ -1146,23 +1146,23 @@
 },
 "barrackTowerlv2_1.png":
 {
-	"frame": {"x":963,"y":606,"w":66,"h":54},
-	"rotated": true,
+	"frame": {"x":953,"y":690,"w":66,"h":54},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":3,"w":66,"h":54},
 	"sourceSize": {"w":80,"h":60}
 },
 "barrackTowerlv2_2.png":
 {
-	"frame": {"x":963,"y":538,"w":66,"h":54},
-	"rotated": true,
+	"frame": {"x":953,"y":634,"w":66,"h":54},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":3,"w":66,"h":54},
 	"sourceSize": {"w":80,"h":60}
 },
 "barrackTowerlv2_3.png":
 {
-	"frame": {"x":963,"y":470,"w":66,"h":54},
+	"frame": {"x":927,"y":951,"w":66,"h":54},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":3,"w":66,"h":54},
@@ -1170,8 +1170,8 @@
 },
 "barrackTowerlv2_4.png":
 {
-	"frame": {"x":963,"y":402,"w":66,"h":54},
-	"rotated": true,
+	"frame": {"x":783,"y":958,"w":66,"h":54},
+	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":2,"y":3,"w":66,"h":54},
 	"sourceSize": {"w":80,"h":60}
@@ -1514,7 +1514,7 @@
 },
 "mageTowerlv1_1.png":
 {
-	"frame": {"x":963,"y":748,"w":72,"h":48},
+	"frame": {"x":903,"y":715,"w":72,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":17,"w":72,"h":48},
@@ -1522,7 +1522,7 @@
 },
 "mageTowerlv1_2.png":
 {
-	"frame": {"x":908,"y":700,"w":72,"h":48},
+	"frame": {"x":890,"y":794,"w":72,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":17,"w":72,"h":48},
@@ -1530,7 +1530,7 @@
 },
 "mageTowerlv1_3.png":
 {
-	"frame": {"x":963,"y":674,"w":72,"h":48},
+	"frame": {"x":962,"y":328,"w":72,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":17,"w":72,"h":48},
@@ -1538,7 +1538,7 @@
 },
 "mageTowerlv1_4.png":
 {
-	"frame": {"x":908,"y":626,"w":72,"h":48},
+	"frame": {"x":944,"y":402,"w":72,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":17,"w":72,"h":48},
@@ -1546,7 +1546,7 @@
 },
 "mageTowerlv1_5.png":
 {
-	"frame": {"x":592,"y":971,"w":72,"h":50},
+	"frame": {"x":569,"y":971,"w":72,"h":50},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":15,"w":72,"h":50},
@@ -1554,7 +1554,7 @@
 },
 "mageTowerlv1_6.png":
 {
-	"frame": {"x":963,"y":748,"w":72,"h":48},
+	"frame": {"x":903,"y":715,"w":72,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":17,"w":72,"h":48},
@@ -1562,7 +1562,7 @@
 },
 "mageTowerlv2_1.png":
 {
-	"frame": {"x":908,"y":552,"w":72,"h":48},
+	"frame": {"x":912,"y":328,"w":72,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":17,"w":72,"h":48},
@@ -1570,7 +1570,7 @@
 },
 "mageTowerlv2_2.png":
 {
-	"frame": {"x":908,"y":478,"w":72,"h":48},
+	"frame": {"x":941,"y":481,"w":72,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":17,"w":72,"h":48},
@@ -1578,7 +1578,7 @@
 },
 "mageTowerlv2_3.png":
 {
-	"frame": {"x":908,"y":404,"w":72,"h":48},
+	"frame": {"x":932,"y":560,"w":72,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":17,"w":72,"h":48},
@@ -1586,7 +1586,7 @@
 },
 "mageTowerlv2_4.png":
 {
-	"frame": {"x":908,"y":404,"w":72,"h":48},
+	"frame": {"x":932,"y":560,"w":72,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":17,"w":72,"h":48},
@@ -1594,7 +1594,7 @@
 },
 "mageTowerlv2_5.png":
 {
-	"frame": {"x":959,"y":873,"w":72,"h":48},
+	"frame": {"x":894,"y":407,"w":72,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":17,"w":72,"h":48},
@@ -1602,7 +1602,7 @@
 },
 "mageTowerlv2_6.png":
 {
-	"frame": {"x":908,"y":552,"w":72,"h":48},
+	"frame": {"x":912,"y":328,"w":72,"h":48},
 	"rotated": true,
 	"trimmed": true,
 	"spriteSourceSize": {"x":3,"y":17,"w":72,"h":48},
@@ -1610,7 +1610,7 @@
 },
 "mageTowerlv3_1.png":
 {
-	"frame": {"x":732,"y":963,"w":72,"h":56},
+	"frame": {"x":738,"y":202,"w":72,"h":56},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":9,"w":72,"h":56},
@@ -1618,7 +1618,7 @@
 },
 "mageTowerlv3_2.png":
 {
-	"frame": {"x":628,"y":202,"w":72,"h":56},
+	"frame": {"x":664,"y":202,"w":72,"h":56},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":9,"w":72,"h":56},
@@ -1626,7 +1626,7 @@
 },
 "mageTowerlv3_3.png":
 {
-	"frame": {"x":554,"y":202,"w":72,"h":56},
+	"frame": {"x":590,"y":202,"w":72,"h":56},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":9,"w":72,"h":56},
@@ -1634,7 +1634,7 @@
 },
 "mageTowerlv3_4.png":
 {
-	"frame": {"x":480,"y":202,"w":72,"h":56},
+	"frame": {"x":516,"y":202,"w":72,"h":56},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":9,"w":72,"h":56},
@@ -1642,7 +1642,7 @@
 },
 "mageTowerlv3_5.png":
 {
-	"frame": {"x":406,"y":202,"w":72,"h":56},
+	"frame": {"x":442,"y":202,"w":72,"h":56},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":9,"w":72,"h":56},
@@ -1650,7 +1650,7 @@
 },
 "mageTowerlv3_6.png":
 {
-	"frame": {"x":732,"y":963,"w":72,"h":56},
+	"frame": {"x":738,"y":202,"w":72,"h":56},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":4,"y":9,"w":72,"h":56},
@@ -1658,11 +1658,11 @@
 },
 "towerTerrain_1.png":
 {
-	"frame": {"x":610,"y":328,"w":70,"h":39},
+	"frame": {"x":162,"y":202,"w":60,"h":34},
 	"rotated": true,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":70,"h":39},
-	"sourceSize": {"w":70,"h":39}
+	"trimmed": true,
+	"spriteSourceSize": {"x":13,"y":29,"w":60,"h":34},
+	"sourceSize": {"w":80,"h":70}
 }},
 "meta": {
 	"app": "http://www.texturepacker.com",
@@ -1671,6 +1671,6 @@
 	"format": "RGBA8888",
 	"size": {"w":1024,"h":1024},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:6080cf532b41fe371d4930c08ae06d22$"
+	"smartupdate": "$TexturePacker:SmartUpdate:67e742b6d2dc63c402b4b41311ebdba1$"
 }
 }

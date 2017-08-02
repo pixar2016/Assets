@@ -169,6 +169,18 @@
   },
   {
     "id": 15.0,
+    "modelName": "towerTerrain_1",
+    "animName": null,
+    "FrameName": "towerTerrain_",
+    "startFrame": 1.0,
+    "endFrame": 1.0,
+    "delta": 0.05,
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": 27.7
+  },
+  {
+    "id": 16.0,
     "modelName": "arrowTowerlv1",
     "animName": null,
     "FrameName": "arrowTowerlv1",
@@ -180,7 +192,7 @@
     "yoffset": 26.0
   },
   {
-    "id": 16.0,
+    "id": 17.0,
     "modelName": "arrowTowerlv2",
     "animName": null,
     "FrameName": "arrowTowerlv2",
@@ -192,7 +204,7 @@
     "yoffset": 26.0
   },
   {
-    "id": 17.0,
+    "id": 18.0,
     "modelName": "arrowTowerlv3",
     "animName": null,
     "FrameName": "arrowTowerlv3",
@@ -204,7 +216,7 @@
     "yoffset": 26.0
   },
   {
-    "id": 18.0,
+    "id": 19.0,
     "modelName": "arrowCossbowTower",
     "animName": null,
     "FrameName": "arrowCossbowTower",
@@ -216,7 +228,7 @@
     "yoffset": 26.0
   },
   {
-    "id": 19.0,
+    "id": 20.0,
     "modelName": "arrowTurretTower",
     "animName": null,
     "FrameName": "arrowTurretTower",
@@ -225,27 +237,15 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": 26.0
+    "yoffset": 28.0
   },
   {
-    "id": 20.0,
+    "id": 21.0,
     "modelName": "arrowTowerlv1Shooter",
     "animName": "idle",
     "FrameName": "arrowTowerlv1Shooter_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.05,
-    "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
-  },
-  {
-    "id": 21.0,
-    "modelName": "arrowTowerlv1Shooter",
-    "animName": "attack",
-    "FrameName": "arrowTowerlv1Shooter_",
-    "startFrame": 1.0,
-    "endFrame": 5.0,
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
@@ -254,6 +254,18 @@
   {
     "id": 22.0,
     "modelName": "arrowTowerlv1Shooter",
+    "animName": "attack",
+    "FrameName": "arrowTowerlv1Shooter_",
+    "startFrame": 1.0,
+    "endFrame": 5.0,
+    "delta": 0.05,
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 23.0,
+    "modelName": "arrowTowerlv1Shooter",
     "animName": "attack1",
     "FrameName": "arrowTowerlv1Shooter_",
     "startFrame": 6.0,
@@ -264,24 +276,12 @@
     "yoffset": null
   },
   {
-    "id": 23.0,
+    "id": 24.0,
     "modelName": "arrowTowerlv2Shooter",
     "animName": "idle",
     "FrameName": "arrowTowerlv2Shooter_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.05,
-    "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
-  },
-  {
-    "id": 24.0,
-    "modelName": "arrowTowerlv2Shooter",
-    "animName": "attack",
-    "FrameName": "arrowTowerlv2Shooter_",
-    "startFrame": 1.0,
-    "endFrame": 5.0,
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
@@ -290,6 +290,18 @@
   {
     "id": 25.0,
     "modelName": "arrowTowerlv2Shooter",
+    "animName": "attack",
+    "FrameName": "arrowTowerlv2Shooter_",
+    "startFrame": 1.0,
+    "endFrame": 5.0,
+    "delta": 0.05,
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 26.0,
+    "modelName": "arrowTowerlv2Shooter",
     "animName": "attack1",
     "FrameName": "arrowTowerlv2Shooter_",
     "startFrame": 6.0,
@@ -300,7 +312,7 @@
     "yoffset": null
   },
   {
-    "id": 26.0,
+    "id": 27.0,
     "modelName": "arrowTowerlv3Shooter",
     "animName": "idle",
     "FrameName": "arrowTowerlv3Shooter_",
@@ -312,7 +324,7 @@
     "yoffset": null
   },
   {
-    "id": 27.0,
+    "id": 28.0,
     "modelName": "arrowTowerlv3Shooter",
     "animName": "attack",
     "FrameName": "arrowTowerlv3Shooter_",
@@ -324,7 +336,7 @@
     "yoffset": null
   },
   {
-    "id": 28.0,
+    "id": 29.0,
     "modelName": "arrowTowerlv3Shooter",
     "animName": "attack1",
     "FrameName": "arrowTowerlv3Shooter_",
@@ -336,24 +348,12 @@
     "yoffset": null
   },
   {
-    "id": 29.0,
+    "id": 30.0,
     "modelName": "arrowCossbowTowerShooter",
     "animName": "idle",
     "FrameName": "arrowCossbowTowerShooter_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.05,
-    "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
-  },
-  {
-    "id": 30.0,
-    "modelName": "arrowCossbowTowerShooter",
-    "animName": "attack",
-    "FrameName": "arrowCossbowTowerShooter_",
-    "startFrame": 3.0,
-    "endFrame": 6.0,
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
@@ -362,6 +362,18 @@
   {
     "id": 31.0,
     "modelName": "arrowCossbowTowerShooter",
+    "animName": "attack",
+    "FrameName": "arrowCossbowTowerShooter_",
+    "startFrame": 3.0,
+    "endFrame": 6.0,
+    "delta": 0.05,
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 32.0,
+    "modelName": "arrowCossbowTowerShooter",
     "animName": "attack1",
     "FrameName": "arrowCossbowTowerShooter_",
     "startFrame": 7.0,
@@ -372,7 +384,7 @@
     "yoffset": null
   },
   {
-    "id": 32.0,
+    "id": 33.0,
     "modelName": "arrowTurretTowerShooter",
     "animName": "idle",
     "FrameName": "arrowTurretTowerShooter_",
@@ -384,7 +396,7 @@
     "yoffset": null
   },
   {
-    "id": 33.0,
+    "id": 34.0,
     "modelName": "arrowTurretTowerShooter",
     "animName": "attack",
     "FrameName": "arrowTurretTowerShooter_",
@@ -396,7 +408,7 @@
     "yoffset": null
   },
   {
-    "id": 34.0,
+    "id": 35.0,
     "modelName": "arrowTurretTowerShooter",
     "animName": "attack1",
     "FrameName": "arrowTurretTowerShooter_",
@@ -408,7 +420,7 @@
     "yoffset": null
   },
   {
-    "id": 35.0,
+    "id": 36.0,
     "modelName": "arrowTurretTowerShooter",
     "animName": "skill",
     "FrameName": "arrowTurretTowerShooter_",
@@ -420,7 +432,7 @@
     "yoffset": null
   },
   {
-    "id": 36.0,
+    "id": 37.0,
     "modelName": "arrowTurretTowerShooter",
     "animName": "skill1",
     "FrameName": "arrowTurretTowerShooter_",
@@ -432,7 +444,7 @@
     "yoffset": null
   },
   {
-    "id": 37.0,
+    "id": 38.0,
     "modelName": "arrowTurretTowerShooter",
     "animName": "skill2",
     "FrameName": "arrowTurretTowerShooter_",
@@ -444,7 +456,7 @@
     "yoffset": null
   },
   {
-    "id": 38.0,
+    "id": 39.0,
     "modelName": "arrowTurretTowerShooter",
     "animName": "skill3",
     "FrameName": "arrowTurretTowerShooter_",
@@ -456,24 +468,12 @@
     "yoffset": null
   },
   {
-    "id": 39.0,
+    "id": 40.0,
     "modelName": "barrackTowerlv1",
     "animName": "idle",
     "FrameName": "barrackTowerlv1_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.05,
-    "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
-  },
-  {
-    "id": 40.0,
-    "modelName": "barrackTowerlv1",
-    "animName": "start",
-    "FrameName": "barrackTowerlv1_",
-    "startFrame": 2.0,
-    "endFrame": 4.0,
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
@@ -481,11 +481,11 @@
   },
   {
     "id": 41.0,
-    "modelName": "barrackTowerlv2",
-    "animName": "idle",
-    "FrameName": "barrackTowerlv2_",
-    "startFrame": 1.0,
-    "endFrame": 1.0,
+    "modelName": "barrackTowerlv1",
+    "animName": "start",
+    "FrameName": "barrackTowerlv1_",
+    "startFrame": 2.0,
+    "endFrame": 4.0,
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
@@ -494,6 +494,18 @@
   {
     "id": 42.0,
     "modelName": "barrackTowerlv2",
+    "animName": "idle",
+    "FrameName": "barrackTowerlv2_",
+    "startFrame": 1.0,
+    "endFrame": 1.0,
+    "delta": 0.05,
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 43.0,
+    "modelName": "barrackTowerlv2",
     "animName": "start",
     "FrameName": "barrackTowerlv2_",
     "startFrame": 2.0,
@@ -504,24 +516,12 @@
     "yoffset": null
   },
   {
-    "id": 43.0,
+    "id": 44.0,
     "modelName": "barrackTowerlv3",
     "animName": "idle",
     "FrameName": "barrackTowerlv3_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.05,
-    "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
-  },
-  {
-    "id": 44.0,
-    "modelName": "barrackTowerlv3",
-    "animName": "start",
-    "FrameName": "barrackTowerlv3_",
-    "startFrame": 2.0,
-    "endFrame": 4.0,
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
@@ -529,11 +529,11 @@
   },
   {
     "id": 45.0,
-    "modelName": "barrackTowerKnight",
-    "animName": "idle",
-    "FrameName": "barrackTowerKnight_",
-    "startFrame": 1.0,
-    "endFrame": 1.0,
+    "modelName": "barrackTowerlv3",
+    "animName": "start",
+    "FrameName": "barrackTowerlv3_",
+    "startFrame": 2.0,
+    "endFrame": 4.0,
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
@@ -542,6 +542,18 @@
   {
     "id": 46.0,
     "modelName": "barrackTowerKnight",
+    "animName": "idle",
+    "FrameName": "barrackTowerKnight_",
+    "startFrame": 1.0,
+    "endFrame": 1.0,
+    "delta": 0.05,
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": null
+  },
+  {
+    "id": 47.0,
+    "modelName": "barrackTowerKnight",
     "animName": "start",
     "FrameName": "barrackTowerKnight_",
     "startFrame": 2.0,
@@ -552,7 +564,7 @@
     "yoffset": null
   },
   {
-    "id": 47.0,
+    "id": 48.0,
     "modelName": "barrackTowerSavage",
     "animName": "idle",
     "FrameName": "barrackTowerSavage_",
@@ -564,7 +576,7 @@
     "yoffset": null
   },
   {
-    "id": 48.0,
+    "id": 49.0,
     "modelName": "barrackTowerSavage",
     "animName": "start",
     "FrameName": "barrackTowerSavage_",
@@ -576,24 +588,12 @@
     "yoffset": null
   },
   {
-    "id": 49.0,
+    "id": 50.0,
     "modelName": "mageTowerlv1",
     "animName": "idle",
     "FrameName": "mageTowerlv1_",
     "startFrame": 1.0,
     "endFrame": 1.0,
-    "delta": 0.05,
-    "loop": 0.0,
-    "xoffset": null,
-    "yoffset": 26.0
-  },
-  {
-    "id": 50.0,
-    "modelName": "mageTowerlv1",
-    "animName": "attack",
-    "FrameName": "mageTowerlv1_",
-    "startFrame": 2.0,
-    "endFrame": 6.0,
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
@@ -601,19 +601,31 @@
   },
   {
     "id": 51.0,
-    "modelName": "mageTowerlv2",
-    "animName": "idle",
-    "FrameName": "mageTowerlv2_",
-    "startFrame": 1.0,
-    "endFrame": 1.0,
+    "modelName": "mageTowerlv1",
+    "animName": "attack",
+    "FrameName": "mageTowerlv1_",
+    "startFrame": 2.0,
+    "endFrame": 6.0,
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": null
+    "yoffset": 26.0
   },
   {
     "id": 52.0,
     "modelName": "mageTowerlv2",
+    "animName": "idle",
+    "FrameName": "mageTowerlv2_",
+    "startFrame": 1.0,
+    "endFrame": 1.0,
+    "delta": 0.05,
+    "loop": 0.0,
+    "xoffset": null,
+    "yoffset": 26.0
+  },
+  {
+    "id": 53.0,
+    "modelName": "mageTowerlv2",
     "animName": "attack",
     "FrameName": "mageTowerlv2_",
     "startFrame": 2.0,
@@ -621,10 +633,10 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": null
+    "yoffset": 26.0
   },
   {
-    "id": 53.0,
+    "id": 54.0,
     "modelName": "mageTowerlv3",
     "animName": "idle",
     "FrameName": "mageTowerlv3_",
@@ -633,10 +645,10 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": null
+    "yoffset": 26.0
   },
   {
-    "id": 54.0,
+    "id": 55.0,
     "modelName": "mageTowerlv3",
     "animName": "attack",
     "FrameName": "mageTowerlv3_",
@@ -645,10 +657,10 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": null
+    "yoffset": 26.0
   },
   {
-    "id": 55.0,
+    "id": 56.0,
     "modelName": "mageTowerNecromancer",
     "animName": "idle",
     "FrameName": "mageTowerMaster_",
@@ -656,11 +668,11 @@
     "endFrame": 1.0,
     "delta": 0.05,
     "loop": 1.0,
-    "xoffset": null,
-    "yoffset": null
+    "xoffset": -5.2,
+    "yoffset": 31.7
   },
   {
-    "id": 56.0,
+    "id": 57.0,
     "modelName": "mageTowerNecromancer",
     "animName": "attack",
     "FrameName": "mageTowerMaster_",
@@ -668,11 +680,11 @@
     "endFrame": 29.0,
     "delta": 0.05,
     "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
+    "xoffset": -5.2,
+    "yoffset": 31.7
   },
   {
-    "id": 57.0,
+    "id": 58.0,
     "modelName": "mageTowerNecromancer",
     "animName": "skill",
     "FrameName": "mageTowerMaster_",
@@ -680,11 +692,11 @@
     "endFrame": 20.0,
     "delta": 0.05,
     "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
+    "xoffset": -5.2,
+    "yoffset": 31.7
   },
   {
-    "id": 58.0,
+    "id": 59.0,
     "modelName": "mageTowerMaster",
     "animName": "idle",
     "FrameName": "mageTowerNecromancer_",
@@ -692,11 +704,11 @@
     "endFrame": 1.0,
     "delta": 0.05,
     "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
+    "xoffset": -1.8,
+    "yoffset": 30.6
   },
   {
-    "id": 59.0,
+    "id": 60.0,
     "modelName": "mageTowerMaster",
     "animName": "attack",
     "FrameName": "mageTowerNecromancer_",
@@ -704,11 +716,11 @@
     "endFrame": 9.0,
     "delta": 0.05,
     "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
+    "xoffset": -1.8,
+    "yoffset": 30.6
   },
   {
-    "id": 60.0,
+    "id": 61.0,
     "modelName": "mageTowerShooter",
     "animName": "idle",
     "FrameName": "mageTowerShooter_",
@@ -720,7 +732,7 @@
     "yoffset": null
   },
   {
-    "id": 61.0,
+    "id": 62.0,
     "modelName": "mageTowerShooter",
     "animName": "idle1",
     "FrameName": "mageTowerShooter_",
@@ -732,7 +744,7 @@
     "yoffset": null
   },
   {
-    "id": 62.0,
+    "id": 63.0,
     "modelName": "mageTowerShooter",
     "animName": "attack",
     "FrameName": "mageTowerShooter_",
@@ -744,7 +756,7 @@
     "yoffset": null
   },
   {
-    "id": 63.0,
+    "id": 64.0,
     "modelName": "mageTowerShooter",
     "animName": "attack1",
     "FrameName": "mageTowerShooter_",
@@ -756,7 +768,7 @@
     "yoffset": null
   },
   {
-    "id": 64.0,
+    "id": 65.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "idle",
     "FrameName": "mageTowerNecroShooter_",
@@ -768,7 +780,7 @@
     "yoffset": null
   },
   {
-    "id": 65.0,
+    "id": 66.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "idle1",
     "FrameName": "mageTowerNecroShooter_",
@@ -780,7 +792,7 @@
     "yoffset": null
   },
   {
-    "id": 66.0,
+    "id": 67.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "attack",
     "FrameName": "mageTowerNecroShooter_",
@@ -792,7 +804,7 @@
     "yoffset": null
   },
   {
-    "id": 67.0,
+    "id": 68.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "attack1",
     "FrameName": "mageTowerNecroShooter_",
@@ -804,7 +816,7 @@
     "yoffset": null
   },
   {
-    "id": 68.0,
+    "id": 69.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "skill",
     "FrameName": "mageTowerNecroShooter_",
@@ -816,7 +828,7 @@
     "yoffset": null
   },
   {
-    "id": 69.0,
+    "id": 70.0,
     "modelName": "mageTowerNecroShooter",
     "animName": "skill1",
     "FrameName": "mageTowerNecroShooter_",
@@ -828,7 +840,7 @@
     "yoffset": null
   },
   {
-    "id": 70.0,
+    "id": 71.0,
     "modelName": "mageTowerMasterShooter",
     "animName": "idle",
     "FrameName": "mageTowerMasterShooter_",
@@ -840,7 +852,7 @@
     "yoffset": null
   },
   {
-    "id": 71.0,
+    "id": 72.0,
     "modelName": "mageTowerMasterShooter",
     "animName": "idle1",
     "FrameName": "mageTowerMasterShooter_",
@@ -852,7 +864,7 @@
     "yoffset": null
   },
   {
-    "id": 72.0,
+    "id": 73.0,
     "modelName": "mageTowerMasterShooter",
     "animName": "attack",
     "FrameName": "mageTowerMasterShooter_",
@@ -864,7 +876,7 @@
     "yoffset": null
   },
   {
-    "id": 73.0,
+    "id": 74.0,
     "modelName": "mageTowerMasterShooter",
     "animName": "attack1",
     "FrameName": "mageTowerMasterShooter_",
@@ -876,7 +888,7 @@
     "yoffset": null
   },
   {
-    "id": 74.0,
+    "id": 75.0,
     "modelName": "artilleryTowerlv1",
     "animName": "idle",
     "FrameName": "artilleryTowerlv1_",
@@ -885,10 +897,10 @@
     "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
-    "yoffset": null
+    "yoffset": 26.0
   },
   {
-    "id": 75.0,
+    "id": 76.0,
     "modelName": "artilleryTowerlv1",
     "animName": "attack",
     "FrameName": "artilleryTowerlv1_",
@@ -897,10 +909,10 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": null
+    "yoffset": 26.0
   },
   {
-    "id": 76.0,
+    "id": 77.0,
     "modelName": "artilleryTowerlv2",
     "animName": "idle",
     "FrameName": "artilleryTowerlv2_",
@@ -909,10 +921,10 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": null
+    "yoffset": 26.6
   },
   {
-    "id": 77.0,
+    "id": 78.0,
     "modelName": "artilleryTowerlv2",
     "animName": "attack",
     "FrameName": "artilleryTowerlv2_",
@@ -921,10 +933,10 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": null
+    "yoffset": 26.6
   },
   {
-    "id": 78.0,
+    "id": 79.0,
     "modelName": "artilleryTowerlv3",
     "animName": "idle",
     "FrameName": "artilleryTowerlv3_",
@@ -933,10 +945,10 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": null
+    "yoffset": 26.6
   },
   {
-    "id": 79.0,
+    "id": 80.0,
     "modelName": "artilleryTowerlv3",
     "animName": "attack",
     "FrameName": "artilleryTowerlv3_",
@@ -945,10 +957,10 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": null
+    "yoffset": 26.6
   },
   {
-    "id": 80.0,
+    "id": 81.0,
     "modelName": "artilleryTowerEarthquake",
     "animName": "idle",
     "FrameName": "artilleryTowerEarthquake_",
@@ -956,11 +968,11 @@
     "endFrame": 1.0,
     "delta": 0.05,
     "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
+    "xoffset": 5.2,
+    "yoffset": 26.6
   },
   {
-    "id": 81.0,
+    "id": 82.0,
     "modelName": "artilleryTowerEarthquake",
     "animName": "attack",
     "FrameName": "artilleryTowerEarthquake_",
@@ -968,11 +980,11 @@
     "endFrame": 27.0,
     "delta": 0.05,
     "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
+    "xoffset": 5.2,
+    "yoffset": 26.6
   },
   {
-    "id": 82.0,
+    "id": 83.0,
     "modelName": "artilleryTowerEarthquake",
     "animName": "skill",
     "FrameName": "artilleryTowerEarthquake_",
@@ -980,11 +992,11 @@
     "endFrame": 37.0,
     "delta": 0.05,
     "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
+    "xoffset": 5.2,
+    "yoffset": 26.6
   },
   {
-    "id": 83.0,
+    "id": 84.0,
     "modelName": "artilleryTowerTesla",
     "animName": "idle",
     "FrameName": "artilleryTowerTesla_",
@@ -992,11 +1004,11 @@
     "endFrame": 1.0,
     "delta": 0.05,
     "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
+    "xoffset": -1.2,
+    "yoffset": 32.9
   },
   {
-    "id": 84.0,
+    "id": 85.0,
     "modelName": "artilleryTowerTesla",
     "animName": "attack",
     "FrameName": "artilleryTowerTesla_",
@@ -1004,11 +1016,11 @@
     "endFrame": 33.0,
     "delta": 0.05,
     "loop": 0.0,
-    "xoffset": null,
-    "yoffset": null
+    "xoffset": -1.2,
+    "yoffset": 32.9
   },
   {
-    "id": 85.0,
+    "id": 86.0,
     "modelName": "arrow",
     "animName": null,
     "FrameName": "arrow",
@@ -1020,7 +1032,7 @@
     "yoffset": null
   },
   {
-    "id": 86.0,
+    "id": 87.0,
     "modelName": "mageTowerBullet",
     "animName": null,
     "FrameName": "mageTowerlv1Bullet_",
@@ -1032,7 +1044,7 @@
     "yoffset": null
   },
   {
-    "id": 87.0,
+    "id": 88.0,
     "modelName": "mageTowerNecroBullet",
     "animName": null,
     "FrameName": "witchtowereffect_",
@@ -1044,7 +1056,7 @@
     "yoffset": null
   },
   {
-    "id": 88.0,
+    "id": 89.0,
     "modelName": "mageTowerNecroHitEffect",
     "animName": null,
     "FrameName": "witchtowereffect_",
@@ -1056,7 +1068,7 @@
     "yoffset": null
   },
   {
-    "id": 89.0,
+    "id": 90.0,
     "modelName": "mageTowerMasterBullet",
     "animName": null,
     "FrameName": "magetowereffect_",
@@ -1068,7 +1080,7 @@
     "yoffset": null
   },
   {
-    "id": 90.0,
+    "id": 91.0,
     "modelName": "mageTowerMasterHitEffect",
     "animName": null,
     "FrameName": "mageTowerMasterEffect_",
@@ -1080,7 +1092,7 @@
     "yoffset": null
   },
   {
-    "id": 91.0,
+    "id": 92.0,
     "modelName": "mageTowerMasterTransferEffect",
     "animName": null,
     "FrameName": "transfereffect_",
@@ -1092,7 +1104,7 @@
     "yoffset": null
   },
   {
-    "id": 92.0,
+    "id": 93.0,
     "modelName": "mageTowerMasterTransferEffect1",
     "animName": null,
     "FrameName": "transfereffect_",
@@ -1104,7 +1116,7 @@
     "yoffset": null
   },
   {
-    "id": 93.0,
+    "id": 94.0,
     "modelName": "turreBullet",
     "animName": null,
     "FrameName": "turretlv2effect_",
@@ -1116,7 +1128,7 @@
     "yoffset": null
   },
   {
-    "id": 94.0,
+    "id": 95.0,
     "modelName": "turretEffect",
     "animName": null,
     "FrameName": "turretlv2effect_",
@@ -1128,7 +1140,7 @@
     "yoffset": 20.0
   },
   {
-    "id": 95.0,
+    "id": 96.0,
     "modelName": "barrackSoliderBullet",
     "animName": null,
     "FrameName": "barrackeffect_",
@@ -1140,7 +1152,7 @@
     "yoffset": null
   },
   {
-    "id": 96.0,
+    "id": 97.0,
     "modelName": "lightening",
     "animName": null,
     "FrameName": "lightning_",
@@ -1152,7 +1164,7 @@
     "yoffset": null
   },
   {
-    "id": 97.0,
+    "id": 98.0,
     "modelName": "arrowTowerBase",
     "animName": null,
     "FrameName": "arrowTowerBase",
@@ -1164,7 +1176,7 @@
     "yoffset": null
   },
   {
-    "id": 98.0,
+    "id": 99.0,
     "modelName": "ArtilleryTowerBase",
     "animName": null,
     "FrameName": "ArtilleryTowerBase",
@@ -1176,7 +1188,7 @@
     "yoffset": null
   },
   {
-    "id": 99.0,
+    "id": 100.0,
     "modelName": "barrackTowerBase",
     "animName": null,
     "FrameName": "barrackTowerBase",
@@ -1188,7 +1200,7 @@
     "yoffset": null
   },
   {
-    "id": 100.0,
+    "id": 101.0,
     "modelName": "mageTowerBase",
     "animName": null,
     "FrameName": "mageTowerBase",
@@ -1200,7 +1212,7 @@
     "yoffset": null
   },
   {
-    "id": 101.0,
+    "id": 102.0,
     "modelName": "towerUpgradeEffect",
     "animName": null,
     "FrameName": "towerUpgradeEffect_",
@@ -1212,7 +1224,7 @@
     "yoffset": null
   },
   {
-    "id": 102.0,
+    "id": 103.0,
     "modelName": "fireRain",
     "animName": null,
     "FrameName": "fireRain_",
@@ -1224,7 +1236,7 @@
     "yoffset": null
   },
   {
-    "id": 103.0,
+    "id": 104.0,
     "modelName": "fireRainSelect",
     "animName": null,
     "FrameName": "fireRainSelect_",
@@ -1236,7 +1248,7 @@
     "yoffset": null
   },
   {
-    "id": 104.0,
+    "id": 105.0,
     "modelName": "lightenSelect",
     "animName": null,
     "FrameName": "lightenSelect_",

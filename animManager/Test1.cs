@@ -85,10 +85,19 @@ public class Test1 : MonoBehaviour {
         tower = EntityManager.getInstance().AddTower(100);
         tower.SetPosition(100, 10, 0);
         tower.ChangeState("idle");
-        tower = EntityManager.getInstance().AddTower(1);
-        tower.SetPosition(150, 10, 0);
+        tower = EntityManager.getInstance().AddTower(11);
+        tower.SetPosition(100, 10, 0);
         tower.ChangeState("idle");
-        tower = EntityManager.getInstance().AddTower(2);
+        tower = EntityManager.getInstance().AddTower(12);
+        tower.SetPosition(200, 10, 0);
+        tower.ChangeState("idle");
+        tower = EntityManager.getInstance().AddTower(13);
+        tower.SetPosition(200, 10, 0);
+        tower.ChangeState("idle");
+        tower = EntityManager.getInstance().AddTower(14);
+        tower.SetPosition(200, 10, 0);
+        tower.ChangeState("idle");
+        tower = EntityManager.getInstance().AddTower(15);
         tower.SetPosition(200, 10, 0);
         tower.ChangeState("idle");
 
