@@ -5,38 +5,48 @@ using Hero;
 
 public class CharacterView {
 
-    public CharacterInfo charInfo;
+    //public CharacterInfo charInfo;
     public ILoadAsset charAsset;
     public GameObject charObj;
-    public Animate charAnim;
+    //public Animate charAnim;
 
     public CharacterView()
     {
 
     }
-    public CharacterView(CharacterInfo charInfo)
+    //public CharacterView(CharacterInfo charInfo)
+    //{
+    //    this.charInfo = charInfo;
+    //    this.charInfo.eventDispatcher.Register("DoAction", DoAction);
+    //}
+
+    public virtual void LoadModel()
     {
-        this.charInfo = charInfo;
-        this.charInfo.eventDispatcher.Register("DoAction", DoAction);
+        //charAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/fly.prefab");
+        //charObj = charAsset.GameObjectAsset;
+        //charObj.name = charInfo.charName;
+        //charAnim = InitAnimate(charObj, charInfo.charName);
     }
 
-    public void LoadModel()
+    //public void DoAction(object[] data)
+    //{
+    //    //Debug.Log("View DoAction" + data[0].ToString());
+    //    float actionTime = 0;
+    //    if (data.Length > 1)
+    //    {
+    //        actionTime = float.Parse(data[1].ToString());
+    //    }
+    //    charAnim.startAnimation(data[0].ToString(), actionTime);
+    //}
+
+    public virtual void SetPosition(Vector3 _pos)
     {
-        charAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/fly.prefab");
-        charObj = charAsset.GameObjectAsset;
-        charObj.name = charInfo.charName;
-        charAnim = InitAnimate(charObj, charInfo.charName);
+        charObj.transform.position = _pos;
     }
 
-    public void DoAction(object[] data)
+    public virtual void SetRotation(Vector3 _rot)
     {
-        //Debug.Log("View DoAction" + data[0].ToString());
-        float actionTime = 0;
-        if (data.Length > 1)
-        {
-            actionTime = float.Parse(data[1].ToString());
-        }
-        charAnim.startAnimation(data[0].ToString(), actionTime);
+        charObj.transform.eulerAngles = _rot;
     }
 
     /// <summary>
@@ -83,7 +93,7 @@ public class CharacterView {
     }
     public void Update()
     {
-        charObj.transform.position = charInfo.GetPosition();
-        charObj.transform.eulerAngles = charInfo.GetRotation();
+        //charObj.transform.position = charInfo.GetPosition();
+        //charObj.transform.eulerAngles = charInfo.GetRotation();
     }
 }

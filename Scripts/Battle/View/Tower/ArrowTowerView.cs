@@ -13,6 +13,7 @@ public class ArrowTowerView : TowerView
     public ArrowTowerView(AttackTowerInfo towerInfo)
     {
         this.towerInfo = towerInfo;
+        this.towerInfo.towerView = this;
         this.towerInfo.eventDispatcher.Register("DoAction", DoAction);
         this.shooterNum = 1;
     }
@@ -74,7 +75,7 @@ public class ArrowTowerView : TowerView
 
     public override void Update()
     {
-        this.towerObj.transform.position = this.towerInfo.GetPosition();
+        //this.towerObj.transform.position = this.towerInfo.GetPosition();
     }
 }
 

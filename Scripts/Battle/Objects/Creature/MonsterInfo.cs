@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class MonsterInfo : CharacterInfo
 {
+    public MonsterView charView;
     //攻击目标
     private CharacterInfo attackCharInfo;
     //攻击需要移动的位置
@@ -98,6 +99,24 @@ public class MonsterInfo : CharacterInfo
         SetAttr(CharAttr.ArmorType, _charInfo.GetAttr(CharAttr.ArmorType));
         SetAttr(CharAttr.Speed, _charInfo.GetAttr(CharAttr.Speed));
         SetAttr(CharAttr.SpeedPer, _charInfo.GetAttr(CharAttr.SpeedPer));
+    }
+
+    public override void SetPosition(float x, float y, float z)
+    {
+        base.SetPosition(x, y, z);
+        charView.SetPosition(this.position);
+    }
+
+    public override void SetPosition(Vector3 _pos)
+    {
+        base.SetPosition(_pos);
+        charView.SetPosition(this.position);
+    }
+
+    public override void SetRotation(float x, float y, float z)
+    {
+        base.SetRotation(x, y, z);
+        charView.SetRotation(this.rotation);
     }
 
     public bool ReachNextPoint()

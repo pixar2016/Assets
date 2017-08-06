@@ -33,6 +33,8 @@ public class StraightEffectInfo : EffectInfo
         {
             angle.z = angle_360(Vector3.left, targetPos - pos);
             pos = Vector3.MoveTowards(pos, targetPos, speed * Time.deltaTime);
+            UpdatePositionToView();
+            UpdateRotationToView();
         }
     }
 

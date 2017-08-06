@@ -17,6 +17,7 @@ public class BarrackTowerInfo : TowerInfo
     public StateMachine towerStateMachine;
     public BarrackStart barrackStart;
     public BarrackIdle barrackIdle;
+    public BarrackConstructing barrackConstructing;
 
     public BarrackTowerInfo(int indexId, int barrackId) 
         : base(indexId, barrackId)
@@ -25,6 +26,7 @@ public class BarrackTowerInfo : TowerInfo
         towerStateMachine = new StateMachine();
         barrackStart = new BarrackStart(this);
         barrackIdle = new BarrackIdle(this);
+        barrackConstructing = new BarrackConstructing(this);
         soliderDict = new Dictionary<int, SoliderInfo>();
 
         startTime = AnimationCache.getInstance().getAnimation(this.towerBase).getMeshAnimation("start").getAnimTime();
@@ -36,6 +38,7 @@ public class BarrackTowerInfo : TowerInfo
         towerStateMachine = new StateMachine();
         barrackStart = new BarrackStart(this);
         barrackIdle = new BarrackIdle(this);
+        barrackConstructing = new BarrackConstructing(this);
         soliderDict = new Dictionary<int, SoliderInfo>();
 
         soliderPos = new Vector3[3];
@@ -67,7 +70,13 @@ public class BarrackTowerInfo : TowerInfo
 
     public override void SetPosition(float x, float y, float z)
     {
-        position = new Vector3(x, y, z);
+        base.SetPosition(x, y, z);
+        SetSignPos(position);
+    }
+
+    public override void SetPosition(Vector3 _pos)
+    {
+        base.SetPosition(_pos);
         SetSignPos(position);
     }
 
@@ -98,6 +107,10 @@ public class BarrackTowerInfo : TowerInfo
         else if (stateName == "idle")
         {
             towerStateMachine.ChangeState(barrackIdle, _param);
+        }
+        else if (stateName == "constructing")
+        {
+            towerStateMachine.ChangeState(barrackConstructing, _param);
         }
     }
 

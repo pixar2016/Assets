@@ -9,6 +9,7 @@ public class BarrackTowerView : TowerView
     public BarrackTowerView(BarrackTowerInfo towerInfo)
     {
         this.towerInfo = towerInfo;
+        this.towerInfo.towerView = this;
         this.towerInfo.eventDispatcher.Register("DoAction", DoAction);
     }
 
@@ -39,7 +40,7 @@ public class BarrackTowerView : TowerView
 
     public override void Update()
     {
-        this.towerObj.transform.position = this.towerInfo.GetPosition();
+        //this.towerObj.transform.position = this.towerInfo.GetPosition();
     }
 }
 

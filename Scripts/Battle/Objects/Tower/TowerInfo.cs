@@ -5,6 +5,7 @@ using UnityEngine;
 //基础塔类
 public class TowerInfo : CharacterInfo
 {
+    public TowerView towerView;
     public D_Tower towerData;
     public string towerBase;
     //没有就为空
@@ -59,6 +60,19 @@ public class TowerInfo : CharacterInfo
     public void InitAttr()
     {
 
+    }
+
+    public override void SetPosition(float x, float y, float z)
+    {
+        //position = new Vector3(x, y, z);
+        base.SetPosition(x, y, z);
+        towerView.SetPosition(this.position);
+    }
+
+    public override void SetPosition(Vector3 _pos)
+    {
+        base.SetPosition(_pos);
+        towerView.SetPosition(this.position);
     }
 
     public virtual void ChangeState(string stateName, StateParam _param = null)

@@ -37,6 +37,8 @@ public class BezierEffectInfo : EffectInfo
             angle.z = angle_360(Vector3.left, _targetPos - _pos);
             this.pos = _targetPos;
             curPathNum++;
+            UpdatePositionToView();
+            UpdateRotationToView();
         }
         else
         {

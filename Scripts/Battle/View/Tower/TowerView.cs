@@ -31,6 +31,11 @@ public class TowerView
         }
     }
 
+    public virtual void SetPosition(Vector3 _pos)
+    {
+        towerObj.transform.position = _pos;
+    }
+
     public virtual void LoadModel()
     {
 

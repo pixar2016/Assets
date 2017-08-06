@@ -14,15 +14,15 @@ public class EntityViewManager
         return instance;
     }
 
-    public Dictionary<int, CharacterView> monsters;
-    public Dictionary<int, CharacterView> soliders;
+    public Dictionary<int, MonsterView> monsters;
+    public Dictionary<int, SoliderView> soliders;
     public Dictionary<int, EffectView> effects;
     public Dictionary<int, TowerView> towers;
 
     private EntityViewManager()
     {
-        monsters = new Dictionary<int, CharacterView>();
-        soliders = new Dictionary<int, CharacterView>();
+        monsters = new Dictionary<int, MonsterView>();
+        soliders = new Dictionary<int, SoliderView>();
         effects = new Dictionary<int, EffectView>();
         towers = new Dictionary<int, TowerView>();
         EntityManager.getInstance().eventDispatcher.Register("AddMonster", AddMonster);
@@ -38,8 +38,8 @@ public class EntityViewManager
 
     public void AddMonster(object[] data)
     {
-        CharacterInfo charInfo = (CharacterInfo)data[0];
-        CharacterView charView = new CharacterView(charInfo);
+        MonsterInfo charInfo = (MonsterInfo)data[0];
+        MonsterView charView = new MonsterView(charInfo);
         charView.LoadModel();
         if (monsters.ContainsKey(charInfo.Id))
         {
@@ -53,8 +53,8 @@ public class EntityViewManager
 
     public void AddSolider(object[] data)
     {
-        CharacterInfo charInfo = (CharacterInfo)data[0];
-        CharacterView charView = new CharacterView(charInfo);
+        SoliderInfo charInfo = (SoliderInfo)data[0];
+        SoliderView charView = new SoliderView(charInfo);
         charView.LoadModel();
         if (soliders.ContainsKey(charInfo.Id))
         {
@@ -137,7 +137,7 @@ public class EntityViewManager
         int delId = -1;
         foreach (int key in monsters.Keys)
         {
-            if (monsters[key].charInfo.Id == monsterIndexId)
+            if (monsters[key].monsterInfo.Id == monsterIndexId)
             {
                 delId = key;
                 monsters[key].Release();
@@ -154,7 +154,7 @@ public class EntityViewManager
         int delId = -1;
         foreach (int key in soliders.Keys)
         {
-            if (soliders[key].charInfo.Id == soliderIndexId)
+            if (soliders[key].soliderInfo.Id == soliderIndexId)
             {
                 delId = key;
                 soliders[key].Release();

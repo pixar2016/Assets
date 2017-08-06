@@ -100,6 +100,7 @@ public class EntityManager {
         effectInfo.SetDirtySign(false);
         effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
+        effectInfo.UpdatePositionToView();
         return effectInfo;
     }
     //添加动态特效
@@ -116,6 +117,7 @@ public class EntityManager {
         effectInfo.SetDirtySign(false);
         effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
+        effectInfo.UpdatePositionToView();
         return effectInfo;
     }
     //添加防御塔

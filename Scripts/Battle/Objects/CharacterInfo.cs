@@ -65,7 +65,7 @@ public class CharacterInfo
         position.z = y / 20;
     }
 
-    public void SetPosition(Vector3 _pos)
+    public virtual void SetPosition(Vector3 _pos)
     {
         _pos.z = _pos.y / 20f;
         position = _pos;
@@ -76,7 +76,7 @@ public class CharacterInfo
         return position;
     }
 
-    public void SetRotation(float x, float y, float z)
+    public virtual void SetRotation(float x, float y, float z)
     {
         rotation = new Vector3(x, y, z);
     }

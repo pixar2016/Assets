@@ -9,6 +9,7 @@ public class MageTowerView : TowerView
     public MageTowerView(AttackTowerInfo towerInfo)
     {
         this.towerInfo = towerInfo;
+        this.towerInfo.towerView = this;
         this.towerInfo.eventDispatcher.Register("DoAction", DoAction);
     }
 
@@ -54,7 +55,7 @@ public class MageTowerView : TowerView
 
     public override void Update()
     {
-        this.towerObj.transform.position = this.towerInfo.GetPosition();
+        //this.towerObj.transform.position = this.towerInfo.GetPosition();
     }
 }
 

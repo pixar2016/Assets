@@ -10,6 +10,7 @@ public class EffectView
     public EffectView(EffectInfo effectInfo)
     {
         this.effectInfo = effectInfo;
+        this.effectInfo.effectView = this;
     }
 
     public void LoadModel()
@@ -56,6 +57,17 @@ public class EffectView
         render.sortingLayerName = layerName;
         render.sortingOrder = layerId;
     }
+
+    public void SetPosition(Vector3 _pos)
+    {
+        effectObj.transform.position = _pos;
+    }
+
+    public void SetRotation(Vector3 _rot)
+    {
+        effectObj.transform.eulerAngles = _rot;
+    }
+
     public void Release()
     {
         GameLoader.Instance.UnLoadGameObject(effectAsset);
@@ -63,8 +75,8 @@ public class EffectView
 
     public void Update()
     {
-        effectObj.transform.position = effectInfo.GetPosition();
-        effectObj.transform.eulerAngles = effectInfo.GetEulerAngles();
+        //effectObj.transform.position = effectInfo.GetPosition();
+        //effectObj.transform.eulerAngles = effectInfo.GetEulerAngles();
     }
 }
 

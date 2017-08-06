@@ -5,6 +5,7 @@ using UnityEngine;
 //特效基类
 public class EffectInfo
 {
+    public EffectView effectView;
     //索引ID
     public int Id;
     //特效ID
@@ -17,12 +18,15 @@ public class EffectInfo
     public Vector3 angle;
     //标记 0-正常 1-添加 2-删除
     public int dirtySign;
+
+    public D_Effect effectData;
     
     public EffectInfo(int effectIndexId, int effId)
     {
         Id = effectIndexId;
         effectId = effId;
-        effectName = J_Effect.GetData(effId)._model;
+        effectData = J_Effect.GetData(effId);
+        effectName = effectData._model;
         dirtySign = 0;
     }
 
@@ -35,13 +39,25 @@ public class EffectInfo
         Vector3 temp = pos;
         temp.x = x;
         temp.y = y;
-        temp.z = z;
+        temp.z = y / 20f;
         pos = temp;
     }
 
     public void SetPosition(Vector3 _pos)
     {
+        _pos.z = _pos.y / 20f;
         pos = _pos;
+    }
+
+    //将位置更新到View层
+    public void UpdatePositionToView()
+    {
+        this.effectView.SetPosition(pos);
+    }
+    //将角度更新到View层
+    public void UpdateRotationToView()
+    {
+        this.effectView.SetRotation(angle);
     }
     public Vector3 GetEulerAngles()
     {

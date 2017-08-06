@@ -170,6 +170,7 @@ public class SelectPanel : UIComponent
         //Debug.Log(towerInfo.towerData._nextlevel.Length);
         if (nextlevel.Length == 1)
         {
+            Debug.Log(nextlevel[0]);
             towerInfo.ChangeState("constructing", new StateParam(nextlevel[0]));
             UiManager.Instance.CloseUIById(UIDefine.eSelectPanel);
         }
