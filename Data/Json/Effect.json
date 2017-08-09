@@ -6,96 +6,101 @@
   },
   {
     "id": 2.0,
-    "name": "基础魔法弹",
-    "model": "mageTowerBullet"
+    "name": "通用魔法弹",
+    "model": "mageTowerNormalBullet"
   },
   {
     "id": 3.0,
-    "name": "巫师塔魔法弹",
-    "model": "mageTowerNecroBullet"
+    "name": "通用魔法弹击中",
+    "model": "mageTowerNormalHitEffect"
   },
   {
     "id": 4.0,
-    "name": "巫师塔魔法弹击中",
-    "model": "mageTowerNecroHitEffect"
+    "name": "巫师塔魔法弹",
+    "model": "necromancerBullet"
   },
   {
     "id": 5.0,
-    "name": "大法师塔魔法弹",
-    "model": "mageTowerMasterBullet"
+    "name": "巫师塔魔法弹击中",
+    "model": "necromancerHitEffect"
   },
   {
     "id": 6.0,
-    "name": "大法师塔魔法弹击中",
-    "model": "mageTowerMasterHitEffect"
+    "name": "大法师塔魔法弹",
+    "model": "mageTowerMasterBullet1"
   },
   {
     "id": 7.0,
+    "name": "大法师塔魔法弹击中",
+    "model": "mageTowerMasterHitEffect1"
+  },
+  {
+    "id": 8.0,
     "name": "大法师塔传送小型",
     "model": "mageTowerMasterTransferEffect"
   },
   {
-    "id": 8.0,
+    "id": 9.0,
     "name": "大法师塔传送大型",
     "model": "mageTowerMasterTransferEffect1"
   },
   {
-    "id": 9.0,
+    "id": 10.0,
     "name": "炮塔子弹",
     "model": "turreBullet"
   },
   {
-    "id": 10.0,
+    "id": 11.0,
     "name": "炮弹击中",
     "model": "turretEffect"
   },
   {
-    "id": 11.0,
+    "id": 12.0,
     "name": "兵营子弹",
     "model": "barrackSoliderBullet"
   },
   {
-    "id": 12.0,
+    "id": 13.0,
     "name": "箭塔基座",
     "model": "arrowTowerBase"
   },
   {
-    "id": 13.0,
+    "id": 14.0,
     "name": "魔法塔基座",
     "model": "mageTowerBase"
   },
   {
-    "id": 14.0,
+    "id": 15.0,
     "name": "兵营基座",
     "model": "barrackTowerBase"
   },
   {
-    "id": 15.0,
+    "id": 16.0,
     "name": "炮塔基座",
     "model": "ArtilleryTowerBase"
   },
   {
-    "id": 16.0,
+    "id": 17.0,
     "name": "闪电",
     "model": "lightening"
   },
   {
-    "id": 17.0,
+    "id": 18.0,
     "name": "闪电选择",
     "model": "lightenSelect"
   },
   {
-    "id": 18.0,
+    "id": 19.0,
     "name": "火雨",
     "model": "fireRain"
   },
   {
-    "id": 19.0,
+    "id": 20.0,
     "name": "火雨选择",
     "model": "fireRainSelect"
   },
   {
-    "id": 20.0,
+    "id": 21.0,
     "name": "塔升级特效",
     "model": "towerUpgradeEffect"
   }
