@@ -11,6 +11,7 @@ public class D_Effect
 	public int _id;
 	public string _name;
 	public string _model;
+	public int _loop;
 
 }
 public class J_Effect
@@ -39,11 +40,26 @@ public class J_Effect
 			if(jsonObject["id"] != null){
 				info._id = int.Parse(jsonObject["id"].ToString());
 			}
+			else{
+				info._id = 0;
+			}
 			if(jsonObject["name"] != null){
 				info._name = jsonObject["name"].ToString();
 			}
+			else{
+				info._name = "";
+			}
 			if(jsonObject["model"] != null){
 				info._model = jsonObject["model"].ToString();
+			}
+			else{
+				info._model = "";
+			}
+			if(jsonObject["loop"] != null){
+				info._loop = int.Parse(jsonObject["loop"].ToString());
+			}
+			else{
+				info._loop = 0;
 			}
 
             infoDict.Add(info._id, info);
@@ -54,6 +70,25 @@ public class J_Effect
             Debug.Log(">>>>>"+info.Value._id+":"+info.Value._name+":"+info.Value._desc+":"+info.Value._point+":"+info.Value._label+":"+info.Value._type+":"+info.Value._number+":"+info.Value._function+":"+info.Value._para+":"+info.Value._reward+":"+"<<<<<\n");
         }
         */
+    }
+
+	/// <summary>
+    /// 将string拆分为int数组
+    /// </summary>
+    /// <param name="data"></param>
+    /// <returns></returns>
+    public static int[] GetIntArray(string data)
+    {
+        string[] strArray = data.Split('|');
+        int strLength = strArray.Length;
+        int[] intArray = new int[strLength];
+        int result;
+        for (int i = 0; i < strLength; i++)
+        {
+            bool isSuccess = int.TryParse(strArray[i], out result);
+            intArray[i] = isSuccess ? result : 0;
+        }
+        return intArray;
     }
 
     /// <summary>

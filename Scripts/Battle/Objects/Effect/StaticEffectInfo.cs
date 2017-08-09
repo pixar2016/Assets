@@ -15,7 +15,7 @@ public class StaticEffectInfo : EffectInfo
     {
         effectTime = 0;
         effectMaxTime = 1.0f;
-        loop = true;
+        loop = effectData._loop == 1 ? true : false;
     }
 
     public override void Update()

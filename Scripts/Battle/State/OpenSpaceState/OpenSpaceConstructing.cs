@@ -26,7 +26,7 @@ public class OpenSpaceConstructing : StateBase
     {
         curTime = 0;
         //进入第一次创建过程，需要显示底座
-        baseEffect = EntityManager.getInstance().AddStaticEffect(12, openSpaceInfo.GetPosition());
+        baseEffect = EntityManager.getInstance().AddStaticEffect(13, openSpaceInfo.GetPosition());
         openSpaceInfo.DoAction("hide");
     }
 
@@ -41,7 +41,7 @@ public class OpenSpaceConstructing : StateBase
             changeTower.SetPosition(pos.x, pos.y, pos.z);
             changeTower.ChangeState("idle");
             //加入灰尘特效
-            EntityManager.getInstance().AddStaticEffect(20, pos);
+            EntityManager.getInstance().AddStaticEffect(21, pos);
             EntityManager.getInstance().RemoveTower(openSpaceInfo.Id);
         }
     }

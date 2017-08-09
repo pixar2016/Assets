@@ -2,106 +2,127 @@
   {
     "id": 1.0,
     "name": "弓箭",
-    "model": "arrow"
+    "model": "arrow",
+    "loop": 1.0
   },
   {
     "id": 2.0,
     "name": "通用魔法弹",
-    "model": "mageTowerNormalBullet"
+    "model": "mageTowerNormalBullet",
+    "loop": 1.0
   },
   {
     "id": 3.0,
     "name": "通用魔法弹击中",
-    "model": "mageTowerNormalHitEffect"
+    "model": "mageTowerNormalHitEffect",
+    "loop": null
   },
   {
     "id": 4.0,
     "name": "巫师塔魔法弹",
-    "model": "necromancerBullet"
+    "model": "necromancerBullet",
+    "loop": 1.0
   },
   {
     "id": 5.0,
     "name": "巫师塔魔法弹击中",
-    "model": "necromancerHitEffect"
+    "model": "necromancerHitEffect",
+    "loop": null
   },
   {
     "id": 6.0,
     "name": "大法师塔魔法弹",
-    "model": "mageTowerMasterBullet1"
+    "model": "mageTowerMasterBullet1",
+    "loop": 1.0
   },
   {
     "id": 7.0,
     "name": "大法师塔魔法弹击中",
-    "model": "mageTowerMasterHitEffect1"
+    "model": "mageTowerMasterHitEffect1",
+    "loop": null
   },
   {
     "id": 8.0,
     "name": "大法师塔传送小型",
-    "model": "mageTowerMasterTransferEffect"
+    "model": "mageTowerMasterTransferEffect",
+    "loop": null
   },
   {
     "id": 9.0,
     "name": "大法师塔传送大型",
-    "model": "mageTowerMasterTransferEffect1"
+    "model": "mageTowerMasterTransferEffect1",
+    "loop": null
   },
   {
     "id": 10.0,
     "name": "炮塔子弹",
-    "model": "turreBullet"
+    "model": "turreBullet",
+    "loop": 1.0
   },
   {
     "id": 11.0,
     "name": "炮弹击中",
-    "model": "turretEffect"
+    "model": "turretEffect",
+    "loop": null
   },
   {
     "id": 12.0,
     "name": "兵营子弹",
-    "model": "barrackSoliderBullet"
+    "model": "barrackSoliderBullet",
+    "loop": null
   },
   {
     "id": 13.0,
     "name": "箭塔基座",
-    "model": "arrowTowerBase"
+    "model": "arrowTowerBase",
+    "loop": 1.0
   },
   {
     "id": 14.0,
     "name": "魔法塔基座",
-    "model": "mageTowerBase"
+    "model": "mageTowerBase",
+    "loop": 1.0
   },
   {
     "id": 15.0,
     "name": "兵营基座",
-    "model": "barrackTowerBase"
+    "model": "barrackTowerBase",
+    "loop": 1.0
   },
   {
     "id": 16.0,
     "name": "炮塔基座",
-    "model": "ArtilleryTowerBase"
+    "model": "ArtilleryTowerBase",
+    "loop": 1.0
   },
   {
     "id": 17.0,
     "name": "闪电",
-    "model": "lightening"
+    "model": "lightening",
+    "loop": null
   },
   {
     "id": 18.0,
     "name": "闪电选择",
-    "model": "lightenSelect"
+    "model": "lightenSelect",
+    "loop": 1.0
   },
   {
     "id": 19.0,
     "name": "火雨",
-    "model": "fireRain"
+    "model": "fireRain",
+    "loop": null
   },
   {
     "id": 20.0,
     "name": "火雨选择",
-    "model": "fireRainSelect"
+    "model": "fireRainSelect",
+    "loop": 1.0
   },
   {
     "id": 21.0,
     "name": "塔升级特效",
-    "model": "towerUpgradeEffect"
+    "model": "towerUpgradeEffect",
+    "loop": null
   }
 ]
