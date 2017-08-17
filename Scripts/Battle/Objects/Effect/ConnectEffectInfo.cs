@@ -12,7 +12,6 @@ public class ConnectEffectInfo : EffectInfo
     public bool loop;
 
     public Vector3 startPos;
-
     public Vector3 endPos;
 
     public ConnectEffectInfo(int effectIndexId, int effId, Vector3 _startPos, Vector3 _endPos)
@@ -23,6 +22,11 @@ public class ConnectEffectInfo : EffectInfo
         loop = effectData._loop == 1 ? true : false;
         startPos = _startPos;
         endPos = _endPos;
+        effectLength = Vector3.Distance(startPos, endPos);
+        pos = (startPos + endPos) / 2;
+        angle.z = angle_360(Vector3.left, endPos - startPos);
+        UpdatePositionToView();
+        UpdateRotationToView();
     }
     public override void Update()
     {

@@ -20,6 +20,8 @@ public class EffectInfo
     public int dirtySign;
 
     public D_Effect effectData;
+
+    public float effectLength = 0;
     
     public EffectInfo(int effectIndexId, int effId)
     {
@@ -84,6 +86,17 @@ public class EffectInfo
         {
             dirtySign++;
         }
+    }
+
+    protected float angle_360(Vector3 _from, Vector3 _to)
+    {
+        Vector3 cross = Vector3.Cross(_from, _to);
+        float angle;
+        if (cross.z > 0)
+            angle = Vector3.Angle(_from, _to);
+        else
+            angle = 360 - Vector3.Angle(_from, _to);
+        return angle;
     }
 }
 

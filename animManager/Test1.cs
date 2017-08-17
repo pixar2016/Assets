@@ -106,7 +106,7 @@ public class Test1 : MonoBehaviour {
         //tower.SetPosition(0, 0, 0);
         //tower.ChangeState("idle");
 
-        //baseEffect = EntityManager.getInstance().AddStaticEffect(12, Vector3.zero);
+        baseEffect = EntityManager.getInstance().AddStaticEffect(17, Vector3.zero);
 
 
         GameManager.getInstance().LoadLevel(1);

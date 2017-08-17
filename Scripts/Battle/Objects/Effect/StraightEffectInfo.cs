@@ -37,16 +37,5 @@ public class StraightEffectInfo : EffectInfo
             UpdateRotationToView();
         }
     }
-
-    private float angle_360(Vector3 _from, Vector3 _to)
-    {
-        Vector3 cross = Vector3.Cross(_from, _to);
-        float angle;
-        if (cross.z > 0)
-            angle = Vector3.Angle(_from, _to);
-        else
-            angle = 360 - Vector3.Angle(_from, _to);
-        return angle;
-    }
 }
 
