@@ -12,6 +12,7 @@ public class ConnectEffectInfo : EffectInfo
     public bool loop;
 
     public Vector3 startPos;
+
     public Vector3 endPos;
 
     public ConnectEffectInfo(int effectIndexId, int effId, Vector3 _startPos, Vector3 _endPos)
@@ -21,12 +22,9 @@ public class ConnectEffectInfo : EffectInfo
         effectMaxTime = 1.0f;
         loop = effectData._loop == 1 ? true : false;
         startPos = _startPos;
-        endPos = _endPos;
-        effectLength = Vector3.Distance(startPos, endPos);
-        pos = (startPos + endPos) / 2;
+        endPos = _endPos; 
+        SetPosition((_startPos + _endPos) / 2);
         angle.z = angle_360(Vector3.left, endPos - startPos);
-        UpdatePositionToView();
-        UpdateRotationToView();
     }
     public override void Update()
     {
@@ -40,6 +38,16 @@ public class ConnectEffectInfo : EffectInfo
             effectTime = 0;
             EntityManager.getInstance().RemoveEffect(this.Id);
         }
+    }
+    private float angle_360(Vector3 _from, Vector3 _to)
+    {
+        Vector3 cross = Vector3.Cross(_from, _to);
+        float angle;
+        if (cross.z > 0)
+            angle = Vector3.Angle(_from, _to);
+        else
+            angle = 360 - Vector3.Angle(_from, _to);
+        return angle;
     }
 }
 

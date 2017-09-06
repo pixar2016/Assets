@@ -101,6 +101,7 @@ public class EntityManager {
         effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
         effectInfo.UpdatePositionToView();
+        effectInfo.UpdateRotationToView();
         return effectInfo;
     }
     //添加动态特效
@@ -110,6 +111,8 @@ public class EntityManager {
         EffectInfo effectInfo;
         if (pathType == 2)
             effectInfo = new BezierEffectInfo(effectIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
+        else if (pathType == 3)
+            effectInfo = new ConnectEffectInfo(effectIndexId, effectId, charInfo.GetPosition(), targetInfo.GetPosition());
         else
             effectInfo = new StraightEffectInfo(effectIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
         //effects.Add(effectIndexId, effectInfo);
@@ -118,6 +121,7 @@ public class EntityManager {
         effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
         effectInfo.UpdatePositionToView();
+        effectInfo.UpdateRotationToView();
         return effectInfo;
     }
     //添加防御塔
