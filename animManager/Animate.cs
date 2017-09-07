@@ -60,6 +60,21 @@ public class Animate: MonoBehaviour
         //根据图片名字加载使用的材质
         gameObject.GetComponent<MeshRenderer>().material = SpriteFrameCache.getInstance().getSpriteTexture(anim.pictName);
     }
+
+    /// <summary>
+    /// 设置动画GameObject的长度
+    /// </summary>
+    /// <param name="width"></param>
+    public void SetWidth(float width = 0)
+    {
+        if (width == 0)
+        {
+            return;
+        }
+        float scale = width / this.anim.imageWidth;
+        this.transform.localScale = new Vector3(scale, scale, 1);
+    }
+
     /// <summary>
     /// 开始动画
     /// </summary>

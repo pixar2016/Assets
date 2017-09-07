@@ -18,6 +18,8 @@ public class MeshAnimation
     public int count;
     //动画总时间
     public float animTime;
+    public float imageWidth;
+    public float imageHeight;
     public MeshAnimation()
     {
         frameList = new List<SpriteFrame>();
@@ -30,6 +32,8 @@ public class MeshAnimation
         if (animFrames.Count > 0)
         {
             texture = animFrames[0].textureName;
+            imageWidth = animFrames[0].width;
+            imageHeight = animFrames[0].height;
         }
         foreach (SpriteFrame frame in animFrames)
         {

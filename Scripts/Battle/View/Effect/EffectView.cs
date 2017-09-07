@@ -37,6 +37,7 @@ public class EffectView
             animCom = obj.AddComponent<Animate>();
         }
         animCom.OnInit(modelName);
+        animCom.SetWidth(effectInfo.GetWidth());
         animCom.startAnimation();
         return animCom;
     }

@@ -18,8 +18,9 @@ public class ConnectEffectInfo : EffectInfo
     public ConnectEffectInfo(int effectIndexId, int effId, Vector3 _startPos, Vector3 _endPos)
         : base(effectIndexId, effId)
     {
+        Debug.Log("ConnectEffectInfo");
         effectTime = 0;
-        effectMaxTime = 1.0f;
+        effectMaxTime = 2.0f;
         loop = effectData._loop == 1 ? true : false;
         startPos = _startPos;
         endPos = _endPos; 
@@ -48,6 +49,11 @@ public class ConnectEffectInfo : EffectInfo
         else
             angle = 360 - Vector3.Angle(_from, _to);
         return angle;
+    }
+
+    public override float GetWidth()
+    {
+        return Vector3.Distance(startPos, endPos);
     }
 }
 

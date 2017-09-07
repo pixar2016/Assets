@@ -10,15 +10,23 @@ public class MyAnimation
     public Dictionary<string, MeshAnimation> actionFrameDict;
     //动画帧所在的大图名字
     public string pictName;
+
+    public float imageWidth;
+    public float imageHeight;
+
     public void AddAnimation(MeshAnimation anim, string animName)
     {
         actionFrameDict.Add(animName, anim);
         pictName = anim.texture;
+        imageWidth = anim.imageWidth;
+        imageHeight = anim.imageHeight;
     }
     public void AddAnimation(MeshAnimation anim)
     {
         actionFrameDict.Add("normal", anim);
         pictName = anim.texture;
+        imageWidth = anim.imageWidth;
+        imageHeight = anim.imageHeight;
     }
 
     public MyAnimation()

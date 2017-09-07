@@ -305,7 +305,7 @@
     "attackDamage": 60.0,
     "attackRange": 1.0,
     "description": "磁暴塔",
-    "attackId": 2.0,
+    "attackId": 8.0,
     "soliderId": null,
     "skill1": null,
     "skill2": null,

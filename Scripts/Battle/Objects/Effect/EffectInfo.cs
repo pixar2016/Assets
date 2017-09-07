@@ -98,5 +98,10 @@ public class EffectInfo
             angle = 360 - Vector3.Angle(_from, _to);
         return angle;
     }
+
+    public virtual float GetWidth()
+    {
+        return 0;
+    }
 }
 

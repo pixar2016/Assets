@@ -111,12 +111,22 @@ public class EntityManager {
         EffectInfo effectInfo;
         if (pathType == 2)
             effectInfo = new BezierEffectInfo(effectIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
-        else if (pathType == 3)
-            effectInfo = new ConnectEffectInfo(effectIndexId, effectId, charInfo.GetPosition(), targetInfo.GetPosition());
         else
             effectInfo = new StraightEffectInfo(effectIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
         //effects.Add(effectIndexId, effectInfo);
         //标记为“添加”
+        effectInfo.SetDirtySign(false);
+        effectTempList.Add(effectIndexId, effectInfo);
+        this.eventDispatcher.Broadcast("AddEffect", effectInfo);
+        effectInfo.UpdatePositionToView();
+        effectInfo.UpdateRotationToView();
+        return effectInfo;
+    }
+
+    public EffectInfo AddConnectEffect(int effectId, CharacterInfo charInfo, CharacterInfo targetInfo)
+    {
+        effectIndexId += 1;
+        EffectInfo effectInfo = new ConnectEffectInfo(effectIndexId, effectId, charInfo.GetPosition(), targetInfo.GetPosition());
         effectInfo.SetDirtySign(false);
         effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
