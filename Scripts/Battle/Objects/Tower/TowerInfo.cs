@@ -75,6 +75,11 @@ public class TowerInfo : CharacterInfo
         towerView.SetPosition(this.position);
     }
 
+    public override Vector3 GetBulletPos()
+    {
+        return towerView.GetBulletPos();
+    }
+
     public virtual void ChangeState(string stateName, StateParam _param = null)
     {
 

@@ -76,6 +76,11 @@ public class CharacterInfo
         return position;
     }
 
+    public virtual Vector3 GetBulletPos()
+    {
+        return position;
+    }
+
     public virtual void SetRotation(float x, float y, float z)
     {
         rotation = new Vector3(x, y, z);

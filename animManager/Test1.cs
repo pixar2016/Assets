@@ -32,6 +32,7 @@ public class Test1 : MonoBehaviour {
         J_Tower.LoadConfig();
         J_AnimData.LoadConfig();
         J_Effect.LoadConfig();
+        J_ModelResource.LoadConfig();
 
         EntityManager.getInstance();
         EntityViewManager.getInstance();
@@ -90,18 +91,18 @@ public class Test1 : MonoBehaviour {
         //charInfo.SetPosition(0, 0, 0);
         //monster = EntityManager.getInstance().AddMonster(10001, path);
         //monster.SetPosition(0, 0, 0);
-        //tower = EntityManager.getInstance().AddTower(11);
-        //tower.SetPosition(0, 0, 0);
-        //tower.ChangeState("idle");
-        //tower = EntityManager.getInstance().AddTower(12);
-        //tower.SetPosition(0, 0, 0);
-        //tower.ChangeState("idle");
-        //tower = EntityManager.getInstance().AddTower(13);
-        //tower.SetPosition(0, 0, 0);
-        //tower.ChangeState("idle");
-        //tower = EntityManager.getInstance().AddTower(14);
-        //tower.SetPosition(0, 0, 0);
-        //tower.ChangeState("idle");
+        tower = EntityManager.getInstance().AddTower(11);
+        tower.SetPosition(0, 0, 0);
+        tower.ChangeState("idle");
+        tower = EntityManager.getInstance().AddTower(12);
+        tower.SetPosition(0, 0, 0);
+        tower.ChangeState("idle");
+        tower = EntityManager.getInstance().AddTower(13);
+        tower.SetPosition(0, 0, 0);
+        tower.ChangeState("idle");
+        tower = EntityManager.getInstance().AddTower(14);
+        tower.SetPosition(0, 0, 0);
+        tower.ChangeState("idle");
         tower = EntityManager.getInstance().AddTower(15);
         tower.SetPosition(0, 0, 0);
         tower.ChangeState("idle");

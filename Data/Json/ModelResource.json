@@ -22,5 +22,125 @@
     "modelName": "兵营",
     "modelPath": "Prefabs/SoliderTower.prefab",
     "": null
+  },
+  {
+    "id": 10.0,
+    "modelName": "一级箭塔",
+    "modelPath": "Prefabs/Tower/arrowTowerlv1.prefab",
+    "": null
+  },
+  {
+    "id": 11.0,
+    "modelName": "二级箭塔",
+    "modelPath": "Prefabs/Tower/arrowTowerlv2.prefab",
+    "": null
+  },
+  {
+    "id": 12.0,
+    "modelName": "三级箭塔",
+    "modelPath": "Prefabs/Tower/arrowTowerlv3.prefab",
+    "": null
+  },
+  {
+    "id": 13.0,
+    "modelName": "精灵箭塔",
+    "modelPath": "Prefabs/Tower/arrowCossbowTower.prefab",
+    "": null
+  },
+  {
+    "id": 14.0,
+    "modelName": "矮人炮塔",
+    "modelPath": "Prefabs/Tower/arrowTurretTower.prefab",
+    "": null
+  },
+  {
+    "id": 20.0,
+    "modelName": "一级魔法塔",
+    "modelPath": "Prefabs/Tower/mageTowerlv1.prefab",
+    "": null
+  },
+  {
+    "id": 21.0,
+    "modelName": "二级魔法塔",
+    "modelPath": "Prefabs/Tower/mageTowerlv2.prefab",
+    "": null
+  },
+  {
+    "id": 22.0,
+    "modelName": "三级魔法塔",
+    "modelPath": "Prefabs/Tower/mageTowerlv3.prefab",
+    "": null
+  },
+  {
+    "id": 23.0,
+    "modelName": "巫师塔",
+    "modelPath": "Prefabs/Tower/mageTowerMaster.prefab",
+    "": null
+  },
+  {
+    "id": 24.0,
+    "modelName": "大法师塔",
+    "modelPath": "Prefabs/Tower/mageTowerNecromancer.prefab",
+    "": null
+  },
+  {
+    "id": 30.0,
+    "modelName": "一级炮塔",
+    "modelPath": "Prefabs/Tower/artilleryTowerlv1.prefab",
+    "": null
+  },
+  {
+    "id": 31.0,
+    "modelName": "二级炮塔",
+    "modelPath": "Prefabs/Tower/artilleryTowerlv2.prefab",
+    "": null
+  },
+  {
+    "id": 32.0,
+    "modelName": "三级炮塔",
+    "modelPath": "Prefabs/Tower/artilleryTowerlv3.prefab",
+    "": null
+  },
+  {
+    "id": 33.0,
+    "modelName": "地震塔",
+    "modelPath": "Prefabs/Tower/artilleryTowerEarthquake.prefab",
+    "": null
+  },
+  {
+    "id": 34.0,
+    "modelName": "磁暴塔",
+    "modelPath": "Prefabs/Tower/artilleryTowerTesla.prefab",
+    "": null
+  },
+  {
+    "id": 40.0,
+    "modelName": "一级兵营",
+    "modelPath": "Prefabs/Tower/barrackTowerlv1.prefab",
+    "": null
+  },
+  {
+    "id": 41.0,
+    "modelName": "二级兵营",
+    "modelPath": "Prefabs/Tower/barrackTowerlv2.prefab",
+    "": null
+  },
+  {
+    "id": 42.0,
+    "modelName": "三级兵营",
+    "modelPath": "Prefabs/Tower/barrackTowerlv3.prefab",
+    "": null
+  },
+  {
+    "id": 43.0,
+    "modelName": "骑士营",
+    "modelPath": "Prefabs/Tower/barrackTowerKnight.prefab",
+    "": null
+  },
+  {
+    "id": 44.0,
+    "modelName": "野人营",
+    "modelPath": "Prefabs/Tower/barrackTowerSavage.prefab",
+    "": null
   }
 ]

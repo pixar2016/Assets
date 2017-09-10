@@ -17,7 +17,7 @@ public class BezierEffectInfo : EffectInfo
         angle = Vector3.zero;
         triggerGroupId = _triggerGroupId;
         bezierPath = new Bezier();
-        Vector3 startPos = _charInfo.GetPosition();
+        Vector3 startPos = _charInfo.GetBulletPos();
         Vector3 endPos = _targetInfo.GetPosition();
         int fps = (int)(60 * BattleUtils.Distance2(startPos, endPos) / speed);
         //Debug.Log(Vector3.Distance(startPos, endPos));

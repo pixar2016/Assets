@@ -8,6 +8,9 @@ public class ArrowTowerView : TowerView
     public SpriteImage towerBase;
     public Animate shooter1;
     public Animate shooter2;
+
+    private Vector3 bulletPos1;
+    private Vector3 bulletPos2;
     //轮到哪个弓手
     public int shooterNum;
     public ArrowTowerView(AttackTowerInfo towerInfo)
@@ -20,7 +23,8 @@ public class ArrowTowerView : TowerView
 
     public override void LoadModel()
     {
-        towerAsset = GameLoader.Instance.LoadAssetSync("Resources/Prefabs/ArrowTower.prefab");
+        string modelPath = "Resources/" + J_ModelResource.GetData(towerInfo.towerData._modelId)._modelPath;
+        towerAsset = GameLoader.Instance.LoadAssetSync(modelPath);
         towerObj = towerAsset.GameObjectAsset;
         towerObj.transform.position = this.towerInfo.GetPosition();
         //增加点击事件
@@ -34,8 +38,11 @@ public class ArrowTowerView : TowerView
         //加载射手2
         GameObject shooterObj2 = towerObj.transform.Find("ArrowShooter2").gameObject;
         shooter2 = InitAnimate(shooterObj2, towerInfo.shooter);
+
+        bulletPos1 = towerObj.transform.Find("BulletPos1").position;
+        bulletPos2 = towerObj.transform.Find("BulletPos2").position;
         //根据塔基座大小增加碰撞盒
-        AddBoxColider(towerObj, towerBase.width, towerBase.height);
+        //AddBoxColider(towerObj, towerBase.width, towerBase.height);
     }
 
     public override void DoAction(object[] data)
@@ -50,6 +57,11 @@ public class ArrowTowerView : TowerView
             shooter1.startAnimation(actionName);
             shooter2.startAnimation(actionName);
         }
+    }
+
+    public override Vector3 GetBulletPos()
+    {
+        return bulletPos1;
     }
 
     private void Attack()

@@ -14,7 +14,7 @@ public class StraightEffectInfo : EffectInfo
         this.charInfo = _charInfo;
         this.targetInfo = _targetInfo;
         this.speed = _speed;
-        pos = charInfo.GetPosition();
+        pos = charInfo.GetBulletPos();
         angle = Vector3.zero;
         triggerGroupId = _triggerGroupId;
     }

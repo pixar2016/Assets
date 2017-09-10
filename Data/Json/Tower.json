@@ -2,7 +2,7 @@
   {
     "id": 1.0,
     "name": "一级箭塔",
-    "modelId": 1.0,
+    "modelId": 10.0,
     "towerType": 1.0,
     "towerBase": "arrowTowerlv1",
     "Shooter": "arrowTowerlv1Shooter",
@@ -23,7 +23,7 @@
   {
     "id": 2.0,
     "name": "二级箭塔",
-    "modelId": 1.0,
+    "modelId": 11.0,
     "towerType": 1.0,
     "towerBase": "arrowTowerlv2",
     "Shooter": "arrowTowerlv2Shooter",
@@ -44,7 +44,7 @@
   {
     "id": 3.0,
     "name": "三级箭塔",
-    "modelId": 1.0,
+    "modelId": 12.0,
     "towerType": 1.0,
     "towerBase": "arrowTowerlv3",
     "Shooter": "arrowTowerlv3Shooter",
@@ -65,7 +65,7 @@
   {
     "id": 4.0,
     "name": "精灵箭塔",
-    "modelId": 1.0,
+    "modelId": 13.0,
     "towerType": 1.0,
     "towerBase": "arrowCossbowTower",
     "Shooter": "arrowCossbowTowerShooter",
@@ -86,7 +86,7 @@
   {
     "id": 5.0,
     "name": "矮人炮塔",
-    "modelId": 1.0,
+    "modelId": 14.0,
     "towerType": 1.0,
     "towerBase": "arrowTurretTower",
     "Shooter": "arrowTurretTowerShooter",
@@ -107,7 +107,7 @@
   {
     "id": 6.0,
     "name": "一级魔法塔",
-    "modelId": 2.0,
+    "modelId": 20.0,
     "towerType": 2.0,
     "towerBase": "mageTowerlv1",
     "Shooter": "mageTowerShooter",
@@ -128,7 +128,7 @@
   {
     "id": 7.0,
     "name": "二级魔法塔",
-    "modelId": 2.0,
+    "modelId": 21.0,
     "towerType": 2.0,
     "towerBase": "mageTowerlv2",
     "Shooter": "mageTowerShooter",
@@ -149,7 +149,7 @@
   {
     "id": 8.0,
     "name": "三级魔法塔",
-    "modelId": 2.0,
+    "modelId": 22.0,
     "towerType": 2.0,
     "towerBase": "mageTowerlv3",
     "Shooter": "mageTowerShooter",
@@ -170,7 +170,7 @@
   {
     "id": 9.0,
     "name": "巫师塔",
-    "modelId": 2.0,
+    "modelId": 23.0,
     "towerType": 2.0,
     "towerBase": "mageTowerNecromancer",
     "Shooter": "mageTowerNecroShooter",
@@ -191,7 +191,7 @@
   {
     "id": 10.0,
     "name": "大法师塔",
-    "modelId": 2.0,
+    "modelId": 24.0,
     "towerType": 2.0,
     "towerBase": "mageTowerMaster",
     "Shooter": "mageTowerMasterShooter",
@@ -212,7 +212,7 @@
   {
     "id": 11.0,
     "name": "一级炮塔",
-    "modelId": 3.0,
+    "modelId": 30.0,
     "towerType": 3.0,
     "towerBase": "artilleryTowerlv1",
     "Shooter": null,
@@ -233,7 +233,7 @@
   {
     "id": 12.0,
     "name": "二级炮塔",
-    "modelId": 3.0,
+    "modelId": 31.0,
     "towerType": 3.0,
     "towerBase": "artilleryTowerlv2",
     "Shooter": null,
@@ -254,7 +254,7 @@
   {
     "id": 13.0,
     "name": "三级炮塔",
-    "modelId": 3.0,
+    "modelId": 32.0,
     "towerType": 3.0,
     "towerBase": "artilleryTowerlv3",
     "Shooter": null,
@@ -275,7 +275,7 @@
   {
     "id": 14.0,
     "name": "地震塔",
-    "modelId": 3.0,
+    "modelId": 33.0,
     "towerType": 3.0,
     "towerBase": "artilleryTowerEarthquake",
     "Shooter": null,
@@ -296,7 +296,7 @@
   {
     "id": 15.0,
     "name": "磁暴塔",
-    "modelId": 3.0,
+    "modelId": 34.0,
     "towerType": 3.0,
     "towerBase": "artilleryTowerTesla",
     "Shooter": null,
@@ -317,7 +317,7 @@
   {
     "id": 16.0,
     "name": "一级兵营",
-    "modelId": 4.0,
+    "modelId": 40.0,
     "towerType": 4.0,
     "towerBase": "barrackTowerlv1",
     "Shooter": null,
@@ -338,7 +338,7 @@
   {
     "id": 17.0,
     "name": "二级兵营",
-    "modelId": 4.0,
+    "modelId": 41.0,
     "towerType": 4.0,
     "towerBase": "barrackTowerlv2",
     "Shooter": null,
@@ -359,7 +359,7 @@
   {
     "id": 18.0,
     "name": "三级兵营",
-    "modelId": 4.0,
+    "modelId": 42.0,
     "towerType": 4.0,
     "towerBase": "barrackTowerlv3",
     "Shooter": null,
@@ -380,7 +380,7 @@
   {
     "id": 19.0,
     "name": "骑士营",
-    "modelId": 4.0,
+    "modelId": 43.0,
     "towerType": 4.0,
     "towerBase": "barrackTowerKnight",
     "Shooter": null,
@@ -401,7 +401,7 @@
   {
     "id": 20.0,
     "name": "野人营",
-    "modelId": 4.0,
+    "modelId": 44.0,
     "towerType": 4.0,
     "towerBase": "barrackTowerSavage",
     "Shooter": null,

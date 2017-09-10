@@ -138,6 +138,11 @@ public class TowerView
         render.sortingOrder = layerId;
     }
 
+    public virtual Vector3 GetBulletPos()
+    {
+        return towerInfo.GetPosition();
+    }
+
     public virtual void Update()
     {
 
