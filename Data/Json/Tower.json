@@ -284,7 +284,7 @@
     "attackDamage": 35.0,
     "attackRange": 1.0,
     "description": "地震塔",
-    "attackId": 2.0,
+    "attackId": 7.0,
     "soliderId": null,
     "skill1": null,
     "skill2": null,

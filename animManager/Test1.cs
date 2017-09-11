@@ -110,11 +110,11 @@ public class Test1 : MonoBehaviour {
         //baseEffect = EntityManager.getInstance().AddStaticEffect(17, Vector3.zero);
 
 
-        GameManager.getInstance().LoadLevel(1);
-        GameManager.getInstance().StartGame();
+        //GameManager.getInstance().LoadLevel(1);
+        //GameManager.getInstance().StartGame();
 
-        //monster = EntityManager.getInstance().AddMonster(10001, path);
-        //monster.SetPosition(250, 5, 0);
+        monster = EntityManager.getInstance().AddMonster(10001, path);
+        monster.SetPosition(100, 5, 0);
         //monster = EntityManager.getInstance().AddMonster(10001, path);
         //monster.SetPosition(250, 0, 0);
         //monster.SetPosition(116, -100, 0);

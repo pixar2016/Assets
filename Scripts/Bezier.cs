@@ -28,6 +28,7 @@ public class Bezier
         for (int i = 0; i < _count; i++)
         {
             pathList.Add(GetPointAtTime(i * 1.0f / _count));
+            Debug.Log(GetPointAtTime(i * 1.0f / _count));
         }
     }
     /// <summary>

@@ -9,7 +9,7 @@
     "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
-    "yoffset": 9.0
+    "yoffset": 7.0
   },
   {
     "id": 2.0,
@@ -21,7 +21,7 @@
     "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
-    "yoffset": 9.0
+    "yoffset": 7.0
   },
   {
     "id": 3.0,
@@ -33,7 +33,7 @@
     "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
-    "yoffset": 9.0
+    "yoffset": 7.0
   },
   {
     "id": 4.0,
@@ -45,7 +45,7 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": 9.0
+    "yoffset": 7.0
   },
   {
     "id": 5.0,
@@ -57,7 +57,7 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": 9.0
+    "yoffset": 7.0
   },
   {
     "id": 6.0,
@@ -69,7 +69,7 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": 9.0
+    "yoffset": 7.0
   },
   {
     "id": 7.0,
@@ -81,7 +81,7 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": 9.0
+    "yoffset": 7.0
   },
   {
     "id": 8.0,
@@ -977,7 +977,7 @@
     "animName": "attack",
     "FrameName": "artilleryTowerEarthquake_",
     "startFrame": 2.0,
-    "endFrame": 27.0,
+    "endFrame": 26.0,
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": 5.2,
@@ -1209,7 +1209,7 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": 20.0
+    "yoffset": 29.2
   },
   {
     "id": 102.0,
