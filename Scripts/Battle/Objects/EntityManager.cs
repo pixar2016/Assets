@@ -126,7 +126,7 @@ public class EntityManager {
     public EffectInfo AddConnectEffect(int effectId, CharacterInfo charInfo, CharacterInfo targetInfo)
     {
         effectIndexId += 1;
-        EffectInfo effectInfo = new ConnectEffectInfo(effectIndexId, effectId, charInfo.GetPosition(), targetInfo.GetPosition());
+        EffectInfo effectInfo = new ConnectEffectInfo(effectIndexId, effectId, charInfo.GetBulletPos(), targetInfo.GetPosition());
         effectInfo.SetDirtySign(false);
         effectTempList.Add(effectIndexId, effectInfo);
         this.eventDispatcher.Broadcast("AddEffect", effectInfo);
