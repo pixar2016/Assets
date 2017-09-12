@@ -12,6 +12,7 @@ public class SpriteFrame
     public string textureName;
     public float width;
     public float height;
+    private float zoomSize = 1;
     public SpriteFrame()
     {
         
@@ -22,7 +23,6 @@ public class SpriteFrame
         Vector3 v1, v2, v3, v4;
         Vector2 s1, s2, s3, s4;
         float minX, maxX, minY, maxY;
-        float zoomSize = 1;
         float imageWidth = (int)meta["size"]["w"];
         float imageHeight = (int)meta["size"]["h"];
         textureName = (string)meta["image"];
@@ -112,8 +112,8 @@ public class SpriteFrame
         int count = vertices.Length;
         for (int i = 0; i < count; i++)
         {
-            vertices[i].x += x;
-            vertices[i].y += y;
+            vertices[i].x += x / zoomSize;
+            vertices[i].y += y / zoomSize;
         }
     }
 }

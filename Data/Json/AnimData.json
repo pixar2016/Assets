@@ -9,7 +9,7 @@
     "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
-    "yoffset": 7.0
+    "yoffset": 5.0
   },
   {
     "id": 2.0,
@@ -21,7 +21,7 @@
     "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
-    "yoffset": 7.0
+    "yoffset": 5.0
   },
   {
     "id": 3.0,
@@ -33,7 +33,7 @@
     "delta": 0.05,
     "loop": 1.0,
     "xoffset": null,
-    "yoffset": 7.0
+    "yoffset": 5.0
   },
   {
     "id": 4.0,
@@ -45,7 +45,7 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": 7.0
+    "yoffset": 5.0
   },
   {
     "id": 5.0,
@@ -57,7 +57,7 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": 7.0
+    "yoffset": 5.0
   },
   {
     "id": 6.0,
@@ -69,7 +69,7 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": 7.0
+    "yoffset": 5.0
   },
   {
     "id": 7.0,
@@ -81,7 +81,7 @@
     "delta": 0.05,
     "loop": 0.0,
     "xoffset": null,
-    "yoffset": 7.0
+    "yoffset": 5.0
   },
   {
     "id": 8.0,

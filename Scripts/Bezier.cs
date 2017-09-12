@@ -27,8 +27,8 @@ public class Bezier
         controlPoint.y = controlPoint.y + Vector3.Distance(_startPoint, _endPoint);
         for (int i = 0; i < _count; i++)
         {
-            pathList.Add(GetPointAtTime(i * 1.0f / _count));
-            Debug.Log(GetPointAtTime(i * 1.0f / _count));
+            pathList.Add(GetPointAtTime(i * 1.0f / (_count - 1)));
+            //Debug.Log(GetPointAtTime(i * 1.0f / (_count - 1)));
         }
     }
     /// <summary>
