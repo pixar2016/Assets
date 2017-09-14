@@ -19,20 +19,23 @@ public class EntityViewManager
     public Dictionary<int, EffectView> effects;
     public Dictionary<int, TowerView> towers;
 
+    public Dictionary<int, EffectView> effectTempList;
+
     private EntityViewManager()
     {
         monsters = new Dictionary<int, MonsterView>();
         soliders = new Dictionary<int, SoliderView>();
         effects = new Dictionary<int, EffectView>();
         towers = new Dictionary<int, TowerView>();
+
+        effectTempList = new Dictionary<int, EffectView>();
+
         EntityManager.getInstance().eventDispatcher.Register("AddMonster", AddMonster);
         EntityManager.getInstance().eventDispatcher.Register("AddSolider", AddSolider);
-        EntityManager.getInstance().eventDispatcher.Register("AddEffect", AddEffect);
         EntityManager.getInstance().eventDispatcher.Register("AddTower", AddTower);
 
         EntityManager.getInstance().eventDispatcher.Register("RemoveMonster", RemoveMonster);
         EntityManager.getInstance().eventDispatcher.Register("RemoveSolider", RemoveSolider);
-        EntityManager.getInstance().eventDispatcher.Register("RemoveEffect", RemoveEffect);
         EntityManager.getInstance().eventDispatcher.Register("RemoveTower", RemoveTower);
     }
 
@@ -66,19 +69,36 @@ public class EntityViewManager
         }
     }
 
-    public void AddEffect(object[] data)
+    public void AddStaticEffect(StaticEffectInfo effectInfo)
     {
-        EffectInfo effectInfo = (EffectInfo)data[0];
-        EffectView effectView = new EffectView(effectInfo);
+        StaticEffectView effectView = new StaticEffectView(effectInfo);
         effectView.LoadModel();
-        if (effects.ContainsKey(effectInfo.Id))
-        {
-            effects[effectInfo.Id] = effectView;
-        }
-        else
-        {
-            effects.Add(effectInfo.Id, effectView);
-        }
+        effectView.SetDirtySign(false);
+        effectTempList.Add(effectInfo.Id, effectView);
+    }
+
+    public void AddBezierEffect(BezierEffectInfo effectInfo)
+    {
+        BezierEffectView effectView = new BezierEffectView(effectInfo);
+        effectView.LoadModel();
+        effectView.SetDirtySign(false);
+        effectTempList.Add(effectInfo.Id, effectView);
+    }
+
+    public void AddStraightEffect(StraightEffectInfo effectInfo)
+    {
+        StraightEffectView effectView = new StraightEffectView(effectInfo);
+        effectView.LoadModel();
+        effectView.SetDirtySign(false);
+        effectTempList.Add(effectInfo.Id, effectView);
+    }
+
+    public void AddConnectEffect(ConnectEffectInfo effectInfo)
+    {
+        ConnectEffectView effectView = new ConnectEffectView(effectInfo);
+        effectView.LoadModel();
+        effectView.SetDirtySign(false);
+        effectTempList.Add(effectInfo.Id, effectView);
     }
 
     public void AddTower(object[] data)
@@ -165,21 +185,22 @@ public class EntityViewManager
             soliders.Remove(delId);
         }
     }
-    public void RemoveEffect(object[] data)
+    public void RemoveEffect(int effectIndexId)
     {
-        int effectIndexId = (int)data[0];
-        int delId = -1;
         foreach (int key in effects.Keys)
         {
-            if (effects[key].effectInfo.Id == effectIndexId)
+            if(effects[key].Id == effectIndexId)
             {
-                delId = key;
-                effects[key].Release();
+                if (effectTempList.ContainsKey(key))
+                {
+                    effectTempList[key].SetDirtySign(true);
+                }
+                else
+                {
+                    effectTempList.Add(key, effects[key]);
+                    effects[key].SetDirtySign(true);
+                }
             }
-        }
-        if (delId != -1)
-        {
-            effects.Remove(delId);
         }
     }
     public void RemoveTower(object[] data)
@@ -216,6 +237,29 @@ public class EntityViewManager
         foreach (int key in towers.Keys)
         {
             towers[key].Update();
+        }
+        CollectDirtyUnit();
+    }
+
+    public void CollectDirtyUnit()
+    {
+        if (effectTempList.Count > 0)
+        {
+            foreach (int key in effectTempList.Keys)
+            {
+                EffectView effect = effectTempList[key];
+                if (effect.dirtySign > 0)
+                {
+                    effects.Add(key, effect);
+                }
+                else if (effect.dirtySign < 0)
+                {
+                    effects.Remove(key);
+                    effect.Release();
+                }
+                effect.dirtySign = 0;
+            }
+            effectTempList.Clear();
         }
     }
 }

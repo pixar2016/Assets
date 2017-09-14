@@ -93,46 +93,57 @@ public class EntityManager {
     public EffectInfo AddStaticEffect(int effectId, Vector3 pos)
     {
         effectIndexId += 1;
-        EffectInfo effectInfo = new StaticEffectInfo(effectIndexId, effectId);
-        effectInfo.SetPosition(pos);
-        //effects.Add(effectIndexId, effectInfo);
-        //标记为“添加”
+        StaticEffectInfo effectInfo = new StaticEffectInfo(effectIndexId, effectId, pos);
+        EntityViewManager.getInstance().AddStaticEffect(effectInfo);
         effectInfo.SetDirtySign(false);
         effectTempList.Add(effectIndexId, effectInfo);
-        this.eventDispatcher.Broadcast("AddEffect", effectInfo);
-        effectInfo.UpdatePositionToView();
-        effectInfo.UpdateRotationToView();
         return effectInfo;
+        //EffectInfo effectInfo = new StaticEffectInfo(effectIndexId, effectId);
+        //effectInfo.SetPosition(pos);
+        ////effects.Add(effectIndexId, effectInfo);
+        ////标记为“添加”
+        //effectInfo.SetDirtySign(false);
+        //effectTempList.Add(effectIndexId, effectInfo);
+        //this.eventDispatcher.Broadcast("AddEffect", effectInfo);
+        //effectInfo.UpdatePositionToView();
+        //effectInfo.UpdateRotationToView();
+        //return effectInfo;
     }
     //添加动态特效
     public EffectInfo AddMoveEffect(int effectId, CharacterInfo charInfo, CharacterInfo targetInfo, float speed, int pathType, int triggerGroupId = 0)
     {
         effectIndexId += 1;
-        EffectInfo effectInfo;
-        if (pathType == 2)
-            effectInfo = new BezierEffectInfo(effectIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
-        else
-            effectInfo = new StraightEffectInfo(effectIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
-        //effects.Add(effectIndexId, effectInfo);
-        //标记为“添加”
-        effectInfo.SetDirtySign(false);
-        effectTempList.Add(effectIndexId, effectInfo);
-        this.eventDispatcher.Broadcast("AddEffect", effectInfo);
-        effectInfo.UpdatePositionToView();
-        effectInfo.UpdateRotationToView();
-        return effectInfo;
+        if (pathType == 2){
+            BezierEffectInfo effectInfo = new BezierEffectInfo(effectIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
+            EntityViewManager.getInstance().AddBezierEffect(effectInfo);
+            effectInfo.SetDirtySign(false);
+            effectTempList.Add(effectIndexId, effectInfo);
+            return effectInfo;
+        }   
+        else{
+            StraightEffectInfo effectInfo = new StraightEffectInfo(effectIndexId, effectId, charInfo, targetInfo, speed, triggerGroupId);
+            EntityViewManager.getInstance().AddStraightEffect(effectInfo);
+            effectInfo.SetDirtySign(false);
+            effectTempList.Add(effectIndexId, effectInfo);
+            return effectInfo;
+        }
     }
 
     public EffectInfo AddConnectEffect(int effectId, CharacterInfo charInfo, CharacterInfo targetInfo)
     {
         effectIndexId += 1;
-        EffectInfo effectInfo = new ConnectEffectInfo(effectIndexId, effectId, charInfo.GetBulletPos(), targetInfo.GetPosition());
+        ConnectEffectInfo effectInfo = new ConnectEffectInfo(effectIndexId, effectId, charInfo.GetBulletPos(), targetInfo.GetPosition());
+        EntityViewManager.getInstance().AddConnectEffect(effectInfo);
         effectInfo.SetDirtySign(false);
         effectTempList.Add(effectIndexId, effectInfo);
-        this.eventDispatcher.Broadcast("AddEffect", effectInfo);
-        effectInfo.UpdatePositionToView();
-        effectInfo.UpdateRotationToView();
         return effectInfo;
+        //EffectInfo effectInfo = new ConnectEffectInfo(effectIndexId, effectId, charInfo.GetBulletPos(), targetInfo.GetPosition());
+        //effectInfo.SetDirtySign(false);
+        //effectTempList.Add(effectIndexId, effectInfo);
+        //this.eventDispatcher.Broadcast("AddEffect", effectInfo);
+        //effectInfo.UpdatePositionToView();
+        //effectInfo.UpdateRotationToView();
+        //return effectInfo;
     }
     //添加防御塔
     public TowerInfo AddTower(int towerId)
@@ -226,8 +237,7 @@ public class EntityManager {
                     effectTempList.Add(key, effects[key]);
                     effects[key].SetDirtySign(true);
                 }
-                
-                this.eventDispatcher.Broadcast("RemoveEffect", effectId);
+                EntityViewManager.getInstance().RemoveEffect(effectId);
             }
         }
     }
