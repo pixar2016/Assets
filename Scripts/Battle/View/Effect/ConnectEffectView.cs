@@ -17,8 +17,10 @@ public class ConnectEffectView : EffectView
 
     public override void InitCom()
     {
-        InitAnimate(effectObj, effectInfo.effectName, effectInfo.GetWidth());
+        InitAnimate(effectObj, effectInfo.effectName, Vector3.Distance(effectInfo.startPos, effectInfo.endPos));
         InitPos();
+        effectMaxTime = effectObj.GetComponent<Animate>().GetAnimTime();
+        Debug.Log(effectMaxTime);
     }
 
     private void InitPos()
@@ -33,12 +35,14 @@ public class ConnectEffectView : EffectView
 
     public override void Update()
     {
-        effectTime += Time.deltaTime;
+        
+        Debug.Log("effectTime = " + effectTime);
         if (effectTime >= effectMaxTime)
         {
             effectTime = 0;
             EntityManager.getInstance().RemoveEffect(effectInfo.Id);
         }
+        effectTime += Time.deltaTime;
     }
 }
 

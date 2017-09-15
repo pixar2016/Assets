@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ConnectEffectInfo : EffectInfo
 {
-    //特效已产生的时间
-    public float effectTime;
-    //特效播放一次时间
-    public float effectMaxTime;
-    //特效是否循环播放 true-是 false-否
-    public bool loop;
+    ////特效已产生的时间
+    //public float effectTime;
+    ////特效播放一次时间
+    //public float effectMaxTime;
+    ////特效是否循环播放 true-是 false-否
+    //public bool loop;
 
     public Vector3 startPos;
 
@@ -19,41 +19,41 @@ public class ConnectEffectInfo : EffectInfo
         : base(effectIndexId, effId)
     {
         Debug.Log("ConnectEffectInfo");
-        effectTime = 0;
-        effectMaxTime = 2.0f;
-        loop = effectData._loop == 1 ? true : false;
+        //effectTime = 0;
+        //effectMaxTime = 2.0f;
+        //loop = effectData._loop == 1 ? true : false;
         startPos = _startPos;
         endPos = _endPos; 
-        SetPosition((_startPos + _endPos) / 2);
-        angle.z = angle_360(Vector3.left, endPos - startPos);
+        //SetPosition((_startPos + _endPos) / 2);
+        //angle.z = angle_360(Vector3.left, endPos - startPos);
     }
     public override void Update()
     {
-        if (loop)
-        {
-            return;
-        }
-        effectTime += Time.deltaTime;
-        if (effectTime >= effectMaxTime)
-        {
-            effectTime = 0;
-            EntityManager.getInstance().RemoveEffect(this.Id);
-        }
+        //if (loop)
+        //{
+        //    return;
+        //}
+        //effectTime += Time.deltaTime;
+        //if (effectTime >= effectMaxTime)
+        //{
+        //    effectTime = 0;
+        //    EntityManager.getInstance().RemoveEffect(this.Id);
+        //}
     }
-    private float angle_360(Vector3 _from, Vector3 _to)
-    {
-        Vector3 cross = Vector3.Cross(_from, _to);
-        float angle;
-        if (cross.z > 0)
-            angle = Vector3.Angle(_from, _to);
-        else
-            angle = 360 - Vector3.Angle(_from, _to);
-        return angle;
-    }
+    //private float angle_360(Vector3 _from, Vector3 _to)
+    //{
+    //    Vector3 cross = Vector3.Cross(_from, _to);
+    //    float angle;
+    //    if (cross.z > 0)
+    //        angle = Vector3.Angle(_from, _to);
+    //    else
+    //        angle = 360 - Vector3.Angle(_from, _to);
+    //    return angle;
+    //}
 
-    public override float GetWidth()
-    {
-        return Vector3.Distance(startPos, endPos);
-    }
+    //public override float GetWidth()
+    //{
+    //    return Vector3.Distance(startPos, endPos);
+    //}
 }
 

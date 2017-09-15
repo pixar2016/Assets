@@ -91,12 +91,18 @@ public class Animate: MonoBehaviour
         this.curActionName = actionName;
         this.curAnimation = temp;
         this.maxFrameNum = curAnimation.frameList.Count;
+        Debug.Log("maxFrameNum = " + this.maxFrameNum);
         float frameDelta = animTime / this.maxFrameNum;
         this.delay = (frameDelta > 0) ? frameDelta : curAnimation.delay;
         this.isLoop = curAnimation.loop;
-        this.curTime = delay;
+        this.curTime = 0;
         this.FrameNum = 0;
         this.active = true;
+    }
+
+    public float GetAnimTime()
+    {
+        return delay * maxFrameNum;
     }
     /// <summary>
     /// 停止动画
@@ -128,12 +134,15 @@ public class Animate: MonoBehaviour
 		if (curAnimation != null)
 		{
 			curTime += Time.deltaTime;
-            if (curTime < delay) return;
-			curTime = 0;
+            FrameNum = (int)Mathf.Floor(curTime / delay);
+            Debug.Log(curActionName + "  =  " + FrameNum + " " + curTime / delay);
+            //if (curTime < delay) return;
+            //curTime = 0;
             if (FrameNum >= this.maxFrameNum)
 			{
                 if (isLoop)
                 {
+                    curTime = 0;
                     FrameNum = 0;
                 }    
                 else
@@ -143,8 +152,9 @@ public class Animate: MonoBehaviour
                 }
                     
 			}
+            
 			GetMesh(curAnimation.frameList[FrameNum]);
-			FrameNum++;
+            //FrameNum++;
 		}
 	}
 
